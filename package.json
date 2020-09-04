@@ -17,7 +17,11 @@
     "build": "next build",
     "start": "next build && next start",
     "format": "prettier --write **/*.{jsx,js}",
-    "lint": "eslint --fix --ext .jsx --ext .js ."
+    "lint": "eslint --fix --ext .jsx --ext .js .",
+    "secrets": "npm run secrets:logout && npm run secrets:login 'npm run secrets:sync'",
+    "secrets:logout": "(bw logout || true)",
+    "secrets:login": "cross-env-shell BW_SESSION=`bw login product@bitsofgood.org --raw`",
+    "secrets:sync": "bw sync && bw get item 4771d430-f968-412a-aedd-ac2c0116a700 | fx .notes > '.env'"
   },
   "husky": {
     "hooks": {
