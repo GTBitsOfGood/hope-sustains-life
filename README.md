@@ -14,7 +14,10 @@ Our team is building a comprehensive donation website for Hope Sustains Life so 
 ### Development
 To understand this code better, read the [Code Tour](/CODETOUR.md).
 1. Run `npm install`
-2. Run `npm run dev`
+2. Setup development environment variables by running `npm run secrets`
+  - You will be prompted for a password. Ask your EM to send it to you.
+  - **NOTE**: Windows users need to run `npm run secrets:login` and `npm run secrets:sync` instead
+3. Run `npm run dev`
 
 ### Production
 1. Setup your host/vm and the necessary env vars
