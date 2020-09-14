@@ -18,6 +18,12 @@ export default {
       login: "/api/user/login",
       logout: "/api/user/logout",
       getCurrent: "/api/user/get-current",
+      ourStory: "/api/user/ourstory",
+      blogNews: "/api/user/blognews",
+      hundredPromise: "/api/user/hundredPromise",
+      ourWork: "/api/user/ourwork",
+      joinClassroom: "/api/user/joinclassroom",
+      joinLibrary: "/api/user/joinlibrary",
     },
   },
 };
