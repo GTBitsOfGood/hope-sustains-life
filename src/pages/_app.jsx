@@ -69,7 +69,7 @@ MyApp.propTypes = {
   router: PropTypes.object.isRequired,
   currentUser: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
   }),
 };
 

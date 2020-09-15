@@ -1,22 +1,20 @@
 import React from "react";
-// import Router from "next/router";
-// import { login } from "../../../actions/User";
-// import urls from "../../../../utils/urls";
+import { useRouter } from "next/router";
+import { login } from "../../../actions/User";
+import urls from "../../../../utils/urls";
 import classes from "./LoginPage.module.css";
 
 const LoginPage = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const router = useRouter();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(email);
-    console.log(password);
-
-    // return login(email, password)
-    //   .then(() => Router.replace(urls.pages.adminHome))
-    //   .catch((error) => window.alert(error.message));
+    return login(email, password)
+      .then(() => router.replace(urls.pages.adminHome))
+      .catch((error) => window.alert(error.message));
   };
 
   return (
