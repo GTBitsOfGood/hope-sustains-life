@@ -1,7 +1,7 @@
-import BlogsPage from "../../components/AdminBlogs/BlogsPage.jsx";
+import React from "react";
 
 const blogs = () => {
-  return <BlogsPage />;
+  return <p>This will list all Blogs</p>;
 };
 
 export default blogs;

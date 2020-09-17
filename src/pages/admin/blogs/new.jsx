@@ -1,7 +1,3 @@
-import BlogsPage from "../../../components/AdminBlogs/BlogsPage.jsx";
+import NewBlogPage from "../../../screens/NewBlog";
 
-const blogs = () => {
-  return <BlogsPage />;
-};
-
-export default blogs;
+export default NewBlogPage;

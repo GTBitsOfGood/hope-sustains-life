@@ -7,6 +7,7 @@ import { getCurrentUser } from "../actions/User";
 import urls from "../../utils/urls";
 import Header from "../components/Header";
 import "focus-visible/dist/focus-visible.min.js";
+import "react-quill/dist/quill.snow.css";
 import "normalize.css";
 import "../../public/static/styles/App.css";
 
