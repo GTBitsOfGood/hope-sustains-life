@@ -7,6 +7,7 @@ export default {
     index: "/",
     ssr: "/ssr",
     login: "/login",
+    newBlogPage: "/admin/blogs/new",
     app: {
       home: "/app",
     },
