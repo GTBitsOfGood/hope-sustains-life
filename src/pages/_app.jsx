@@ -9,6 +9,8 @@ import "focus-visible/dist/focus-visible.min.js";
 import "normalize.css";
 import "../../public/static/styles/App.css";
 import NavBar from "../components/NavBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import "../components/NavBar/NavBar.css";
 
 
 const MyApp = ({ Component, pageProps, router, currentUser }) => (

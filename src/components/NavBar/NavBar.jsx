@@ -1,28 +1,46 @@
 import React from "react";
-import { Nav, Navbar, NavItem, NavDropdown, NavProps } from "react-bootstrap";
+import { Nav, Navbar, NavItem, NavDropdown, NavProps, Button, Image, Container, Row, Col} from "react-bootstrap";
+import { Link, Router } from "react-router-dom";
+import logo from "./non-white globe-green_.png";
+
 
 const { Brand, Toggle, Collapse} = Navbar;
 
 const NavBar = () => {
     return (
-    <Navbar bg="light" expand="lg">
-    <Brand href="#home">React-Bootstrap</Brand>
-    <Toggle aria-controls="basic-navbar-nav" />
-    <Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-        <NavDropdown title="ABOUT US" id="basic-nav-dropdown">
-            <NavDropdown.Item href="urls.pages.app.ourstory">OUR STORY</NavDropdown.Item>
-            <NavDropdown.Item href="urls.pages.app.blognews">BLOG/NEWS</NavDropdown.Item>
-            <NavDropdown.Item href="urls.pages.app.hundredpromise">100% PROMISE</NavDropdown.Item>
-        </NavDropdown>
-        <Link><Nav.Link href="#home">OUR WORK</Nav.Link></Link>
-        <NavDropdown title="GET INVOLVED" id="basic-nav-dropdown">
-            <NavDropdown.Item href="urls.pages.app.joinclassroom">JOIN THE CLASSROOM</NavDropdown.Item>
-            <NavDropdown.Item href="urls.pages.app.joinlibrary">JOIN THE LIBRARY</NavDropdown.Item>
-        </NavDropdown>
-        </Nav>
-    </Collapse>
-    </Navbar>
+        <div className="navbar-stuff" >
+            <Navbar bg="dark" expand="xl">
+            <Image src={logo}></Image>
+            <Toggle aria-controls="basic-navbar-nav" />
+            <Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                <Container>
+                    <Row>
+                        <Col>
+                            <NavDropdown title="ABOUT US" id="basic-nav-dropdown">
+                            <NavDropdown.Item href= "/ourstory">OUR STORY</NavDropdown.Item>
+                            <NavDropdown.Item href="/blognews">BLOG/NEWS</NavDropdown.Item>
+                            <NavDropdown.Item href="/hundredpromise">100% PROMISE</NavDropdown.Item>
+                            </NavDropdown>
+                        </Col>
+                        <Col md="auto">
+                            <Nav.Link href="/ourwork">OUR WORK</Nav.Link>
+                        </Col>
+                        <Col>
+                            <NavDropdown title="GET INVOLVED" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/joinclassroom">JOIN THE CLASSROOM</NavDropdown.Item>
+                                <NavDropdown.Item href="/joinlibrary">JOIN THE LIBRARY</NavDropdown.Item>
+                            </NavDropdown>
+                        </Col>
+                        <Col>
+                            <Button href="/donate" class="btn btn-primary" type="submit">Donate</Button>
+                        </Col>
+                    </Row>
+                </Container>
+                </Nav>
+            </Collapse>
+            </Navbar>
+        </div>
     );
 };
 
