@@ -9,6 +9,8 @@ import Header from "../components/Header";
 import "focus-visible/dist/focus-visible.min.js";
 import "normalize.css";
 import "../../public/static/styles/App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "../components/Footer";
 
 const MyApp = ({ Component, pageProps, router, currentUser }) => (
   <>
@@ -17,6 +19,7 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
     </Head>
     <div className="App">
       <Header loggedIn={currentUser != null} currentRoute={router.asPath} />
+      <Footer/>
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
       </div>
