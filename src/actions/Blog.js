@@ -1,0 +1,1 @@
+/* For blog related frontend actions */

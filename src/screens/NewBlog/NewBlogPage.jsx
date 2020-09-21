@@ -3,26 +3,29 @@ import TextEditor from "../../components/TextEditor";
 import classes from "./NewBlogPage.module.css";
 
 const NewBlogPage = () => {
-  const [currentBlogContent, setBlogContent] = React.useState("");
+  const [title, setTitle] = React.useState("Insert Title");
+  const [body, setBody] = React.useState("");
+
+  const handleSave = () => {
+    console.log(title);
+    console.log(body);
+  };
 
   return (
-    <div className={classes.newBlog}>
+    <div className={classes.blogContainer}>
       <div className={classes.buttonContainer}>
-        <button className={classes.blogButton}>Save & Finish</button>
-        <button className={classes.blogButton}> Publish </button>
+        <button onClick={handleSave} className={classes.blogButton}>
+          Save & Finish
+        </button>
       </div>
-      <h1
-        contentEditable="true"
-        className={classes.newBlogTitle}
-        suppressContentEditableWarning={true}
-      >
-        [Insert Headline]
-      </h1>
-      <h4 style={{ textAlign: "right" }}>Date</h4>
-      <TextEditor
-        value={currentBlogContent}
-        onChange={(val) => setBlogContent(val)}
-      />
+      <div className={classes.titleContainer}>
+        <input
+          className={classes.title}
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+      </div>
+      <TextEditor value={body} onChange={(newBody) => setBody(newBody)} />
     </div>
   );
 };

@@ -1,3 +1,10 @@
+import dynamic from "next/dynamic";
+
+export const QuillWrapper = dynamic(import("react-quill"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+
 // More formats available @ https://quilljs.com/docs/formats/
 export const formats = [
   "bold",
