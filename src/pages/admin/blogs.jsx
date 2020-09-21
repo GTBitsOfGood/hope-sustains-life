@@ -1,7 +1,7 @@
 import React from "react";
+import BlogTable from '../../screens/BlogTable';
 
-const blogs = () => {
-  return <p>This will list all Blogs</p>;
-};
 
-export default blogs;
+
+
+export default BlogTable;
