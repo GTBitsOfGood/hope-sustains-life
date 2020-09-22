@@ -7,6 +7,8 @@ export default {
     index: "/",
     ssr: "/ssr",
     login: "/login",
+    admin: "/admin",
+    adminHome: "/admin/home",
     ourStory: "/ourstory",
     blogNews: "/blognews",
     hundredPromise: "/hundredPromise",

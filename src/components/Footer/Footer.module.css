@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 4px;
+    background-color: #004b4b;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 100em;
+}
+
+.button {
+    padding-right: 50em;
+    align-self: flex-end;
+}
+
