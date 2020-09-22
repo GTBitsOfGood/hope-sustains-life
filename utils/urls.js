@@ -14,6 +14,7 @@ export default {
     joinClassroom: "/joinclassroom",
     joinLibrary: "/joinlibrary",
     donate: "/donate",
+    newBlogPage: "/admin/blogs/new",
     app: {
       home: "/app",
     },
