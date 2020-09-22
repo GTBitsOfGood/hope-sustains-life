@@ -1,0 +1,30 @@
+.newBlog {
+    margin: auto;
+    width: 90%;
+    max-width: 1024px;
+}
+
+.newBlog>.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.blogButton {
+    margin-left: 20px;
+    padding: 8px 16px;
+    outline: none;
+    color: #ffffff;
+    background-color: #000000;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.newBlogTitle {    
+    margin: auto;
+    margin-top: 32px;
+    text-align: center;
+    outline: 0px solid transparent;
+}
