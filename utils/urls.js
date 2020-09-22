@@ -7,6 +7,13 @@ export default {
     index: "/",
     ssr: "/ssr",
     login: "/login",
+    ourStory: "/ourstory",
+    blogNews: "/blognews",
+    hundredPromise: "/hundredPromise",
+    ourWork: "/ourwork",
+    joinClassroom: "/joinclassroom",
+    joinLibrary: "/joinlibrary",
+    donate: "/donate",
     newBlogPage: "/admin/blogs/new",
     app: {
       home: "/app",
