@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Draggable } from "react-beautiful-dnd";
 import classes from "./blog.module.css";
 
-const Blog = ({ id, index }) => (
+const BlogTableRow = ({ id, index }) => (
   <Draggable draggableId={id} index={index}>
     {(provided) => (
       <div
@@ -20,9 +20,9 @@ const Blog = ({ id, index }) => (
   </Draggable>
 );
 
-Blog.propTypes = {
+BlogTableRow.propTypes = {
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
 
-export default Blog;
+export default BlogTableRow;

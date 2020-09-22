@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import Blog from "./Blog";
+import BlogTableRow from "./BlogTableRow";
 
 const reorder = (list, startIndex, endIndex) => {
   const newList = [...list];
@@ -41,7 +41,7 @@ const BlogTable = ({ blogs }) => {
             <div ref={provided.innerRef} {...provided.droppableProps}>
               {currentBlogs.map((blog, index) => (
                 // TODO - Pass any relevant props for the Blog record
-                <Blog id={blog.id} key={blog.id} index={index} />
+                <BlogTableRow id={blog.id} key={blog.id} index={index} />
               ))}
               {provided.placeholder}
             </div>
