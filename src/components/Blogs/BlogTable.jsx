@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import BlogTableRow from "./BlogTableRow";
@@ -36,7 +37,10 @@ const BlogTable = ({ blogs }) => {
     <div style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 10 }}>
       <div className={styles.blogTable}>
         <h4>
-          Blogs/News <button style={{ marginLeft: 1000 }}> Add </button>
+          Blogs/News
+          <Link href="./blogs/new">
+            <button style={{ marginLeft: 1000 }}> Add </button>
+          </Link>
         </h4>
         <br></br>
         <div>
@@ -52,7 +56,13 @@ const BlogTable = ({ blogs }) => {
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                   {currentBlogs.map((blog, index) => (
                     // TODO - Pass any relevant props for the Blog record
-                    <BlogTableRow id={blog.id} key={blog.id} index={index} />
+                    <BlogTableRow
+                      id={blog.id}
+                      key={blog.id}
+                      index={index}
+                      date={blog.date}
+                      headline={blog.headline}
+                    />
                   ))}
                   {provided.placeholder}
                 </div>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Draggable } from "react-beautiful-dnd";
 import classes from "./blog.module.css";
 
-const BlogTableRow = ({ id, index }) => (
+const BlogTableRow = ({ id, index, date, headline }) => (
   <Draggable draggableId={id} index={index}>
     {(provided) => (
       <div
@@ -13,10 +13,11 @@ const BlogTableRow = ({ id, index }) => (
       >
         <div className={classes.blogTableRow}>
           <div>
-            Placeholder for Blog table row {id} <br />
+            Placeholder for Blog table row {id} <br />{" "}
+            {/* need to replace with headline */}
             <small>Need to add additional detail to match requirements</small>
           </div>
-          <label>Enter date here</label>
+          <label>Enter date here</label> {/* need to replace with date */}
           <div className={classes.action}>
             <button className={classes.actionButtons}> View </button>
             <button className={classes.actionButtons}> Edit </button>
