@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import BlogTableRow from "./BlogTableRow";
+import styles from "./blog.module.css";
 
 const reorder = (list, startIndex, endIndex) => {
   const newList = [...list];
@@ -32,24 +33,42 @@ const BlogTable = ({ blogs }) => {
   };
 
   return (
-    <div>
-      <h1>Table Header</h1>
+    <div style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 10 }}>
+      <div className={styles.blogTable}>
+        <h4>
+          Blogs/News <button style={{ marginLeft: 1000 }}> Add </button>
+        </h4>
+        <br></br>
+        <div>
+          <div className={styles.tableHeader}>
+            <label> Blogs </label>
+            <label> Date </label>
+            <label> Action </label>
+          </div>
+          <br></br>
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="blogTableBody">
+              {(provided) => (
+                <div ref={provided.innerRef} {...provided.droppableProps}>
+                  {currentBlogs.map((blog, index) => (
+                    // TODO - Pass any relevant props for the Blog record
+                    <BlogTableRow id={blog.id} key={blog.id} index={index} />
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
 
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="blogTableBody">
-          {(provided) => (
-            <div ref={provided.innerRef} {...provided.droppableProps}>
-              {currentBlogs.map((blog, index) => (
-                // TODO - Pass any relevant props for the Blog record
-                <BlogTableRow id={blog.id} key={blog.id} index={index} />
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
-
-      <h1>Footer (Pagination maybe?)</h1>
+        <h6 className={styles.footer}>
+          <button className={styles.actionButtons}> Previous </button>
+          <button className={styles.actionButtons}> 1 </button>
+          <button className={styles.actionButtons}> 2 </button>
+          <button className={styles.actionButtons}> 3 </button>
+          <button className={styles.actionButtons}> Next </button>
+        </h6>
+      </div>
     </div>
   );
 };

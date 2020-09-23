@@ -12,8 +12,16 @@ const BlogTableRow = ({ id, index }) => (
         {...provided.dragHandleProps}
       >
         <div className={classes.blogTableRow}>
-          Placeholder for Blog table row {id} <br />
-          <small>Need to add additional detail to match requirements</small>
+          <div>
+            Placeholder for Blog table row {id} <br />
+            <small>Need to add additional detail to match requirements</small>
+          </div>
+          <label>Enter date here</label>
+          <div className={classes.action}>
+            <button className={classes.actionButtons}> View </button>
+            <button className={classes.actionButtons}> Edit </button>
+            <button className={classes.actionButtons}> Delete </button>
+          </div>
         </div>
       </div>
     )}
