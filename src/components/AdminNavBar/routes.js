@@ -2,17 +2,17 @@ import urls from "../../../utils/urls";
 
 const routes = [
   {
-    name: "Blogs",
+    name: "BLOGS",
     link: urls.pages.adminBlogs,
     auth: false,
   },
   {
-    name: "Donations",
+    name: "DONATIONS",
     link: urls.pages.adminDonations,
     auth: false,
   },
   {
-    name: "Subscribers",
+    name: "SUBSCRIBERS",
     link: urls.pages.adminSubscribers,
     auth: false,
   },

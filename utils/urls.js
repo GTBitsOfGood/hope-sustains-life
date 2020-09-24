@@ -9,7 +9,7 @@ export default {
     login: "/login",
     admin: "/admin",
     adminHome: "/admin/home",
-    adminBlogs: "/admin/blogs/new",
+    adminBlogs: "/admin/blogs/blogs",
     adminDonations: "/admin/donations",
     adminSubscribers: "/admin/subscribers",
     adminEditProfile: "/admin/editprofile",
