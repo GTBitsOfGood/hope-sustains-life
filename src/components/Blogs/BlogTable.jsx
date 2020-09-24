@@ -41,7 +41,7 @@ const BlogTable = ({ blogs }) => {
           <Link href="./blogs/new">
             <button
               style={{
-                marginLeft: 1000,
+                marginLeft: "75%",
                 backgroundColor: "#03AB99",
                 border: "none",
                 width: 90,
@@ -55,7 +55,7 @@ const BlogTable = ({ blogs }) => {
         <br></br>
         <div>
           <div className={styles.tableHeader}>
-            <label style={{ marginLeft: 319, marginRight: 284 }}> Blogs </label>
+            <label style={{ marginLeft: "15%", marginRight: 284 }}>Blog</label>
             <label style={{ marginRight: 295 }}> Date </label>
             <label> Action </label>
           </div>

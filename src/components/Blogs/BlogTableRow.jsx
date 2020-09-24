@@ -12,12 +12,12 @@ const BlogTableRow = ({ id, index, date, headline }) => (
         {...provided.dragHandleProps}
       >
         <div className={classes.blogTableRow}>
-          <div style={{ marginRight: 90 }}>
-            Placeholder for Blog table row {id} <br />
+          <div style={{ marginRight: 120, width: 300 }}>
+            Header goes here {id} <br />
             {/* need to replace with headline */}
             <small>Need to add additional detail to match requirements</small>
           </div>
-          <label style={{ marginRight: 110 }}>Enter date here</label>
+          <label style={{ marginRight: 90, width: 180 }}>Enter date here</label>
           {/* need to replace with date */}
           <div className={classes.action}>
             <button className={classes.actionButtons}> View </button>
