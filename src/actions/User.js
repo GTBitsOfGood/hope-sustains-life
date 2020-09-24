@@ -1,7 +1,7 @@
 import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
 
-export const signUp = (username, password) =>
+export const signUp = (email, password) =>
   fetch(urls.baseUrl + urls.api.user.signUp, {
     method: "post",
     mode: "same-origin",
@@ -10,7 +10,7 @@ export const signUp = (username, password) =>
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      username,
+      email,
       password,
     }),
   })
@@ -25,7 +25,7 @@ export const signUp = (username, password) =>
       return json.payload;
     });
 
-export const login = (username, password) =>
+export const login = (email, password) =>
   fetch(urls.baseUrl + urls.api.user.login, {
     method: "POST",
     mode: "same-origin",
@@ -34,7 +34,7 @@ export const login = (username, password) =>
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      username,
+      email,
       password,
     }),
   })
