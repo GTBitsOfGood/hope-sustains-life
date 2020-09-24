@@ -9,16 +9,9 @@ const AdminNavBar = ({ loggedIn, currentRoute }) => (
   <div className={styles.root}>
     {routes
       .filter((route) => (loggedIn && route.auth) || (!loggedIn && !route.auth))
-      .map(({ name, link, atEnd }) => (
+      .map(({ name, link }) => (
         <NavLink href={link} key={name}>
-          <div
-            className={clsx(
-              atEnd ? styles.endRoute : styles.route,
-              currentRoute === link && styles.selected
-            )}
-          >
-            {name}
-          </div>
+          {name}
         </NavLink>
       ))}
   </div>

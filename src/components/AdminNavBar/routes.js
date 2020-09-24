@@ -5,19 +5,16 @@ const routes = [
     name: "Blogs",
     link: urls.pages.adminBlogs,
     auth: false,
-    atEnd: false,
   },
   {
     name: "Donations",
     link: urls.pages.adminDonations,
     auth: false,
-    atEnd: false,
   },
   {
     name: "Subscribers",
     link: urls.pages.adminSubscribers,
     auth: false,
-    atEnd: true,
   },
   {
     name: "Admin",
