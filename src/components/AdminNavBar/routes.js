@@ -18,7 +18,7 @@ const routes = [
   },
   {
     name: "Admin",
-    link: urls.pages.app.adminEditProfile,
+    link: urls.pages.adminEditProfile,
     auth: true,
   },
 ];

@@ -1,16 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Router from "next/router";
 import AdminNavBar from "../../../components/AdminNavBar";
-import { getCurrentUser } from "../../../actions/User";
+import urls from '../../../../utils/urls'
 
-const HomePage = ({ currentUser, router }) => (
-  <AdminNavBar loggedIn = {currentUser != null } currentRoute = {router.asPath}></AdminNavBar>
-);
-
-HomePage.propTypes = {
-  currentUser: true,
-  router: PropTypes.object.isRequired,
+const HomePage = () => {
+  return <p>This is the admin Home Page</p>;
 };
 
 export default HomePage;
