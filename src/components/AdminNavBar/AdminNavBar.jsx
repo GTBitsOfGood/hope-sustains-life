@@ -5,7 +5,7 @@ import NavLink from "../NavLink";
 import routes from "./routes";
 import styles from "./AdminNavBar.module.css";
 import logo from "./non-white globe-green_.png";
-import adminLogo from "./adminLogo.png"
+import adminLogo from "./adminLogo.png";
 
 const AdminNavBar = ({ loggedIn, currentRoute }) => (
   <div className={styles.adminNavBar}>
@@ -17,17 +17,17 @@ const AdminNavBar = ({ loggedIn, currentRoute }) => (
           <NavLink className={styles.navlink} href={link} key={name}>
             <div
               className={clsx(
-                currentRoute === link ? styles.endRoute && styles.selected : styles.route
+                currentRoute === link
+                  ? styles.endRoute && styles.selected
+                  : styles.route
               )}
             >
-              {name === "Admin" &&
-                <img src={adminLogo}></img>
-              }
+              {name === "Admin" && <img src={adminLogo}></img>}
               {name}
             </div>
           </NavLink>
         ))}
-    </div> 
+    </div>
   </div>
 );
 
