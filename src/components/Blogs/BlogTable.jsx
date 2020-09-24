@@ -34,19 +34,29 @@ const BlogTable = ({ blogs }) => {
   };
 
   return (
-    <div style={{ paddingLeft: 40, paddingRight: 40, paddingTop: 10 }}>
+    <div style={{ width: 1440, height: 919, top: 105 }}>
       <div className={styles.blogTable}>
         <h4>
           Blogs/News
           <Link href="./blogs/new">
-            <button style={{ marginLeft: 1000 }}> Add </button>
+            <button
+              style={{
+                marginLeft: 1000,
+                backgroundColor: "#03AB99",
+                border: "none",
+                width: 90,
+                height: 35,
+              }}
+            >
+              Add
+            </button>
           </Link>
         </h4>
         <br></br>
         <div>
           <div className={styles.tableHeader}>
-            <label> Blogs </label>
-            <label> Date </label>
+            <label style={{ marginLeft: 319, marginRight: 284 }}> Blogs </label>
+            <label style={{ marginRight: 295 }}> Date </label>
             <label> Action </label>
           </div>
           <br></br>

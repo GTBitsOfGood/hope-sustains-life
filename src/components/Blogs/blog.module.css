@@ -1,5 +1,10 @@
 .blogTable {
-  width: 1150px;
+  width: 1279px;
+  height: 774px;
+  padding-left: 80px;
+  padding-right: 81px;
+  padding-top: 55px;
+  padding-bottom: 90px;
 }
 .blogTableRow {
   background: transparent;
@@ -7,17 +12,15 @@
   border-right: 0px;
   border-left: 0px;
   border-top: 0px;
-  padding: 25px;
-  margin-left: 125px;
-  margin-bottom: 10px;
-  width: 900px;
+  padding-top: 82px;
+  margin-left: 218px;
+  padding-bottom: 10px;
+  width: 881px;
   align-items: center;
   display: inline-flex;
-  justify-content: space-evenly;
 }
 .action {
   margin-left: 95px;
-  margin-right: 52px;
 }
 .actionButtons {
   background-color: transparent;
@@ -33,9 +36,7 @@
   height: 45px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 300px;
-  padding-right: 260px;
+  width: 1281px;
 }
 .footer {
   margin-left: 900px;
