@@ -3,7 +3,7 @@ import urls from "../../utils/urls";
 
 export const getBlogs = () => {};
 
-export const createBlog = (title, body) => {
+export const createBlog = (title, body) =>
   fetch(urls.baseUrl + urls.api.blogs, {
     method: "POST",
     mode: "same-origin",
@@ -23,7 +23,6 @@ export const createBlog = (title, body) => {
       } else if (!json.success) {
         throw new Error(json.message);
       }
-    });
 
-  return Promise.resolve();
-};
+      return json.payload;
+    });

@@ -1,15 +1,18 @@
 import React from "react";
 import TextEditor from "../../components/TextEditor";
 import classes from "./NewBlogPage.module.css";
+import { useRouter } from "next/router";
 import { createBlog } from "../../actions/Blog";
+import urls from "../../../utils/urls";
 
 const NewBlogPage = () => {
   const [title, setTitle] = React.useState("Insert Title");
   const [body, setBody] = React.useState("");
+  const router = useRouter();
 
   const handleSave = () => {
     return createBlog(title, body)
-      .then(() => window.alert("Blog saved successfully!"))
+      .then(() => router.replace(urls.pages.adminHome))
       .catch((error) => window.alert(error.message));
   };
 

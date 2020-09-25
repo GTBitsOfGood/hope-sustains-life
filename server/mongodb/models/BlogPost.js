@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const BlogPostSchema = new Schema({
+  isPublished: {
+    type: Boolean,
+    required: true,
+  },
   author: {
     type: String,
     required: true,
@@ -21,4 +25,5 @@ const BlogPostSchema = new Schema({
   },
 });
 
-export default mongoose.model("BlogPost", BlogPostSchema);
+export default mongoose.models.BlogPost ??
+  mongoose.model("BlogPost", BlogPostSchema);

@@ -7,8 +7,8 @@ const handler = async (req, res) => {
   if (req.method === "GET") {
     /* Get the blogs using the server action */
   } else if (req.method === "POST") {
-    createBlog(req.body)
-      .then(() => res.status(200).json({ success: true }))
+    return createBlog(req.body)
+      .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })
       );

@@ -15,7 +15,8 @@ export async function createBlog({ title, body }) {
   await mongoDB();
 
   try {
-    await BlogPost.create({
+    return BlogPost.create({
+      isPublished: false,
       author: "Test Author",
       title: title,
       body: body,
@@ -23,6 +24,4 @@ export async function createBlog({ title, body }) {
   } catch (error) {
     throw new Error(error.message);
   }
-
-  return Promise.resolve();
 }
