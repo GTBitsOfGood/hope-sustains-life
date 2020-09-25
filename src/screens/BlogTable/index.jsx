@@ -1,12 +1,17 @@
 import React from "react";
 import BlogTable from "../../components/Blogs/BlogTable";
-import Link from "next/link";
+// import axios from 'axios';
 
 const getBlogs = () => {
   var sampleBlogList = [];
   //Make call to database pass into blog component and create a list of blogs
   //sample blog list to pass into table
 
+  // axios.get('/api')
+  //   .then((response) => {
+  //     const data = response.data;
+  //     sampleBlogList = data;
+  //   })
 
   //Sample blog list for sprint 2
   
