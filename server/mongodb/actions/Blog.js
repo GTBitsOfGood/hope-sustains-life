@@ -11,9 +11,9 @@ export async function getBlogs() {
   }
 }
 
-export async function createBlog({ title, body }) {
-  if (title == null || body == null) {
-    throw new Error("Title and body must be provided");
+export async function createBlog(author, title, body) {
+  if (author == null || title == null || body == null) {
+    throw new Error("Author, title, and body must be provided");
   }
 
   await mongoDB();
@@ -21,7 +21,7 @@ export async function createBlog({ title, body }) {
   try {
     return BlogPost.create({
       isPublished: false,
-      author: "Test Author",
+      author: author,
       title: title,
       body: body,
     });
