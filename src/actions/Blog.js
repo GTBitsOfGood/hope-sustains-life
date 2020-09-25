@@ -5,7 +5,6 @@ export const getBlogs = () =>
   fetch(urls.baseUrl + urls.api.blogs, {
     method: "GET",
     mode: "same-origin",
-    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },

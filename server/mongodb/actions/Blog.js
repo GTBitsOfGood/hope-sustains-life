@@ -9,7 +9,6 @@ export async function getBlogs() {
   } catch (error) {
     throw new Error(error.message);
   }
-  /* Get the blogs from the database and return them */
 }
 
 export async function createBlog({ title, body }) {
