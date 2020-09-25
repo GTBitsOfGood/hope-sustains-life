@@ -4,6 +4,11 @@ import BlogPost from "../models/BlogPost";
 export async function getBlogs() {
   await mongoDB();
 
+  try {
+    return BlogPost.find({});
+  } catch (error) {
+    throw new Error(error.message);
+  }
   /* Get the blogs from the database and return them */
 }
 
