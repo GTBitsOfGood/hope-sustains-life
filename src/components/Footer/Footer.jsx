@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <Container>
-        <Button href="/admin" class="btn btn-primary" type="submit">
+        <Button href="/admin" className="btn btn-primary" type="submit">
           Log In
         </Button>
       </Container>
