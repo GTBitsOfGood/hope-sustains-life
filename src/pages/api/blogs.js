@@ -3,7 +3,7 @@ import { createBlog } from "../../../server/mongodb/actions/Blog";
 // @route   GET POST DELETE api/blogs
 // @desc    Blog Creation, Retrieval, or Deletion
 // @access  Admin
-const handler = (req, res) => {
+const handler = async (req, res) => {
   if (req.method === "GET") {
     /* Get the blogs using the server action */
   } else if (req.method === "POST") {

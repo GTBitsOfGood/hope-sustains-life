@@ -1,4 +1,5 @@
 import mongoDB from "../index";
+import BlogPost from "../models/BlogPost";
 
 export async function getBlogs() {
   await mongoDB();
@@ -13,5 +14,15 @@ export async function createBlog({ title, body }) {
 
   await mongoDB();
 
-  /* Create new blog and save it */
+  try {
+    await BlogPost.create({
+      author: "Test Author",
+      title: title,
+      body: body,
+    });
+  } catch (error) {
+    throw new Error(error.message);
+  }
+
+  return Promise.resolve();
 }

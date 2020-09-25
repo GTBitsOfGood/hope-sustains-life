@@ -23,7 +23,7 @@ export const createBlog = (title, body) => {
       } else if (!json.success) {
         throw new Error(json.message);
       }
-
-      return json.success;
     });
+
+  return Promise.resolve();
 };

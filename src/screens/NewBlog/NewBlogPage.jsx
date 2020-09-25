@@ -1,14 +1,16 @@
 import React from "react";
 import TextEditor from "../../components/TextEditor";
 import classes from "./NewBlogPage.module.css";
+import { createBlog } from "../../actions/Blog";
 
 const NewBlogPage = () => {
   const [title, setTitle] = React.useState("Insert Title");
   const [body, setBody] = React.useState("");
 
   const handleSave = () => {
-    console.log(title);
-    console.log(body);
+    return createBlog(title, body)
+      .then(() => window.alert("Blog saved successfully!"))
+      .catch((error) => window.alert(error.message));
   };
 
   return (
