@@ -1,10 +1,20 @@
 import React from "react";
-import { Nav, Navbar, NavItem, NavDropdown, NavProps, Button, Image, Container, Row, Col} from "react-bootstrap";
+import {
+  Nav,
+  Navbar,
+  NavItem,
+  NavDropdown,
+  NavProps,
+  Button,
+  Image,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { Link, Router } from "react-router-dom";
 import logo from "./non-white globe-green_.png";
 
-
-const { Brand, Toggle, Collapse} = Navbar;
+const { Brand, Toggle, Collapse } = Navbar;
 
 const NavBar = () => {
     return (
@@ -44,4 +54,4 @@ const NavBar = () => {
     );
 };
 
-  export default NavBar;
+export default NavBar;
