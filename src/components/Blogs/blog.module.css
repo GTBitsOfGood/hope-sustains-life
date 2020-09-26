@@ -1,0 +1,48 @@
+.blogTable {
+  max-width: 1279px;
+  max-height: 774px;
+  width: 85%;
+  height: 85%;
+  padding-left: 80px;
+  padding-right: 81px;
+  padding-top: 55px;
+  padding-bottom: 90px;
+}
+.blogTableRow {
+  background: transparent;
+  border: 1px solid lightgray;
+  border-right: 0px;
+  border-left: 0px;
+  border-top: 0px;
+  padding-top: 82px;
+  margin-left: 10%;
+  padding-bottom: 10px;
+  max-width: 881px;
+  width: 70%;
+  align-items: center;
+  display: inline-flex;
+}
+.action {
+  margin-left: 95px;
+  width: 250px;
+}
+.actionButtons {
+  background-color: transparent;
+  border: none;
+}
+.tableName {
+  display: inline;
+}
+.tableHeader {
+  border: 1px solid lightgray;
+  border-right: 0px;
+  border-left: 0px;
+  display: flex;
+  align-items: center;
+  max-width: 1281px;
+  height: 45px;
+  width: 90%;
+}
+.footer {
+  margin-left: 75%;
+}
