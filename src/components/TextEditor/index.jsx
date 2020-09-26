@@ -1,14 +1,8 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
-import { formats, modules } from "./config";
+import { QuillWrapper, formats, modules } from "./config";
 
-const QuillWrapper = dynamic(import("react-quill"), {
-  ssr: false,
-  loading: () => <p>Loading...</p>,
-});
-
-function TextEditor({ value, onChange }) {
+const TextEditor = ({ value, onChange }) => {
   return (
     <QuillWrapper
       modules={modules}
@@ -18,7 +12,7 @@ function TextEditor({ value, onChange }) {
       onChange={(val) => onChange(val)}
     />
   );
-}
+};
 
 TextEditor.propTypes = {
   value: PropTypes.string,

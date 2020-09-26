@@ -1,28 +1,36 @@
 import React from "react";
 import TextEditor from "../../components/TextEditor";
 import classes from "./NewBlogPage.module.css";
+import { useRouter } from "next/router";
+import { createBlog } from "../../actions/Blog";
+import urls from "../../../utils/urls";
 
 const NewBlogPage = () => {
-  const [currentBlogContent, setBlogContent] = React.useState("");
+  const [title, setTitle] = React.useState("Insert Title");
+  const [body, setBody] = React.useState("");
+  const router = useRouter();
+
+  const handleSave = () => {
+    return createBlog(title, body)
+      .then(() => router.replace(urls.pages.adminHome))
+      .catch((error) => window.alert(error.message));
+  };
 
   return (
-    <div className={classes.newBlog}>
+    <div className={classes.blogContainer}>
       <div className={classes.buttonContainer}>
-        <button className={classes.blogButton}>Save & Finish</button>
-        <button className={classes.blogButton}> Publish </button>
+        <button onClick={handleSave} className={classes.blogButton}>
+          Save & Finish
+        </button>
       </div>
-      <h1
-        contentEditable="true"
-        className={classes.newBlogTitle}
-        suppressContentEditableWarning={true}
-      >
-        [Insert Headline]
-      </h1>
-      <h4 style={{ textAlign: "right" }}>Date</h4>
-      <TextEditor
-        value={currentBlogContent}
-        onChange={(val) => setBlogContent(val)}
-      />
+      <div className={classes.titleContainer}>
+        <input
+          className={classes.title}
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+      </div>
+      <TextEditor value={body} onChange={(newBody) => setBody(newBody)} />
     </div>
   );
 };

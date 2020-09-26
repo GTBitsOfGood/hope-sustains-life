@@ -34,5 +34,6 @@ export default {
       logout: "/api/user/logout",
       getCurrent: "/api/user/get-current",
     },
+    blogs: "/api/blogs",
   },
 };
