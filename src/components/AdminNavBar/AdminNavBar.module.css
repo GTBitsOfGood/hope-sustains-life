@@ -2,12 +2,20 @@
     display: flex;
     flex-direction: row;
     padding: 8px 4px;
-    background-color: #004b4b;
+    background-color: white;
     align-items: center;
+    color: #4c4c4c;
 }
 
+.adminNavBar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;;
+}
+
+
 .route, .endRoute {
-    color: white;
+    color: #4c4c4c;
     padding: 12px 24px;
     margin: 0 16px;
     font-size: 20px;
@@ -17,9 +25,22 @@
 }
 
 .route:hover, .endRoute:hover, .selected {
+    color: white;
     background-color: #002d2d;
+    padding: 12px 24px;
+    margin: 0 16px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.route:hover, .endRoute:hover {
+    color: white;
 }
 
 .endRoute {
     margin-left: auto;
+}
+
+.navlink {
+    color: #4c4c4c;
 }

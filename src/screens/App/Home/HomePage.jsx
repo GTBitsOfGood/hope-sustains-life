@@ -13,7 +13,7 @@ const handleLogout = () =>
 const HomePage = ({ currentUser }) => (
   <div className={classes.root}>
     <h2 className={classes.centerText}>
-      Welcome to our app, {currentUser.username}!
+      Welcome to our app, {currentUser.email}!
     </h2>
     <h3>
       This page can only be accessed by logged-in users, because _app.js
@@ -28,7 +28,7 @@ const HomePage = ({ currentUser }) => (
 HomePage.propTypes = {
   currentUser: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
   }).isRequired,
 };
 
