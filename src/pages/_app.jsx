@@ -11,7 +11,7 @@ import "focus-visible/dist/focus-visible.min.js";
 import "react-quill/dist/quill.snow.css";
 import "normalize.css";
 import "../../public/static/styles/App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 //import "../components/NavBar/NavBar.css";
 
 const MyApp = ({ Component, pageProps, router, currentUser }) => (
@@ -20,8 +20,8 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
       <title>Next.js-Starter</title>
     </Head>
     <div className="App">
-    <NavBar/>
-      <Footer/>
+      <NavBar />
+      <Footer />
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
       </div>
