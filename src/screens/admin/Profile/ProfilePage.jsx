@@ -38,7 +38,7 @@ const ProfilePage = () => {
         </Form>
         <div className = {styles.savebutton}>
             <Container>
-                        <Button class="btn btn-primary" type="submit">Save</Button>
+                <Button className="btn btn-primary" type="submit">Save</Button>
             </Container>
         </div>
     </div>

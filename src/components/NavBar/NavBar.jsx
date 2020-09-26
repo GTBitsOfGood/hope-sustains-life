@@ -33,7 +33,7 @@ const NavBar = () => {
                             </NavDropdown>
                         </Col>
                         <Col>
-                            <Button href="/donate" class="btn btn-primary" type="submit">Donate</Button>
+                            <Button href="/donate" className="btn btn-primary" type="submit">Donate</Button>
                         </Col>
                     </Row>
                 </Container>
