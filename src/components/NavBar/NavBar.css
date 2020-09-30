@@ -11,3 +11,10 @@
     position: absolute;
     width: 100%;
 }
+
+#basic-navbar-nav a {     
+    color: white; 
+} 
+.dropdown-menu {     
+    background-color: grey; 
+}

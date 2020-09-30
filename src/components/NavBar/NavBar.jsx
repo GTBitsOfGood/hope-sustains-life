@@ -55,7 +55,7 @@ const NavBar = () => {
                 <Col>
                   <Button
                     href="/donate"
-                    className="btn btn-primary"
+                    className="btn btn-success"
                     type="submit"
                   >
                     Donate
