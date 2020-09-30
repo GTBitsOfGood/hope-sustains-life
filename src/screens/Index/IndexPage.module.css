@@ -1,3 +1,36 @@
 .centerText {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+
 }
+
+.general {
+    background-image: url("../../../public/static/home-bg.jpg");
+    height: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.centerButton {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100%;
+}
+
+

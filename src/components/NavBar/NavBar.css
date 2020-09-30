@@ -1,12 +1,13 @@
 
 .navbar-stuff {
     background: #2A2D39;
-    opacity: 0.4;
-    padding-bottom: 25pt;
-    color: black;
+    opacity: 0.8;
+    color: white;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
+    position: absolute;
+    width: 100%;
 }

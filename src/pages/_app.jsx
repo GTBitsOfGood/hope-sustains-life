@@ -12,7 +12,7 @@ import "react-quill/dist/quill.snow.css";
 import "normalize.css";
 import "../../public/static/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import "../components/NavBar/NavBar.css";
+import "../components/NavBar/Navbar.css";
 
 const MyApp = ({ Component, pageProps, router, currentUser }) => (
   <>

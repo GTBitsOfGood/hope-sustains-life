@@ -1,28 +1,16 @@
 import React from "react";
-import { helloWorld } from "../../actions/General";
 import classes from "./IndexPage.module.css";
+import { Button, Row, Col } from "react-bootstrap";
 
-const IndexPage = () => {
-  const [payload, setPayload] = React.useState("");
-
-  React.useEffect(() => {
-    // Example how to create page without ssr
-    helloWorld().then((resp) => {
-      setPayload(resp);
-    });
-  }, []);
-
-  return (
-    <>
-      <h2 className={classes.centerText}>HOPE SUSTAINS LIFE</h2>
-      <h3>
-        This page is static rendered, because all API calls are made in
-        useEffect
-      </h3>
-      <h4>{payload}</h4>
-      <p>You can tell because the text above flashes on page refresh</p>
-    </>
-  );
-};
+const IndexPage = () => (
+    <div className={classes.general}>
+          <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
+          <Row>
+            <Col></Col>
+            <Col md="auto"><Button href="/learnmore" className="btn btn-success centerButton" type="submit">LEARN MORE</Button></Col>
+            <Col></Col>
+          </Row>
+    </div>
+);
 
 export default IndexPage;

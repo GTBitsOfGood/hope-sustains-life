@@ -18,8 +18,8 @@ const { Brand, Toggle, Collapse } = Navbar;
 
 const NavBar = () => {
   return (
-    <div className="navbar-stuff">
-      <Navbar bg="dark" expand="xl">
+    <div>
+      <Navbar className="navbar-stuff" expand="xl">
         <Image src={logo}></Image>
         <Toggle aria-controls="basic-navbar-nav" />
         <Collapse id="basic-navbar-nav">
