@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Draggable } from "react-beautiful-dnd";
 import classes from "./blog.module.css";
 
-const BlogTableRow = ({ id, index, date, headline }) => (
+const BlogTableRow = ({ id, index, onDeleteClick }) => (
   <Draggable draggableId={id} index={index}>
     {(provided) => (
       <div
@@ -14,15 +14,17 @@ const BlogTableRow = ({ id, index, date, headline }) => (
         <div className={classes.blogTableRow}>
           <div style={{ marginRight: 120, width: 300 }}>
             Header goes here {id} <br />
-            {/* need to replace with headline */}
+            {/* need to replace with title from blog object*/}
             <small>Need to add additional detail to match requirements</small>
           </div>
           <label style={{ marginRight: 90, width: 180 }}>Enter date here</label>
-          {/* need to replace with date */}
+          {/* need to replace with date from blog object*/}
           <div className={classes.action}>
             <button className={classes.actionButtons}> View </button>
             <button className={classes.actionButtons}> Edit </button>
-            <button className={classes.actionButtons}> Delete </button>
+            <button className={classes.actionButtons} onClick={onDeleteClick}>
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -33,6 +35,7 @@ const BlogTableRow = ({ id, index, date, headline }) => (
 BlogTableRow.propTypes = {
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default BlogTableRow;
