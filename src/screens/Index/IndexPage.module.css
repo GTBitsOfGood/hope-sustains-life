@@ -34,13 +34,13 @@
 }
 
 .pictures {
+    height: auto;
     position: absolute;
-}
-
-#a img{
-    max-width: 100%;     
-    height: auto;     
     width: auto;
+    max-width: 100%; 
+    flex-shrink: 0;
+    align-content: stretch;
+    flex-wrap: wrap;
 }
 
 .centerButton {
@@ -53,10 +53,18 @@
 
 
 .centered {
+    bottom: 0;
+    color: white;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 3.75em 3em;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 0;
+    right: 0;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
 }
 
 
