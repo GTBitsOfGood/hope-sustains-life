@@ -32,7 +32,7 @@ const BlogTable = ({ blogs }) => {
   const deleteSelectedBlog = () => {
     // TODO - Replace with actual call to delete blog
     setShowModal(false);
-    setBlogs(currentBlogs.filter((x) => x.id !== selectedBlog?.id));
+    setBlogs(currentBlogs.filter((x) => x._id !== selectedBlog?.id));
     setSelectedBlog(null);
   };
 
@@ -92,19 +92,15 @@ const BlogTable = ({ blogs }) => {
               {(provided) => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                   {currentBlogs.map((blog, index) => (
-                    // TODO - Pass any relevant props for the Blog record
                     <BlogTableRow
-                      id={blog.id}
-                      key={blog.id}
+                      blog={blog}
+                      key={blog._id}
                       index={index}
-                      date={blog.date}
-                      title={blog.title}
-                      onDeleteClick={
-                        () =>
-                          showDeleteModal({
-                            id: blog.id,
-                            title: `Test Blog ${blog.id}`,
-                          }) // TODO - Reeplace the placeholder with actual blog title
+                      onDeleteClick={() =>
+                        showDeleteModal({
+                          id: blog._id,
+                          title: blog.title,
+                        })
                       }
                     />
                   ))}

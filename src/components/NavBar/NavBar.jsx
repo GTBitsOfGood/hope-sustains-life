@@ -18,8 +18,8 @@ const { Brand, Toggle, Collapse } = Navbar;
 
 const NavBar = () => {
   return (
-    <div className="navbar-stuff">
-      <Navbar bg="dark" expand="xl">
+    <div>
+      <Navbar className="navbar-stuff" expand="xl">
         <Image src={logo}></Image>
         <Toggle aria-controls="basic-navbar-nav" />
         <Collapse id="basic-navbar-nav">
@@ -55,7 +55,7 @@ const NavBar = () => {
                 <Col>
                   <Button
                     href="/donate"
-                    className="btn btn-primary"
+                    className="btn btn-success"
                     type="submit"
                   >
                     Donate

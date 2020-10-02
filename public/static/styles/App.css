@@ -21,7 +21,7 @@ html, body, #__next {
 
 .App > .Content {
     height: 100%;
-    padding: 16px;
+    padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
 }

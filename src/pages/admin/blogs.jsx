@@ -1,15 +1,3 @@
-import React from "react";
-import BlogTable from "../../screens/BlogTable";
-import AdminNavBar from "../../components/AdminNavBar";
-import urls from "../../../utils/urls";
+import AdminBlogs from "../../screens/admin/Blogs";
 
-const blogs = () => {
-  return (
-    <>
-      <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminBlogs} />
-      <BlogTable />;
-    </>
-  );
-};
-
-export default blogs;
+export default AdminBlogs;

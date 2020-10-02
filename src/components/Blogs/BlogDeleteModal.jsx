@@ -9,7 +9,9 @@ const BlogDeleteModal = ({ show, onClose, onDelete, blogTitle }) => {
       <Modal.Header closeButton>Confirm Delete</Modal.Header>
       <Modal.Body>
         <p>Are you sure you want to detete the blog</p>
-        <p>Blog Placeholder {blogTitle}</p>
+        <p>
+          <strong>{blogTitle}</strong>
+        </p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
