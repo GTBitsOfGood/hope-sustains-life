@@ -22,7 +22,9 @@ const ProfilePage = () => {
       <h2>Edit Profile</h2>
       <Formik
         validationSchema={schema}
-        onSubmit={console.log}
+        onSubmit={() => {
+          console.log("submit!");
+        }}
         initialValues={{
           firstName: "",
           lastName: "",
@@ -88,7 +90,7 @@ const ProfilePage = () => {
                   type="password"
                   placeholder="Password"
                   onChange={handleChange}
-                  isInvalid={!!errors.password}
+                  isInvalid={errors.password}
                 />
 
                 <Form.Control.Feedback type="invalid">
