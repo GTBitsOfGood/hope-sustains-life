@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/Link";
 import PropTypes from "prop-types";
+// import {  } from "../../actions/Blog";
 
 const ViewPost = ({ blogPost }) => {
   return (
@@ -15,11 +16,12 @@ const ViewPost = ({ blogPost }) => {
   );
 };
 
-ViewPost.getInitialProps = async ({ query, req }) => {
+ViewPost.getInitialProps = async ({ query }) => {
   const id = query.id;
 
   try {
-    const blogPost = await getBlog(id);
+    const blogPost = null; // TODO - add API call to retrieve blog by id
+    // const blogPost = await getBlog(id);
 
     return {
       blogPost,

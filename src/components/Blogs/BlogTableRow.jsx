@@ -3,11 +3,8 @@ import PropTypes from "prop-types";
 import { Draggable } from "react-beautiful-dnd";
 import Link from "next/Link";
 import classes from "./blog.module.css";
-import { Router, useRouter } from "next/router";
 
 const BlogTableRow = ({ id, index, date, headline, onDeleteClick }) => {
-  const router = useRouter();
-
   return (
     <Draggable draggableId={id} index={index}>
       {(provided) => (
@@ -27,24 +24,10 @@ const BlogTableRow = ({ id, index, date, headline, onDeleteClick }) => {
             </label>
             {/* need to replace with date */}
             <div className={classes.action}>
-              <Link
-                href={() => {
-                  router.push({
-                    pathname: "./blogs/[id]",
-                    query: { id: id },
-                  });
-                }}
-              >
+              <Link href={`/admin/blogs/${id}`}>
                 <button className={classes.actionButtons}> View </button>
               </Link>
-              <Link
-                href={() => {
-                  router.push({
-                    pathname: "./blogs/edit/[id]",
-                    query: { id: id },
-                  });
-                }}
-              >
+              <Link href={`/admin/blogs/edit/${id}`}>
                 <button className={classes.actionButtons}> Edit </button>
               </Link>
               <button className={classes.actionButtons} onClick={onDeleteClick}>
