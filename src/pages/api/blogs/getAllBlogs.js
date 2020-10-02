@@ -1,7 +1,8 @@
-import { getBlogs, createBlog } from "../../../server/mongodb/actions/Blog";
-import { getUserFromToken } from "../../../server/mongodb/actions/User";
+import { getBlogs, createBlog } from "../../../../server/mongodb/actions/Blog";
+import { getUserFromToken } from "../../../../server/mongodb/actions/User";
+import { deleteBlog } from "../../../../server/mongodb/actions/User";
 
-// @route   GET POST DELETE api/blogs
+// @route   GET POST DELETE api/blogs/getAllBlogs
 // @desc    Blog Creation, Retrieval, or Deletion
 // @access  Admin
 const handler = (req, res) => {
@@ -17,6 +18,12 @@ const handler = (req, res) => {
 
     return getUserFromToken(req.cookies.token)
       .then((user) => createBlog(user.email, title, body))
+      .then((payload) => res.status(200).json({ success: true, payload }))
+      .catch((error) =>
+        res.status(400).json({ success: false, message: error.message })
+      );
+  } else if (req.method === "DELETE") {
+    return deleteBlog()
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })
