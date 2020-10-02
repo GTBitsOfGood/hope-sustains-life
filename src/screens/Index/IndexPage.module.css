@@ -1,3 +1,71 @@
 .centerText {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+
 }
+
+.general {
+    background-image: url("../../../public/static/home-bg.jpg");
+    margin: 0;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.space {
+    padding: 3%;
+}
+
+.images {
+    display: flex;
+}
+
+.pictures {
+    height: auto;
+    position: absolute;
+    width: auto;
+    max-width: 100%; 
+    flex-shrink: 0;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+.centerButton {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100%;
+}
+
+
+.centered {
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.3%;
+    padding-bottom: 2%;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+
