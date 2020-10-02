@@ -19,7 +19,6 @@ const subscribers = () => {
   };
 
   const renderBody = (subscribersList) => {
-    console.log(subscribersList);
     return subscribersList.map((email) => {
       return (
         <tr key={email}>
