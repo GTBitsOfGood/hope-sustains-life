@@ -47,7 +47,10 @@ const BlogTableRow = ({ id, index, date, headline, onDeleteClick }) => {
               >
                 <button className={classes.actionButtons}> Edit </button>
               </Link>
-              <button className={classes.actionButtons} onClick={onDeleteClick}> Delete </button>
+              <button className={classes.actionButtons} onClick={onDeleteClick}>
+                {" "}
+                Delete{" "}
+              </button>
             </div>
           </div>
         </div>
