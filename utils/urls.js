@@ -37,6 +37,7 @@ export default {
       login: "/api/user/login",
       logout: "/api/user/logout",
       getCurrent: "/api/user/get-current",
+      updateCurrent: "/api/user/update-current",
     },
     blogs: "/api/blogs",
   },

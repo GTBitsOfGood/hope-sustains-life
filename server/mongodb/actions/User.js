@@ -86,3 +86,37 @@ export const getUserFromToken = async (token) => {
     throw new Error("Invalid token!");
   }
 };
+
+export const updateUser = async (email, password, token) => {
+  if (token == null) {
+    throw new Error("User is not signed in!");
+  } else if (email == null || password == null) {
+    throw new Error("Email and password must be provided!");
+  }
+
+  await mongoDB();
+
+  try {
+    const { id } = jwt.verify(token, process.env.JWT_SECRET);
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = await User.findOneAndUpdate(
+      { _id: id },
+      { email: email, password: hashedPassword },
+      { new: true }
+    );
+
+    return jwt.sign(
+      {
+        id: user._id,
+        email: user.email,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "7d",
+      }
+    );
+  } catch (error) {
+    throw new Error("Invalid token!");
+  }
+};
