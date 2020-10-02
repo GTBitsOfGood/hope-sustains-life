@@ -1,13 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import TextEditor from "../../components/TextEditor";
 import classes from "./NewBlogPage.module.css";
 import { useRouter } from "next/router";
 import { createBlog } from "../../actions/Blog";
 import urls from "../../../utils/urls";
 
-const EditBlogPage = () => {
-  const [title, setTitle] = React.useState("Insert Title");
-  const [body, setBody] = React.useState("");
+const EditBlogPage = ({ blogTitle, blogBody }) => {
+  const [title, setTitle] = React.useState({ blogTitle });
+  const [body, setBody] = React.useState({ blogBody });
   const router = useRouter();
 
   const handleSave = () => {
@@ -33,6 +34,11 @@ const EditBlogPage = () => {
       <TextEditor value={body} onChange={(newBody) => setBody(newBody)} />
     </div>
   );
+};
+
+EditBlogPage.propTypes = {
+  blogTitle: PropTypes.bool.isRequired,
+  blogBody: PropTypes.string.isRequired,
 };
 
 export default EditBlogPage;
