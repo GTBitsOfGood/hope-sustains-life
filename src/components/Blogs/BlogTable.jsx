@@ -3,6 +3,7 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import BlogTableRow from "./BlogTableRow";
+import BlogDeleteModal from "./BlogDeleteModal";
 import styles from "./blog.module.css";
 
 const reorder = (list, startIndex, endIndex) => {
@@ -15,6 +16,25 @@ const reorder = (list, startIndex, endIndex) => {
 
 const BlogTable = ({ blogs }) => {
   const [currentBlogs, setBlogs] = React.useState(blogs);
+  const [showModal, setShowModal] = React.useState(false);
+  const [selectedBlog, setSelectedBlog] = React.useState();
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedBlog(null);
+  };
+
+  const showDeleteModal = ({ id, title }) => {
+    setShowModal(true);
+    setSelectedBlog({ id, title });
+  };
+
+  const deleteSelectedBlog = () => {
+    // TODO - Replace with actual call to delete blog
+    setShowModal(false);
+    setBlogs(currentBlogs.filter((x) => x.id !== selectedBlog?.id));
+    setSelectedBlog(null);
+  };
 
   // callback function for when dropping a row
   const onDragEnd = (result) => {
@@ -34,7 +54,14 @@ const BlogTable = ({ blogs }) => {
   };
 
   return (
-    <div style={{ width: 1440, height: 919, top: 105 }}>
+    <div>
+      <BlogDeleteModal
+        show={showModal}
+        onClose={closeModal}
+        onDelete={deleteSelectedBlog}
+        blogTitle={selectedBlog?.title}
+      />
+
       <div className={styles.blogTable}>
         <h4>
           Blogs/News
@@ -71,7 +98,14 @@ const BlogTable = ({ blogs }) => {
                       key={blog.id}
                       index={index}
                       date={blog.date}
-                      headline={blog.headline}
+                      title={blog.title}
+                      onDeleteClick={
+                        () =>
+                          showDeleteModal({
+                            id: blog.id,
+                            title: `Test Blog ${blog.id}`,
+                          }) // TODO - Reeplace the placeholder with actual blog title
+                      }
                     />
                   ))}
                   {provided.placeholder}

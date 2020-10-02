@@ -5,7 +5,7 @@ import Link from "next/Link";
 import classes from "./blog.module.css";
 import { Router, useRouter } from "next/router";
 
-const BlogTableRow = ({ id, index, date, headline }) => {
+const BlogTableRow = ({ id, index, date, headline, onDeleteClick }) => {
   const router = useRouter();
 
   return (
@@ -47,7 +47,7 @@ const BlogTableRow = ({ id, index, date, headline }) => {
               >
                 <button className={classes.actionButtons}> Edit </button>
               </Link>
-              <button className={classes.actionButtons}> Delete </button>
+              <button className={classes.actionButtons} onClick={onDeleteClick}> Delete </button>
             </div>
           </div>
         </div>
@@ -59,6 +59,7 @@ const BlogTableRow = ({ id, index, date, headline }) => {
 BlogTableRow.propTypes = {
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default BlogTableRow;
