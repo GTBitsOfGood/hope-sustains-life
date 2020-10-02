@@ -38,10 +38,6 @@ export default {
       logout: "/api/user/logout",
       getCurrent: "/api/user/get-current",
     },
-    // blog: "/api/blogs/getAllBlogs",
-    blogs: {
-      blog: "/api/blogs/getAllBlogs",
-      getBlog: "/api/blogs/getBlogByID",
-    },
+    blogs: "/api/blogs",
   },
 };

@@ -29,3 +29,31 @@ export async function createBlog(author, title, body) {
     throw new Error(error.message);
   }
 }
+
+export async function getBlogById(id) {
+  if (id == null) {
+    throw new Error("ID must be provided");
+  }
+
+  await mongoDB();
+
+  try {
+    return await BlogPost.findById(id);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function deleteBlogById(id) {
+  if (id == null) {
+    throw new Error("ID must be provided");
+  }
+
+  await mongoDB();
+
+  try {
+    return await BlogPost.findByIdAndDelete(id);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}

@@ -1,27 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
-// import {  } from "../../actions/Blog";
+import { getBlogById } from "../../../actions/Blog";
 
 const ViewPost = ({ blogPost }) => {
   return (
     <>
-      <h1>{blogPost?.title}</h1>
-      <br />
-      <p>{blogPost?.body}</p>
       <Link href="/admin/blogs">
         <button>Back</button>
       </Link>
+      <h1>{blogPost?.title}</h1>
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: blogPost?.body }} />
     </>
   );
 };
 
 ViewPost.getInitialProps = async ({ query }) => {
-  const id = query.id;
-
   try {
-    const blogPost = null; // TODO - add API call to retrieve blog by id
-    // const blogPost = await getBlog(id);
+    const blogPost = await getBlogById(query.id);
 
     return {
       blogPost,

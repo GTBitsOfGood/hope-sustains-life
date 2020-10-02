@@ -1,17 +1,15 @@
-import EditBlogPage from "../../../../screens/EditBlog";
 import React from "react";
 import PropTypes from "prop-types";
+import EditBlogPage from "../../../../screens/EditBlog";
+import { getBlogById } from "../../../../actions/Blog";
 
 const EditPost = ({ blogPost }) => {
   return <EditBlogPage blogTitle={blogPost?.title} blogBody={blogPost?.body} />;
 };
 
 EditPost.getInitialProps = async ({ query }) => {
-  const id = query.id;
-
   try {
-    const blogPost = null; // TODO - add API call to retrieve blog by id
-    // const blogPost = await getBlog(id);
+    const blogPost = await getBlogById(query.id);
 
     return {
       blogPost,
@@ -24,7 +22,7 @@ EditPost.getInitialProps = async ({ query }) => {
 };
 
 EditPost.propTypes = {
-  blogPost: PropTypes.array.isRequired,
+  blogPost: PropTypes.object.isRequired,
 };
 
 export default EditPost;

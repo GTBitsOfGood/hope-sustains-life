@@ -37,7 +37,7 @@ const EditBlogPage = ({ blogTitle, blogBody }) => {
 };
 
 EditBlogPage.propTypes = {
-  blogTitle: PropTypes.bool.isRequired,
+  blogTitle: PropTypes.string.isRequired,
   blogBody: PropTypes.string.isRequired,
 };
 
