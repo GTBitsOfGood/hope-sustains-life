@@ -1,15 +1,15 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import PropTypes from "prop-types";
 // import {  } from "../../actions/Blog";
 
 const ViewPost = ({ blogPost }) => {
   return (
     <>
-      <h1>{blogPost.title}</h1>
+      <h1>{blogPost?.title}</h1>
       <br />
-      <p>{blogPost.body}</p>
-      <Link href="./blogs/">
+      <p>{blogPost?.body}</p>
+      <Link href="/admin/blogs">
         <button>Back</button>
       </Link>
     </>
@@ -34,7 +34,7 @@ ViewPost.getInitialProps = async ({ query }) => {
 };
 
 ViewPost.propTypes = {
-  blogPost: PropTypes.array.isRequired,
+  blogPost: PropTypes.object,
 };
 
 export default ViewPost;

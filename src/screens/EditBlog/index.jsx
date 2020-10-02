@@ -1,3 +1,3 @@
-import NewBlogPage from "./NewBlogPage";
+import EditBlogPage from "./EditBlogPage";
 
-export default NewBlogPage;
+export default EditBlogPage;

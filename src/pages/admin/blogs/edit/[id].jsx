@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const EditPost = ({ blogPost }) => {
-  return <EditBlogPage title={blogPost?.title} body={blogPost?.body} />;
+  return <EditBlogPage blogTitle={blogPost?.title} blogBody={blogPost?.body} />;
 };
 
 EditPost.getInitialProps = async ({ query }) => {

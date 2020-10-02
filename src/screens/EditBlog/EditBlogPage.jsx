@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TextEditor from "../../components/TextEditor";
-import classes from "./NewBlogPage.module.css";
+import classes from "./EditBlogPage.module.css";
 import { useRouter } from "next/router";
 import { createBlog } from "../../actions/Blog";
 import urls from "../../../utils/urls";
 
 const EditBlogPage = ({ blogTitle, blogBody }) => {
-  const [title, setTitle] = React.useState({ blogTitle });
-  const [body, setBody] = React.useState({ blogBody });
+  const [title, setTitle] = React.useState(blogTitle);
+  const [body, setBody] = React.useState(blogBody);
   const router = useRouter();
 
   const handleSave = () => {
