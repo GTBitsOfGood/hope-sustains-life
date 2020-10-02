@@ -32,7 +32,7 @@ const BlogTable = ({ blogs }) => {
   const deleteSelectedBlog = () => {
     // TODO - Replace with actual call to delete blog
     setShowModal(false);
-    setBlogs(currentBlogs.filter((x) => x.id !== selectedBlog?.id));
+    setBlogs(currentBlogs.filter((x) => x._id !== selectedBlog?.id));
     setSelectedBlog(null);
   };
 

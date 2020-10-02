@@ -21,7 +21,11 @@ export default {
     joinClassroom: "/joinclassroom",
     joinLibrary: "/joinlibrary",
     donate: "/donate",
+    learnMore: "/learnmore",
     newBlogPage: "/admin/blogs/new",
+    tanzania: "/about/tanzania",
+    bangledesh: "/about/bangledesh",
+    haiti: "/about/haiti",
     app: {
       home: "/app",
     },
