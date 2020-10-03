@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 20%;
-  width: 100%;
+  width: 65%;
   height: 100%;
 }
 .elements {
@@ -15,7 +15,7 @@
   background-color: white;
   border-color: #03ab99;
   color: #03ab99;
-  width: 30%;
+  width: 50%;
 }
 .frequencyButtons:hover {
   border-radius: 0px;
@@ -26,12 +26,19 @@
 .amountButtons {
   justify-items: flex-start;
   height: 50%;
+  width: 100%;
 }
 .amtButton {
   background-color: lightgray;
   border-color: lightgray;
-  width: 20%;
-  height: 60%;
+  width: 30%;
   border-radius: 0px;
-  margin-right: 5px;
+  margin-right: 13px;
+  margin-top: 13px;
+}
+.headers {
+  border-bottom-style: solid;
+  border-bottom-color: #03ab99;
+  margin-top: 40px;
+  text-align: center;
 }
