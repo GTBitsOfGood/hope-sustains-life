@@ -28,12 +28,23 @@ const NavBar = () => {
             <Container>
               <Row>
                 <Col>
+<<<<<<< HEAD
                   <NavDropdown title="ABOUT US" id="basic-nav-dropdown">
                     <Link href="/ourstory" passHref>
                       <NavDropdown.Item>
                         OUR STORY
                       </NavDropdown.Item>
                     </Link>
+=======
+                  <NavDropdown
+                    renderMenuOnMount={true}
+                    title="ABOUT US"
+                    id="basic-nav-dropdown"
+                  >
+                    <NavDropdown.Item href="/ourstory">
+                      OUR STORY
+                    </NavDropdown.Item>
+>>>>>>> 906f3aa6f6c997a431e6ad7494585c12868d4022
                     <NavDropdown.Item href="/blognews">
                       BLOG/NEWS
                     </NavDropdown.Item>
@@ -46,7 +57,11 @@ const NavBar = () => {
                   <Nav.Link href="/ourwork">OUR WORK</Nav.Link>
                 </Col>
                 <Col>
-                  <NavDropdown title="GET INVOLVED" id="basic-nav-dropdown">
+                  <NavDropdown
+                    renderMenuOnMount={true}
+                    title="GET INVOLVED"
+                    id="basic-nav-dropdown"
+                  >
                     <NavDropdown.Item href="/joinclassroom">
                       JOIN THE CLASSROOM
                     </NavDropdown.Item>

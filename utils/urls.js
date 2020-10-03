@@ -39,6 +39,9 @@ export default {
       getCurrent: "/api/user/get-current",
       updateCurrent: "/api/user/update-current",
     },
-    blogs: "/api/blogs",
+    blogs: {
+      index: "/api/blogs",
+      publish: "/api/blogs/publish",
+    },
   },
 };

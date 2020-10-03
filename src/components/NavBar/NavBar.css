@@ -18,3 +18,7 @@
 .dropdown-menu {     
     background-color: grey; 
 }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
