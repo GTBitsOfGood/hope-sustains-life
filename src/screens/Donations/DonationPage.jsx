@@ -22,15 +22,17 @@ const DonationPage = () => {
             <Button className={styles.frequencyButtons}>One Time </Button>
             <Button className={styles.frequencyButtons}>Monthly </Button>
           </div>
-          <label>Select an amount to give</label>
+          <h5 className={styles.headers}>Select an amount to give</h5>
           <div className={styles.amountButtons}>
-            {donationAmts.map((amt, index) => {
+            {donationAmts.map((amt) => {
               return <Button className={styles.amtButton}> {amt} </Button>;
             })}
+            <Button className={styles.amtButton} style={{ width: 200 }}>
+              Other amount
+            </Button>
           </div>
-
+          <br></br>
           <label>Your information </label>
-
           <CardElement
             options={{
               style: {
