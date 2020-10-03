@@ -8,7 +8,6 @@ export async function login({ email, password }) {
     throw new Error("All parameters must be provided!");
   }
 
-  
   await mongoDB();
 
   const user = await User.findOne({ email });
@@ -117,6 +116,18 @@ export const updateUser = async (email, password, token) => {
         expiresIn: "7d",
       }
     );
+  } catch (error) {
+    throw new Error("Invalid token!");
+  }
+};
+
+export const verifyToken = async (token) => {
+  if (token == null) {
+    throw new Error("User is not signed in!");
+  }
+
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
     throw new Error("Invalid token!");
   }
