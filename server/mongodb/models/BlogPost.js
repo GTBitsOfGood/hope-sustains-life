@@ -42,5 +42,6 @@ BlogPostSchema.pre("save", function (next) {
   }
 });
 
-const BlogPostModel = mongoose.model("BlogPost", BlogPostSchema);
+const BlogPostModel =
+  mongoose.models.BlogPost ?? mongoose.model("BlogPost", BlogPostSchema);
 export default BlogPostModel;

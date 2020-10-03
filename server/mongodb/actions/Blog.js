@@ -57,3 +57,21 @@ export async function deleteBlogById(id) {
     throw new Error(error.message);
   }
 }
+
+export async function reorderBlogs(blogs) {
+  try {
+    const bulkUpdates = blogs.map((blog) => {
+      return {
+        updateOne: {
+          filter: { _id: blog.id },
+          update: { orderIndex: blog.orderIndex },
+        },
+      };
+    });
+
+    await BlogPost.bulkWrite(bulkUpdates);
+    return;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+}

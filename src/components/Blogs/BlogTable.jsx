@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { reorderBlogs } from "../../actions/Blog";
 import BlogTableRow from "./BlogTableRow";
 import BlogDeleteModal from "./BlogDeleteModal";
 import styles from "./blog.module.css";
@@ -48,6 +49,18 @@ const BlogTable = ({ blogs }) => {
       currentBlogs,
       result.source.index,
       result.destination.index
+    );
+
+    // Retrieve the blog id and their new order index
+    const newBlogOrderIndexes = newBlogs.map((blog, index) => {
+      return {
+        id: blog._id,
+        orderIndex: index,
+      };
+    });
+    // Send backend request to reorder blogs in the database
+    reorderBlogs(newBlogOrderIndexes).then(() =>
+      console.log("Successfully reordered it")
     );
 
     setBlogs(newBlogs);
