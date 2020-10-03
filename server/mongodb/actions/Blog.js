@@ -57,3 +57,19 @@ export async function deleteBlogById(id) {
     throw new Error(error.message);
   }
 }
+
+export async function setPublished(blogId, isPublished) {
+  if (blogId == null || isPublished == null) {
+    throw new Error("ID and published status must be provided!");
+  }
+
+  await mongoDB();
+
+  try {
+    return await BlogPost.findByIdAndUpdate(blogId, {
+      isPublished: isPublished,
+    });
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
