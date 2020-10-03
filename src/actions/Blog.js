@@ -114,6 +114,7 @@ export const reorderBlogs = async (blogs) =>
     },
     body: JSON.stringify({
       blogs,
+      action: "REORDER_BLOGS",
     }),
   })
     .then((response) => response.json())

@@ -26,11 +26,13 @@ const handler = (req, res) => {
         res.status(400).json({ success: false, message: error.message })
       );
   } else if (req.method === "PUT") {
-    return reorderBlogs(req.body.blogs)
-      .then(() => res.status(200).json({ success: true }))
-      .catch((error) =>
-        res.status(400).json({ success: false, message: error.message })
-      );
+    if (req.body.action === "REORDER_BLOGS") {
+      return reorderBlogs(req.body.blogs)
+        .then(() => res.status(200).json({ success: true }))
+        .catch((error) =>
+          res.status(400).json({ success: false, message: error.message })
+        );
+    }
   }
 };
 
