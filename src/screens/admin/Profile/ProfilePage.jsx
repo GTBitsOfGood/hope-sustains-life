@@ -31,6 +31,7 @@ const ProfilePage = () => {
           email: "",
           password: "",
         }}
+        //
       >
         {({
           handleSubmit,
@@ -41,13 +42,14 @@ const ProfilePage = () => {
           isValid,
           errors,
         }) => (
-          <Form noValidate onSubmit={handleSubmit}>
+          <Form validateOnBlur onSubmit={handleSubmit}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridFirstName">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
                   onChange={handleChange}
                   type="firstName"
+                  onBlur={handleBlur}
                   placeholder="First Name"
                   isValid={touched.firstName && !errors.firstName}
                 />
