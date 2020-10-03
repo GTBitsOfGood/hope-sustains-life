@@ -27,7 +27,11 @@ const NavBar = () => {
             <Container>
               <Row>
                 <Col>
-                  <NavDropdown title="ABOUT US" id="basic-nav-dropdown">
+                  <NavDropdown
+                    renderMenuOnMount={true}
+                    title="ABOUT US"
+                    id="basic-nav-dropdown"
+                  >
                     <NavDropdown.Item href="/ourstory">
                       OUR STORY
                     </NavDropdown.Item>
@@ -43,7 +47,11 @@ const NavBar = () => {
                   <Nav.Link href="/ourwork">OUR WORK</Nav.Link>
                 </Col>
                 <Col>
-                  <NavDropdown title="GET INVOLVED" id="basic-nav-dropdown">
+                  <NavDropdown
+                    renderMenuOnMount={true}
+                    title="GET INVOLVED"
+                    id="basic-nav-dropdown"
+                  >
                     <NavDropdown.Item href="/joinclassroom">
                       JOIN THE CLASSROOM
                     </NavDropdown.Item>
