@@ -30,9 +30,9 @@ const BlogPostSchema = new Schema({
 
 BlogPostSchema.pre("save", function (next) {
   if (!this.orderIndex) {
+    // Set the order index to the last for newly added blog post
     BlogPostModel.countDocuments((err, count) => {
       if (count) {
-        // Set the order index to the last for newly added blog post
         this.orderIndex = count;
       }
       next();

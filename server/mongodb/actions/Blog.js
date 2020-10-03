@@ -5,7 +5,7 @@ export async function getBlogs() {
   await mongoDB();
 
   try {
-    return BlogPost.find({});
+    return await BlogPost.find({}).sort("orderIndex").exec();
   } catch (error) {
     throw new Error(error.message);
   }
