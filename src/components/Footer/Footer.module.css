@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     flex-direction: row;
-    padding: 8px 4px;
+    padding: 30px 4px;
     background: #2A2D39;
     align-items: left;
     flex-direction: column;
@@ -9,9 +9,39 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    padding-left: 100em;
+    width: 100%;
 }
 
+.image {
+    padding-right: 50px;
+}
+
+.icon {
+    padding-left: 15px;
+
+}
+
+.header {
+    color: #009d91;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.sublinks {
+    padding-top: 10px;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 10px;
+}
+
+.social {
+    color: white;
+    padding-bottom: 20px;
+}
 
 .button {
     padding-right: 50em;
