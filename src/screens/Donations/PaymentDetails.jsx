@@ -37,10 +37,7 @@ const PaymentDetails = () => {
         </Form.Label>
         <Col sm={8}>
           <div className="form-control">
-            <CardElement
-              options={stripElementStyleOptions}
-              // className="form-control"
-            />
+            <CardElement options={stripElementStyleOptions} />
           </div>
         </Col>
       </Form.Group>
