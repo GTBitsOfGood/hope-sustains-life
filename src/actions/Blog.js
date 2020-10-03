@@ -104,3 +104,26 @@ export const setPublished = (id, isPublished) =>
       }
       return json.payload;
     });
+
+export const reorderBlogs = async (blogs) =>
+  fetch(urls.baseUrl + urls.api.blogs.index, {
+    method: "PUT",
+    mode: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      blogs,
+      action: "REORDER_BLOGS",
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      if (json == null) {
+        throw new Error("Could not connect to API!");
+      } else if (!json.success) {
+        throw new Error(json.message);
+      }
+
+      return;
+    });
