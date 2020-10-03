@@ -23,7 +23,24 @@ const BlogPostSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  orderIndex: {
+    type: Number,
+  },
 });
 
-export default mongoose.models.BlogPost ??
-  mongoose.model("BlogPost", BlogPostSchema);
+BlogPostSchema.pre("save", function (next) {
+  if (!this.orderIndex) {
+    BlogPostModel.countDocuments((err, count) => {
+      if (count) {
+        // Set the order index to the last for newly added blog post
+        this.orderIndex = count;
+      }
+      next();
+    });
+  } else {
+    next();
+  }
+});
+
+const BlogPostModel = mongoose.model("BlogPost", BlogPostSchema);
+export default BlogPostModel;
