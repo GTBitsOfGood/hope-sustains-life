@@ -4,6 +4,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import styles from "./DonationPage.module.css";
 import { Button } from "react-bootstrap";
 import PaymentDetails from "./PaymentDetails";
+import Information from "./Information";
 
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
@@ -32,8 +33,7 @@ const DonationPage = () => {
             </Button>
           </div>
           <br></br>
-          <label>Your information </label>
-
+          <Information />
           <PaymentDetails />
         </div>
       </Elements>
