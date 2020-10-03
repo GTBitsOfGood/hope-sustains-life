@@ -58,7 +58,7 @@ MyApp.getInitialProps = async (appContext) => {
       };
     })
     .catch(() => {
-      if (route.startsWith("/admin" && route !== "/admin")) {
+      if (route.startsWith("/admin") && route !== "/admin") {
         if (res) {
           res.writeHead(301, { Location: urls.pages.admin });
           res.end();
