@@ -14,13 +14,13 @@ const EditBlogPage = () => {
   const router = useRouter();
 
   const handleSave = () => {
-    return createBlog(title, subtitle, body, references, false)
+    return createBlog("", title, subtitle, body, references, false)
       .then(() => router.replace(urls.pages.adminHome))
       .catch((error) => window.alert(error.message));
   };
 
   const handlePublish = () => {
-    return createBlog(title, subtitle, body, references, true)
+    return createBlog("", title, subtitle, body, references, true)
       .then(() => router.replace(urls.pages.adminHome))
       .catch((error) => window.alert(error.message));
   };

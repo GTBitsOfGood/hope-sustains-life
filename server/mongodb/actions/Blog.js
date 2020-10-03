@@ -19,28 +19,20 @@ export async function createBlog(
   references,
   isPublished
 ) {
-  if (
-    author == null ||
-    title == null ||
-    subtitle == null ||
-    body == null ||
-    references == null
-  ) {
-    throw new Error(
-      "Author, title, subtitle, body, and references must be provided"
-    );
+  if (author == null || title == null || subtitle == null || body == null) {
+    throw new Error("Author, title, subtitle, and body must be provided");
   }
 
   await mongoDB();
 
   try {
     return BlogPost.create({
-      isPublished: isPublished,
       author: author,
       title: title,
       subtitle: subtitle,
       body: body,
       references: references,
+      isPublished: isPublished,
     });
   } catch (error) {
     throw new Error(error.message);
