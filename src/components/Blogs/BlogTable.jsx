@@ -115,38 +115,31 @@ const BlogTable = ({ blogs }) => {
             <label style={{ marginRight: 295 }}> Date </label>
             <label> Action </label>
           </div>
-          <br></br>
-          <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="blogTableBody">
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  {currentBlogs.map((blog, index) => (
-                    <BlogTableRow
-                      blog={blog}
-                      key={blog._id}
-                      index={index}
-                      onDeleteClick={() =>
-                        showDeleteModal({
-                          id: blog._id,
-                          title: blog.title,
-                        })
-                      }
-                    />
-                  ))}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
+          <div className={styles.tableContents}>
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="blogTableBody">
+                {(provided) => (
+                  <div ref={provided.innerRef} {...provided.droppableProps}>
+                    {currentBlogs.map((blog, index) => (
+                      <BlogTableRow
+                        blog={blog}
+                        key={blog._id}
+                        index={index}
+                        onDeleteClick={() =>
+                          showDeleteModal({
+                            id: blog._id,
+                            title: blog.title,
+                          })
+                        }
+                      />
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+          </div>
         </div>
-
-        <h6 className={styles.footer}>
-          <button className={styles.actionButtons}> Previous </button>
-          <button className={styles.actionButtons}> 1 </button>
-          <button className={styles.actionButtons}> 2 </button>
-          <button className={styles.actionButtons}> 3 </button>
-          <button className={styles.actionButtons}> Next </button>
-        </h6>
       </div>
     </div>
   );
