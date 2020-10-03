@@ -11,7 +11,8 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import { Link, Router } from "react-router-dom";
+//import { Link, Router } from "react-router-dom";
+import Link from "next/link";
 import logo from "./non-white globe-green_.png";
 
 const { Brand, Toggle, Collapse } = Navbar;
@@ -28,9 +29,11 @@ const NavBar = () => {
               <Row>
                 <Col>
                   <NavDropdown title="ABOUT US" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/ourstory">
-                      OUR STORY
-                    </NavDropdown.Item>
+                    <Link href="/ourstory" passHref>
+                      <NavDropdown.Item>
+                        OUR STORY
+                      </NavDropdown.Item>
+                    </Link>
                     <NavDropdown.Item href="/blognews">
                       BLOG/NEWS
                     </NavDropdown.Item>
