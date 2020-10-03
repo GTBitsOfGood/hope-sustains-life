@@ -1,9 +1,9 @@
 import React from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { CardElement } from "@stripe/react-stripe-js";
 import styles from "./DonationPage.module.css";
 import { Button } from "react-bootstrap";
+import PaymentDetails from "./PaymentDetails";
 
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
@@ -33,22 +33,8 @@ const DonationPage = () => {
           </div>
           <br></br>
           <label>Your information </label>
-          <CardElement
-            options={{
-              style: {
-                base: {
-                  fontSize: "16px",
-                  color: "#424770",
-                  "::placeholder": {
-                    color: "#aab7c4",
-                  },
-                },
-                invalid: {
-                  color: "#9e2146",
-                },
-              },
-            }}
-          />
+
+          <PaymentDetails />
         </div>
       </Elements>
     </div>
