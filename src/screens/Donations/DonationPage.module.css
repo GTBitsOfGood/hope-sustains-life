@@ -8,7 +8,10 @@
   height: 100%;
 }
 .elements {
-  width: 50%;
+  background-color: white;
+  width: 60%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .frequencyButtons {
   border-radius: 0px;
@@ -29,8 +32,8 @@
   width: 100%;
 }
 .amtButton {
-  background-color: lightgray;
-  border-color: lightgray;
+  background-color: #c4c4c4;
+  border-color: #c4c4c4;
   width: 30%;
   border-radius: 0px;
   margin-right: 13px;

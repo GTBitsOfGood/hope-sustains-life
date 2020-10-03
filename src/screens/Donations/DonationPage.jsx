@@ -3,8 +3,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { CardElement } from "@stripe/react-stripe-js";
 import styles from "./DonationPage.module.css";
-import { Button } from "react-bootstrap";
-
+import { Button, Image } from "react-bootstrap";
+import DonationImage from "../../../public/static/donation.jpg";
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
 const DonationPage = () => {
@@ -18,6 +18,9 @@ const DonationPage = () => {
     <div className={styles.container}>
       <Elements stripe={stripePromise}>
         <div className={styles.elements}>
+          <h3 style={{ textAlign: "center", marginBottom: 40 }}>
+            Donate to Hope Sustains Life
+          </h3>
           <div>
             <Button className={styles.frequencyButtons}>One Time </Button>
             <Button className={styles.frequencyButtons}>Monthly </Button>
