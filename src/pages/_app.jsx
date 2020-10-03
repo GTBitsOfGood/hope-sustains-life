@@ -6,7 +6,7 @@ import Router from "next/router";
 import { ToastContainer } from "react-toastify";
 import { getCurrentUser } from "../actions/User";
 import urls from "../../utils/urls";
-import Footer from "../components/Footer";
+import EmailSubInput from "../components/EmailSubInput";
 import NavBar from "../components/NavBar";
 import "focus-visible/dist/focus-visible.min.js";
 import "react-quill/dist/quill.snow.css";
@@ -23,9 +23,9 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
     </Head>
     <div className="App">
       <NavBar />
-      <Footer />
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
+        <EmailSubInput />
       </div>
       <ToastContainer />
     </div>
