@@ -15,7 +15,15 @@ const BlogPostSchema = new Schema({
     type: String,
     required: true,
   },
+  subtitle: {
+    type: String,
+    required: true,
+  },
   body: {
+    type: String,
+    required: true,
+  },
+  references: {
     type: String,
     required: true,
   },

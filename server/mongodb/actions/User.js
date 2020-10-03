@@ -8,7 +8,6 @@ export async function login({ email, password }) {
     throw new Error("All parameters must be provided!");
   }
 
-  
   await mongoDB();
 
   const user = await User.findOne({ email });
