@@ -1,5 +1,5 @@
-import { getBlogs, createBlog } from "../../../server/mongodb/actions/Blog";
-import { getUserFromToken } from "../../../server/mongodb/actions/User";
+import { getBlogs, createBlog } from "../../../../server/mongodb/actions/Blog";
+import { getUserFromToken } from "../../../../server/mongodb/actions/User";
 
 // @route   GET POST DELETE api/blogs
 // @desc    Blog Creation, Retrieval, or Deletion

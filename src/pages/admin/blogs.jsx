@@ -1,4 +1,3 @@
-import React from "react";
-import BlogTable from "../../screens/BlogTable";
+import AdminBlogs from "../../screens/admin/Blogs";
 
-export default BlogTable;
+export default AdminBlogs;
