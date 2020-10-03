@@ -43,5 +43,6 @@ export default {
       index: "/api/blogs",
       publish: "/api/blogs/publish",
     },
+    subscribers: "/api/subscribers",
   },
 };

@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "./EmailSubInput.module.css";
+import { addSubscriber } from "../../actions/Subscriber";
 
 const EmailSubInput = () => {
-  const [email, setEmail] = React.useState("Your Email");
+  const [email, setEmail] = React.useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(email);
+    return addSubscriber(email)
+      .then(() => window.alert("Subscribed successfully!"))
+      .catch((error) => window.alert(error.message));
   };
 
   return (
@@ -21,6 +24,7 @@ const EmailSubInput = () => {
             id="email"
             type="email"
             value={email}
+            placeholder="Your Email"
             onChange={(event) => setEmail(event.target.value)}
           />
           <button className={styles.button} type="submit">
