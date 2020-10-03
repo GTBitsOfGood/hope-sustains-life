@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
+import { ToastContainer } from "react-toastify";
 import { getCurrentUser } from "../actions/User";
 import urls from "../../utils/urls";
 import EmailSubInput from "../components/EmailSubInput";
 import NavBar from "../components/NavBar";
 import "focus-visible/dist/focus-visible.min.js";
 import "react-quill/dist/quill.snow.css";
+import "react-toastify/dist/ReactToastify.css";
 import "normalize.css";
 import "../../public/static/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +27,7 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
         <Component {...pageProps} currentUser={currentUser} />
         <EmailSubInput />
       </div>
+      <ToastContainer />
     </div>
   </>
 );
