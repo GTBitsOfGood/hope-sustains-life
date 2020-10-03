@@ -9,7 +9,9 @@ const IndexPage = () => (
   <>
     <div className={classes.general}>
       <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
-	  <p className={classes.centered}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p className={classes.centered}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
       <Row>
         <Col></Col>
         <Col md="auto">

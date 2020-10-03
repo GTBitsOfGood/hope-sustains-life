@@ -11,7 +11,6 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-//import { Link, Router } from "react-router-dom";
 import Link from "next/link";
 import logo from "./non-white globe-green_.png";
 
@@ -28,33 +27,32 @@ const NavBar = () => {
             <Container>
               <Row>
                 <Col>
-<<<<<<< HEAD
-                  <NavDropdown title="ABOUT US" id="basic-nav-dropdown">
-                    <Link href="/ourstory" passHref>
-                      <NavDropdown.Item>
-                        OUR STORY
-                      </NavDropdown.Item>
-                    </Link>
-=======
                   <NavDropdown
                     renderMenuOnMount={true}
                     title="ABOUT US"
                     id="basic-nav-dropdown"
                   >
-                    <NavDropdown.Item href="/ourstory">
-                      OUR STORY
-                    </NavDropdown.Item>
->>>>>>> 906f3aa6f6c997a431e6ad7494585c12868d4022
-                    <NavDropdown.Item href="/blognews">
-                      BLOG/NEWS
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="/hundredpromise">
-                      100% PROMISE
-                    </NavDropdown.Item>
+                    <Link href="/ourstory" passHref>
+                      <NavDropdown.Item>
+                        OUR STORY
+                      </NavDropdown.Item>
+                    </Link>
+                    <Link href="/blognews" passHref>
+                      <NavDropdown.Item>
+                        BLOG/NEWS
+                      </NavDropdown.Item>
+                    </Link>
+                    <Link href="/hundredpromise" passHref>
+                      <NavDropdown.Item>
+                        100% PROMISE
+                      </NavDropdown.Item>
+                    </Link>
                   </NavDropdown>
                 </Col>
                 <Col md="auto">
-                  <Nav.Link href="/ourwork">OUR WORK</Nav.Link>
+                  <Link href="/ourwork" passHref>
+                    <Nav.Link>OUR WORK</Nav.Link>
+                  </Link>
                 </Col>
                 <Col>
                   <NavDropdown
@@ -62,22 +60,27 @@ const NavBar = () => {
                     title="GET INVOLVED"
                     id="basic-nav-dropdown"
                   >
-                    <NavDropdown.Item href="/joinclassroom">
-                      JOIN THE CLASSROOM
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="/joinlibrary">
-                      JOIN THE LIBRARY
-                    </NavDropdown.Item>
+                    <Link href="/joinclassroom" passHref>
+                      <NavDropdown.Item>
+                        JOIN THE CLASSROOM
+                      </NavDropdown.Item>
+                    </Link>
+                    <Link href="/joinlibrary" passHref>
+                      <NavDropdown.Item>
+                        JOIN THE LIBRARY
+                      </NavDropdown.Item>
+                    </Link>
                   </NavDropdown>
                 </Col>
                 <Col>
-                  <Button
-                    href="/donate"
-                    className="btn btn-success"
-                    type="submit"
-                  >
-                    Donate
-                  </Button>
+                  <Link href="/donate" passHref>
+                    <Button
+                      className="btn btn-success"
+                      type="submit"
+                    >
+                      Donate
+                    </Button>
+                  </Link>
                 </Col>
               </Row>
             </Container>
