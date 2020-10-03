@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { toast } from "react-toastify";
 import { reorderBlogs } from "../../actions/Blog";
 import BlogTableRow from "./BlogTableRow";
 import BlogDeleteModal from "./BlogDeleteModal";
@@ -58,10 +59,25 @@ const BlogTable = ({ blogs }) => {
         orderIndex: index,
       };
     });
+
     // Send backend request to reorder blogs in the database
-    reorderBlogs(newBlogOrderIndexes).then(() =>
-      console.log("Successfully reordered it")
-    );
+    reorderBlogs(newBlogOrderIndexes)
+      .then(() =>
+        toast.success("Successfully reordered the blogs list", {
+          position: "bottom-right",
+          autoClose: 2000,
+          closeOnClick: true,
+          draggable: true,
+        })
+      )
+      .catch(() =>
+        toast.error("Failed to save the new order for blogs", {
+          position: "bottom-right",
+          autoClose: 2000,
+          closeOnClick: true,
+          draggable: true,
+        })
+      );
 
     setBlogs(newBlogs);
   };
