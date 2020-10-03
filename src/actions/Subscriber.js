@@ -1,12 +1,8 @@
 import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
 
-/*
-  This is being used to build the subscriber page instead of
-  just getting the subscribers.  Probably shouldnt be doing that?
-*/
 export const getSubscribers = () =>
-  fetch(urls.baseUrl + urls.pages.adminSubscribers, {
+  fetch(urls.baseUrl + urls.api.subscribers.getAll, {
     method: "GET",
     mode: "same-origin",
     headers: {
@@ -25,7 +21,7 @@ export const getSubscribers = () =>
     });
 
 export const addSubscriber = (email) =>
-  fetch(urls.baseUrl + urls.api.subscribers, {
+  fetch(urls.baseUrl + urls.api.subscribers.add, {
     method: "POST",
     mode: "same-origin",
     headers: {
