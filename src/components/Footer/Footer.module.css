@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: row;
     padding: 8px 4px;
-    background-color: #004b4b;
-    align-items: center;
+    background: #2A2D39;
+    align-items: left;
     flex-direction: column;
     display: flex;
     position: absolute;
@@ -11,6 +11,7 @@
     right: 0;
     padding-left: 100em;
 }
+
 
 .button {
     padding-right: 50em;
