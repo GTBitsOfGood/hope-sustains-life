@@ -1,5 +1,4 @@
 import React from "react";
+import DonationPage from "../screens/Donations/DonationPage";
 
-const Donate = () => <h1>Donate!</h1>;
-
-export default Donate;
+export default DonationPage;
