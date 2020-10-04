@@ -1,6 +1,7 @@
 import React from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import Form from "react-bootstrap/Form";
 import styles from "./DonationPage.module.css";
 import { Button } from "react-bootstrap";
 import PaymentDetails from "./PaymentDetails";
@@ -19,8 +20,8 @@ const DonationPage = () => {
               Donate to Hope Sustains Life
             </h3>
             <div>
-              <Button className={styles.frequencyButtons}>One Time</Button>
-              <Button className={styles.frequencyButtons}>Monthly</Button>
+              <Button className={styles.donationFreqButtons}>One Time</Button>
+              <Button className={styles.donationFreqButtons}>Monthly</Button>
             </div>
             <h5 className={styles.headers}>Select an amount to give</h5>
             <div className={styles.amountButtons}>
@@ -41,6 +42,24 @@ const DonationPage = () => {
             <h5 className={styles.headers}>Payment Details</h5>
 
             <PaymentDetails />
+            <div className="agreements">
+              <Form.Group controlId="matchesDonation">
+                <Form.Check
+                  type="checkbox"
+                  label="My employer matches 501(c)(3) donations"
+                />
+              </Form.Group>
+              <Form.Group controlId="subscribe">
+                <Form.Check
+                  type="checkbox"
+                  label="Subscribe to recieve newsletters"
+                />
+              </Form.Group>
+            </div>
+
+            <Button className={styles.donationFreqButtons}>
+              Complete Donation
+            </Button>
           </div>
         </Elements>
       </div>
