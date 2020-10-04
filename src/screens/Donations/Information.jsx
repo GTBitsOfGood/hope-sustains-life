@@ -4,7 +4,6 @@ import InputField from "./DonationInputField";
 const Information = () => {
   return (
     <div>
-      <h1 className="text-center mb-3">Your Information</h1>
       <InputField
         label="First Name"
         inputType="text"

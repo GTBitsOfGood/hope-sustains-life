@@ -23,7 +23,6 @@ const stripElementStyleOptions = {
 const PaymentDetails = () => {
   return (
     <div>
-      <h1 className="text-center mb-3">Payment Details</h1>
       <InputField
         label="Cardholder Name"
         inputType="text"
