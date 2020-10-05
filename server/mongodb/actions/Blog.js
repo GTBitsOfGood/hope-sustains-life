@@ -5,7 +5,7 @@ export async function getBlogs() {
   await mongoDB();
 
   try {
-    return BlogPost.find({});
+    return await BlogPost.find({}).sort("orderIndex").exec();
   } catch (error) {
     throw new Error(error.message);
   }
@@ -53,6 +53,40 @@ export async function deleteBlogById(id) {
 
   try {
     return await BlogPost.findByIdAndDelete(id);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function reorderBlogs(blogs) {
+  try {
+    const bulkUpdates = blogs.map((blog) => {
+      return {
+        updateOne: {
+          filter: { _id: blog.id },
+          update: { orderIndex: blog.orderIndex },
+        },
+      };
+    });
+
+    await BlogPost.bulkWrite(bulkUpdates);
+    return;
+  } catch (err) {
+    throw new Error(err.message);
+  }
+}
+
+export async function setPublished(blogId, isPublished) {
+  if (blogId == null || isPublished == null) {
+    throw new Error("ID and published status must be provided!");
+  }
+
+  await mongoDB();
+
+  try {
+    return await BlogPost.findByIdAndUpdate(blogId, {
+      isPublished: isPublished,
+    });
   } catch (error) {
     throw new Error(error.message);
   }
