@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { toast } from "react-toastify";
+import { reorderBlogs } from "../../actions/Blog";
 import BlogTableRow from "./BlogTableRow";
 import BlogDeleteModal from "./BlogDeleteModal";
 import styles from "./blog.module.css";
@@ -50,6 +52,33 @@ const BlogTable = ({ blogs }) => {
       result.destination.index
     );
 
+    // Retrieve the blog id and their new order index
+    const newBlogOrderIndexes = newBlogs.map((blog, index) => {
+      return {
+        id: blog._id,
+        orderIndex: index,
+      };
+    });
+
+    // Send backend request to reorder blogs in the database
+    reorderBlogs(newBlogOrderIndexes)
+      .then(() =>
+        toast.success("Successfully reordered the blogs list", {
+          position: "bottom-right",
+          autoClose: 2000,
+          closeOnClick: true,
+          draggable: true,
+        })
+      )
+      .catch(() =>
+        toast.error("Failed to save the new order for blogs", {
+          position: "bottom-right",
+          autoClose: 2000,
+          closeOnClick: true,
+          draggable: true,
+        })
+      );
+
     setBlogs(newBlogs);
   };
 
@@ -86,38 +115,31 @@ const BlogTable = ({ blogs }) => {
             <label style={{ marginRight: 295 }}> Date </label>
             <label> Action </label>
           </div>
-          <br></br>
-          <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="blogTableBody">
-              {(provided) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  {currentBlogs.map((blog, index) => (
-                    <BlogTableRow
-                      blog={blog}
-                      key={blog._id}
-                      index={index}
-                      onDeleteClick={() =>
-                        showDeleteModal({
-                          id: blog._id,
-                          title: blog.title,
-                        })
-                      }
-                    />
-                  ))}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
+          <div className={styles.tableContents}>
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="blogTableBody">
+                {(provided) => (
+                  <div ref={provided.innerRef} {...provided.droppableProps}>
+                    {currentBlogs.map((blog, index) => (
+                      <BlogTableRow
+                        blog={blog}
+                        key={blog._id}
+                        index={index}
+                        onDeleteClick={() =>
+                          showDeleteModal({
+                            id: blog._id,
+                            title: blog.title,
+                          })
+                        }
+                      />
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+          </div>
         </div>
-
-        <h6 className={styles.footer}>
-          <button className={styles.actionButtons}> Previous </button>
-          <button className={styles.actionButtons}> 1 </button>
-          <button className={styles.actionButtons}> 2 </button>
-          <button className={styles.actionButtons}> 3 </button>
-          <button className={styles.actionButtons}> Next </button>
-        </h6>
       </div>
     </div>
   );
