@@ -8,6 +8,7 @@ import { getCurrentUser } from "../actions/User";
 import urls from "../../utils/urls";
 import EmailSubInput from "../components/EmailSubInput";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import "focus-visible/dist/focus-visible.min.js";
 import "react-quill/dist/quill.snow.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,6 +27,7 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
         <EmailSubInput />
+        <Footer/>
       </div>
       <ToastContainer />
     </div>
