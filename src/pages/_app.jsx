@@ -20,14 +20,20 @@ import "../components/NavBar/Navbar.css";
 const MyApp = ({ Component, pageProps, router, currentUser }) => (
   <>
     <Head>
-      <title>Next.js-Starter</title>
+      <title>Hope Sustains Life</title>
     </Head>
     <div className="App">
+    {!router.pathname.includes("admin") &&
       <NavBar />
+    }
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
+        {!router.pathname.includes("admin") &&
+        <>
         <EmailSubInput />
         <Footer/>
+        </>
+        }
       </div>
       <ToastContainer />
     </div>
