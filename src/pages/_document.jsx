@@ -17,7 +17,7 @@ class MyDocument extends Document {
           <link
             rel="shortcut icon"
             type="image/png"
-            href="/static/favicon.png"
+            href="/static/hsl-logo-512x512.png"
           />
         </Head>
         <body>
