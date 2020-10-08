@@ -9,6 +9,7 @@
   padding-bottom: 90px;
   margin: auto;
 }
+
 .blogTableRow {
   background: transparent;
   border: 1px solid lightgray;
@@ -23,17 +24,21 @@
   align-items: center;
   display: inline-flex;
 }
+
 .action {
   margin-left: 95px;
   width: 250px;
 }
+
 .actionButtons {
   background-color: transparent;
   border: none;
 }
+
 .tableName {
   display: inline;
 }
+
 .tableHeader {
   border: 1px solid lightgray;
   border-right: 0px;
@@ -44,6 +49,8 @@
   height: 45px;
   width: 90%;
 }
-.footer {
-  margin-left: 75%;
+
+.tableContents {
+  max-height: 720px;
+  overflow-y: auto;
 }
