@@ -27,7 +27,7 @@ const DonationPage = () => {
             <div className={styles.amountButtons}>
               {donationAmts.map((amt, index) => {
                 return (
-                  <Button id={index} className={styles.amtButton}>
+                  <Button key={index} className={styles.amtButton}>
                     {amt}
                   </Button>
                 );
