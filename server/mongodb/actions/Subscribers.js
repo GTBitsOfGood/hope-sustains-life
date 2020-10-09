@@ -24,3 +24,15 @@ export async function addSubscriber(email) {
     throw new Error(error.message);
   }
 }
+
+export async function deleteSubscriber(id) {
+  if (!id) {
+    throw new Error("ID for subscriber must be provided");
+  }
+
+  await mongoDB();
+
+  return await Subscriber.findByIdAndDelete(id).catch((err) => {
+    throw new Error(err.message);
+  });
+}
