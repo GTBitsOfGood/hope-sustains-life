@@ -49,12 +49,12 @@ MyApp.getInitialProps = async (appContext) => {
 
   return getCurrentUser(cookies)
     .then((user) => {
-      if (route === "/login") {
+      if (route === "/admin") {
         if (res) {
-          res.writeHead(301, { Location: urls.pages.app.home });
+          res.writeHead(301, { Location: urls.pages.adminHome });
           res.end();
         } else {
-          return Router.replace(urls.pages.app.home);
+          return Router.replace(urls.pages.adminHome);
         }
       }
 
@@ -64,12 +64,12 @@ MyApp.getInitialProps = async (appContext) => {
       };
     })
     .catch(() => {
-      if (route.startsWith("/app")) {
+      if (route.startsWith("/admin") && route !== "/admin") {
         if (res) {
-          res.writeHead(301, { Location: urls.pages.index });
+          res.writeHead(301, { Location: urls.pages.admin });
           res.end();
         } else {
-          return Router.replace(urls.pages.index);
+          return Router.replace(urls.pages.admin);
         }
       }
 
