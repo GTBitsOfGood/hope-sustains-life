@@ -1,12 +1,11 @@
 import React from "react";
 import { Button, Image, Container, Row, Col } from "react-bootstrap";
 import styles from "./Footer.module.css";
-import logo from "./non-white globe-green_.png";
 import { Link, Router } from "react-router-dom";
-import facebookLogo from "./facebook.svg";
-import instagramLogo from "./instagram.svg";
-import twitterLogo from "./twitter.svg";
-import youtubeLogo from "./youtube.svg";
+import facebookLogo from "./icons/facebook.svg";
+import instagramLogo from "./icons/instagram.svg";
+import twitterLogo from "./icons/twitter.svg";
+import youtubeLogo from "./icons/youtube.svg";
 import urls from "../../../utils/urls";
 
 const Footer = () => {
@@ -16,7 +15,7 @@ const Footer = () => {
         <Row>
           <Col>
             <div className={styles.image}>
-              <Image src={logo}></Image>
+              <Image src="/static/hsl-logo-transparent.png"></Image>
             </div>
           </Col>
 

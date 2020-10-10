@@ -12,7 +12,6 @@ import {
   Col,
 } from "react-bootstrap";
 import Link from "next/link";
-import logo from "./non-white globe-green_.png";
 import urls from "../../../utils/urls";
 
 const { Brand, Toggle, Collapse } = Navbar;
@@ -21,7 +20,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar className="navbar-stuff" expand="xl">
-        <Image src={logo}></Image>
+        <Image src="/static/hsl-logo-transparent.png"></Image>
         <Toggle aria-controls="basic-navbar-nav" />
         <Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

@@ -14,8 +14,6 @@ export default {
       newBlog: "/admin/blogs/new",
     },
     index: "/",
-    ssr: "/ssr",
-    login: "/login",
     ourStory: "/ourstory",
     blogNews: "/blognews",
     hundredPromise: "/hundredpromise",
@@ -27,12 +25,8 @@ export default {
     tanzania: "/about/tanzania",
     bangledesh: "/about/bangledesh",
     haiti: "/about/haiti",
-    app: {
-      home: "/app",
-    },
   },
   api: {
-    example: "/api/example",
     user: {
       signUp: "/api/user/sign-up",
       login: "/api/user/login",
