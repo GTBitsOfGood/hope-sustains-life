@@ -48,5 +48,5 @@ export default {
       getAll: "/api/subscribers/getSubscribers",
       add: "/api/subscribers/addSubscriber",
     },
-  }
+  },
 };

@@ -34,19 +34,13 @@ const NavBar = () => {
                     id="basic-nav-dropdown"
                   >
                     <Link href={urls.pages.ourStory} passHref>
-                      <NavDropdown.Item>
-                        OUR STORY
-                      </NavDropdown.Item>
+                      <NavDropdown.Item>OUR STORY</NavDropdown.Item>
                     </Link>
                     <Link href={urls.pages.blogNews} passHref>
-                      <NavDropdown.Item>
-                        BLOG/NEWS
-                      </NavDropdown.Item>
+                      <NavDropdown.Item>BLOG/NEWS</NavDropdown.Item>
                     </Link>
                     <Link href={urls.pages.hundredPromise} passHref>
-                      <NavDropdown.Item>
-                        100% PROMISE
-                      </NavDropdown.Item>
+                      <NavDropdown.Item>100% PROMISE</NavDropdown.Item>
                     </Link>
                   </NavDropdown>
                 </Col>
@@ -62,23 +56,16 @@ const NavBar = () => {
                     id="basic-nav-dropdown"
                   >
                     <Link href={urls.pages.joinClassroom} passHref>
-                      <NavDropdown.Item>
-                        JOIN THE CLASSROOM
-                      </NavDropdown.Item>
+                      <NavDropdown.Item>JOIN THE CLASSROOM</NavDropdown.Item>
                     </Link>
                     <Link href={urls.pages.joinLibrary} passHref>
-                      <NavDropdown.Item>
-                        JOIN THE LIBRARY
-                      </NavDropdown.Item>
+                      <NavDropdown.Item>JOIN THE LIBRARY</NavDropdown.Item>
                     </Link>
                   </NavDropdown>
                 </Col>
                 <Col>
                   <Link href={urls.pages.donate} passHref>
-                    <Button
-                      className="btn btn-success"
-                      type="submit"
-                    >
+                    <Button className="btn btn-success" type="submit">
                       Donate
                     </Button>
                   </Link>
