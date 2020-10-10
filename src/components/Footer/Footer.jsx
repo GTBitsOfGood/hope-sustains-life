@@ -13,11 +13,7 @@ import facebookLogo from './facebook.svg';
 import instagramLogo from './instagram.svg';
 import twitterLogo from './twitter.svg';
 import youtubeLogo from './youtube.svg';
-
-
-
-
-
+import urls from "../../../utils/urls";
 
 const Footer = () => {
   return (
@@ -34,20 +30,20 @@ const Footer = () => {
           
           <Col>
             <div className={styles.header}>ABOUT US</div>
-            <div className={styles.sublinks} href="/ourstory">OUR STORY</div>
-            <div className={styles.sublinks} href="/blognews">BLOG/NEWS</div>
-            <div className={styles.sublinks} href="/ourstory">OUR STORY</div>
+            <div className={styles.sublinks} href={urls.pages.ourStory}>OUR STORY</div>
+            <div className={styles.sublinks} href={urls.pages.blogNews}>BLOG/NEWS</div>
+            <div className={styles.sublinks} href={urls.pages.ourStory}>OUR STORY</div>
             
           </Col>
 
           <Col>
-            <div className={styles.header} href="/ourwork">OUR WORK</div>
+            <div className={styles.header} href={urls.pages.ourWork}>OUR WORK</div>
           </Col>
 
           <Col>
             <div className={styles.header}>GET INVOLVED</div>
-            <div className={styles.sublinks} href="/joinclassroo">JOIN THE CLASSROOM</div>
-            <div className={styles.sublinks} href="/joinlibrary">JOIN THE LIBRARY</div>
+            <div className={styles.sublinks} href={urls.pages.joinClassroom}>JOIN THE CLASSROOM</div>
+            <div className={styles.sublinks} href={urls.pages.joinLibrary}>JOIN THE LIBRARY</div>
           </Col>
 
           <Col>

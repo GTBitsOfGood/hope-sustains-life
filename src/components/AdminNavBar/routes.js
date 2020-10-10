@@ -3,22 +3,22 @@ import urls from "../../../utils/urls";
 const routes = [
   {
     name: "BLOGS",
-    link: urls.pages.adminBlogs,
+    link: urls.pages.admin.blogs,
     auth: false,
   },
   {
     name: "DONATIONS",
-    link: urls.pages.adminDonations,
+    link: urls.pages.admin.donations,
     auth: false,
   },
   {
     name: "SUBSCRIBERS",
-    link: urls.pages.adminSubscribers,
+    link: urls.pages.admin.subscribers,
     auth: false,
   },
   {
     name: "Admin",
-    link: urls.pages.adminEditProfile,
+    link: urls.pages.admin.profile,
     auth: true,
   },
 ];

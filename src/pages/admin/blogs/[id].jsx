@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { getBlogById } from "../../../actions/Blog";
+import urls from "../../../../utils/urls";
 
 const ViewPost = ({ blogPost }) => {
   return (
     <>
-      <Link href="/admin/blogs">
+      <Link href={urls.pages.admin.blogs}>
         <button>Back</button>
       </Link>
       <h1>{blogPost?.title}</h1>

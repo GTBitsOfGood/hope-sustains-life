@@ -33,7 +33,10 @@ const subscribers = () => {
 
   return (
     <>
-      <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminSubscribers} />
+      <AdminNavBar
+        loggedIn={true}
+        currentRoute={urls.pages.admin.subscribers}
+      />
       <h1>Subscribers</h1>
       <CSVLink data={subscribersList}>Export All</CSVLink>
       <Table id="employee">

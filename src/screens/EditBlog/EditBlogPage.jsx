@@ -13,7 +13,7 @@ const EditBlogPage = ({ blogTitle, blogBody }) => {
 
   const handleSave = () => {
     return createBlog(title, body)
-      .then(() => router.replace(urls.pages.adminHome))
+      .then(() => router.replace(urls.pages.admin.home))
       .catch((error) => window.alert(error.message));
   };
 

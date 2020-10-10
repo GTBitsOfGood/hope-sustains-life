@@ -5,7 +5,7 @@ import urls from "../../../utils/urls";
 const editprofile = () => {
   return (
     <>
-      <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminEditProfile} />
+      <AdminNavBar loggedIn={true} currentRoute={urls.pages.admin.profile} />
       <p>Admin can edit their profile here</p>
     </>
   );

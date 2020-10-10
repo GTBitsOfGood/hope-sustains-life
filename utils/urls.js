@@ -4,25 +4,26 @@ export default {
   baseUrl: prod ? process.env.PROD_URL : "http://localhost:3000",
   dbUrl: process.env.MONGO_DB ?? "mongodb://localhost:27017",
   pages: {
+    admin: {
+      index: "/admin",
+      home: "/admin/home",
+      profile: "/admin/profile",
+      blogs: "/admin/blogs",
+      donations: "/admin/donations",
+      subscribers: "/admin/subscribers",
+      newBlog: "/admin/blogs/new",
+    },
     index: "/",
     ssr: "/ssr",
     login: "/login",
-    admin: "/admin",
-    adminHome: "/admin/home",
-    adminProfile: "/admin/profile",
-    adminBlogs: "/admin/blogs",
-    adminDonations: "/admin/donations",
-    adminSubscribers: "/admin/subscribers",
-    adminEditProfile: "/admin/editprofile",
     ourStory: "/ourstory",
     blogNews: "/blognews",
-    hundredPromise: "/hundredPromise",
+    hundredPromise: "/hundredpromise",
     ourWork: "/ourwork",
     joinClassroom: "/joinclassroom",
     joinLibrary: "/joinlibrary",
     donate: "/donate",
     learnMore: "/learnmore",
-    newBlogPage: "/admin/blogs/new",
     tanzania: "/about/tanzania",
     bangledesh: "/about/bangledesh",
     haiti: "/about/haiti",
@@ -45,7 +46,7 @@ export default {
     },
     subscribers: {
       getAll: "/api/subscribers/getSubscribers",
-      add: "/api/subscribers/addSubscriber"
-    }
+      add: "/api/subscribers/addSubscriber",
+    },
   }
 };
