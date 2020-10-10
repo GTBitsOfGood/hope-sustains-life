@@ -40,5 +40,5 @@ export const addSubscriber = (email) =>
         throw new Error(json.message);
       }
 
-      return json.payload;
+      return;
     });

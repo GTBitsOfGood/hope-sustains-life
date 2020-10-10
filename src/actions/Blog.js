@@ -41,7 +41,7 @@ export const createBlog = (title, body) =>
         throw new Error(json.message);
       }
 
-      return json.payload;
+      return;
     });
 
 export const deleteBlogById = (id) =>
@@ -61,14 +61,13 @@ export const deleteBlogById = (id) =>
         throw new Error(json.message);
       }
 
-      return json.payload;
+      return;
     });
 
 export const getBlogById = (id) =>
   fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
     method: "GET",
     mode: "same-origin",
-    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
@@ -80,6 +79,7 @@ export const getBlogById = (id) =>
       } else if (!json.success) {
         throw new Error(json.message);
       }
+
       return json.payload;
     });
 
@@ -102,13 +102,15 @@ export const setPublished = (id, isPublished) =>
       } else if (!json.success) {
         throw new Error(json.message);
       }
-      return json.payload;
+
+      return;
     });
 
 export const reorderBlogs = async (blogs) =>
   fetch(urls.baseUrl + urls.api.blogs.index, {
     method: "PUT",
     mode: "same-origin",
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
