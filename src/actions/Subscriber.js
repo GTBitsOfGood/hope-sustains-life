@@ -2,9 +2,10 @@ import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
 
 export const getSubscribers = () =>
-  fetch(urls.baseUrl + urls.api.subscribers.getAll, {
+  fetch(urls.baseUrl + urls.api.subscribers, {
     method: "GET",
     mode: "same-origin",
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
@@ -21,7 +22,7 @@ export const getSubscribers = () =>
     });
 
 export const addSubscriber = (email) =>
-  fetch(urls.baseUrl + urls.api.subscribers.add, {
+  fetch(urls.baseUrl + urls.api.subscribers, {
     method: "POST",
     mode: "same-origin",
     headers: {
