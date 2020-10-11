@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { element } from "prop-types";
 import { toast } from "react-toastify";
 import { getSubscribers, deleteSubscriber } from "../../actions/Subscriber";
 import AdminNavBar from "../../components/AdminNavBar";
@@ -25,6 +25,8 @@ const Subscribers = (props) => {
       // TODO - filter mainSubscriberList based on user input
       // NOTE: Do not modify mainSubsribersList directly.
       // Instead use mainSubsribersList.filter(x => filterLogic(x)) method to return a new array
+      sortedBlogs = mainSubsribersList.filter(x => element.includes(x.target.value))
+      return sortedBlogs
     } else {
       return mainSubscribersList; // return all subscribers if no filter text
     }
@@ -49,6 +51,13 @@ const Subscribers = (props) => {
       <div className={styles.subscriberPageContainer}>
         <h1>Subscribers</h1>
         {/* TODO - Add search input here. Use filterText for value and setFilterText for onChange callback */}
+        <input 
+          type = "text"
+          placeholder = "Search"
+          value = {filterText}
+          onChange = {setFilterText}
+        />
+
         <SubscriberTable
           subscribers={getSubscribersBySearchFilter()}
           removeSubscriber={removeSubscriber}
