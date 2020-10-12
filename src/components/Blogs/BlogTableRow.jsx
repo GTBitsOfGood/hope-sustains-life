@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 
 const BlogTableRow = ({ blog, index, onDeleteClick }) => {
   const { _id, title, date } = blog;
-  const getItemStyle = (isDragging, draggableStyle) => ({
+  const getItemStyle = (isDragging) => ({
     // change background colour if dragging
     background: isDragging ? "lightgray" : "transparent",
     borderLeft: isDragging ? "8px solid #03AB99" : "transparent",
@@ -25,7 +25,7 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
     margin: "auto",
   
     // styles we need to apply on draggables
-    ...draggableStyle
+    // ...draggableStyle
   });
 
 
@@ -37,7 +37,7 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <div style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}>
+          <div style={getItemStyle(snapshot.isDragging)}>
             <div style={{ marginRight: 120, width: 300 }}>{title}</div>
             <div className={classes.action}>
               <Link href={`/admin/blogs/${_id}`}>
@@ -51,7 +51,7 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
               </button>
             </div>
             <div>
-            <button className={classes.unpublishButton}>Unpublish</button>
+            <Button className={classes.unpublishButton}>Unpublish</Button>
             </div>
           </div>
         </div>
