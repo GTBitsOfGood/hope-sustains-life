@@ -14,7 +14,7 @@ const SubscriberTable = ({ subscribers, removeSubscriber }) => {
   const emailList = subscribers.map((sub) => [sub.email]);
   return (
     <>
-      <CSVLink data={emailList} className="btn btn-light m-3">
+      <CSVLink data={emailList} className="btn btn-light my-3">
         Export All
       </CSVLink>
       <Table id="employee" className="mb-4">

@@ -1,6 +1,7 @@
 import React from "react";
-import PropTypes, { element } from "prop-types";
+import PropTypes from "prop-types";
 import { toast } from "react-toastify";
+import Button from "react-bootstrap/Button";
 import { getSubscribers, deleteSubscriber } from "../../actions/Subscriber";
 import AdminNavBar from "../../components/AdminNavBar";
 import SubscriberTable from "./subscriberTable";
@@ -22,11 +23,9 @@ const Subscribers = (props) => {
 
   const getSubscribersBySearchFilter = () => {
     if (filterText?.trim()) {
-      // TODO - filter mainSubscriberList based on user input
-      // NOTE: Do not modify mainSubsribersList directly.
-      // Instead use mainSubsribersList.filter(x => filterLogic(x)) method to return a new array
-      sortedBlogs = mainSubsribersList.filter(x => element.includes(x.target.value))
-      return sortedBlogs
+      return mainSubscribersList.filter((x) =>
+        x.email.includes(filterText.trim())
+      );
     } else {
       return mainSubscribersList; // return all subscribers if no filter text
     }
@@ -50,14 +49,23 @@ const Subscribers = (props) => {
       <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminSubscribers} />
       <div className={styles.subscriberPageContainer}>
         <h1>Subscribers</h1>
-        {/* TODO - Add search input here. Use filterText for value and setFilterText for onChange callback */}
-        <input 
-          type = "text"
-          placeholder = "Search"
-          value = {filterText}
-          onChange = {setFilterText}
-        />
-
+        <div>
+          <input
+            type="text"
+            placeholder="Search"
+            value={filterText}
+            onChange={(e) => setFilterText(e.target.value)}
+          />
+          {filterText && (
+            <Button
+              size="sm"
+              variant="outline-danger"
+              onClick={() => setFilterText("")}
+            >
+              X
+            </Button>
+          )}
+        </div>
         <SubscriberTable
           subscribers={getSubscribersBySearchFilter()}
           removeSubscriber={removeSubscriber}
