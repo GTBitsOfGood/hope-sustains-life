@@ -47,9 +47,12 @@ MyApp.getInitialProps = async (appContext) => {
 
   const route = appContext.ctx.asPath;
 
+  // Why is this always /admin/home for all routes that start with /admin?
+  console.log(route);
+
   return getCurrentUser(cookies)
     .then((user) => {
-      if (route === "/admin") {
+      if (route === urls.pages.admin.index) {
         if (res) {
           res.writeHead(301, { Location: urls.pages.admin.home });
           res.end();
@@ -64,12 +67,15 @@ MyApp.getInitialProps = async (appContext) => {
       };
     })
     .catch(() => {
-      if (route.startsWith("/admin") && route !== "/admin") {
+      if (
+        route.startsWith(urls.pages.admin.index) &&
+        route !== urls.pages.admin.index
+      ) {
         if (res) {
-          res.writeHead(301, { Location: urls.pages.admin });
+          res.writeHead(301, { Location: urls.pages.admin.index });
           res.end();
         } else {
-          return Router.replace(urls.pages.admin);
+          return Router.replace(urls.pages.admin.index);
         }
       }
 
