@@ -111,9 +111,8 @@ const BlogTable = ({ blogs }) => {
         <br></br>
         <div>
           <div className={styles.tableHeader}>
-            <label style={{ marginLeft: "15%", marginRight: 284 }}>Blog</label>
-            <label style={{ marginRight: 295 }}> Date </label>
-            <label> Action </label>
+            <label style={{ marginLeft: "15%", marginRight: 284}}>BLOGS</label>
+            <label style={{ marginLeft: 120, marginRight: 100 }}> ACTIONS </label>
           </div>
           <div className={styles.tableContents}>
             <DragDropContext onDragEnd={onDragEnd}>

@@ -3,26 +3,60 @@
   max-height: 774px;
   width: 85%;
   height: 85%;
-  padding-left: 80px;
-  padding-right: 81px;
+  padding-left: 0px;
+  padding-right: 0px;
   padding-top: 55px;
   padding-bottom: 90px;
   margin: auto;
 }
 
-.blogTableRow {
+/* .blogTableRow {
   background: transparent;
   border: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   border-right: 0px;
   border-left: 0px;
   border-top: 0px;
   padding-top: 82px;
-  margin-left: 10%;
+  margin-left: 0%;
   padding-bottom: 10px;
   max-width: 881px;
   width: 70%;
   align-items: center;
   display: inline-flex;
+} */
+
+.blogTableRow {
+  background: transparent;
+  border-bottom: 1px solid lightgray;
+  align-items: center;
+  display: inline-flex;
+  max-width: 1279px;
+  max-height: 774px;
+  width: 90%;
+  height: 70%;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+}
+
+.rowSelected {
+  background: gray;
+  border-bottom: 1px solid lightgray;
+  border-left:#03AB99;
+  align-items: center;
+  display: inline-flex;
+  max-width: 1279px;
+  max-height: 774px;
+  width: 90%;
+  height: 70%;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
 }
 
 .action {
@@ -35,12 +69,30 @@
   border: none;
 }
 
+.unpublishButton {
+  margin-left: 220px;
+  background-color: gray;
+  border: none;  
+  color: white;  
+  padding: 15px 32px;  
+  text-align: center;  
+  text-decoration: none;  
+  display: inline-block;  
+  font-size: 16px;  
+  /* margin: 4px 2px;   */
+  cursor: pointer;
+}
+
+
 .tableName {
   display: inline;
 }
 
 .tableHeader {
   border: 1px solid lightgray;
+  background-color: #C4C4C4;
+  opacity: 40%;
+  color: #2A2D39;
   border-right: 0px;
   border-left: 0px;
   display: flex;
