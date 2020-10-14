@@ -120,3 +120,15 @@ export const updateUser = async (email, password, token) => {
     throw new Error("Invalid token!");
   }
 };
+
+export const verifyToken = async (token) => {
+  if (token == null) {
+    throw new Error("User is not signed in!");
+  }
+
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET);
+  } catch (error) {
+    throw new Error("Invalid token!");
+  }
+};

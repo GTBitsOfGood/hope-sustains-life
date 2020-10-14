@@ -8,7 +8,7 @@ export default {
     ssr: "/ssr",
     login: "/login",
     admin: "/admin",
-    adminHome: "/admin/home",
+    adminHome: "/admin/blogs",
     adminProfile: "/admin/profile",
     adminBlogs: "/admin/blogs",
     adminDonations: "/admin/donations",
@@ -39,6 +39,13 @@ export default {
       getCurrent: "/api/user/get-current",
       updateCurrent: "/api/user/update-current",
     },
-    blogs: "/api/blogs",
+    blogs: {
+      index: "/api/blogs",
+      publish: "/api/blogs/publish",
+    },
+    subscribers: {
+      getAll: "/api/subscribers/getSubscribers",
+      add: "/api/subscribers/addSubscriber",
+    },
   },
 };

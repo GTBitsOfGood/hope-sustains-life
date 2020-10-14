@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
+import { ToastContainer } from "react-toastify";
 import { getCurrentUser } from "../actions/User";
 import urls from "../../utils/urls";
-import Footer from "../components/Footer";
+import EmailSubInput from "../components/EmailSubInput";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import "focus-visible/dist/focus-visible.min.js";
 import "react-quill/dist/quill.snow.css";
+import "react-toastify/dist/ReactToastify.css";
 import "normalize.css";
 import "../../public/static/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,14 +20,22 @@ import "../components/NavBar/Navbar.css";
 const MyApp = ({ Component, pageProps, router, currentUser }) => (
   <>
     <Head>
-      <title>Next.js-Starter</title>
+      <title>Hope Sustains Life</title>
     </Head>
     <div className="App">
+    {!router.pathname.includes("admin") &&
       <NavBar />
-      <Footer />
+    }
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
+        {!router.pathname.includes("admin") &&
+        <>
+        <EmailSubInput />
+        <Footer/>
+        </>
+        }
       </div>
+      <ToastContainer />
     </div>
   </>
 );
