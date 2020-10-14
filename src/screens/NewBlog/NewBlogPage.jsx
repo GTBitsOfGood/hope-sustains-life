@@ -7,10 +7,10 @@ import { createBlog } from "../../actions/Blog";
 import urls from "../../../utils/urls";
 
 const EditBlogPage = () => {
-  const [title, setTitle] = React.useState("Insert Title");
-  const [subtitle, setSubtitle] = React.useState("Insert Subtitle");
+  const [title, setTitle] = React.useState("");
+  const [subtitle, setSubtitle] = React.useState("");
   const [body, setBody] = React.useState("");
-  const [references, setReferences] = React.useState("References...");
+  const [references, setReferences] = React.useState("References..");
   const router = useRouter();
 
   const handleSave = () => {
@@ -38,6 +38,7 @@ const EditBlogPage = () => {
       <div className={classes.titleContainer}>
         <input
           className={classes.title}
+          placeholder={"Insert Title"}
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
@@ -45,6 +46,7 @@ const EditBlogPage = () => {
       <div className={classes.subtitleContainer}>
         <input
           className={classes.subtitle}
+          placeholder={"Insert Subtitle"}
           value={subtitle}
           onChange={(event) => setSubtitle(event.target.value)}
         />

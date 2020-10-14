@@ -28,7 +28,7 @@ export const createBlog = (
   references,
   isPublished
 ) =>
-  fetch(urls.baseUrl + urls.api.blogs, {
+  fetch(urls.baseUrl + urls.api.blogs.index, {
     method: "POST",
     mode: "same-origin",
     credentials: "include",
