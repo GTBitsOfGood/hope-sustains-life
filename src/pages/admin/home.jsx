@@ -1,3 +1,3 @@
-import LoginPage from "../../screens/admin/Login";
+import HomePage from "../../screens/admin/Home";
 
-export default LoginPage;
+export default HomePage;
