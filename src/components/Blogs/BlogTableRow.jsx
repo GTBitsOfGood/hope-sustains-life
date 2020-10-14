@@ -23,11 +23,10 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
     paddingTop: "20px",
     paddingBottom: "20px",
     margin: "auto",
-  
+
     // styles we need to apply on draggables
     // ...draggableStyle
   });
-
 
   return (
     <Draggable draggableId={blog._id} index={index}>
@@ -51,7 +50,7 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
               </button>
             </div>
             <div>
-            <Button className={classes.unpublishButton}>Unpublish</Button>
+              <Button className={classes.unpublishButton}>Unpublish</Button>
             </div>
           </div>
         </div>
