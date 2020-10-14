@@ -20,7 +20,14 @@ export const getBlogs = () =>
       return json.payload;
     });
 
-export const createBlog = (title, body) =>
+export const createBlog = (
+  author,
+  title,
+  subtitle,
+  body,
+  references,
+  isPublished
+) =>
   fetch(urls.baseUrl + urls.api.blogs.index, {
     method: "POST",
     mode: "same-origin",
@@ -29,8 +36,12 @@ export const createBlog = (title, body) =>
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      author,
       title,
+      subtitle,
       body,
+      references,
+      isPublished,
     }),
   })
     .then((response) => response.json())
