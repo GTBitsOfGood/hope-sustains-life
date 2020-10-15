@@ -1,5 +1,4 @@
-import React from "react";
+import OurStoryPage from "../screens/OurStory/OurStory";
 
-const OurStory = () => <h1>Our Story!</h1>;
+export default OurStoryPage;
 
-export default OurStory;
