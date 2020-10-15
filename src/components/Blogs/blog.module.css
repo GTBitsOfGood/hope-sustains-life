@@ -69,6 +69,12 @@
   border: none;
 }
 
+.actionButtons:hover {
+  background-color: transparent;
+  border: none;
+  color: #03AB99;
+}
+
 .unpublishButton {
   margin-left: 220px;
   background-color: gray;
