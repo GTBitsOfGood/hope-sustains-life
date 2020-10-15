@@ -13,21 +13,24 @@ const EditBlogPage = () => {
   const router = useRouter();
 
   const uploadImage = async (e) => {
-    console.log("Uploading image");
-    const file = uploadedImage;
-    const data = new FormData();
-    data.append("file", file);
-    data.append("upload_preset", "NewBlogImage");
+    // TODO: call in publish method
+    if (uploadedImage) {
+      console.log("Uploading image");
+      const file = uploadedImage.imgBuffer;
+      const data = new FormData();
+      data.append("file", file);
+      data.append("upload_preset", "NewBlogImage");
 
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dh7fnazjb/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-    const image = await res.json();
-    console.log(image);
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dh7fnazjb/image/upload",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+      const image = await res.json();
+      console.log(image);
+    }
   };
 
   const handleSave = () => {
