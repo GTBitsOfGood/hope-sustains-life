@@ -16,9 +16,10 @@ const NewBlogPage = () => {
 
   const uploadImage = async (e) => {
     // TODO: call in publish method
+    console.log("Entered Method");
     if (uploadedImage) {
       console.log("Uploading image");
-      const file = uploadedImage.imgBuffer;
+      const file = uploadedImage;
       const data = new FormData();
       data.append("file", file);
       data.append("upload_preset", "NewBlogImage");
@@ -42,6 +43,7 @@ const NewBlogPage = () => {
   };
 
   const handlePublish = () => {
+    uploadImage();
     return createBlog("", title, subtitle, body, references, true)
       .then(() => router.replace(urls.pages.adminHome))
       .catch((error) => window.alert(error.message));
