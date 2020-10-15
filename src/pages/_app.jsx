@@ -23,17 +23,15 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
       <title>Hope Sustains Life</title>
     </Head>
     <div className="App">
-    {!router.pathname.includes("admin") &&
-      <NavBar />
-    }
+      {!router.pathname.includes("admin") && <NavBar />}
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
-        {!router.pathname.includes("admin") &&
-        <>
-        <EmailSubInput />
-        <Footer/>
-        </>
-        }
+        {!router.pathname.includes("admin") && (
+          <>
+            <EmailSubInput />
+            <Footer />
+          </>
+        )}
       </div>
       <ToastContainer />
     </div>
