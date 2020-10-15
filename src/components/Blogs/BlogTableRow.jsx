@@ -27,16 +27,16 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
     // styles we need to apply on draggables
     // ...draggableStyle
   });
-  
-  function toggle() {
-	  //TODO: add unpublish action call, call from blogtable somehow?
-      var Unpublish = document.getElementById("Unpublish").innerHTML;
-      if (document.getElementById("Unpublish").innerHTML === "Publish") {
-        document.getElementById("Unpublish").innerHTML = "Unpublish";
-      } else {
-        document.getElementById("Unpublish").innerHTML = "Publish";
-      }
+
+  const toggle = (_id) => {
+    //TODO: add unpublish action call
+    var Unpublish = document.getElementById(_id).innerHTML;
+    if (document.getElementById(_id).innerHTML === "Publish") {
+      document.getElementById(_id).innerHTML = "Unpublish";
+    } else {
+      document.getElementById(_id).innerHTML = "Publish";
     }
+  }
 
   return (
     <Draggable draggableId={blog._id} index={index}>
@@ -60,7 +60,13 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
               </button>
             </div>
             <div>
-              <Button className={classes.unpublishButton} id="Unpublish" onClick={toggle}>Unpublish</Button>
+              <Button
+                className={classes.unpublishButton}
+                id={_id}
+                onClick={() => toggle(_id)}
+              >
+                Unpublish
+              </Button>
             </div>
           </div>
         </div>
