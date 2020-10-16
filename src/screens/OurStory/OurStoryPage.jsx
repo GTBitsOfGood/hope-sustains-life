@@ -100,10 +100,21 @@ const OurStoryPage = () => (
         Hope Sustains Life is growing bigger and bigger. Bit by bit, we hope to expand our reach and help the international refugee population.
       </p>
     
-    </div>
-    <div className={classes.donate}>
-    
     </div> */}
+    <div className={classes.donate}>
+      <Row>
+        <Col className={classes.centerContent}>
+          <p className={classes.donateText}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing 
+          </p>
+          <br/>
+          <br/>
+          <Button className={classes.donateButton} type="submit" href="/donate">
+                Donate
+          </Button>
+        </Col>`
+      </Row>
+    </div>
   </>
 );
 

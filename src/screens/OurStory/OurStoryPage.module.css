@@ -86,11 +86,39 @@
 /* Our Team */
 
 /* Donate */
-/* Could be useful for donate button */
-/* .centerButton {
+.donate {
+    background: linear-gradient(270.01deg, rgba(196, 196, 196, 0.126) -43.35%, rgba(207, 207, 207, 0.2) 29.99%, rgba(229, 229, 229, 0.2) 105.19%), url("../../../public/static/seth-doyle-78210-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 200px 120px 120px 120px;
+    
+}
+
+.donateText {
+    font: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+}
+
+.donateButton {
+    border-color: #FFFFFF;
+    color: #03AB99;
+    background: #FFFFFF;
+    width: 200px;
+    height: 40px;
+}
+
+.donateButton:hover {
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100%;
-} */
+    border-color: #FFFFFF;
+    color: #03AB99;
+    background: #FFFFFF;
+    width: 200px;
+    height: 40px;
+}
