@@ -78,6 +78,7 @@
 .unpublishButton {
   margin-left: 220px;
   background-color: gray;
+  min-width: 100px;
   border: none;  
   color: white;  
   padding: 15px 32px;  

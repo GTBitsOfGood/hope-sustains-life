@@ -4,9 +4,13 @@ import { Draggable } from "react-beautiful-dnd";
 import Link from "next/link";
 import classes from "./blog.module.css";
 import { Button } from "react-bootstrap";
+import { publishBlog } from "../../actions/Blog";
 
 const BlogTableRow = ({ blog, index, onDeleteClick }) => {
-  const { _id, title, date } = blog;
+  const { _id, title, isPublished } = blog;
+  const [published, setPublished] = React.useState(isPublished);
+  const [isLoading, setLoading] = React.useState(false);
+
   const getItemStyle = (isDragging) => ({
     // change background colour if dragging
     background: isDragging ? "lightgray" : "transparent",
@@ -28,15 +32,17 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
     // ...draggableStyle
   });
 
-  const toggle = (_id) => {
-    //TODO: add unpublish action call
-    var Unpublish = document.getElementById(_id).innerHTML;
-    if (document.getElementById(_id).innerHTML === "Publish") {
-      document.getElementById(_id).innerHTML = "Unpublish";
-    } else {
-      document.getElementById(_id).innerHTML = "Publish";
-    }
-  }
+  const publish = () => {
+    setLoading(true);
+
+    publishBlog(_id, !published)
+      .then(() => {
+        setPublished(!published);
+      })
+      .catch((error) => window.alert(error.message));
+
+    setLoading(false);
+  };
 
   return (
     <Draggable draggableId={blog._id} index={index}>
@@ -62,10 +68,10 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
             <div>
               <Button
                 className={classes.unpublishButton}
-                id={_id}
-                onClick={() => toggle(_id)}
+                disabled={isLoading}
+                onClick={publish}
               >
-                Unpublish
+                {isLoading ? "..." : published ? "Unpublish" : "Publish"}
               </Button>
             </div>
           </div>

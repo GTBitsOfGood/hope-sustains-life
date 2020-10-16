@@ -94,7 +94,7 @@ export const getBlogById = (id) =>
       return json.payload;
     });
 
-export const setPublished = (id, isPublished) =>
+export const publishBlog = (id, isPublished) =>
   fetch(urls.baseUrl + urls.api.blogs.publish + `/${id}`, {
     method: "PATCH",
     mode: "same-origin",
