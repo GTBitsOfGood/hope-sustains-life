@@ -55,24 +55,37 @@ const ImageUploader = ({ uploadedImage, setUploadedImage }) => {
     // Show error message if uploading multiple images
     if (rejectedFiles.length > 1) {
       showErrorNotification("You can upload at most 1 file");
-      setUploadedImage(null);
     } else if (rejectedFiles.length == 1) {
-      // Show any error message while uploading the image
-      const errorMessages = rejectedFiles[0].errors?.map((err) => err.message);
-      showErrorNotification(
-        errorMessages.join(", ") || "Error uploading image"
-      );
-      setUploadedImage(null);
+      // if file is too large
+      if (rejectedFiles[0].file?.size > maxFileSize * 1024 * 1024) {
+        showErrorNotification(`File is too large (${maxFileSize} MB Limit)`);
+      } else {
+        // Show any other error message while uploading the image
+        const errorMessages = rejectedFiles[0].errors?.map(
+          (err) => err.message
+        );
+        showErrorNotification(
+          errorMessages.join(", ") || "Error uploading image"
+        );
+      }
     }
+    setUploadedImage(null);
   }, []);
 
+  const maxFileSize = 25; // in Megabytes
   const {
     getRootProps,
     getInputProps,
     isDragActive,
     isDragAccept,
     isDragReject,
-  } = useDropzone({ accept: "image/*", maxFiles: 1, onDrop });
+  } = useDropzone({
+    accept: "image/*",
+    maxFiles: 1,
+    onDrop,
+    minSize: 0,
+    maxSize: maxFileSize * 1024 * 1024,
+  });
 
   // apply custom styling on different stages
   const style = useMemo(

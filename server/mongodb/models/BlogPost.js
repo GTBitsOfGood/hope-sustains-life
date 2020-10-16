@@ -34,6 +34,10 @@ const BlogPostSchema = new Schema({
   orderIndex: {
     type: Number,
   },
+  image: {
+    asset_id: String, // This uniquely identifies image asset in Cloudinary
+    url: String,
+  },
 });
 
 BlogPostSchema.pre("save", function (next) {

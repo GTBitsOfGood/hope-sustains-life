@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Button from "react-bootstrap/Button";
 import TextEditor from "../../components/TextEditor";
 import ImageUploader from "../../components/ImageUploader";
 import classes from "./NewBlogPage.module.css";
@@ -12,13 +13,11 @@ const NewBlogPage = () => {
   const [body, setBody] = React.useState("");
   const [uploadedImage, setUploadedImage] = React.useState();
   const [references, setReferences] = React.useState("References..");
+  const [saving, setSaving] = React.useState(false);
   const router = useRouter();
 
-  const uploadImage = async (e) => {
-    // TODO: call in publish method
-    console.log("Entered Method");
+  const uploadImage = async () => {
     if (uploadedImage) {
-      console.log("Uploading image");
       const file = uploadedImage;
       const data = new FormData();
       data.append("file", file);
@@ -32,21 +31,52 @@ const NewBlogPage = () => {
         }
       );
       const image = await res.json();
-      console.log(image);
+      return {
+        asset_id: image["asset_id"],
+        url: image["secure_url"],
+      };
+    }
+    return null;
+  };
+
+  const handleSave = async () => {
+    try {
+      setSaving(true);
+      const cloudinaryImage = await uploadImage();
+      await createBlog(
+        title,
+        subtitle,
+        body,
+        references,
+        false,
+        cloudinaryImage
+      );
+      router.replace(urls.pages.adminHome);
+    } catch (error) {
+      window.alert(error.message);
+    } finally {
+      setSaving(false);
     }
   };
 
-  const handleSave = () => {
-    return createBlog("", title, subtitle, body, references, false)
-      .then(() => router.replace(urls.pages.adminHome))
-      .catch((error) => window.alert(error.message));
-  };
-
-  const handlePublish = () => {
-    uploadImage();
-    return createBlog("", title, subtitle, body, references, true)
-      .then(() => router.replace(urls.pages.adminHome))
-      .catch((error) => window.alert(error.message));
+  const handlePublish = async () => {
+    try {
+      setSaving(true);
+      const cloudinaryImage = await uploadImage();
+      await createBlog(
+        title,
+        subtitle,
+        body,
+        references,
+        true,
+        cloudinaryImage
+      );
+      router.replace(urls.pages.adminHome);
+    } catch (error) {
+      window.alert(error.message);
+    } finally {
+      setSaving(false);
+    }
   };
 
   useEffect(
@@ -62,12 +92,22 @@ const NewBlogPage = () => {
   return (
     <div className={classes.blogContainer}>
       <div className={classes.buttonContainer}>
-        <button onClick={handleSave} className={classes.blogButton}>
+        <Button
+          onClick={handleSave}
+          className={classes.blogButton}
+          disabled={saving}
+          variant="dark"
+        >
           Save & Finish
-        </button>
-        <button onClick={handlePublish} className={classes.blogButton}>
+        </Button>
+        <Button
+          onClick={handlePublish}
+          className={classes.blogButton}
+          disabled={saving}
+          variant="dark"
+        >
           Publish
-        </button>
+        </Button>
       </div>
       <ImageUploader
         uploadedImage={uploadedImage}

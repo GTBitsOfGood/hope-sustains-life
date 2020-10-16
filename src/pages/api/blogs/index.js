@@ -16,15 +16,19 @@ const handler = (req, res) => {
         res.status(400).json({ success: false, message: error.message })
       );
   } else if (req.method === "POST") {
-    const title = req.body.title;
-    const subtitle = req.body.subtitle;
-    const body = req.body.body;
-    const references = req.body.references;
-    const isPublished = req.body.isPublished;
+    const { title, subtitle, body, references, isPublished, image } = req.body;
 
     return getUserFromToken(req.cookies.token)
       .then((user) =>
-        createBlog(user.email, title, subtitle, body, references, isPublished)
+        createBlog(
+          user.email,
+          title,
+          subtitle,
+          body,
+          references,
+          isPublished,
+          image
+        )
       )
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
