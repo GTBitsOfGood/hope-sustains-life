@@ -93,10 +93,13 @@ const OurStoryPage = () => (
     </div>
 
     <div className={classes.ourTeam}>
-      <h1>
-            Our{" "}
-        <span className={classes.blueText}>Team</span>
+      <h1 className = {classes.blueLineTeam}>
+        <span>
+          Our
+          <span className = {classes.blueText}>Team</span>
+        </span>
       </h1>
+      
 
       <p className={classes.ourTeamText}>
         All great things begin small and Hope Sustains Life is no different. For years, it has just been my father and I working together as a two-man team to slowly 
@@ -106,11 +109,11 @@ const OurStoryPage = () => (
       </p>
 
       <Row>
-        <Col className={classes.centerContent}>
+        <Col className={classes.leftContent}>
           {/* <div className={classes.Bernard}></div> */}
           <Image src={BernardImage} className="pictures" fluid />
         </Col>
-        <Col md={4} className={classes.centerContent}>
+        <Col md={4} className={classes.leftContent}>
           <h1>Bernard Michel</h1>
           <h2 className={classes.blueText2}>Co-Founder / CEO</h2>
           <p className={classes.ourTeamText}>
@@ -126,10 +129,10 @@ const OurStoryPage = () => (
 
 
       <Row>
-        <Col className={classes.centerContent}>
+        <Col className={classes.leftContent}>
           <Image src={TheodoreImage} className="pictures" fluid />
         </Col>
-        <Col md={4} className={classes.centerContent}>
+        <Col md={4} className={classes.leftContent}>
           <h1>Theodore Michel</h1>
           <h2 className={classes.blueText2}>Founder</h2>
           <p className={classes.ourTeamText}>
