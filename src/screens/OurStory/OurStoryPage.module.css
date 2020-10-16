@@ -137,6 +137,15 @@
     justify-content: left;
 }
 
+.pictures {
+    height: auto;
+    position: absolute;
+    width: auto;
+    max-width: 100%; 
+    flex-shrink: 0;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
 /* Donate */
 /* Could be useful for donate button */
 /* .centerButton {

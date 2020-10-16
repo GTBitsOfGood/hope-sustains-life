@@ -111,7 +111,7 @@ const OurStoryPage = () => (
       <Row>
         <Col className={classes.leftContent}>
           {/* <div className={classes.Bernard}></div> */}
-          <Image src={BernardImage} className="pictures" fluid />
+          <Image src={BernardImage} className= {classes.pictures} fluid />
         </Col>
         <Col md={4} className={classes.leftContent}>
           <h1>Bernard Michel</h1>
