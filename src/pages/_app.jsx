@@ -47,9 +47,6 @@ MyApp.getInitialProps = async (appContext) => {
 
   const route = appContext.ctx.asPath;
 
-  // Why is this always /admin/home for all routes that start with /admin?
-  console.log(route);
-
   return getCurrentUser(cookies)
     .then((user) => {
       if (route === urls.pages.admin.index) {
