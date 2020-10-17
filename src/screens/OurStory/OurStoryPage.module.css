@@ -1,0 +1,195 @@
+/* Header CSS */
+.header {
+    background-image: url("../../../public/static/our-story-header.png");
+    margin: 0;
+    height: 739px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headerTitle {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+}
+
+.headerText {
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.3%;
+    padding-bottom: 2%;
+    
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+/* Our Story/Issue CSS */
+.centerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bodyText {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 26px;
+    letter-spacing: 1.05px;
+    color: #2A2D39;
+}
+
+.blueText {
+    color: #4ca899;
+}
+
+.ourStory {
+    padding: 117px 128px 120px 0px;
+}
+
+.blueLineStory {
+    border-bottom: 4px #03Ab99;
+    border-bottom-style: solid;
+}
+
+.blueLineIssue {
+    border-top: 4px #03Ab99;
+    border-top-style: solid;
+}
+
+.issueTackling {
+    background: linear-gradient(rgba(255,255,255,0.80),rgba(255,255,255,0.80)), url("../../../public/static/martin-bekerman.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    padding: 117px 0px 120px 117px;
+    z-index: 0;
+}
+
+/* Our Team */
+
+.ourTeamText{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 75px;
+    text-align: left;
+    align-items: left;
+
+}
+
+.blueLineTeam {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 4px solid #03Ab99; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+.blueLineTeam span { 
+     background:#fff; 
+     padding:0 15px; 
+ }
+
+.ourTeamHeader{
+    text-align: center;
+    align-items: center;
+}
+
+.ourTeam{
+    padding: 117px 0px 120px 117px;
+}
+
+.Bernard {
+    background-image: url("../../../public/static/Bernard_headshot.jpg");
+    margin: 0;
+    height: 739px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blueText2 {
+    color: #4ca899;
+    text-align: left;
+}
+
+.centerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.pictures {
+    height: auto;
+    position: absolute;
+    width: auto;
+    max-width: 100%; 
+    flex-shrink: 0;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+/* Donate */
+/* Could be useful for donate button */
+/* .centerButton {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100%;
+} */
+
+/* Donate */
+.donate {
+    background: linear-gradient(270.01deg, rgba(196, 196, 196, 0.126) -43.35%, rgba(207, 207, 207, 0.2) 29.99%, rgba(229, 229, 229, 0.2) 105.19%), url("../../../public/static/seth-doyle-78210-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 200px 120px 120px 120px;
+    
+}
+
+.donateText {
+    font: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+}
+
+.donateButton {
+    border-color: #FFFFFF;
+    color: #03AB99;
+    background: #FFFFFF;
+    width: 200px;
+    height: 40px;
+}
+
+.donateButton:hover {
+    text-align: center;
+    border-color: #FFFFFF;
+    color: #03AB99;
+    background: #FFFFFF;
+    width: 200px;
+    height: 40px;
+}

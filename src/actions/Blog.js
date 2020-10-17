@@ -21,12 +21,12 @@ export const getBlogs = () =>
     });
 
 export const createBlog = (
-  author,
   title,
   subtitle,
   body,
   references,
-  isPublished
+  isPublished,
+  image
 ) =>
   fetch(urls.baseUrl + urls.api.blogs.index, {
     method: "POST",
@@ -36,12 +36,12 @@ export const createBlog = (
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      author,
       title,
       subtitle,
       body,
       references,
       isPublished,
+      image,
     }),
   })
     .then((response) => response.json())
