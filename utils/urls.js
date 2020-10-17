@@ -8,7 +8,7 @@ export default {
     ssr: "/ssr",
     login: "/login",
     admin: "/admin",
-    adminHome: "/admin/home",
+    adminHome: "/admin/blogs",
     adminProfile: "/admin/profile",
     adminBlogs: "/admin/blogs",
     adminDonations: "/admin/donations",

@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const BlogPostSchema = new Schema({
   isPublished: {
     type: Boolean,
-    required: true,
+    required: false,
   },
   author: {
     type: String,
@@ -15,9 +15,17 @@ const BlogPostSchema = new Schema({
     type: String,
     required: true,
   },
+  subtitle: {
+    type: String,
+    required: true,
+  },
   body: {
     type: String,
     required: true,
+  },
+  references: {
+    type: String,
+    required: false,
   },
   date: {
     type: Date,
