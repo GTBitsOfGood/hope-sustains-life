@@ -46,7 +46,10 @@ const Subscribers = (props) => {
 
   return (
     <>
-      <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminSubscribers} />
+      <AdminNavBar
+        loggedIn={true}
+        currentRoute={urls.pages.admin.subscribers}
+      />
       <div className={styles.subscriberPageContainer}>
         <h1>Subscribers</h1>
         <div>

@@ -3,7 +3,11 @@ import {
   createBlog,
   reorderBlogs,
 } from "../../../../server/mongodb/actions/Blog";
-import { getUserFromToken } from "../../../../server/mongodb/actions/User";
+
+import {
+  verifyToken,
+  getUserFromToken,
+} from "../../../../server/mongodb/actions/User";
 
 // @route   GET POST DELETE api/blogs
 // @desc    Blog Creation, Retrieval, or Deletion
@@ -36,7 +40,10 @@ const handler = (req, res) => {
       );
   } else if (req.method === "PUT") {
     if (req.body.action === "REORDER_BLOGS") {
-      return reorderBlogs(req.body.blogs)
+      const token = req.cookies.token;
+
+      return verifyToken(token)
+        .then(() => reorderBlogs(req.body.blogs))
         .then(() => res.status(200).json({ success: true }))
         .catch((error) =>
           res.status(400).json({ success: false, message: error.message })

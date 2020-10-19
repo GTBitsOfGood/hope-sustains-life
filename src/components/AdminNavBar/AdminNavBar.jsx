@@ -4,13 +4,11 @@ import PropTypes from "prop-types";
 import NavLink from "../NavLink";
 import routes from "./routes";
 import styles from "./AdminNavBar.module.css";
-import logo from "./HSL-logo.png";
-import adminLogo from "./Admin-Logo.png";
 
 const AdminNavBar = ({ loggedIn, currentRoute }) => (
   <div>
     <div className={styles.root}>
-      <img src={logo}></img>
+      <img src="/static/hsl-logo-white.png"></img>
       {routes
         // .filter((route) => (loggedIn && route.auth) || (!loggedIn && !route.auth))
         .map(({ name, link }) => (
@@ -22,7 +20,7 @@ const AdminNavBar = ({ loggedIn, currentRoute }) => (
                   : styles.route
               )}
             >
-              {name === "Admin" && <img src={adminLogo}></img>}
+              {name === "Admin" && <img src="/static/admin-logo.png"></img>}
               {name}
             </div>
           </NavLink>

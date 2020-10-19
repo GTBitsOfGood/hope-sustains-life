@@ -7,7 +7,7 @@ import { getBlogs } from "../../../actions/Blog";
 
 const Blogs = ({ blogs }) => (
   <>
-    <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminBlogs} />
+    <AdminNavBar loggedIn={true} currentRoute={urls.pages.admin.blogs} />
     <BlogTable blogs={blogs || []} />
   </>
 );

@@ -51,7 +51,7 @@ const NewBlogPage = () => {
         false,
         cloudinaryImage
       );
-      router.replace(urls.pages.adminHome);
+      router.replace(urls.pages.admin.home);
     } catch (error) {
       window.alert(error.message);
     } finally {
@@ -71,7 +71,7 @@ const NewBlogPage = () => {
         true,
         cloudinaryImage
       );
-      router.replace(urls.pages.adminHome);
+      router.replace(urls.pages.admin.home);
     } catch (error) {
       window.alert(error.message);
     } finally {

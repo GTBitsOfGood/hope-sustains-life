@@ -1,12 +1,13 @@
 import React from "react";
 import { Form, Col, Container, Button } from "react-bootstrap";
 import styles from "./ProfilePage.module.css";
+import urls from "../../../../utils/urls";
 
 const ProfilePage = () => {
   return (
     <div>
       <Container className={styles.container}>
-        <Button href="/blognews" variant="link">
+        <Button href={urls.pages.blogNews} variant="link">
           Back
         </Button>
       </Container>

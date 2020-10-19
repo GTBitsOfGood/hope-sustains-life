@@ -5,7 +5,7 @@ import urls from "../../../utils/urls";
 const donations = () => {
   return (
     <>
-      <AdminNavBar loggedIn={true} currentRoute={urls.pages.adminDonations} />
+      <AdminNavBar loggedIn={true} currentRoute={urls.pages.admin.donations} />
       <p>This will list donations</p>
     </>
   );

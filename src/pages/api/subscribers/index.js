@@ -1,25 +1,24 @@
 import {
-  getBlogById,
-  deleteBlogById,
-} from "../../../../server/mongodb/actions/Blog";
+  getSubscribers,
+  addSubscriber,
+} from "../../../../server/mongodb/actions/Subscribers";
 
 import { verifyToken } from "../../../../server/mongodb/actions/User";
 
-// @route   GET POST DELETE api/blogs/:id
-// @desc    Blog Retrieval, Update, or Deletion
-// @access  Admin
 const handler = (req, res) => {
   if (req.method === "GET") {
-    return getBlogById(req.query.id)
+    const token = req.cookies.token;
+
+    return verifyToken(token)
+      .then(() => getSubscribers())
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })
       );
-  } else if (req.method === "DELETE") {
-    const token = req.cookies.token;
+  } else if (req.method === "POST") {
+    const email = req.body.email;
 
-    return verifyToken(token)
-      .then(() => deleteBlogById(req.query.id))
+    return addSubscriber(email)
       .then(() => res.status(200).json({ success: true }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })
