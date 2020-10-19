@@ -4,6 +4,7 @@ import { Button, Row, Col, Image } from "react-bootstrap";
 import TanzaniaImage from "../../../public/static/tanzania.jpg";
 import BangledeshImage from "../../../public/static/bangledesh.jpg";
 import HaitiImage from "../../../public/static/haiti.jpg";
+import urls from "../../../utils/urls";
 
 const IndexPage = () => (
   <>
@@ -16,7 +17,7 @@ const IndexPage = () => (
         <Col></Col>
         <Col md="auto">
           <Button
-            href="/learnmore"
+            href={urls.pages.learnMore}
             className="btn btn-success centerButton"
             type="submit"
           >
@@ -28,14 +29,14 @@ const IndexPage = () => (
     </div>
     <div className={classes.space}></div>
     <div className={classes.images}>
-      <a href="/about/tanzania">
+      <a href={urls.pages.tanzania}>
         <Image src={TanzaniaImage} className="pictures" fluid />
         <div className="centered">Tanzania</div>
       </a>
-      <a href="/about/bangledesh">
+      <a href={urls.pages.bangledesh}>
         <Image src={BangledeshImage} className="pictures" fluid />
       </a>
-      <a href="/about/haiti">
+      <a href={urls.pages.haiti}>
         <Image src={HaitiImage} className="pictures" fluid />
       </a>
     </div>

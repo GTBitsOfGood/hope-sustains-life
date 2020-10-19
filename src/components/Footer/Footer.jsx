@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Image, Container, Row, Col } from "react-bootstrap";
 import styles from "./Footer.module.css";
-import logo from "./non-white globe-green_.png";
 import { Link, Router } from "react-router-dom";
-import facebookLogo from "./facebook.svg";
-import instagramLogo from "./instagram.svg";
-import twitterLogo from "./twitter.svg";
-import youtubeLogo from "./youtube.svg";
+import facebookLogo from "./icons/facebook.svg";
+import instagramLogo from "./icons/instagram.svg";
+import twitterLogo from "./icons/twitter.svg";
+import youtubeLogo from "./icons/youtube.svg";
+import urls from "../../../utils/urls";
 
 const Footer = () => {
   return (
@@ -15,35 +15,35 @@ const Footer = () => {
         <Row>
           <Col>
             <div className={styles.image}>
-              <Image src={logo}></Image>
+              <Image src="/static/hsl-logo-transparent.png"></Image>
             </div>
           </Col>
 
           <Col>
             <div className={styles.header}>ABOUT US</div>
-            <div className={styles.sublinks} href="/ourstory">
+            <div className={styles.sublinks} href={urls.pages.ourStory}>
               OUR STORY
             </div>
-            <div className={styles.sublinks} href="/blognews">
+            <div className={styles.sublinks} href={urls.pages.blogNews}>
               BLOG/NEWS
             </div>
-            <div className={styles.sublinks} href="/ourstory">
+            <div className={styles.sublinks} href={urls.pages.ourStory}>
               OUR STORY
             </div>
           </Col>
 
           <Col>
-            <div className={styles.header} href="/ourwork">
+            <div className={styles.header} href={urls.pages.ourWork}>
               OUR WORK
             </div>
           </Col>
 
           <Col>
             <div className={styles.header}>GET INVOLVED</div>
-            <div className={styles.sublinks} href="/joinclassroo">
+            <div className={styles.sublinks} href={urls.pages.joinClassroom}>
               JOIN THE CLASSROOM
             </div>
-            <div className={styles.sublinks} href="/joinlibrary">
+            <div className={styles.sublinks} href={urls.pages.joinLibrary}>
               JOIN THE LIBRARY
             </div>
           </Col>

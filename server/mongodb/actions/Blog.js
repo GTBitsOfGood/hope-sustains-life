@@ -17,7 +17,8 @@ export async function createBlog(
   subtitle,
   body,
   references,
-  isPublished
+  isPublished,
+  image
 ) {
   if (author == null || title == null || subtitle == null || body == null) {
     throw new Error("Author, title, subtitle, and body must be provided");
@@ -33,6 +34,7 @@ export async function createBlog(
       body: body,
       references: references,
       isPublished: isPublished,
+      image: image,
     });
   } catch (error) {
     throw new Error(error.message);

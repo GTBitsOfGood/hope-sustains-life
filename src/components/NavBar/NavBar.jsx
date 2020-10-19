@@ -12,7 +12,7 @@ import {
   Col,
 } from "react-bootstrap";
 import Link from "next/link";
-import logo from "./non-white globe-green_.png";
+import urls from "../../../utils/urls";
 
 const { Brand, Toggle, Collapse } = Navbar;
 
@@ -20,7 +20,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar className="navbar-stuff" expand="xl">
-        <Image src={logo}></Image>
+        <Image src="/static/hsl-logo-transparent.png"></Image>
         <Toggle aria-controls="basic-navbar-nav" />
         <Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -32,19 +32,19 @@ const NavBar = () => {
                     title="ABOUT US"
                     id="basic-nav-dropdown"
                   >
-                    <Link href="/ourstory" passHref>
+                    <Link href={urls.pages.ourStory} passHref>
                       <NavDropdown.Item>OUR STORY</NavDropdown.Item>
                     </Link>
-                    <Link href="/blognews" passHref>
+                    <Link href={urls.pages.blogNews} passHref>
                       <NavDropdown.Item>BLOG/NEWS</NavDropdown.Item>
                     </Link>
-                    <Link href="/hundredpromise" passHref>
+                    <Link href={urls.pages.hundredPromise} passHref>
                       <NavDropdown.Item>100% PROMISE</NavDropdown.Item>
                     </Link>
                   </NavDropdown>
                 </Col>
                 <Col md="auto">
-                  <Link href="/ourwork" passHref>
+                  <Link href={urls.pages.ourWork} passHref>
                     <Nav.Link>OUR WORK</Nav.Link>
                   </Link>
                 </Col>
@@ -54,16 +54,16 @@ const NavBar = () => {
                     title="GET INVOLVED"
                     id="basic-nav-dropdown"
                   >
-                    <Link href="/joinclassroom" passHref>
+                    <Link href={urls.pages.joinClassroom} passHref>
                       <NavDropdown.Item>JOIN THE CLASSROOM</NavDropdown.Item>
                     </Link>
-                    <Link href="/joinlibrary" passHref>
+                    <Link href={urls.pages.joinLibrary} passHref>
                       <NavDropdown.Item>JOIN THE LIBRARY</NavDropdown.Item>
                     </Link>
                   </NavDropdown>
                 </Col>
                 <Col>
-                  <Link href="/donate" passHref>
+                  <Link href={urls.pages.donate} passHref>
                     <Button className="btn btn-success" type="submit">
                       Donate
                     </Button>

@@ -21,12 +21,12 @@ export const getBlogs = () =>
     });
 
 export const createBlog = (
-  author,
   title,
   subtitle,
   body,
   references,
-  isPublished
+  isPublished,
+  image
 ) =>
   fetch(urls.baseUrl + urls.api.blogs.index, {
     method: "POST",
@@ -36,12 +36,12 @@ export const createBlog = (
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      author,
       title,
       subtitle,
       body,
       references,
       isPublished,
+      image,
     }),
   })
     .then((response) => response.json())
@@ -52,7 +52,7 @@ export const createBlog = (
         throw new Error(json.message);
       }
 
-      return json.payload;
+      return;
     });
 
 export const deleteBlogById = (id) =>
@@ -72,14 +72,13 @@ export const deleteBlogById = (id) =>
         throw new Error(json.message);
       }
 
-      return json.payload;
+      return;
     });
 
 export const getBlogById = (id) =>
   fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
     method: "GET",
     mode: "same-origin",
-    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
@@ -91,6 +90,7 @@ export const getBlogById = (id) =>
       } else if (!json.success) {
         throw new Error(json.message);
       }
+
       return json.payload;
     });
 
@@ -113,13 +113,15 @@ export const publishBlog = (id, isPublished) =>
       } else if (!json.success) {
         throw new Error(json.message);
       }
-      return json.payload;
+
+      return;
     });
 
 export const reorderBlogs = async (blogs) =>
   fetch(urls.baseUrl + urls.api.blogs.index, {
     method: "PUT",
     mode: "same-origin",
+    credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
