@@ -4,9 +4,13 @@ import { Draggable } from "react-beautiful-dnd";
 import Link from "next/link";
 import classes from "./blog.module.css";
 import { Button } from "react-bootstrap";
+import { publishBlog } from "../../actions/Blog";
 
 const BlogTableRow = ({ blog, index, onDeleteClick }) => {
-  const { _id, title, date } = blog;
+  const { _id, title, isPublished } = blog;
+  const [published, setPublished] = React.useState(isPublished);
+  const [isLoading, setLoading] = React.useState(false);
+
   const getItemStyle = (isDragging) => ({
     // change background colour if dragging
     background: isDragging ? "lightgray" : "transparent",
@@ -27,6 +31,18 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
     // styles we need to apply on draggables
     // ...draggableStyle
   });
+
+  const publish = () => {
+    setLoading(true);
+
+    publishBlog(_id, !published)
+      .then(() => {
+        setPublished(!published);
+      })
+      .catch((error) => window.alert(error.message));
+
+    setLoading(false);
+  };
 
   return (
     <Draggable draggableId={blog._id} index={index}>
@@ -50,7 +66,13 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
               </button>
             </div>
             <div>
-              <Button className={classes.unpublishButton}>Unpublish</Button>
+              <Button
+                className={classes.unpublishButton}
+                disabled={isLoading}
+                onClick={publish}
+              >
+                {isLoading ? "..." : published ? "Unpublish" : "Publish"}
+              </Button>
             </div>
           </div>
         </div>
