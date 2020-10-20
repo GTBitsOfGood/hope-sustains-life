@@ -25,6 +25,7 @@ export default {
     tanzania: "/about/tanzania",
     bangledesh: "/about/bangledesh",
     haiti: "/about/haiti",
+    contactUs: "/contactus",
   },
   api: {
     user: {
