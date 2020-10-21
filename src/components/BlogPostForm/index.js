@@ -12,6 +12,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
   const [body, setBody] = React.useState(blogPost?.body);
   const [uploadedImage, setUploadedImage] = React.useState();
   const [references, setReferences] = React.useState(blogPost?.references);
+  const [deleteOriginalImage, setDeleteOriginalImage] = React.useState(false);
   const [saving, setSaving] = React.useState(false);
 
   const uploadImage = async () => {
@@ -47,7 +48,8 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
         body,
         references,
         false,
-        cloudinaryImage
+        cloudinaryImage,
+        deleteOriginalImage
       );
     } catch (error) {
       window.alert(error.message);
@@ -108,6 +110,9 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
       <ImageUploader
         uploadedImage={uploadedImage}
         setUploadedImage={setUploadedImage}
+        originalImageURL={blogPost?.image?.url}
+        deleteOriginalImage={deleteOriginalImage}
+        setDeleteOriginalImage={setDeleteOriginalImage}
       />
       <Form.Group controlId="blogTitle">
         <Form.Label>Title</Form.Label>
@@ -126,7 +131,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
         <Form.Control
           type="text"
           className={classes.subtitle}
-          placeholder={"Insert Subtitle"}
+          placeholder={"Enter Subtitle"}
           value={subtitle}
           onChange={(event) => setSubtitle(event.target.value)}
           required
@@ -145,7 +150,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
         <Form.Control
           type="text"
           className={classes.referencesContainer}
-          placeholder={"Insert Subtitle"}
+          placeholder={"Enter Subtitle"}
           value={references}
           onChange={(e) => setReferences(e.target.value)}
         />
