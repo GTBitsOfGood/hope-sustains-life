@@ -55,6 +55,21 @@ export const createBlog = (
       return;
     });
 
+export const updateBlog = (
+  id,
+  title,
+  subtitle,
+  body,
+  references,
+  isPublished,
+  image,
+  deleteOriginalImage
+) => {
+  // TODO - make necessary API calls to update the blog
+  // If deleteOriginalImage is true, delete original image from Cloudinary on backend
+  throw new Error("API to update Blog has not been implemented");
+};
+
 export const deleteBlogById = (id) =>
   fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
     method: "DELETE",

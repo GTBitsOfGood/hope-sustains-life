@@ -2,6 +2,10 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import {
+  showSuccessNotification,
+  showErrorNotification,
+} from "../../../utils/notifications";
 import TextEditor from "../TextEditor";
 import ImageUploader from "../ImageUploader";
 import classes from "./blogPostForm.module.css";
@@ -41,6 +45,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
   const saveBlog = async () => {
     try {
       setSaving(true);
+      showSuccessNotification("Saving blog post");
       const cloudinaryImage = await uploadImage();
       await handleSavePublish(
         title,
@@ -52,7 +57,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
         deleteOriginalImage
       );
     } catch (error) {
-      window.alert(error.message);
+      showErrorNotification(error.message);
     } finally {
       setSaving(false);
     }
@@ -61,6 +66,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
   const publishBlog = async () => {
     try {
       setSaving(true);
+      showSuccessNotification("Publishing blog post");
       const cloudinaryImage = await uploadImage();
       await handleSavePublish(
         title,
@@ -68,10 +74,11 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
         body,
         references,
         true,
-        cloudinaryImage
+        cloudinaryImage,
+        deleteOriginalImage
       );
     } catch (error) {
-      window.alert(error.message);
+      showErrorNotification(error.message);
     } finally {
       setSaving(false);
     }

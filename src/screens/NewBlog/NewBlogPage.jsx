@@ -13,21 +13,18 @@ const NewBlogPage = () => {
     body,
     references,
     isPublished,
-    cloudinaryImage
+    cloudinaryImage,
+    deleteOriginalImage = false // This is used by EditBlogPage handler
   ) => {
-    try {
-      await createBlog(
-        title,
-        subtitle,
-        body,
-        references,
-        isPublished,
-        cloudinaryImage
-      );
-      router.replace(urls.pages.admin.blogs);
-    } catch (error) {
-      window.alert(error.message);
-    }
+    await createBlog(
+      title,
+      subtitle,
+      body,
+      references,
+      isPublished,
+      cloudinaryImage
+    );
+    router.replace(urls.pages.admin.blogs);
   };
 
   return <BlogPostForm handleSavePublish={handleSavePublish} />;

@@ -1,44 +1,53 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextEditor from "../../components/TextEditor";
-import classes from "./EditBlogPage.module.css";
 import { useRouter } from "next/router";
-import { createBlog } from "../../actions/Blog";
+import BlogPostForm from "../../components/BlogPostForm";
+import { updateBlog } from "../../actions/Blog";
 import urls from "../../../utils/urls";
 
-const EditBlogPage = ({ blogTitle, blogBody }) => {
-  const [title, setTitle] = React.useState(blogTitle);
-  const [body, setBody] = React.useState(blogBody);
+const EditBlogPage = ({ blogPost }) => {
   const router = useRouter();
 
-  const handleSave = () => {
-    return createBlog(title, body)
-      .then(() => router.replace(urls.pages.admin.home))
-      .catch((error) => window.alert(error.message));
+  const handleSavePublish = async (
+    title,
+    subtitle,
+    body,
+    references,
+    setPublished,
+    cloudinaryImage,
+    deleteOriginalImage
+  ) => {
+    await updateBlog(
+      blogPost._id,
+      title,
+      subtitle,
+      body,
+      references,
+      setPublished || blogPost.isPublished, // If user clicks save, setPublished will be false so use previous value for the blog published
+      cloudinaryImage,
+      deleteOriginalImage // this flag is necessary if user does not add new image and deletes the previous one
+    );
+    router.replace(urls.pages.admin.blogs);
   };
 
   return (
-    <div className={classes.blogContainer}>
-      <div className={classes.buttonContainer}>
-        <button onClick={handleSave} className={classes.blogButton}>
-          Save & Finish
-        </button>
-      </div>
-      <div className={classes.titleContainer}>
-        <input
-          className={classes.title}
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-      </div>
-      <TextEditor value={body} onChange={(newBody) => setBody(newBody)} />
-    </div>
+    <BlogPostForm handleSavePublish={handleSavePublish} blogPost={blogPost} />
   );
 };
 
 EditBlogPage.propTypes = {
-  blogTitle: PropTypes.string.isRequired,
-  blogBody: PropTypes.string.isRequired,
+  blogPost: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    references: PropTypes.string,
+    image: PropTypes.shape({
+      asset_id: PropTypes.string,
+      url: PropTypes.string,
+    }),
+    isPublished: PropTypes.bool,
+  }),
 };
 
 export default EditBlogPage;
