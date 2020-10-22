@@ -6,12 +6,13 @@
   width: 60%;
   margin: auto;
   margin-bottom: 5%;
-  margin-top: 10%;
+  margin-top: 6%;
   display: block;
 }
 .backButton {
   background-color: transparent;
   border-color: transparent;
+  margin-left: 5%;
 }
 .arrow {
   border: solid black;
