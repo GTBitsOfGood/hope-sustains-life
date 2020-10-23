@@ -16,13 +16,12 @@ export async function sendContactEmail(email, name, message) {
     body: JSON.stringify({
       personalizations: [
         {
-          to: [{ email: "placeholder@gmail.com" }],
+          to: [{ email: process.env.TO_ADDRESS }],
           subject: `[HSL] New Contact from ${name}`,
         },
       ],
       from: {
-        email: "placeholder@gmail.com",
-        name: "placeholder",
+        email: process.env.FROM_ADDRESS,
       },
       content: [
         {
@@ -32,13 +31,21 @@ export async function sendContactEmail(email, name, message) {
       ],
     }),
   })
-    .then((response) => response.json())
-    .then((json) => {
-      if ("errors" in json) {
-        // SendGrid can respond with multiple errors, let's deal with one at a time
-        const errorMessage = json.errors[0].message;
+    .then((response) => response.text())
+    .then((text) => {
+      if (text) {
+        const json = JSON.parse(text);
 
-        throw new Error(errorMessage);
+        if ("errors" in json) {
+          // SendGrid can respond with multiple errors, let's deal with one at a time
+          const errorMessage = json.errors[0].message;
+
+          throw new Error(errorMessage);
+        }
+
+        return json;
       }
+
+      return {};
     });
 }
