@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import classes from "./ContactUs.module.css";
+import { sendContactEmail } from "../../actions/Email";
 
 const ContactUs = () => {
   const [name, setName] = React.useState("");
@@ -9,7 +10,8 @@ const ContactUs = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    return sendMessage(name, email, message)
+
+    return sendContactEmail(email, name, message)
       .then(() => window.alert("Message sent successfully!"))
       .catch((error) => window.alert(error.message));
   };
