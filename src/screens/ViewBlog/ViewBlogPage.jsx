@@ -23,7 +23,7 @@ const ViewBlogPage = ({ image, title, subtitle, body, references }) => {
       )}
       <div className={styles.headAndBodyContainer}>
         <h1 style={{ textAlign: "center", fontWeight: "bold" }}>{title}</h1>
-        <h4 style={{ textAlign: "center" }}>{subtitle}</h4>
+        <h5 style={{ textAlign: "center" }}>{subtitle}</h5>
         <br />
         <div dangerouslySetInnerHTML={{ __html: body }} />
         {references && (
