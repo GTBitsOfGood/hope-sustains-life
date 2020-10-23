@@ -1,9 +1,11 @@
 import React from "react";
-import ContactUs from "../../components/ContactUs";
+import ContactUs from "../components/ContactUs/ContactUs";
 
 const ContactUsPage = () => (
   <>
-    <ContactUs />
+    <div>
+      <ContactUs />
+    </div>
   </>
 );
 

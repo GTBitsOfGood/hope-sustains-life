@@ -15,9 +15,10 @@ const ContactUs = () => {
   };
   return (
     <>
-      <Card>
-        <h1 className={classes.title}>Contact Us</h1>
-        <p>
+    <div style={{alignItems:"center"}}>
+      <Card border="light" style={{width: '50rem', borderRadius: "30px", alignItems: "center"}} className={classes.container}>
+        <Card.Title style={{fontSize: "40px"}} className={classes.title}>Contact Us</Card.Title>
+        <p style={{width: "400px"}}>
           If you have questions or just want to get in touch, use the form
           below. We look forward to hearing from you!
         </p>
@@ -29,10 +30,12 @@ const ContactUs = () => {
               id="name"
               type="name"
               value={name}
-              placeholder="Name"
+              size="51"
+              placeholder=" Name"
               onChange={(event) => setName(event.target.value)}
             />
           </div>
+          <br/>
           <div className={classes.input}>
             <input
               className={classes.inputText}
@@ -40,26 +43,34 @@ const ContactUs = () => {
               id="email"
               type="email"
               value={email}
-              placeholder="E-Mail"
+              size="51"
+              placeholder=" E-Mail"
               onChange={(event) => setEmail(event.target.value)}
             />
           </div>
-          <div className={classes.input}>
-            <input
+          <br/>
+          <div className={classes.inputMessage}>
+            <textarea
               className={classes.inputText}
               required
               id="Message"
               type="Message"
               value={message}
-              placeholder="Message"
+              size="50"
+              cols="50"
+              rows="10"
+              placeholder=" Message"
               onChange={(event) => setMessage(event.target.value)}
             />
           </div>
+          <br/>
           <button className={classes.submit} type="submit">
             Submit
           </button>
         </form>
       </Card>
+    </div>
+      
     </>
   );
 };
