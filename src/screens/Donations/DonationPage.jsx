@@ -14,12 +14,13 @@ const DonationPage = () => {
   const donationAmts = ["$25", "$50", "$100", "$150"];
   //const [mobile, setMobile] = React.useState(false);
 
-  const isMobile = async () => {
+  const isMobile = () => {
     //setMobile(await displayMobileView);
-    const mobile = await displayMobileView();
+    const mobile = displayMobileView();
     console.log("Is mobile: " + mobile);
     return mobile;
   };
+
   return (
     <div>
       <div className={styles.container}>
@@ -65,10 +66,10 @@ const DonationPage = () => {
                 />
               </Form.Group>
             </div>
-
             <Button className={styles.donationFreqButtons}>
               Complete Donation
             </Button>
+            <div>{isMobile() && <h1> yoyoyo </h1>}</div>
           </div>
         </Elements>
       </div>
