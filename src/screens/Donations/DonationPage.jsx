@@ -6,11 +6,20 @@ import styles from "./DonationPage.module.css";
 import { Button } from "react-bootstrap";
 import PaymentDetails from "./PaymentDetails";
 import Information from "./Information";
+import { displayMobileView } from "../../../utils/screen.js";
 
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
 const DonationPage = () => {
   const donationAmts = ["$25", "$50", "$100", "$150"];
+  //const [mobile, setMobile] = React.useState(false);
+
+  const isMobile = async () => {
+    //setMobile(await displayMobileView);
+    const mobile = await displayMobileView();
+    console.log("Is mobile: " + mobile);
+    return mobile;
+  };
   return (
     <div>
       <div className={styles.container}>
