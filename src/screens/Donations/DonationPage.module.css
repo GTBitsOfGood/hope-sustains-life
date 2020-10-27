@@ -52,3 +52,25 @@
   margin-top: 40px;
   text-align: center;
 }
+
+.mobileContainer {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  background-image: url("../../../public/static/donate.jpg");
+  background-size: 100%;
+}
+.mobileElements {
+  background-color: white;
+  width: 90%;
+  border-radius: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+  margin-top: 25%;
+}
