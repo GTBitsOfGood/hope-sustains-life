@@ -12,20 +12,46 @@ const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
 const DonationPage = () => {
   const donationAmts = ["$25", "$50", "$100", "$150"];
-  //const [mobile, setMobile] = React.useState(false);
 
   const isMobile = () => {
-    //setMobile(await displayMobileView);
     const mobile = displayMobileView();
     console.log("Is mobile: " + mobile);
     return mobile;
   };
 
+  const mobileView = isMobile();
+
   return (
     <div>
-      <div className={styles.container}>
+      <div className={mobileView ? styles.mobileContainer : styles.container}>
         <Elements stripe={stripePromise}>
-          <div className={styles.elements}>
+          {mobileView && (
+            <div>
+              <h4
+                style={{
+                  textAlign: "right",
+                  marginTop: 90,
+                  color: "#03AB99",
+                  fontWeight: "bold",
+                }}
+              >
+                For the ones in need
+              </h4>
+              <p
+                style={{
+                  textAlign: "left",
+                  width: "70%",
+                  position: "absolute",
+                  right: 0,
+                }}
+              >
+                <label style={{ backgroundColor: "white" }}> 100% </label>
+                &nbsp; of your money goes to funding our educational projects
+                for the refugee population.
+              </p>
+            </div>
+          )}
+          <div className={mobileView ? styles.mobileElements : styles.elements}>
             <h3 style={{ textAlign: "center", marginBottom: 40 }}>
               Donate to Hope Sustains Life
             </h3>
@@ -47,11 +73,12 @@ const DonationPage = () => {
               </Button>
             </div>
             <br></br>
+
             <h5 className={styles.headers}>Your Information</h5>
             <Information />
             <h5 className={styles.headers}>Payment Details</h5>
-
             <PaymentDetails />
+
             <div className="agreements">
               <Form.Group controlId="matchesDonation">
                 <Form.Check
@@ -69,7 +96,6 @@ const DonationPage = () => {
             <Button className={styles.donationFreqButtons}>
               Complete Donation
             </Button>
-            <div>{isMobile() && <h1> yoyoyo </h1>}</div>
           </div>
         </Elements>
       </div>
