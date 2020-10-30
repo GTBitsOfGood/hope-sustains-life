@@ -28,6 +28,11 @@
     font-size: 18px;
 }
 
+.header a:link, .header a:visited, .header a:hover, .header a:active {
+    text-decoration: none;
+    color: #009d91;
+}
+
 .sublinks {
     padding-top: 10px;
     color: white;
@@ -35,6 +40,11 @@
     font-style: normal;
     font-weight: 100;
     font-size: 10px;
+}
+
+.sublinks a:link, .sublinks a:visited, .sublinks a:hover, .sublinks a:active {
+    text-decoration: none;
+    color: white;
 }
 
 .social {
@@ -47,3 +57,7 @@
     align-self: flex-end;
 }
 
+.verticalLine {
+    border-left: 1px solid #666666;
+    padding-right: 20px;
+}

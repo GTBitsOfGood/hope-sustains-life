@@ -31,7 +31,6 @@ const IndexPage = () => (
     <div className={classes.images}>
       <a href={urls.pages.tanzania}>
         <Image src={TanzaniaImage} className="pictures" fluid />
-        <div className="centered">Tanzania</div>
       </a>
       <a href={urls.pages.bangledesh}>
         <Image src={BangledeshImage} className="pictures" fluid />
