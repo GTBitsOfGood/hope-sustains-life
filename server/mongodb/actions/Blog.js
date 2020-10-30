@@ -64,7 +64,12 @@ export async function deleteBlogById(id) {
   await mongoDB();
 
   try {
-    return await BlogPost.findByIdAndDelete(id);
+    const blogToRemove = await BlogPost.findById(id);
+    if (blogToRemove?.image?.public_id) {
+      deleteImage(blogToRemove.image.public_id);
+    }
+
+    return await blogToRemove.remove();
   } catch (error) {
     throw new Error(error.message);
   }
