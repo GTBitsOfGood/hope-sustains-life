@@ -14,7 +14,7 @@ const ContactFaq = () => {
           FAQ
         </Card.Title>
         <Accordion defaultActiveKey="0">
-          <Card>
+          <Card style={{ textAlign: "center" }}>
             <Card.Header>
               <Accordion.Toggle
                 className={classes.question}
@@ -29,7 +29,7 @@ const ContactFaq = () => {
               <Card.Body>Answer 1</Card.Body>
             </Accordion.Collapse>
           </Card>
-          <Card>
+          <Card style={{ textAlign: "center" }}>
             <Card.Header>
               <Accordion.Toggle
                 className={classes.question}
@@ -44,7 +44,7 @@ const ContactFaq = () => {
               <Card.Body>Answer 2</Card.Body>
             </Accordion.Collapse>
           </Card>
-          <Card>
+          <Card style={{ textAlign: "center" }}>
             <Card.Header>
               <Accordion.Toggle
                 className={classes.question}
