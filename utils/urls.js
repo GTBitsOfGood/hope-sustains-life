@@ -42,5 +42,8 @@ export default {
     subscribers: {
       index: "/api/subscribers",
     },
+    email: {
+      contactUs: "/api/email/contact-us",
+    },
   },
 };

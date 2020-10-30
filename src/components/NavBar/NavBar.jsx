@@ -60,6 +60,9 @@ const NavBar = () => {
                     <Link href={urls.pages.joinLibrary} passHref>
                       <NavDropdown.Item>JOIN THE LIBRARY</NavDropdown.Item>
                     </Link>
+                    <Link href={urls.pages.contactUs} passHref>
+                      <NavDropdown.Item>CONTACT US</NavDropdown.Item>
+                    </Link>
                   </NavDropdown>
                 </Col>
                 <Col>
