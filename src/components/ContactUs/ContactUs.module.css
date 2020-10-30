@@ -1,7 +1,7 @@
 .pictures {
   height: 681px;
-  width: 1700px;
-  /* max-width: 100%;  */
+  /* width: 1700px; */
+  width: 100%;
   flex-shrink: 0;
   align-content: stretch;
   justify-content: stretch;
@@ -37,22 +37,6 @@
   display: flex;
   margin-top: 100px; */
 }
-
-.title2 {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 49px;
-  color: #03AB99;
-  align-items: center;
-  text-align: center;
-  margin-top: 100px;
-  /*margin-left: 720px;
-  display: flex;
-  margin-top: 100px; */
-}
-
 
 .container {
   align-items: center;

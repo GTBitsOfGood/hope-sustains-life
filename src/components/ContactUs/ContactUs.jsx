@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, Image, Card, Button } from "react-bootstrap";
+import { Accordion, Image, Card, Button, Row } from "react-bootstrap";
 import classes from "./ContactUs.module.css";
 import { sendContactEmail } from "../../actions/Email";
 import ContactUsImage from "../../../public/static/contactus.png";
@@ -19,7 +19,9 @@ const ContactUs = () => {
   return (
     <>
       <div>
-        <Image src={ContactUsImage} className={classes.pictures} fluid />
+        <Row>
+          <Image src={ContactUsImage} className={classes.pictures} fluid />
+        </Row>
 		  </div>
       <div style={{ alignItems: "center" }}>
         <Card
