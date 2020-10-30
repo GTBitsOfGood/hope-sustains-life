@@ -18,51 +18,51 @@ const Footer = () => {
               <Image src="/static/hsl-logo-transparent.png"></Image>
             </div>
           </Col>
-		  
-		  <div className={styles.verticalLine} />
+
+          <div className={styles.verticalLine} />
 
           <Col>
             <div className={styles.header}>ABOUT US</div>
             <div className={styles.sublinks}>
-				<Link href={urls.pages.ourStory} passHref>
-				  OUR STORY
-				</Link>
+              <Link href={urls.pages.ourStory} passHref>
+                OUR STORY
+              </Link>
             </div>
             <div className={styles.sublinks}>
-				<Link href={urls.pages.blogNews} passHref>
-				  BLOG/NEWS
-				</Link>
+              <Link href={urls.pages.blogNews} passHref>
+                BLOG/NEWS
+              </Link>
             </div>
             <div className={styles.sublinks}>
-				<Link href={urls.pages.hundredPromise} passHref>
-				  100% PROMISE
-				</Link>
+              <Link href={urls.pages.hundredPromise} passHref>
+                100% PROMISE
+              </Link>
             </div>
           </Col>
 
           <Col>
             <div className={styles.header}>
-			<Link href={urls.pages.ourWork} passHref>
-              OUR WORK
-			</Link>
+              <Link href={urls.pages.ourWork} passHref>
+                OUR WORK
+              </Link>
             </div>
           </Col>
 
           <Col>
             <div className={styles.header}>GET INVOLVED</div>
             <div className={styles.sublinks}>
-				<Link href={urls.pages.joinClassroom} passHref>
-					JOIN THE CLASSROOM
-				</Link>
+              <Link href={urls.pages.joinClassroom} passHref>
+                JOIN THE CLASSROOM
+              </Link>
             </div>
             <div className={styles.sublinks}>
-				<Link href={urls.pages.joinLibrary} passHref>
-					JOIN THE LIBRARY
-				</Link>
+              <Link href={urls.pages.joinLibrary} passHref>
+                JOIN THE LIBRARY
+              </Link>
             </div>
           </Col>
-		  
-		  <Col />
+
+          <Col />
 
           <Col>
             <div className={styles.social}>FOLLOW US</div>
