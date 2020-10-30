@@ -67,6 +67,35 @@ export const updateBlog = (
 ) => {
   // TODO - make necessary API calls to update the blog
   // If deleteOriginalImage is true, delete original image from Cloudinary on backend
+  fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
+    method: "PUT",
+    mode: "same-origin",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title,
+      subtitle,
+      body,
+      references,
+      isPublished,
+      image,
+      deleteOriginalImage,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      if (json == null) {
+        throw new Error("Could not connect to API!");
+      } else if (!json.success) {
+        throw new Error(json.message);
+      }
+
+      return;
+    });
+ 
+  
   throw new Error("API to update Blog has not been implemented");
 };
 

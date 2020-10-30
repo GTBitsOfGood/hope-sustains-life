@@ -102,3 +102,45 @@ export async function setPublished(blogId, isPublished) {
     throw new Error(error.message);
   }
 }
+
+export async function updateBlog(
+  author,
+  title,
+  subtitle,
+  body,
+  references,
+  isPublished,
+  image,
+  blogId,
+  deleteOriginalImage
+) {
+  await mongoDB();
+
+  if (author == null || title == null || subtitle == null || body == null || blogId == null || deleteOriginalImage == null) {
+    throw new Error("Author, title, subtitle, and body must be provided");
+  } else if (deleteOriginalImage){
+    let oldBlog = await BlogPost.findById(blogId);
+    let image_id = oldBlog?.image?.asset_id
+    let params_to_sign = {used_id: image_id, timestamp: new Date().getTime()}
+    let signature = cloudinary.utils.api_sign_request(params_to_sign, process.env.CLOUDINARY_API_SECRET);
+  
+    cloudinary.v2.uploader.destroy(image_id, signature);
+
+  }
+
+  
+
+  try {
+    return BlogPost.findByIdAndUpdate(blogId, {
+      author: author,
+      title: title,
+      subtitle: subtitle,
+      body: body,
+      references: references,
+      isPublished: isPublished,
+      image: image,
+    });
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
