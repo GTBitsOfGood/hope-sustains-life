@@ -1,11 +1,16 @@
-.pictures {
-    height: 500px;
-    min-width: 100%;
+.picture {
+  height: 200px;
+  min-width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .picture {
+    height: 550px;
   }
+}
 
 .mainContainer {
-    background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

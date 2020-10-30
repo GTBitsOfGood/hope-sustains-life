@@ -1,17 +1,15 @@
 import React from "react";
-import { Image } from "react-bootstrap";
 import ContactUs from "../../components/ContactUs";
 import ContactFaq from "../..//components/ContactFaq";
 import styles from "./ContactUsPage.module.css";
 import ContactUsImage from "../../../public/static/contactus.png";
 import classes from "./ContactUsPage.module.css";
-import { displayMobileView } from "../../../utils/screen.js";
 
 const ContactUsPage = () => {
   return (
     <>
       <div>
-        <Image src={ContactUsImage} className={classes.pictures} fluid />
+        <img src={ContactUsImage} className={classes.picture} />
       </div>
       <div className={styles.mainContainer}>
         <ContactUs />

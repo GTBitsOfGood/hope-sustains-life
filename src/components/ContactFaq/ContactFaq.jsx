@@ -4,72 +4,55 @@ import classes from "./ContactFaq.module.css";
 
 const ContactFaq = () => {
   return (
-    <div style={{ alignItems: "center" }}>
-      <Card
-        border="light"
-        style={{
-          width: "100%",
-          borderRadius: "40px",
-          alignItems: "center",
-          marginTop: "100px",
-        }}
-        className={classes.container}
-      >
-        <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
-          FAQs
-        </Card.Title>
-        <Accordion defaultActiveKey="0">
-          <Card style={{ textAlign: "center" }}>
-            <Card.Header>
-              <Accordion.Toggle
-                className={classes.question}
-                as={Button}
-                variant="link"
-                eventKey="0"
-              >
-                <a className={classes.question}>Where does my donation go?</a>
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>Answer 1</Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card style={{ textAlign: "center" }}>
-            <Card.Header>
-              <Accordion.Toggle
-                className={classes.question}
-                as={Button}
-                variant="link"
-                eventKey="1"
-              >
-                <a className={classes.question}>
-                  What is the difference between the Classroom and the Library?
-                </a>
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>Answer 2</Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card style={{ textAlign: "center" }}>
-            <Card.Header>
-              <Accordion.Toggle
-                className={classes.question}
-                as={Button}
-                variant="link"
-                eventKey="2"
-              >
-                <a className={classes.question}>
-                  What is the difference between the Classroom and the Library?
-                </a>
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="2">
-              <Card.Body>Answer 3</Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
-      </Card>
+    <div className={classes.card}>
+      <h2 className={classes.title}>FAQs</h2>
+      <Accordion defaultActiveKey="0">
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle
+              className={classes.question}
+              as={Button}
+              variant="link"
+              eventKey="0"
+            >
+              Where does my donation go?
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body>Answer 1</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle
+              className={classes.question}
+              as={Button}
+              variant="link"
+              eventKey="1"
+            >
+              What is the difference between the Classroom and the Library?
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body>Answer 2</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle
+              className={classes.question}
+              as={Button}
+              variant="link"
+              eventKey="2"
+            >
+              What is the difference between the Classroom and the Library?
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="2">
+            <Card.Body>Answer 3</Card.Body>
+          </Accordion.Collapse>
+        </Card>
+      </Accordion>
     </div>
   );
 };

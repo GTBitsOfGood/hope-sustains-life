@@ -1,17 +1,11 @@
 import React from "react";
 import classes from "./ContactUs.module.css";
 import { sendContactEmail } from "../../actions/Email";
-import { displayMobileView } from "../../../utils/screen.js";
 
 const ContactUs = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
-
-  let isMobile = false;
-  if (displayMobileView()) {
-    isMobile = true;
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,14 +16,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div
-      style={{
-        width: isMobile ? "100%" : "600px",
-        padding: isMobile ? "50px 10px" : "50px 100px",
-        marginTop: isMobile ? "0px" : "-150px",
-      }}
-      className={classes.card}
-    >
+    <div className={classes.card}>
       <h1 className={classes.title}>Contact Us</h1>
       <p>
         If you have questions or just want to get in touch, use the form below.
