@@ -17,7 +17,7 @@ const EditBlogPage = ({ blogPost }) => {
     cloudinaryImage,
     deleteOriginalImage
   ) => {
-    await updateBlog(
+    updateBlog(
       blogPost._id,
       title,
       subtitle,
@@ -26,8 +26,7 @@ const EditBlogPage = ({ blogPost }) => {
       setPublished || blogPost.isPublished, // If user clicks save, setPublished will be false so use previous value for the blog published
       cloudinaryImage,
       deleteOriginalImage // this flag is necessary if user does not add new image and deletes the previous one
-    );
-    router.replace(urls.pages.admin.blogs);
+    ).then(() => router.replace(urls.pages.admin.blogs));
   };
 
   return (
@@ -43,7 +42,7 @@ EditBlogPage.propTypes = {
     body: PropTypes.string.isRequired,
     references: PropTypes.string,
     image: PropTypes.shape({
-      asset_id: PropTypes.string,
+      public_id: PropTypes.string,
       url: PropTypes.string,
     }),
     isPublished: PropTypes.bool,

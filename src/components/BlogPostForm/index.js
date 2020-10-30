@@ -35,11 +35,11 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
       );
       const image = await res.json();
       return {
-        asset_id: image["asset_id"],
+        public_id: image["public_id"],
         url: image["secure_url"],
       };
     }
-    return null;
+    return {};
   };
 
   const saveBlog = async () => {
@@ -174,7 +174,7 @@ BlogPostForm.propTypes = {
     body: PropTypes.string.isRequired,
     references: PropTypes.string,
     image: PropTypes.shape({
-      asset_id: PropTypes.string,
+      public_id: PropTypes.string,
       url: PropTypes.string,
     }),
   }),
