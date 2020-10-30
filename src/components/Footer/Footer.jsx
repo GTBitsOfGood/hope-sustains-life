@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Image, Container, Row, Col } from "react-bootstrap";
 import styles from "./Footer.module.css";
-import { Link, Router } from "react-router-dom";
 import facebookLogo from "./icons/facebook.svg";
 import instagramLogo from "./icons/instagram.svg";
 import twitterLogo from "./icons/twitter.svg";
 import youtubeLogo from "./icons/youtube.svg";
 import urls from "../../../utils/urls";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,35 +18,51 @@ const Footer = () => {
               <Image src="/static/hsl-logo-transparent.png"></Image>
             </div>
           </Col>
+		  
+		  <div className={styles.verticalLine} />
 
           <Col>
             <div className={styles.header}>ABOUT US</div>
-            <div className={styles.sublinks} href={urls.pages.ourStory}>
-              OUR STORY
+            <div className={styles.sublinks}>
+				<Link href={urls.pages.ourStory} passHref>
+				  OUR STORY
+				</Link>
             </div>
-            <div className={styles.sublinks} href={urls.pages.blogNews}>
-              BLOG/NEWS
+            <div className={styles.sublinks}>
+				<Link href={urls.pages.blogNews} passHref>
+				  BLOG/NEWS
+				</Link>
             </div>
-            <div className={styles.sublinks} href={urls.pages.ourStory}>
-              OUR STORY
+            <div className={styles.sublinks}>
+				<Link href={urls.pages.hundredPromise} passHref>
+				  100% PROMISE
+				</Link>
             </div>
           </Col>
 
           <Col>
-            <div className={styles.header} href={urls.pages.ourWork}>
+            <div className={styles.header}>
+			<Link href={urls.pages.ourWork} passHref>
               OUR WORK
+			</Link>
             </div>
           </Col>
 
           <Col>
             <div className={styles.header}>GET INVOLVED</div>
-            <div className={styles.sublinks} href={urls.pages.joinClassroom}>
-              JOIN THE CLASSROOM
+            <div className={styles.sublinks}>
+				<Link href={urls.pages.joinClassroom} passHref>
+					JOIN THE CLASSROOM
+				</Link>
             </div>
-            <div className={styles.sublinks} href={urls.pages.joinLibrary}>
-              JOIN THE LIBRARY
+            <div className={styles.sublinks}>
+				<Link href={urls.pages.joinLibrary} passHref>
+					JOIN THE LIBRARY
+				</Link>
             </div>
           </Col>
+		  
+		  <Col />
 
           <Col>
             <div className={styles.social}>FOLLOW US</div>
