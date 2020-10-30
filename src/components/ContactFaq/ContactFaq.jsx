@@ -8,7 +8,7 @@ const ContactFaq = () => {
       <Card
         border="light"
         style={{
-          width: "40rem",
+          width: "100%",
           borderRadius: "40px",
           alignItems: "center",
           marginTop: "100px",
