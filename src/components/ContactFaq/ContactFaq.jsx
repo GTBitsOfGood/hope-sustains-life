@@ -11,7 +11,7 @@ const ContactFaq = () => {
         className={classes.container}
       >
         <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
-          FAQ
+          FAQs
         </Card.Title>
         <Accordion defaultActiveKey="0">
           <Card style={{ textAlign: "center" }}>
@@ -22,7 +22,7 @@ const ContactFaq = () => {
                 variant="link"
                 eventKey="0"
               >
-                Where does my donation go?
+                <a className={classes.question}>Where does my donation go?</a>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
@@ -37,7 +37,9 @@ const ContactFaq = () => {
                 variant="link"
                 eventKey="1"
               >
-                What is the difference between the Classroom and the Library?
+                <a className={classes.question}>
+                  What is the difference between the Classroom and the Library?
+                </a>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="1">
@@ -52,7 +54,9 @@ const ContactFaq = () => {
                 variant="link"
                 eventKey="2"
               >
-                What is the difference between the Classroom and the Library?
+                <a className={classes.question}>
+                  What is the difference between the Classroom and the Library?
+                </a>
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="2">
