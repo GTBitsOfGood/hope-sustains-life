@@ -5,6 +5,8 @@ import { getWindowSize } from "../src/components/WindowSize";
  * NOTE: any component that calls this method should be dynamically imported.
  * This will allow it to capture the client's browser data
  */
-export const displayMobileView = () => {
+const displayMobileView = () => {
   return getWindowSize().width < 600;
 };
+
+export default displayMobileView;
