@@ -9,7 +9,8 @@
 }
 
 .question {
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 18px;
   line-height: 23px;
   color: #03AB99;

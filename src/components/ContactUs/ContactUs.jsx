@@ -20,7 +20,12 @@ const ContactUs = () => {
     <>
       <Card
         border="light"
-        style={{ width: "40rem", borderRadius: "40px", alignItems: "center" }}
+        style={{
+          width: "40rem",
+          borderRadius: "40px",
+          alignItems: "center",
+          marginTop: "-150px",
+        }}
         className={classes.container}
       >
         <Card.Title style={{ fontSize: "40px" }} className={classes.title}>

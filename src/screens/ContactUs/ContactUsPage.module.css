@@ -1,3 +1,13 @@
+.pictures {
+    height: 681px;
+    width: 1700px;
+    min-width: 100%;
+    flex-shrink: 0;
+    align-content: stretch;
+    justify-content: stretch;
+    flex-wrap: wrap;
+  }
+
 .mainContainer {
     background-color: whitesmoke;
     display: flex;

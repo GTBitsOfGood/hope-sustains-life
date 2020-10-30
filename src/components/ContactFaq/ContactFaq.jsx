@@ -7,7 +7,12 @@ const ContactFaq = () => {
     <div style={{ alignItems: "center" }}>
       <Card
         border="light"
-        style={{ width: "40rem", borderRadius: "40px", alignItems: "center" }}
+        style={{
+          width: "40rem",
+          borderRadius: "40px",
+          alignItems: "center",
+          marginTop: "100px",
+        }}
         className={classes.container}
       >
         <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
