@@ -8,11 +8,20 @@
   flex-wrap: wrap;
 }
 
-.faq {
+/* .faq {
   height: 700px;
   width: 800px;
   margin-top: 100px;
   margin-left: 400px;
+} */
+
+.question {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #03AB99;
 }
 
 .title {
@@ -23,18 +32,25 @@
   line-height: 49px;
   color: #03AB99;
   align-items: center;
+  text-align: center;
   /*margin-left: 720px;
   display: flex;
   margin-top: 100px; */
 }
 
-.question {
+.title2 {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 40px;
+  line-height: 49px;
   color: #03AB99;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+  /*margin-left: 720px;
+  display: flex;
+  margin-top: 100px; */
 }
 
 
