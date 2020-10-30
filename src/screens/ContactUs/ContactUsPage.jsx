@@ -5,6 +5,7 @@ import ContactFaq from "../..//components/ContactFaq";
 import styles from "./ContactUsPage.module.css";
 import ContactUsImage from "../../../public/static/contactus.png";
 import classes from "./ContactUsPage.module.css";
+import { displayMobileView } from "../../../utils/screen.js";
 
 const ContactUsPage = () => {
   return (
