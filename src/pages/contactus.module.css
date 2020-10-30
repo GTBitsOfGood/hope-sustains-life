@@ -1,0 +1,49 @@
+.pictures {
+    height: 681px;
+    width: 1700px;
+    /* max-width: 100%;  */
+    flex-shrink: 0;
+    align-content: stretch;
+    justify-content: stretch;
+    flex-wrap: wrap;
+}
+
+.faq {
+    height: 700px;
+    width: 800px;
+    margin-top: 100px;
+    margin-left: 400px;
+}
+
+.question {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #03AB99;
+}
+
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    display: flex;
+    align-items: flex-end;
+    color: #03AB99;
+    margin-left: 720px;
+    margin-top: 100px;
+}
+
+/* .general {
+    background-image: url("../../public/static/rectangle-faq.png");
+    background-color: red;
+    margin: 0;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+} */
