@@ -15,7 +15,6 @@ const DonationPage = () => {
 
   const isMobile = () => {
     const mobile = displayMobileView();
-    console.log("Is mobile: " + mobile);
     return mobile;
   };
 
