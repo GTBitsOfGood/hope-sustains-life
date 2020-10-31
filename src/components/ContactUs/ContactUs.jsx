@@ -1,9 +1,7 @@
 import React from "react";
-import { Image, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import classes from "./ContactUs.module.css";
 import { sendContactEmail } from "../../actions/Email";
-import FAQAccordion from "./FAQAccordion";
-import ContactUsImage from "../../../public/static/contactus.png"
 
 const ContactUs = () => {
   const [name, setName] = React.useState("");
@@ -19,13 +17,10 @@ const ContactUs = () => {
   };
   return (
     <>
-    <div>
-      <Image src={ContactUsImage} className={classes.pictures} fluid />
-    </div>
       <div style={{ alignItems: "center" }}>
         <Card
           border="light"
-          style={{ width: "40rem", borderRadius: "40px", alignItems: "center", marginTop: "-150px" }}
+          style={{ width: "40rem", borderRadius: "40px", alignItems: "center"}}
           className={classes.container}
         >
           <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
@@ -81,16 +76,6 @@ const ContactUs = () => {
               Submit
             </button>
           </form>
-        </Card>
-        <Card
-          border="light"
-          style={{ width: "80rem", borderRadius: "40px", alignItems: "center" }}
-          className={classes.container}
-        >
-          <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
-            Frequently Asked Questions
-          </Card.Title>
-        <FAQAccordion/>
         </Card>
       </div>    
     </>

@@ -9,10 +9,24 @@
 }
 
 .faq {
-  margin-bottom: 150px;
-  margin-top: 50px;
+  height: 700px;
+  width: 800px;
+  margin-top: 100px;
+  margin-left: 400px;
 }
 
+.title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 49px;
+  color: #03AB99;
+  align-items: center;
+  /*margin-left: 720px;
+  display: flex;
+  margin-top: 100px; */
+}
 
 .question {
   font-family: Montserrat;
