@@ -55,6 +55,45 @@ export const createBlog = (
       return;
     });
 
+export const updateBlog = async (
+  id,
+  title,
+  subtitle,
+  body,
+  references,
+  isPublished,
+  image,
+  deleteOriginalImage
+) => {
+  fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
+    method: "PUT",
+    mode: "same-origin",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title,
+      subtitle,
+      body,
+      references,
+      isPublished,
+      image,
+      deleteOriginalImage,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      if (json == null) {
+        throw new Error("Could not connect to API!");
+      } else if (!json.success) {
+        throw new Error(json.message);
+      }
+
+      return;
+    });
+};
+
 export const deleteBlogById = (id) =>
   fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
     method: "DELETE",

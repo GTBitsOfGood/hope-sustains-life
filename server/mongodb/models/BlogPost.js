@@ -35,7 +35,7 @@ const BlogPostSchema = new Schema({
     type: Number,
   },
   image: {
-    asset_id: String, // This uniquely identifies image asset in Cloudinary
+    public_id: String, // This uniquely identifies image asset in Cloudinary
     url: String,
   },
 });

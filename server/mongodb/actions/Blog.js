@@ -1,5 +1,6 @@
 import mongoDB from "../index";
 import BlogPost from "../models/BlogPost";
+import { deleteImage } from "../../actions/cloudinary";
 
 export async function getBlogs() {
   await mongoDB();
@@ -63,7 +64,12 @@ export async function deleteBlogById(id) {
   await mongoDB();
 
   try {
-    return await BlogPost.findByIdAndDelete(id);
+    const blogToRemove = await BlogPost.findById(id);
+    if (blogToRemove?.image?.public_id) {
+      deleteImage(blogToRemove.image.public_id);
+    }
+
+    return await blogToRemove.remove();
   } catch (error) {
     throw new Error(error.message);
   }
@@ -98,6 +104,50 @@ export async function setPublished(blogId, isPublished) {
     return await BlogPost.findByIdAndUpdate(blogId, {
       isPublished: isPublished,
     });
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function updateBlog(
+  author,
+  title,
+  subtitle,
+  body,
+  references,
+  isPublished,
+  image,
+  blogId,
+  deleteOriginalImage
+) {
+  await mongoDB();
+
+  if (author == null || title == null || subtitle == null || body == null) {
+    throw new Error("Author, title, subtitle, and body must be provided");
+  }
+
+  const updateParams = {
+    author,
+    title,
+    subtitle,
+    body,
+    references,
+    isPublished,
+  };
+
+  try {
+    if (deleteOriginalImage) {
+      const oldBlog = await BlogPost.findById(blogId);
+      const image_id = oldBlog?.image?.public_id;
+
+      if (image_id) {
+        deleteImage(image_id);
+      }
+
+      updateParams["image"] = image;
+    }
+
+    return BlogPost.findByIdAndUpdate(blogId, updateParams);
   } catch (error) {
     throw new Error(error.message);
   }

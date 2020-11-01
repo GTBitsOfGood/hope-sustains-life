@@ -1,0 +1,25 @@
+.headAndBodyContainer {
+  padding-left: 11%;
+  padding-right: 11%;
+}
+.imageFormat {
+  width: 65%;
+  margin: auto;
+  margin-bottom: 5%;
+  margin-top: 6%;
+  display: block;
+}
+.backButton {
+  background-color: transparent;
+  border-color: transparent;
+  margin-left: 5%;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-right: 5px;
+}
