@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Image, Container, Row, Col } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
 import styles from "./Footer.module.css";
 import facebookLogo from "./icons/facebook.svg";
 import instagramLogo from "./icons/instagram.svg";
@@ -9,9 +9,70 @@ import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
 
-
 const Footer = () => {
   const mobileView = displayMobileView();
+
+  const linkContents = (
+    <>
+      <Col>
+        <div className={styles.header}>ABOUT US</div>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.ourStory} passHref>
+            OUR STORY
+          </Link>
+        </div>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.blogNews} passHref>
+            BLOG/NEWS
+          </Link>
+        </div>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.hundredPromise} passHref>
+            100% PROMISE
+          </Link>
+        </div>
+      </Col>
+
+      <Col>
+        <div className={styles.header}>
+          <Link href={urls.pages.ourWork} passHref>
+            OUR WORK
+          </Link>
+        </div>
+      </Col>
+
+      <Col>
+        <div className={styles.header}>GET INVOLVED</div>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.joinClassroom} passHref>
+            JOIN THE CLASSROOM
+          </Link>
+        </div>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.joinLibrary} passHref>
+            JOIN THE LIBRARY
+          </Link>
+        </div>
+      </Col>
+    </>
+  );
+
+  const socialIcons = (
+    <Row>
+      <div className={styles.icon}>
+        <Image src={facebookLogo}></Image>
+      </div>
+      <div className={styles.icon}>
+        <Image src={instagramLogo}></Image>
+      </div>
+      <div className={styles.icon}>
+        <Image src={twitterLogo}></Image>
+      </div>
+      <div className={styles.icon}>
+        <Image src={youtubeLogo}></Image>
+      </div>
+    </Row>
+  );
 
   const normalContents = (
     <div className={styles.footer}>
@@ -22,68 +83,14 @@ const Footer = () => {
               <Image src="/static/hsl-logo-transparent.png"></Image>
             </div>
           </Col>
-		  
-		  <div className={styles.verticalLine} />
 
-          <Col>
-            <div className={styles.header}>ABOUT US</div>
-            <div className={styles.sublinks}>
-				<Link href={urls.pages.ourStory} passHref>
-				  OUR STORY
-				</Link>
-            </div>
-            <div className={styles.sublinks}>
-				<Link href={urls.pages.blogNews} passHref>
-				  BLOG/NEWS
-				</Link>
-            </div>
-            <div className={styles.sublinks}>
-				<Link href={urls.pages.hundredPromise} passHref>
-				  100% PROMISE
-				</Link>
-            </div>
-          </Col>
+          <div className={styles.verticalLine} />
 
-          <Col>
-            <div className={styles.header}>
-			<Link href={urls.pages.ourWork} passHref>
-              OUR WORK
-			</Link>
-            </div>
-          </Col>
-
-          <Col>
-            <div className={styles.header}>GET INVOLVED</div>
-            <div className={styles.sublinks}>
-				<Link href={urls.pages.joinClassroom} passHref>
-					JOIN THE CLASSROOM
-				</Link>
-            </div>
-            <div className={styles.sublinks}>
-				<Link href={urls.pages.joinLibrary} passHref>
-					JOIN THE LIBRARY
-				</Link>
-            </div>
-          </Col>
-		  
-		  <Col />
-
+          {linkContents}
+          <Col />
           <Col>
             <div className={styles.social}>FOLLOW US</div>
-            <Row>
-              <div className={styles.icon}>
-                <Image src={facebookLogo}></Image>
-              </div>
-              <div className={styles.icon}>
-                <Image src={instagramLogo}></Image>
-              </div>
-              <div className={styles.icon}>
-                <Image src={twitterLogo}></Image>
-              </div>
-              <div className={styles.icon}>
-                <Image src={youtubeLogo}></Image>
-              </div>
-            </Row>
+            {socialIcons}
           </Col>
         </Row>
       </Container>
@@ -94,97 +101,29 @@ const Footer = () => {
     <div className={styles.footer}>
       <Container>
         <Row>
-        <Col>
-          <div className={styles.social}>FOLLOW US</div>
-        </Col>
-
-        <Col>
-            
-            <Row>
-              <div className={styles.icon}>
-                <Image src={facebookLogo}></Image>
-              </div>
-              <div className={styles.icon}>
-                <Image src={instagramLogo}></Image>
-              </div>
-              <div className={styles.icon}>
-                <Image src={twitterLogo}></Image>
-              </div>
-              <div className={styles.icon}>
-                <Image src={youtubeLogo}></Image>
-              </div>
-            </Row>
-          </Col>
-
-      </Row>
-          
-		  
-		  <div className={styles.horizontalLine} />
-
-      <Row>
-        <Col>
-            <div className={styles.mobileHeader}>ABOUT US</div>
-            <div className={styles.mobileSublinks}>
-				<Link href={urls.pages.ourStory} passHref>
-				  OUR STORY
-				</Link>
-            </div>
-            <div className={styles.mobileSublinks}>
-				<Link href={urls.pages.blogNews} passHref>
-				  BLOG/NEWS
-				</Link>
-            </div>
-            <div className={styles.mobileSublinks}>
-				<Link href={urls.pages.hundredPromise} passHref>
-				  100% PROMISE
-				</Link>
-            </div>
-       </Col>
-
           <Col>
-            <div className={styles.mobileHeader}>
-			<Link href={urls.pages.ourWork} passHref>
-              OUR WORK
-			</Link>
-            </div>
+            <div className={styles.social}>FOLLOW US</div>
           </Col>
 
-          <Col>
-            <div className={styles.mobileHeader}>GET INVOLVED</div>
-            <div className={styles.mobileSublinks}>
-				<Link href={urls.pages.joinClassroom} passHref>
-					JOIN THE CLASSROOM
-				</Link>
-            </div>
-            <div className={styles.mobileSublinks}>
-				<Link href={urls.pages.joinLibrary} passHref>
-					JOIN THE LIBRARY
-				</Link>
-            </div>
-          </Col>
-		  
-	    	<Col />
+          <Col>{socialIcons}</Col>
+        </Row>
 
+        <div className={styles.horizontalLine} />
+
+        <Row>
+          {linkContents}
+          <Col />
           <Col>
             <div className={styles.mobileImage}>
               <Image src="/static/hsl-logo-transparent.png"></Image>
             </div>
           </Col>
-
-      </Row>
-
-     
-        
+        </Row>
       </Container>
     </div>
   );
 
-  if (mobileView){
-    return mobileContents;
-  } else {
-    return normalContents
-  }
-
+  return mobileView ? mobileContents : normalContents;
 };
 
 export default Footer;
