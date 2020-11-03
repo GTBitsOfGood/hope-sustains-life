@@ -4,7 +4,7 @@ import EditBlogPage from "../../../../screens/EditBlog";
 import { getBlogById } from "../../../../actions/Blog";
 
 const EditPost = ({ blogPost }) => {
-  return <EditBlogPage blogTitle={blogPost?.title} blogBody={blogPost?.body} />;
+  return <EditBlogPage blogPost={blogPost} />;
 };
 
 EditPost.getInitialProps = async ({ query }) => {

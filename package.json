@@ -33,6 +33,8 @@
     "@stripe/stripe-js": "^1.9.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.3",
+    "cloudinary": "^1.23.0",
+    "cloudinary-react": "^1.6.7",
     "clsx": "^1.1.1",
     "dotenv": "^8.2.0",
     "focus-visible": "^5.1.0",

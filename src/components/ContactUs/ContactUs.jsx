@@ -1,9 +1,6 @@
 import React from "react";
-import { Image, Card } from "react-bootstrap";
 import classes from "./ContactUs.module.css";
 import { sendContactEmail } from "../../actions/Email";
-import FAQAccordion from "./FAQAccordion";
-import ContactUsImage from "../../../public/static/contactus.png"
 
 const ContactUs = () => {
   const [name, setName] = React.useState("");
@@ -17,83 +14,55 @@ const ContactUs = () => {
       .then(() => window.alert("Message sent successfully!"))
       .catch((error) => window.alert(error.message));
   };
+
   return (
-    <>
-    <div>
-      <Image src={ContactUsImage} className={classes.pictures} fluid />
+    <div className={classes.card}>
+      <h1 className={classes.title}>Contact Us</h1>
+      <p>
+        If you have questions or just want to get in touch, use the form below.
+        We look forward to hearing from you!
+      </p>
+      <form onSubmit={handleSubmit} className={classes.form}>
+        <input
+          className={classes.input}
+          required
+          id="name"
+          type="name"
+          value={name}
+          size="51"
+          placeholder=" Name"
+          onChange={(event) => setName(event.target.value)}
+        />
+        <br />
+        <input
+          className={classes.input}
+          required
+          id="email"
+          type="email"
+          value={email}
+          size="51"
+          placeholder=" E-Mail"
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <br />
+        <textarea
+          className={classes.inputMessage}
+          required
+          id="Message"
+          type="Message"
+          value={message}
+          size="50"
+          cols="50"
+          rows="10"
+          placeholder=" Message"
+          onChange={(event) => setMessage(event.target.value)}
+        />
+        <br />
+        <button className={classes.submit} type="submit">
+          Submit
+        </button>
+      </form>
     </div>
-      <div style={{ alignItems: "center" }}>
-        <Card
-          border="light"
-          style={{ width: "40rem", borderRadius: "40px", alignItems: "center", marginTop: "-150px" }}
-          className={classes.container}
-        >
-          <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
-            Contact Us
-          </Card.Title>
-          <p style={{ width: "420px"}}>
-            If you have questions or just want to get in touch, use the form
-            below. We look forward to hearing from you!
-          </p>
-          <form onSubmit={handleSubmit}>
-            <div className={classes.input}>
-              <input
-                className={classes.inputText}
-                required
-                id="name"
-                type="name"
-                value={name}
-                size="51"
-                placeholder=" Name"
-                onChange={(event) => setName(event.target.value)}
-              />
-            </div>
-            <br />
-            <div className={classes.input}>
-              <input
-                className={classes.inputText}
-                required
-                id="email"
-                type="email"
-                value={email}
-                size="51"
-                placeholder=" E-Mail"
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </div>
-            <br />
-            <div className={classes.inputMessage}>
-              <textarea
-                className={classes.inputText}
-                required
-                id="Message"
-                type="Message"
-                value={message}
-                size="50"
-                cols="50"
-                rows="10"
-                placeholder=" Message"
-                onChange={(event) => setMessage(event.target.value)}
-              />
-            </div>
-            <br />
-            <button className={classes.submit} type="submit">
-              Submit
-            </button>
-          </form>
-        </Card>
-        <Card
-          border="light"
-          style={{ width: "80rem", borderRadius: "40px", alignItems: "center" }}
-          className={classes.container}
-        >
-          <Card.Title style={{ fontSize: "40px" }} className={classes.title}>
-            Frequently Asked Questions
-          </Card.Title>
-        <FAQAccordion/>
-        </Card>
-      </div>    
-    </>
   );
 };
 

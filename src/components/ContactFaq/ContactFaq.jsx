@@ -1,12 +1,12 @@
 import React from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
-import classes from "./ContactUs.module.css";
+import { Accordion, Button, Card } from "react-bootstrap";
+import classes from "./ContactFaq.module.css";
 
-const FAQAccordion = () => (
-  <>
-
-    <div className={classes.faq} style={{width: "80%"}}>
-      <Accordion defaultActiveKey="0" className={classes.faq}>
+const ContactFaq = () => {
+  return (
+    <div className={classes.card}>
+      <h2 className={classes.title}>FAQs</h2>
+      <Accordion defaultActiveKey="0">
         <Card>
           <Card.Header>
             <Accordion.Toggle
@@ -54,6 +54,7 @@ const FAQAccordion = () => (
         </Card>
       </Accordion>
     </div>
-  </>
-);
-export default FAQAccordion;
+  );
+};
+
+export default ContactFaq;

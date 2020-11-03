@@ -1,12 +1,3 @@
-import React from "react";
-import ContactUs from "../components/ContactUs/ContactUs";
-
-const ContactUsPage = () => (
-  <>
-    <div>
-      <ContactUs />
-    </div>
-  </>
-);
+import ContactUsPage from "../screens/ContactUs";
 
 export default ContactUsPage;
