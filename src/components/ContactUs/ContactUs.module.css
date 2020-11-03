@@ -1,71 +1,42 @@
-.pictures {
-  height: 681px;
-  width: 1700px;
-  min-width: 100%;
-  flex-shrink: 0;
-  align-content: stretch;
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   justify-content: stretch;
-  flex-wrap: wrap;
+  align-items: center;
+  padding: 50px 10px;
+  width: 100%;
 }
 
-.faq {
-  height: 700px;
-  width: 800px;
-  margin-top: 100px;
-  margin-left: 400px;
+@media screen and (min-width: 600px) {
+  .card {
+    width: 600px;
+    padding: 50px 100px;
+    margin-top: -200px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .title {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 49px;
+  line-height: 50px;
   color: #03AB99;
-  align-items: center;
-  /*margin-left: 720px;
+}
+
+.form {
   display: flex;
-  margin-top: 100px; */
-}
-
-.question {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  color: #03AB99;
-}
-
-
-.container {
-  align-items: center;
-  text-align: left;
-  margin-top: 180px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
 }
 
 
 .input {
-  margin: 0 auto;
   opacity: 0.5;
-  line-height: 28px;
-  border-radius: 10px;
-  /*
-  border: 1px solid #969696;
-  box-sizing: border-box;
-  border-radius: 5px;
-  outline: none;
-  */
+  line-height: 30px;
 }
 
 .inputMessage {
-  margin: 0 auto;
   opacity: 0.5;
 }
 
@@ -74,11 +45,5 @@
   background: #03AB99;
   border-radius: 5px;
   border: none;
-  text-align: center;
-  margin: auto; 
-  display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 10px 80px;
 }
