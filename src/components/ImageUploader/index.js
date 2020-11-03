@@ -19,8 +19,32 @@ import {
  * Upon uploading the image, a preview is generated for the uploaded image.
  * It currently supports uploading 1 image file at a time.
  */
-const ImageUploader = ({ uploadedImage, setUploadedImage }) => {
+const ImageUploader = ({
+  uploadedImage,
+  setUploadedImage,
+  originalImageURL,
+  deleteOriginalImage,
+  setDeleteOriginalImage,
+}) => {
   const [uploading, setUploading] = React.useState(false);
+
+  let imagePreviewUrl = uploadedImage?.tmpURL;
+  // If delete flag is not set for original image and there is no new uploaded image, use original image
+  if (!deleteOriginalImage && !uploadedImage && originalImageURL) {
+    imagePreviewUrl = originalImageURL;
+  }
+
+  const removeImage = () => {
+    setUploadedImage(null);
+    setDeleteOriginalImage(true);
+  };
+
+  // User decides to keep the original image as is.
+  // Update delete flag to false for original image and removed uploaded image
+  const resetImage = () => {
+    setDeleteOriginalImage(false);
+    setUploadedImage(null);
+  };
 
   // callback function when the user drops image to the dropzone or uploads it
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
@@ -41,6 +65,8 @@ const ImageUploader = ({ uploadedImage, setUploadedImage }) => {
       };
 
       reader.onload = () => {
+        // On successful upload of new image, set delete flag for original image
+        setDeleteOriginalImage(true);
         setUploadedImage(
           Object.assign(file, {
             tmpURL: URL.createObjectURL(file),
@@ -117,14 +143,19 @@ const ImageUploader = ({ uploadedImage, setUploadedImage }) => {
     <div className="my-3">
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
-        {uploadedImage?.tmpURL ? (
-          <img src={uploadedImage.tmpURL} style={imagePreview} />
+        {imagePreviewUrl ? (
+          <img src={imagePreviewUrl} style={imagePreview} />
         ) : (
           customDropZone
         )}
       </div>
-      {uploadedImage?.tmpURL && (
-        <Button variant="danger" block onClick={() => setUploadedImage(null)}>
+      {originalImageURL && imagePreviewUrl !== originalImageURL && (
+        <Button variant="primary" block onClick={resetImage}>
+          Reset
+        </Button>
+      )}
+      {imagePreviewUrl && (
+        <Button variant="danger" block onClick={removeImage}>
           Remove
         </Button>
       )}
@@ -141,6 +172,9 @@ ImageUploader.propTypes = {
     tmpURL: PropTypes.string, // Use URL.createObjectURL(imageFile) to generate URL if not available
     imgBuffer: PropTypes.string | PropTypes.object,
   }),
+  originalImageURL: PropTypes.string, // Image to show if there is no uploadedImage
+  deleteOriginalImage: PropTypes.bool.isRequired, // Flag to indicate to delete original image
+  setDeleteOriginalImage: PropTypes.func.isRequired, // Update flag to indicate whether to delete original image or not
 };
 
 export default ImageUploader;
