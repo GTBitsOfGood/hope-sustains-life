@@ -1,15 +1,22 @@
 
 .navbar-stuff {
-    background: #2A2D39;
-    opacity: 0.8;
+    background-color: rgba(42, 45, 57, 0.8);
     color: white;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    line-height: 21px;
-    position: absolute;
+    text-align: center;
     width: 100%;
+    padding-left: 0
+}
+
+img.mobile-logo {
+    display: none;
+}
+
+.navbar-stuff img {
+    height: 100%;
 }
 
 #basic-navbar-nav a {     
@@ -21,4 +28,13 @@
 
 .dropdown:hover>.dropdown-menu {
     display: block;
-  }
+}
+
+@media(max-width: 599px) {
+    img.large-logo {
+        display: none;
+    }
+    img.mobile-logo {
+        display: block;
+    }
+}
