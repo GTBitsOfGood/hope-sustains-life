@@ -15,7 +15,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "normalize.css";
 import "../../public/static/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../components/NavBar/Navbar.css";
 
 const MyApp = ({ Component, pageProps, router, currentUser }) => (
   <>
