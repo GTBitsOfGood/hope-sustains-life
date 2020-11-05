@@ -39,6 +39,17 @@
     line-height: 27px;
 }
 
+
+.pageContainer{
+    background-image: url("../../../public/static/For\ all\ events\ section\ background.jpg");
+    background-size: 50vh;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+
+}
+
+
 /* Our Story/Issue CSS */
 .centerContent {
     display: flex;
