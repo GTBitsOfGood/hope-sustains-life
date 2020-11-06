@@ -42,11 +42,10 @@
 
 .pageContainer{
     background-image: url("../../../public/static/For\ all\ events\ section\ background.jpg");
-    background-size: 50vh;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-
 }
 
 

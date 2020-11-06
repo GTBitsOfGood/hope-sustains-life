@@ -15,6 +15,16 @@
 
 }
 
+.pageContainer{
+    background-image: url("../../../public/static/Homepage\ Background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: -100px;
+    background-origin: inherit;
+
+}
+
 .general {
     background-image: url("../../../public/static/home-bg.jpg");
     margin: 0;
