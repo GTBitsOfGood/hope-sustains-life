@@ -109,7 +109,7 @@ const OurStoryPage = () => (
       <Row style={{marginLeft: "150px", marginRight: "150px"}}>
         <Col className={classes.leftContent}>
           {/* <div className={classes.Bernard}></div> */}
-          <Image src={BernardImage} style={{maxWidth: "500px"}} className={classes.pictures} fluid />
+          <Image src={BernardImage} style={{maxWidth: "500px"}} className={classes.pictures} fluid rounded />
         </Col>
         <Col md={4} className={classes.leftContent}>
           <h1>Bernard Michel</h1>
@@ -131,7 +131,7 @@ const OurStoryPage = () => (
 
       <Row style={{marginLeft: "150px", marginRight: "150px"}}>
         <Col className={classes.leftContent}>
-          <Image src={TheodoreImage} style={{maxWidth: "500px"}} className="pictures" fluid />
+          <Image src={TheodoreImage} style={{maxWidth: "500px"}} className="pictures" fluid rounded/>
         </Col>
         <Col md={4} className={classes.leftContent}>
           <h1>Theodore Michel</h1>

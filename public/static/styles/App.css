@@ -69,6 +69,10 @@ img.mobile-logo {
   background-color: rgba(42, 45, 57, 0.45);
 }
 
+.navbar-nav .dropdown-item.active {
+  background-color: transparent;
+}
+
 @media (max-width: 599px) {
   img.large-logo {
     display: none;

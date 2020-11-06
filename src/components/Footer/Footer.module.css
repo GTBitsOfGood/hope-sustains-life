@@ -64,9 +64,13 @@
 }
 
 
-.sublinks a:link, .sublinks a:visited, .sublinks a:hover, .sublinks a:active {
+.sublinks a:link, .sublinks a:visited, .sublinks a:active {
     text-decoration: none;
     color: white;
+}
+
+.sublinks a:hover {
+    text-decoration: underline;
 }
 
 .social {
