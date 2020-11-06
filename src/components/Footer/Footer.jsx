@@ -18,17 +18,17 @@ const Footer = () => {
         <div className={styles.header}>ABOUT US</div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.ourStory} passHref>
-            OUR STORY
+            <a>Our Story</a>
           </Link>
         </div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.blogNews} passHref>
-            BLOG/NEWS
+            <a>Blogs/News</a>
           </Link>
         </div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.hundredPromise} passHref>
-            100% PROMISE
+            <a>100% Promise</a>
           </Link>
         </div>
       </Col>
@@ -36,7 +36,7 @@ const Footer = () => {
       <Col>
         <div className={styles.header}>
           <Link href={urls.pages.ourWork} passHref>
-            OUR WORK
+            <a>OUR WORK</a>
           </Link>
         </div>
       </Col>
@@ -45,12 +45,12 @@ const Footer = () => {
         <div className={styles.header}>GET INVOLVED</div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.joinClassroom} passHref>
-            JOIN THE CLASSROOM
+            <a>Join the Classroom</a>
           </Link>
         </div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.joinLibrary} passHref>
-            JOIN THE LIBRARY
+            <a>Join the Library</a>
           </Link>
         </div>
       </Col>
