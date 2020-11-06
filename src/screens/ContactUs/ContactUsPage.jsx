@@ -9,11 +9,11 @@ import { Image } from "react-bootstrap";
 const ContactUsPage = () => {
   return (
     <>
-    
+      <div className = {styles.pageContainer}>
+
       <div>
         <Image fluid src={ContactUsImage} className={classes.picture} />
       </div>
-      <div className = {styles.pageContainer}>
         <div className={styles.mainContainer}>
           <ContactUs />
           <ContactFaq />

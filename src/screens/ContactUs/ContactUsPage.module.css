@@ -22,6 +22,6 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: left;
-  background-position-y: bottom;
+  background-position-y: -1000px;
 
 }
