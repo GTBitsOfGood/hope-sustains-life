@@ -4,7 +4,7 @@ import {
   Navbar as BootstrapNavbar,
   NavDropdown,
   Image,
-  Button
+  Button,
 } from "react-bootstrap";
 import urls from "../../../utils/urls";
 import Link from "next/link";
@@ -24,19 +24,13 @@ const NavBar = () => {
         className="mr-3"
       >
         <Link href={urls.pages.ourStory} passHref>
-          <Item>
-            Our Story
-          </Item>
+          <Item>Our Story</Item>
         </Link>
         <Link href={urls.pages.blogNews} passHref>
-          <Item>
-            Blog/News
-          </Item>
+          <Item>Blog/News</Item>
         </Link>
         <Link href={urls.pages.hundredPromise} passHref>
-          <Item>
-            100% Promise
-          </Item>
+          <Item>100% Promise</Item>
         </Link>
       </NavDropdown>
       <Nav.Link href={urls.pages.ourWork} className="mr-3">
@@ -49,19 +43,13 @@ const NavBar = () => {
         className="mr-3"
       >
         <Link href={urls.pages.joinClassroom} passHref>
-          <Item>
-            Join the Classroom
-          </Item>
+          <Item>Join the Classroom</Item>
         </Link>
         <Link href={urls.pages.joinLibrary} passHref>
-          <Item>
-            Join the Library
-          </Item>
+          <Item>Join the Library</Item>
         </Link>
         <Link href={urls.pages.contactUs} passHref>
-          <Item>
-            Contact Us
-          </Item>
+          <Item>Contact Us</Item>
         </Link>
       </NavDropdown>
     </>
@@ -69,7 +57,13 @@ const NavBar = () => {
 
   const donateButton = (
     <Link href={urls.pages.donate}>
-      <Button style={{backgroundColor: "#00ae99", marginRight: "30px", width: "100px"}}>
+      <Button
+        style={{
+          backgroundColor: "#00ae99",
+          marginRight: "30px",
+          width: "100px",
+        }}
+      >
         Donate
       </Button>
     </Link>
