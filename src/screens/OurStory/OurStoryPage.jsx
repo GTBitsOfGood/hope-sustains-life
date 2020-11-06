@@ -2,15 +2,8 @@ import React from "react";
 import classes from "./OurStoryPage.module.css";
 import { Button, Row, Col, Image } from "react-bootstrap";
 
-import TanzaniaImage from "../../../public/static/tanzania.jpg";
-import BangledeshImage from "../../../public/static/bangledesh.jpg";
-import HaitiImage from "../../../public/static/haiti.jpg";
-
 import TheodoreImage from "../../../public/static/Theodore_headshot.jpg";
 import BernardImage from "../../../public/static/Bernard_headshot.jpg";
-import IssueTacklingImage from "../../../public/static/martin-bekerman.jpg";
-import DonatePicture from "../../../public/static/seth-doyle-78210-unsplash.jpg";
-import OurStoryHeader from "../../../public/static/our-story-header.png";
 
 const OurStoryPage = () => (
   <>
@@ -113,10 +106,10 @@ const OurStoryPage = () => (
         international refugee population.
       </p>
 
-      <Row>
+      <Row style={{marginLeft: "150px", marginRight: "150px"}}>
         <Col className={classes.leftContent}>
           {/* <div className={classes.Bernard}></div> */}
-          <Image src={BernardImage} className={classes.pictures} fluid />
+          <Image src={BernardImage} style={{maxWidth: "500px"}} className={classes.pictures} fluid />
         </Col>
         <Col md={4} className={classes.leftContent}>
           <h1>Bernard Michel</h1>
@@ -136,9 +129,9 @@ const OurStoryPage = () => (
         </Col>
       </Row>
 
-      <Row>
+      <Row style={{marginLeft: "150px", marginRight: "150px"}}>
         <Col className={classes.leftContent}>
-          <Image src={TheodoreImage} className="pictures" fluid />
+          <Image src={TheodoreImage} style={{maxWidth: "500px"}} className="pictures" fluid />
         </Col>
         <Col md={4} className={classes.leftContent}>
           <h1>Theodore Michel</h1>
