@@ -1,5 +1,3 @@
-import React from "react";
+import BlogNewsPage from "../screens/BlogNews/BlogNews";
 
-const BlogNews = () => <h1>Blog and News!</h1>;
-
-export default BlogNews;
+export default BlogNewsPage;
