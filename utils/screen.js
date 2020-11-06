@@ -8,4 +8,3 @@ import { getWindowSize } from "../src/components/WindowSize";
 export const displayMobileView = () => {
   return getWindowSize().width < 600;
 };
-
