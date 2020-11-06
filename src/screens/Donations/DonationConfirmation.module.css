@@ -1,0 +1,21 @@
+.page {
+    width: 100%;    
+    background: linear-gradient(rgba(255,255,255,0.40),rgba(255,255,255,0.40)), url("../../../public/static/donate.jpg");
+    padding: 200px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 2.5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-align: center;
+}
+

@@ -54,7 +54,7 @@ const NavBar = () => {
   );
 
   const donateButton = (
-    <Nav.Link href={urls.pages.donate} className="btn-success">
+    <Nav.Link href={urls.pages.donate.index} className="btn-success">
       Donate
     </Nav.Link>
   );
