@@ -11,17 +11,21 @@ const IndexPage = () => (
     <div className={classes.general}>
       <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
       <p className={classes.centered}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Educating the future, one student at a time
       </p>
       <Row>
         <Col></Col>
         <Col md="auto">
           <Button
             href={urls.pages.learnMore}
-            className="btn btn-success centerButton"
+            className="btn centerButton"
             type="submit"
+            style={{
+              backgroundColor: "#00ae99",
+              borderColor: "#00ae99",
+            }}
           >
-            LEARN MORE
+            Learn More
           </Button>
         </Col>
         <Col></Col>

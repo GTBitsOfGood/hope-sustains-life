@@ -6,24 +6,57 @@ import styles from "./DonationPage.module.css";
 import { Button } from "react-bootstrap";
 import PaymentDetails from "./PaymentDetails";
 import Information from "./Information";
+import { displayMobileView } from "../../../utils/screen.js";
 
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
 const DonationPage = () => {
   const donationAmts = ["$25", "$50", "$100", "$150"];
+
+  const isMobile = () => {
+    const mobile = displayMobileView();
+    return mobile;
+  };
+
+  const mobileView = isMobile();
+
   return (
-    <div>
-      <div className={styles.container}>
+    <div className={styles.page}>
+      <div className={styles.main}>
+        <h1
+          className={mobileView ? styles.mainHeaderMobile : styles.mainHeader}
+        >
+          For the ones in need
+        </h1>
+        {mobileView && (
+          <p className={mobileView ? styles.mainTextMobile : styles.mainText}>
+            <span style={{ color: "#03AB99", backgroundColor: "white" }}>
+              100%
+            </span>
+            &nbsp; of your money goes to funding our educational projects for
+            the refugee population.
+          </p>
+        )}
+      </div>
+      <div className={mobileView ? styles.mobileContainer : styles.container}>
         <Elements stripe={stripePromise}>
-          <div className={styles.elements}>
-            <h3 style={{ textAlign: "center", marginBottom: 40 }}>
+          <div className={mobileView ? styles.mobileElements : styles.elements}>
+            <h3
+              style={{ textAlign: "center", marginBottom: 40 }}
+              className={mobileView ? styles.donateMobile : null}
+            >
               Donate to Hope Sustains Life
             </h3>
             <div>
               <Button className={styles.donationFreqButtons}>One Time</Button>
               <Button className={styles.donationFreqButtons}>Monthly</Button>
             </div>
-            <h5 className={styles.headers}>Select an amount to give</h5>
+            <h5
+              style={mobileView ? { fontSize: "17px" } : null}
+              className={styles.headers}
+            >
+              Select an amount to give
+            </h5>
             <div className={styles.amountButtons}>
               {donationAmts.map((amt, index) => {
                 return (
@@ -37,11 +70,22 @@ const DonationPage = () => {
               </Button>
             </div>
             <br></br>
-            <h5 className={styles.headers}>Your Information</h5>
-            <Information />
-            <h5 className={styles.headers}>Payment Details</h5>
 
+            <h5
+              style={mobileView ? { fontSize: "17px" } : null}
+              className={styles.headers}
+            >
+              Your Information
+            </h5>
+            <Information />
+            <h5
+              style={mobileView ? { fontSize: "17px" } : null}
+              className={styles.headers}
+            >
+              Payment Details
+            </h5>
             <PaymentDetails />
+
             <div className="agreements">
               <Form.Group controlId="matchesDonation">
                 <Form.Check
@@ -56,15 +100,38 @@ const DonationPage = () => {
                 />
               </Form.Group>
             </div>
-
-            <Button className={styles.donationFreqButtons}>
+            <Button className={styles.completeDonation}>
               Complete Donation
             </Button>
           </div>
         </Elements>
+        {!mobileView && (
+          <div style={{ width: "40%" }}>
+            <p className={styles.mainText}>
+              <span style={{ color: "#03AB99", backgroundColor: "white" }}>
+                100%
+              </span>
+              &nbsp; of your money goes to funding our educational projects for
+              the refugee population.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
 };
+
+// {mobileView && (
+//   <div>
+//     <h4 className={mobileView ? styles.mobileContainer: styles.main-header}>
+//       For the ones in need
+//     </h4>
+//     <p>
+//       <label style={{ color: "#03AB99Z", backgroundColor: "white" }}> 100% </label>
+//       &nbsp; of your money goes to funding our educational projects
+//       for the refugee population.
+//     </p>
+//   </div>
+// )}
 
 export default DonationPage;
