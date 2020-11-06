@@ -14,3 +14,14 @@
   flex-direction: column;
   align-items: center;
 }
+
+.pageContainer{
+  background-image: url("../../../public/static/Our\ work_contact\ us.jpg");
+  /* width: 100%;
+  height: auto; */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+
+}
