@@ -2,8 +2,6 @@ import React from "react";
 import classes from "./tanzania.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
-import { BrowserView, MobileView } from "react-device-detect";
-
 import { displayMobileView } from "../../../../utils/screen";
 
 function Tanzania() {
@@ -16,8 +14,6 @@ function Tanzania() {
   if (mobileView) {
     return (
       <>
-        {mobileView && <MobileView />}
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Tanzania</h1>
         </div>
@@ -60,8 +56,6 @@ function Tanzania() {
   } else {
     return (
       <>
-        {!mobileView && <BrowserView />}
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Tanzania</h1>
         </div>

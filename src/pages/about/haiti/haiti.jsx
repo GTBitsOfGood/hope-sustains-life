@@ -2,9 +2,6 @@ import React from "react";
 import classes from "./haiti.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
-
-import { BrowserView, MobileView } from "react-device-detect";
-
 import { displayMobileView } from "../../../../utils/screen";
 
 function Haiti() {
@@ -18,8 +15,6 @@ function Haiti() {
   if (mobileView) {
     return (
       <>
-        {mobileView && <MobileView />}
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Haiti</h1>
         </div>
@@ -69,8 +64,6 @@ function Haiti() {
   } else {
     return (
       <>
-        {!mobileView && <BrowserView />}
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Haiti</h1>
         </div>

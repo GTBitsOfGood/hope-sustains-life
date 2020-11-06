@@ -2,9 +2,6 @@ import React from "react";
 import classes from "./bangledesh.module.css";
 import { Image, Button } from "react-bootstrap";
 import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
-
-import { BrowserView, MobileView } from "react-device-detect";
-
 import { displayMobileView } from "../../../../utils/screen";
 
 function Bangledesh() {
@@ -18,7 +15,6 @@ function Bangledesh() {
   if (mobileView) {
     return (
       <>
-        {mobileView && <MobileView />}
 
         <div className={classes.general}>
           <h1 className={classes.centerText}>Bangladesh</h1>
@@ -63,7 +59,6 @@ function Bangledesh() {
   } else {
     return (
       <>
-        {!mobileView && <BrowserView />}
 
         <div className={classes.general}>
           <h1 className={classes.centerText}>Bangladesh</h1>
