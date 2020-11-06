@@ -3,7 +3,7 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { toast } from "react-toastify";
-import { reorderBlogs } from "../../actions/Blog";
+import { reorderBlogs, deleteBlogById } from "../../actions/Blog";
 import BlogTableRow from "./BlogTableRow";
 import BlogDeleteModal from "./BlogDeleteModal";
 import styles from "./blog.module.css";
@@ -32,10 +32,15 @@ const BlogTable = ({ blogs }) => {
   };
 
   const deleteSelectedBlog = () => {
-    // TODO - Replace with actual call to delete blog
-    setShowModal(false);
-    setBlogs(currentBlogs.filter((x) => x._id !== selectedBlog?.id));
-    setSelectedBlog(null);
+    deleteBlogById(selectedBlog?.id)
+      .then(() => {
+        setShowModal(false);
+        setBlogs(currentBlogs.filter((x) => x._id !== selectedBlog?.id));
+        setSelectedBlog(null);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   // callback function for when dropping a row
