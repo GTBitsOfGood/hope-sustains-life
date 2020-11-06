@@ -1,0 +1,152 @@
+.general {
+    background-image: url("../../../../public/static/realHaiti.png");
+    margin: 0;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.centerText {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+}
+
+.space {
+    padding: 3%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 20px; */
+}
+
+.gridImage {
+    padding-left: 50px;
+    
+}
+
+.gridText {
+    left: 57.01%;
+    right: 5.21%;
+    top: 29.54%;
+    bottom: 68.23%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 187% */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+
+.background {
+    background-image: url("../../../../public/static/HaitiImage2.png");
+    margin: 0;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+.dubedou {
+    left: 53.4%;
+    right: 1.67%;
+    top: 25.71%;
+    bottom: 71.33%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 45px;
+    /* or 173% */
+
+    text-align: center;
+
+    color: #2A2D39;
+
+}
+
+.haiti {
+    left: 53.4%;
+    right: 1.67%;
+    top: 25.71%;
+    bottom: 71.33%;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 45px;
+    /* or 173% */
+
+    text-align: center;
+
+    color: #03AB99;
+
+}
+
+.donateText {
+    left: 2.08%;
+    right: 56.25%;
+    top: 62.7%;
+    bottom: 34.58%;
+
+    padding-left: 100px;
+    padding-top: 350px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    /* or 158% */
+
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
+}
+
+.donateButton {
+    background: #03AB99;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    
+}
+
+.buttonDiv {
+    padding-top: 350;
+    padding-left: 230px; 
+}
