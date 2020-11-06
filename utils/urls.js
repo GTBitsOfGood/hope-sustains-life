@@ -45,5 +45,8 @@ export default {
     email: {
       contactUs: "/api/email/contact-us",
     },
+    donate: {
+      index: "/api/donate",
+    },
   },
 };
