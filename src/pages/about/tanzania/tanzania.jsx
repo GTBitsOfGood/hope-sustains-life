@@ -1,30 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classes from "./tanzania.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png"
-
 import {
     BrowserView,
     MobileView,
-    isBrowser,
-    isMobile
   } from "react-device-detect";
 
 import { displayMobileView }  from "../../../../utils/screen"
 
 
 function Tanzania () {
-    const [isMobile, setIsMobile] = useState(displayMobileView);
-  
-    useEffect(
-        () => {
-        setIsMobile(displayMobileView)
-    });
-
-    const displayView = (isMobile) => {
-        if (isMobile) {
+    const isMobile = () => {
+        const mobile = displayMobileView();
+        return mobile;
+      };
+    
+    const mobileView = isMobile();
+    if (mobileView) {
         return (<>
-            {isMobile && <MobileView/>}
+            {mobileView && <MobileView/>}
 
         <div className={classes.general}>
             <h1 className={classes.centerText}>Tanzania</h1>
@@ -52,9 +47,9 @@ function Tanzania () {
         </div>
     </>
         )
-        } else {
+    } else {
             return (<>
-                {!isMobile && <BrowserView/>}
+                {!mobileView && <BrowserView/>}
 
                 <div className={classes.general}>
             <h1 className={classes.centerText}>Tanzania</h1>
@@ -83,11 +78,6 @@ function Tanzania () {
         </>
             )
         }
-    }
-                
-    return (
-        displayView(isMobile)
-      );
     }
 
 export default Tanzania;

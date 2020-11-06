@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classes from "./bangledesh.module.css";
 import { Image, Button } from "react-bootstrap";
 import BangledeshPic from "../../../../public/static/realBangledeshPic.png"
@@ -6,25 +6,23 @@ import BangledeshPic from "../../../../public/static/realBangledeshPic.png"
 import {
     BrowserView,
     MobileView,
-    isBrowser,
-    isMobile
   } from "react-device-detect";
 
 import { displayMobileView }  from "../../../../utils/screen"
 
 
 function Bangledesh () {
-    const [isMobile, setIsMobile] = useState(displayMobileView);
-  
-    useEffect(
-        () => {
-        setIsMobile(displayMobileView)
-    });
+    const isMobile = () => {
+        const mobile = displayMobileView();
+        return mobile;
+      };
+    
+    const mobileView = isMobile();
 
-    const displayView = (isMobile) => {
-        if (isMobile) {
+
+    if (mobileView) {
         return (<>
-            {isMobile && <MobileView/>}
+            {mobileView && <MobileView/>}
 
         <div className={classes.general}>
             <h1 className={classes.centerText}>Bangladesh</h1>
@@ -52,9 +50,9 @@ function Bangledesh () {
         </div>
     </>
         )
-        } else {
+    } else {
             return (<>
-                {!isMobile && <BrowserView/>}
+                {!mobileView && <BrowserView/>}
 
                 <div className={classes.general}>
             <h1 className={classes.centerText}>Bangladesh</h1>
@@ -83,11 +81,6 @@ function Bangledesh () {
         </>
             )
         }
-    }
-                
-    return (
-        displayView(isMobile)
-      );
     }
 
 export default Bangledesh;
