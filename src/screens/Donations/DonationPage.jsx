@@ -22,6 +22,7 @@ const DonationPage = () => {
   const [email, setEmail] = React.useState("");
 
   const elements = useElements();
+  const router = useRouter();
 
   const isMobile = () => {
     const mobile = displayMobileView();
@@ -45,10 +46,12 @@ const DonationPage = () => {
 
       console.log(response);
       showSuccessNotification("Payment success! Redirecting now");
-      useRouter().replace(urls.pages.donate.confirmation);
+      router.replace(urls.pages.donate.confirmation);
     } catch (error) {
       console.log(error);
-      showErrorNotification(`Failed to process payment\n${error}`);
+      showErrorNotification(
+        `Failed to process payment\n${error.message || error}`
+      );
     }
   };
 
