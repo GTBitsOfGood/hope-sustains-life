@@ -7,7 +7,7 @@ import HaitiImage from "../../../public/static/haiti.jpg";
 import urls from "../../../utils/urls";
 
 const IndexPage = () => (
-  <>
+  <div className={classes.pageContainer}>
     <div className={classes.general}>
       <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
       <p className={classes.centered}>
@@ -39,7 +39,7 @@ const IndexPage = () => (
         <Image src={HaitiImage} className="pictures" fluid />
       </a>
     </div>
-  </>
+  </div>
 );
 
 export default IndexPage;
