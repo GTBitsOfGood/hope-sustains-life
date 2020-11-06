@@ -5,20 +5,40 @@ import Form from "react-bootstrap/Form";
 import styles from "./DonationPage.module.css";
 import { Button } from "react-bootstrap";
 import PaymentDetails from "./PaymentDetails";
-import Information from "./Information";
 import { displayMobileView } from "../../../utils/screen.js";
+import { verifyPayment, finishPayment } from "../../actions/Donate";
+import InputField from "./DonationInputField";
 
 const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG");
 
 const DonationPage = () => {
   const donationAmts = ["$25", "$50", "$100", "$150"];
+  const [donationAmt, setDonationAmt] = React.useState(0);
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setlastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
 
   const isMobile = () => {
     const mobile = displayMobileView();
     return mobile;
   };
-
   const mobileView = isMobile();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const name = firstName + " " + lastName;
+    const finishIntent = verifyPayment(name, email, donationAmt).intentID;
+
+    return finishPayment(finishIntent, "", name)
+      .then(() => {
+        this.context.router.push({
+          pathname: "/confirmation",
+          state: {},
+        });
+      })
+      .catch((error) => window.alert(error.message));
+  };
 
   return (
     <div className={styles.page}>
@@ -60,7 +80,11 @@ const DonationPage = () => {
             <div className={styles.amountButtons}>
               {donationAmts.map((amt, index) => {
                 return (
-                  <Button key={index} className={styles.amtButton}>
+                  <Button
+                    key={index}
+                    className={styles.amtButton}
+                    onClick={() => setDonationAmt(amt)}
+                  >
                     {amt}
                   </Button>
                 );
@@ -77,7 +101,32 @@ const DonationPage = () => {
             >
               Your Information
             </h5>
-            <Information />
+            <div>
+              <InputField
+                label="First Name"
+                inputType="text"
+                placeholder="John"
+                formFieldName="firstName"
+                required={true}
+                onChange={(event) => setFirstName(event.target.value)}
+              />
+              <InputField
+                label="Last Name"
+                inputType="text"
+                placeholder="Doe"
+                formFieldName="lastName"
+                required={true}
+                onChange={(event) => setlastName(event.target.value)}
+              />
+              <InputField
+                label="E-Mail"
+                inputType="text"
+                placeholder="johndoe123@email.com"
+                formFieldName="email"
+                required={true}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
             <h5
               style={mobileView ? { fontSize: "17px" } : null}
               className={styles.headers}
@@ -100,7 +149,7 @@ const DonationPage = () => {
                 />
               </Form.Group>
             </div>
-            <Button className={styles.completeDonation}>
+            <Button className={styles.completeDonation} onClick={handleSubmit}>
               Complete Donation
             </Button>
           </div>
