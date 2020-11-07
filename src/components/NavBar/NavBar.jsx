@@ -4,15 +4,17 @@ import {
   Navbar as BootstrapNavbar,
   NavDropdown,
   Image,
+  Button,
 } from "react-bootstrap";
 import urls from "../../../utils/urls";
+import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
 
 const { Brand, Toggle, Collapse } = BootstrapNavbar;
 
 const NavBar = () => {
   const mobileView = displayMobileView();
-
+  const { Item } = NavDropdown;
   const navContents = (
     <>
       <NavDropdown
@@ -21,15 +23,15 @@ const NavBar = () => {
         id="basic-nav-dropdown"
         className="mr-3"
       >
-        <NavDropdown.Item href={urls.pages.ourStory}>
-          OUR STORY
-        </NavDropdown.Item>
-        <NavDropdown.Item href={urls.pages.blogNews}>
-          BLOG/NEWS
-        </NavDropdown.Item>
-        <NavDropdown.Item href={urls.pages.hundredPromise}>
-          100% PROMISE
-        </NavDropdown.Item>
+        <Link href={urls.pages.ourStory} passHref>
+          <Item>Our Story</Item>
+        </Link>
+        <Link href={urls.pages.blogNews} passHref>
+          <Item>Blog/News</Item>
+        </Link>
+        <Link href={urls.pages.hundredPromise} passHref>
+          <Item>100% Promise</Item>
+        </Link>
       </NavDropdown>
       <Nav.Link href={urls.pages.ourWork} className="mr-3">
         OUR WORK
@@ -40,23 +42,31 @@ const NavBar = () => {
         id="basic-nav-dropdown"
         className="mr-3"
       >
-        <NavDropdown.Item href={urls.pages.joinClassroom}>
-          JOIN THE CLASSROOM
-        </NavDropdown.Item>
-        <NavDropdown.Item href={urls.pages.joinLibrary}>
-          JOIN THE LIBRARY
-        </NavDropdown.Item>
-        <NavDropdown.Item href={urls.pages.contactUs}>
-          CONTACT US
-        </NavDropdown.Item>
+        <Link href={urls.pages.joinClassroom} passHref>
+          <Item>Join the Classroom</Item>
+        </Link>
+        <Link href={urls.pages.joinLibrary} passHref>
+          <Item>Join the Library</Item>
+        </Link>
+        <Link href={urls.pages.contactUs} passHref>
+          <Item>Contact Us</Item>
+        </Link>
       </NavDropdown>
     </>
   );
 
   const donateButton = (
-    <Nav.Link href={urls.pages.donate.index} className="btn-success">
-      Donate
-    </Nav.Link>
+    <Link href={urls.pages.donate.index}>
+      <Button
+        style={{
+          backgroundColor: "#00ae99",
+          marginRight: "30px",
+          width: "100px",
+        }}
+      >
+        Donate
+      </Button>
+    </Link>
   );
 
   return (

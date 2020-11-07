@@ -56,12 +56,21 @@ img.mobile-logo {
 #basic-navbar-nav a {
   color: white;
 }
-.dropdown-menu {
-  background-color: grey;
+
+.navbar-nav .dropdown-menu { 
+  background-color: rgba(42, 45, 57, 0.7); 
 }
 
 .dropdown:hover > .dropdown-menu {
   display: block;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: rgba(42, 45, 57, 0.45);
+}
+
+.navbar-nav .dropdown-item.active {
+  background-color: transparent;
 }
 
 @media (max-width: 599px) {
