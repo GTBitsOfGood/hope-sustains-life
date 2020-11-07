@@ -38,14 +38,8 @@ const DonationPage = () => {
       const { intentSecret } = await verifyPayment(name, email, donationAmt);
       const paymentCardElement = elements.getElement(CardElement);
 
-      const response = await finishPayment(
-        intentSecret,
-        paymentCardElement,
-        name,
-        email
-      );
+      await finishPayment(intentSecret, paymentCardElement, name, email);
 
-      console.log(response);
       showSuccessNotification("Payment success! Redirecting now");
       router.replace(urls.pages.donate.confirmation);
     } catch (error) {
