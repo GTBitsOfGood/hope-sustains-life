@@ -26,7 +26,12 @@ export const verifyPayment = (name, email, amount) =>
       return json.payload;
     });
 
-export const finishPayment = async (intentSecret, card, cardHolderName) => {
+export const finishPayment = async (
+  intentSecret,
+  card,
+  cardHolderName,
+  email
+) => {
   const stripe = await getStripe();
 
   const response = await stripe.confirmCardPayment(intentSecret, {
@@ -34,6 +39,7 @@ export const finishPayment = async (intentSecret, card, cardHolderName) => {
       card: card,
       billing_details: { name: cardHolderName },
     },
+    receipt_email: email,
   });
 
   if (response.error) {

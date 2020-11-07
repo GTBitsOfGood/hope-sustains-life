@@ -41,7 +41,8 @@ const DonationPage = () => {
       const response = await finishPayment(
         intentSecret,
         paymentCardElement,
-        name
+        name,
+        email
       );
 
       console.log(response);
