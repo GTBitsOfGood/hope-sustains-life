@@ -1,0 +1,38 @@
+.menuOuter {
+  background: #03ab99;
+}
+
+.donateButton {
+  background-color: "#00ae99";
+  margin-right: 30px;
+  width: 100px;
+}
+
+.mobileDropdown {
+  background-color: #03ab99;
+  color: #03ab99;
+}
+.mobileDonateButton {
+  background-color: "#00ae99";
+  width: 100px;
+}
+
+.mobileMenuItem {
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+}
+
+.bmBurgerButton {
+  position: relative;
+  width: 36px;
+  height: 30px;
+  background-color: rgba(42, 45, 57, 0.6);
+}
+.bmBurgerBars {
+  background: #03ab99;
+}

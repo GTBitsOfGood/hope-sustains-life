@@ -5,16 +5,56 @@ import {
   NavDropdown,
   Image,
   Button,
+  Dropdown,
 } from "react-bootstrap";
+import { push as Menu } from "react-burger-menu";
 import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
-
+import styles from "./NavBar.module.css";
 const { Brand, Toggle, Collapse } = BootstrapNavbar;
 
 const NavBar = () => {
   const mobileView = displayMobileView();
   const { Item } = NavDropdown;
+
+  const mobileNavContents = (
+    <>
+      <Menu
+        right
+        burgerButtonClassName={styles.bmBurgerButton}
+        burgerBarClassName={styles.bmBurgerBars}
+        outerContainerId={"outer-container"}
+        pageWrapId={"page-wrap"}
+        className={styles.menuOuter}
+      >
+        <Dropdown className={styles.mobileDropdown}>
+          <Dropdown.Toggle>ABOUT US</Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item
+              className={styles.mobileMenuItem}
+              href={urls.pages.ourStory}
+            >
+              OUR STORY
+            </Dropdown.Item>
+            <Dropdown.Item
+              className={styles.mobileMenuItem}
+              href={urls.pages.blogNews}
+            >
+              BLOG/NEWS
+            </Dropdown.Item>
+            <Dropdown.Item
+              className={styles.mobileMenuItem}
+              href={urls.pages.hundredPromise}
+            >
+              100% PROMISE
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </Menu>
+    </>
+  );
   const navContents = (
     <>
       <NavDropdown
@@ -58,11 +98,7 @@ const NavBar = () => {
   const donateButton = (
     <Link href={urls.pages.donate}>
       <Button
-        style={{
-          backgroundColor: "#00ae99",
-          marginRight: "30px",
-          width: "100px",
-        }}
+        className={mobileView ? styles.mobileDonateButton : styles.donateButton}
       >
         Donate
       </Button>
@@ -70,33 +106,38 @@ const NavBar = () => {
   );
 
   return (
-    <BootstrapNavbar
-      className="navbar-stuff"
-      expand="md"
-      fixed="top"
-      variant="dark"
-    >
-      <Brand href="/">
-        <Image
-          src="/static/hsl-logo-transparent.png"
-          className="large-logo"
-        ></Image>
-        <Image
-          src="/static/hsl-logo-transparent-mobile.png"
-          className="mobile-logo"
-        ></Image>
-      </Brand>
-      <div className="d-flex flex-row">
-        {mobileView && donateButton}
-        <Toggle aria-controls="basic-navbar-nav" />
-      </div>
-      <Collapse id="basic-navbar-nav" className="justify-content-end">
-        <Nav className="ml-auto">
-          {navContents}
-          {!mobileView && donateButton}
-        </Nav>
-      </Collapse>
-    </BootstrapNavbar>
+    <div id="outer-container">
+      <BootstrapNavbar
+        className="navbar-stuff"
+        expand="md"
+        fixed="top"
+        variant="dark"
+      >
+        <Brand href="/">
+          <Image
+            src="/static/hsl-logo-transparent.png"
+            className="large-logo"
+          ></Image>
+          <Image
+            src="/static/hsl-logo-transparent-mobile.png"
+            className="mobile-logo"
+          ></Image>
+        </Brand>
+        <div className="d-flex flex-row">
+          {mobileView && donateButton}
+          {/* <Toggle aria-controls="basic-navbar-nav" /> */}
+        </div>
+        {!mobileView && (
+          <Nav className="ml-auto">
+            {navContents}
+
+            {!mobileView && donateButton}
+          </Nav>
+        )}
+
+        {mobileView && mobileNavContents}
+      </BootstrapNavbar>
+    </div>
   );
 };
 
