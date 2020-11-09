@@ -1,38 +1,42 @@
-.menuOuter {
-  background: #03ab99;
-}
-
 .donateButton {
   background-color: "#00ae99";
   margin-right: 30px;
   width: 100px;
 }
 
-.mobileDropdown {
-  background-color: #03ab99;
-  color: #03ab99;
+.mobileNavBar {
 }
 .mobileDonateButton {
   background-color: "#00ae99";
   width: 100px;
+  margin-right: 50px;
+  margin-top: 27%;
 }
 
-.mobileMenuItem {
-  font-size: 22px;
-  line-height: 27px;
-  /* identical to box height */
-  background-color: transparent;
-  display: flex;
-  align-items: flex-end;
-  color: #ffffff;
+.bmMenu {
+  background: #03ab99;
+  padding: 8em 1.5em 0;
+  font-size: 1.15em;
 }
 
 .bmBurgerButton {
-  position: relative;
+  position: fixed;
   width: 36px;
   height: 30px;
+  right: 3%;
+  top: 6.5%;
   background-color: rgba(42, 45, 57, 0.6);
 }
 .bmBurgerBars {
   background: #03ab99;
+  height: 10px;
+}
+
+.bmCrossButton {
+  height: 24px;
+  width: 24px;
+  margin-right: 250px;
+}
+.bmCross {
+  background: #bdc3c7;
 }

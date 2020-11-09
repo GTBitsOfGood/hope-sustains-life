@@ -1,67 +1,31 @@
 import React from "react";
+import styles from "./NavBar.module.css";
 import {
   Nav,
   Navbar as BootstrapNavbar,
   NavDropdown,
   Image,
   Button,
+  DropdownButton,
   Dropdown,
 } from "react-bootstrap";
 import { push as Menu } from "react-burger-menu";
 import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
-import styles from "./NavBar.module.css";
 const { Brand, Toggle, Collapse } = BootstrapNavbar;
 
 const NavBar = () => {
   const mobileView = displayMobileView();
   const { Item } = NavDropdown;
 
-  const mobileNavContents = (
-    <>
-      <Menu
-        right
-        burgerButtonClassName={styles.bmBurgerButton}
-        burgerBarClassName={styles.bmBurgerBars}
-        outerContainerId={"outer-container"}
-        pageWrapId={"page-wrap"}
-        className={styles.menuOuter}
-      >
-        <Dropdown className={styles.mobileDropdown}>
-          <Dropdown.Toggle>ABOUT US</Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item
-              className={styles.mobileMenuItem}
-              href={urls.pages.ourStory}
-            >
-              OUR STORY
-            </Dropdown.Item>
-            <Dropdown.Item
-              className={styles.mobileMenuItem}
-              href={urls.pages.blogNews}
-            >
-              BLOG/NEWS
-            </Dropdown.Item>
-            <Dropdown.Item
-              className={styles.mobileMenuItem}
-              href={urls.pages.hundredPromise}
-            >
-              100% PROMISE
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </Menu>
-    </>
-  );
   const navContents = (
     <>
       <NavDropdown
-        renderMenuOnMount={!mobileView}
         title="ABOUT US"
         id="basic-nav-dropdown"
-        className="mr-3"
+        style={{ colorRendering: "white" }}
+        className={mobileView ? styles.mobileNavBar : "mr-3"}
       >
         <Link href={urls.pages.ourStory} passHref>
           <Item>Our Story</Item>
@@ -73,14 +37,16 @@ const NavBar = () => {
           <Item>100% Promise</Item>
         </Link>
       </NavDropdown>
-      <Nav.Link href={urls.pages.ourWork} className="mr-3">
+      <Nav.Link
+        href={urls.pages.ourWork}
+        className={mobileView ? styles.mobileNavBar : "mr-3"}
+      >
         OUR WORK
       </Nav.Link>
       <NavDropdown
-        renderMenuOnMount={!mobileView}
         title="GET INVOLVED"
         id="basic-nav-dropdown"
-        className="mr-3"
+        className={mobileView ? styles.mobileNavBar : "mr-3"}
       >
         <Link href={urls.pages.joinClassroom} passHref>
           <Item>Join the Classroom</Item>
@@ -92,6 +58,24 @@ const NavBar = () => {
           <Item>Contact Us</Item>
         </Link>
       </NavDropdown>
+    </>
+  );
+
+  const mobileNavContents = (
+    <>
+      <Menu
+        right
+        burgerButtonClassName={styles.bmBurgerButton}
+        burgerBarClassName={styles.bmBurgerBars}
+        menuClassName={styles.bmMenu}
+        crossButtonClassName={styles.bmCrossButton}
+        crossClassName={styles.bmCross}
+        outerContainerId={"outer-container"}
+        pageWrapId={"page-wrap"}
+      >
+        <main id="page-wrap"></main>
+        {navContents}
+      </Menu>
     </>
   );
 
@@ -128,15 +112,24 @@ const NavBar = () => {
           {/* <Toggle aria-controls="basic-navbar-nav" /> */}
         </div>
         {!mobileView && (
-          <Nav className="ml-auto">
-            {navContents}
-
-            {!mobileView && donateButton}
-          </Nav>
+          <Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav className="ml-auto">
+              {navContents}
+              {!mobileView && donateButton}
+            </Nav>
+          </Collapse>
         )}
-
-        {mobileView && mobileNavContents}
       </BootstrapNavbar>
+      {mobileView && (
+        <BootstrapNavbar
+          className="navbar-stuff"
+          expand="md"
+          fixed="top"
+          variant="dark"
+        >
+          {mobileNavContents}
+        </BootstrapNavbar>
+      )}
     </div>
   );
 };
