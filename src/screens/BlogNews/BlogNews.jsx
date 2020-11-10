@@ -6,7 +6,6 @@ import { displayMobileView } from "../../../utils/screen.js";
 import BlogNewsImage from "../../../public/static/blognews.png";
 
 const BlogNews = () => {
-  console.log("ta da")
   const isMobile = () => {
     const mobile = displayMobileView();
     return mobile;

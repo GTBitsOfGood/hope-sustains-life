@@ -120,10 +120,11 @@
   justify-content: space-around;
   padding-left: 10%;
   padding-right: 10%;
+  margin-top: 60px;
 }
 
 .card {
-  min-width: 300px;
+  width: 300px;
   margin: 15px;
 
 }
