@@ -113,3 +113,17 @@
   max-height: 720px;
   overflow-y: auto;
 }
+
+.blogContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.card {
+  min-width: 300px;
+  margin: 15px;
+
+}

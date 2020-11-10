@@ -5,15 +5,14 @@ import BlogCard from "./BlogCard";
 import styles from "./blog.module.css";
 
 const BlogList = ({ blogs }) => {
-  const [currentBlogs, setBlogs] = React.useState(blogs);
-
+  console.log("blogs", blogs)
   return (
-    <>
-      {currentBlogs.map((blog, index) => (
+    <div className={styles.blogContainer}>
+      {blogs.map((blog, index) => (
         <BlogCard blog={blog} key={blog._id} index={index} />
       ))}
       <BlogCard blog={"ha"} />
-    </>
+    </div>
   );
 };
 

@@ -6,8 +6,8 @@ import BlogList from "../../components/Blogs/BlogList";
 
 const BlogsNewsContainer = ({ blogs }) => (
   <>
-    <BlogNews />
-    <BlogList blogs={blogs || []} />
+    <BlogNews/>
+    <BlogList blogs={blogs || []}/>
   </>
 );
 

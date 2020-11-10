@@ -1,19 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-import classes from "./blog.module.css";
+import styles from "./blog.module.css";
 import { Button, Card } from "react-bootstrap";
 
 const BlogCard = ({ blog, index }) => {
+  if (index > 6) { 
+    return (<></>)
+  }
   return (
     <>
-      <Card>
+      <Card className={styles.card}>
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
+        <Card.Title>{blog.title}</Card.Title>
+        <Card.Text>{blog.subtitle}</Card.Text>
+          <Card.Link href="#">Another Link</Card.Link>
         </Card.Body>
       </Card>
     </>
