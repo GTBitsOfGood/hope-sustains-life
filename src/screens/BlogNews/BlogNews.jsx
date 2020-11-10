@@ -1,8 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./BlogNews.module.css";
 import { Button, Card } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen.js";
 import BlogNewsImage from "../../../public/static/blognews.png";
+
 
 
 const BlogNews = () => {

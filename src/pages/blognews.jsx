@@ -1,3 +1,3 @@
-import BlogNewsPage from "../screens/BlogNews/BlogNews";
+import BlogsNewsContainer from "../screens/BlogNews/BlogNews";
 
-export default BlogNewsPage;
+export default BlogsNewsContainer;
