@@ -5,20 +5,19 @@ import classes from "./blog.module.css";
 import { Button, Card } from "react-bootstrap";
 
 const BlogCard = ({ blog, index }) => {
-
-    return (
-        <>
-            <Card>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk
-                        of the card's content.
-            </Card.Text>
-                </Card.Body>
-            </Card>
-        </>
-    );
+  return (
+    <>
+      <Card>
+        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Body>
+          <Card.Text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </>
+  );
 };
 
 BlogCard.propTypes = {
@@ -26,4 +25,3 @@ BlogCard.propTypes = {
 };
 
 export default BlogCard;
-

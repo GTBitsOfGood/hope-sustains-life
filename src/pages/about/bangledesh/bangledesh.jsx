@@ -15,7 +15,6 @@ function Bangledesh() {
   if (mobileView) {
     return (
       <>
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Bangladesh</h1>
         </div>
@@ -59,7 +58,6 @@ function Bangledesh() {
   } else {
     return (
       <>
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Bangladesh</h1>
         </div>
