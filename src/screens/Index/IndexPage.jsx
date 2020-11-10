@@ -50,12 +50,12 @@ const IndexPage = () => (
     </div>
 
     <div className={classes.space}></div>
-    
+
     <div className={classes.ourPrinciples}>
       <Image src={LineImage} className={classes.lineOne} />
-        <h1 className={classes.our}>OUR</h1>
-        <h1 className={classes.principles}>PRINCIPLES</h1>
-        <Image src={LineImage} className={classes.lineTwo} />
+      <h1 className={classes.our}>OUR</h1>
+      <h1 className={classes.principles}>PRINCIPLES</h1>
+      <Image src={LineImage} className={classes.lineTwo} />
     </div>
 
     <div className={classes.images}>
@@ -75,40 +75,45 @@ const IndexPage = () => (
       <h2 className={classes.innovation}>Innovation</h2>
       <h2 className={classes.transparency}>Transparency</h2>
     </div>
-      <div className={classes.paragraphs}>
-        <div className={classes.impactP}>
-          <p>We make sure to provide GPS locations and 
-            photos of the schools we have built or partnered 
-            with to show the impact we have had on the refugee 
-            population and the surrounding community</p>
-        </div>
-        <div className={classes.innovationP}>
-          <p>Traditional methods have not been working for many 
-            years. Our team works on developing breakthrough solutions
-            to build or support schools for the refugee population.</p>
-        </div>
-        <div className={classes.transparencyP}>
-          <p>We make sure 100% of your money goes to funding our 
-            educational projects for the refugee population.</p>
-        </div>
+    <div className={classes.paragraphs}>
+      <div className={classes.impactP}>
+        <p>
+          We make sure to provide GPS locations and photos of the schools we
+          have built or partnered with to show the impact we have had on the
+          refugee population and the surrounding community
+        </p>
       </div>
-
-      <div className={classes.space}></div>
-
-      <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-        <h1 className={classes.where}>WHERE</h1>
-        <h1 className={classes.weAre}>WE ARE</h1>
-        <Image src={LineImage} className={classes.lineTwo} />
+      <div className={classes.innovationP}>
+        <p>
+          Traditional methods have not been working for many years. Our team
+          works on developing breakthrough solutions to build or support schools
+          for the refugee population.
+        </p>
+      </div>
+      <div className={classes.transparencyP}>
+        <p>
+          We make sure 100% of your money goes to funding our educational
+          projects for the refugee population.
+        </p>
+      </div>
     </div>
 
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-    <Image src={LineImage} className={classes.lineOne} />
-        <h1 className={classes.our}>OUR</h1>
-        <h1 className={classes.principles}>WORK</h1>
-        <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage} className={classes.lineOne} />
+      <h1 className={classes.where}>WHERE</h1>
+      <h1 className={classes.weAre}>WE ARE</h1>
+      <Image src={LineImage} className={classes.lineTwo} />
+    </div>
+
+    <div className={classes.space}></div>
+
+    <div className={classes.ourPrinciples}>
+      <Image src={LineImage} className={classes.lineOne} />
+      <h1 className={classes.our}>OUR</h1>
+      <h1 className={classes.principles}>WORK</h1>
+      <Image src={LineImage} className={classes.lineTwo} />
     </div>
 
     <div className={classes.ourWorkGeneral}>
@@ -118,12 +123,11 @@ const IndexPage = () => (
         <Col></Col>
         <Col></Col>
         <Col lg="auto">
-        {/* <Button className={classes.viewMoreButton}>
+          {/* <Button className={classes.viewMoreButton}>
             View More
           </Button> */}
         </Col>
         <Col></Col>
-        
       </Row>
     </div>
   </>

@@ -60,6 +60,7 @@ const NavBar = () => {
       <Button
         style={{
           backgroundColor: "#00ae99",
+          borderColor: "#00ae99",
           marginRight: "30px",
           width: "100px",
         }}
