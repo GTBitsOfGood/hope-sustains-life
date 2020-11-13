@@ -14,3 +14,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+.mobileTitleText {
+  background: rgba(0,0,0, 0.3);
+  display: flex;
+}
