@@ -27,7 +27,9 @@ const BlogNews = () => {
                   alignSelf: "center",
                 }}
               >
-                Hope Sustains<br />Life Blogs
+                Hope Sustains
+                <br />
+                Life Blogs
               </Card.Title>
             </div>
           </Card.ImgOverlay>
