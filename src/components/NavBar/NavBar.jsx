@@ -22,40 +22,45 @@ const NavBar = () => {
   const navContents = (
     <>
       <NavDropdown
-        title="ABOUT US"
+        title={<span className= {styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
-        className={mobileView ? styles.mobileNavBar : "mr-3"}
-      >
+        className={mobileView ? styles.mobileNavBar : "mr-3"}>
+
         <Link href={urls.pages.ourStory} passHref>
-          <Item>Our Story</Item>
+          <Item className = {styles.textColor}>Our Story</Item>
         </Link>
         <Link href={urls.pages.blogNews} passHref>
-          <Item>Blog/News</Item>
+          <Item className = {styles.textColor}>Blog/News</Item>
         </Link>
         <Link href={urls.pages.hundredPromise} passHref>
-          <Item>100% Promise</Item>
+          <Item className = {styles.textColor}>100% Promise</Item>
         </Link>
       </NavDropdown>
+
+
       <Nav.Link
         href={urls.pages.ourWork}
         className={mobileView ? styles.mobileNavBar : "mr-3"}
       >
         OUR WORK
       </Nav.Link>
+
+
       <NavDropdown
-        title="GET INVOLVED"
+        title={<span className= {styles.textColor}>GET INVOLVED</span>}
         id="basic-nav-dropdown"
+        style={{ colorRendering: "white" }}
         className={mobileView ? styles.mobileNavBar : "mr-3"}
       >
         <Link href={urls.pages.joinClassroom} passHref>
-          <Item>Join the Classroom</Item>
+          <Item className = {styles.textColor}>Join the Classroom</Item>
         </Link>
         <Link href={urls.pages.joinLibrary} passHref>
-          <Item>Join the Library</Item>
+          <Item className = {styles.textColor}>Join the Library</Item>
         </Link>
         <Link href={urls.pages.contactUs} passHref>
-          <Item>Contact Us</Item>
+          <Item className = {styles.textColor}>Contact Us</Item>
         </Link>
       </NavDropdown>
     </>
