@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./blog.module.css";
 import { Card } from "react-bootstrap";
 import urls from "../../../utils/urls";
+import { Button, Card } from "react-bootstrap";
 import DefaultImage from "../../../public/static/home-bg.jpg";
 
 const BlogCard = ({ blog }) => {
@@ -16,8 +17,11 @@ const BlogCard = ({ blog }) => {
           src={blog.image ? blog.image.url : DefaultImage}
         />
         <Card.Body>
-          <Card.Title>{blog.title}</Card.Title>
+          <Card.Title className={styles.title}>{blog.title}</Card.Title>
           <Card.Text>{blog.subtitle}</Card.Text>
+          <Card.Link className={styles.readMore} href="#">
+            Read More ⇒
+          </Card.Link>
         </Card.Body>
       </Card>
     </Link>
