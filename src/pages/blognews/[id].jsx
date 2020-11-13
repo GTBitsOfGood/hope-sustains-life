@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { getBlogById, getRecommendedBlogs } from "../../actions/Blog";
+import {
+  getBlogById,
+  getRecommendedBlogs,
+} from "../../../server/mongodb/actions/Blog";
 import BlogNewsDetails from "../../screens/BlogNews/BlogNewsDetails";
 
 const BlogContent = ({ blog, recommendations }) => {
@@ -14,8 +17,13 @@ BlogContent.propTypes = {
 
 export const getServerSideProps = async ({ query }) => {
   try {
-    const blog = await getBlogById(query.id);
-    const recommendations = await getRecommendedBlogs(blog.orderIndex);
+    let blog = await getBlogById(query.id);
+    let recommendations = await getRecommendedBlogs(blog.orderIndex);
+
+    // Next needs JSON serializable data types and dates mess with that
+    blog = JSON.parse(JSON.stringify(blog));
+    recommendations = JSON.parse(JSON.stringify(recommendations));
+
     return {
       props: { blog, recommendations },
     };

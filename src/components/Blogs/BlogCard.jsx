@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import styles from "./blog.module.css";
-import { Card } from "react-bootstrap";
 import urls from "../../../utils/urls";
 import { Button, Card } from "react-bootstrap";
 import DefaultImage from "../../../public/static/home-bg.jpg";
