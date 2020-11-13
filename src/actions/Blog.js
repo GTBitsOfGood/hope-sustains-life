@@ -20,6 +20,25 @@ export const getBlogs = () =>
       return json.payload;
     });
 
+export const getRecommendedBlogs = (orderIndex) => {
+  /**
+   * Make API call to retrieve recommended blogs given orderIndex
+   * Return an array of recommended blogs
+   * If there is an error retrieving recommended blogs, return empty array
+   */
+
+  // TODO: Replace this placeholder with actual API call
+  const recommendations = [];
+  for (let i = 0; i < 3; i++) {
+    recommendations.push({
+      _id: i,
+      title: `Blog Title ${i}`,
+      subtitle: `Some dummy text`,
+    });
+  }
+  return recommendations;
+};
+
 export const createBlog = (
   title,
   subtitle,
