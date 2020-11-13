@@ -21,6 +21,13 @@ const NavBar = () => {
 
   const navContents = (
     <>
+
+      {/* <DropdownButton
+        title ="test"
+        className={mobileView ? styles.mobileNavBar : "mr-3"}
+        >
+          <Dropdown.Item>Hey</Dropdown.Item>
+        </DropdownButton> */}
       <NavDropdown
         title={<span className= {styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
