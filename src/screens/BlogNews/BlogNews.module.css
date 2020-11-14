@@ -15,7 +15,13 @@
   align-items: center;
 }
 
-.mobileTitleText {
+.titleText {
+  font-size: 47px;
   background: rgba(0,0,0, 0.3);
-  display: flex;
+  padding: 1em;
+}
+
+.mobileTitleText {
+  font-size: 25px;
+  background: rgba(0,0,0, 0.3);
 }

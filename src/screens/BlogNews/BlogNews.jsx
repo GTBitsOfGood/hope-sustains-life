@@ -16,25 +16,39 @@ const BlogNews = () => {
   return (
     <>
       {" "}
-      {mobileView && (
-        <Card className="bg-dark text-white">
-          <Card.Img src={BlogNewsImage} alt="Card image" />
-          <Card.ImgOverlay style={{ display: "flex", justifyContent: "right" }}>
-            <div className={styles.mobileTitleText}>
-              <Card.Title
-                style={{
-                  fontSize: "25px",
-                  alignSelf: "center",
-                }}
-              >
-                Hope Sustains
-                <br />
-                Life Blogs
-              </Card.Title>
-            </div>
-          </Card.ImgOverlay>
-        </Card>
-      )}
+      <Card className="bg-dark text-white">
+        <Card.Img src={BlogNewsImage} alt="Card image" />
+        <Card.ImgOverlay style={{ display: "flex", justifyContent: "right" }}>
+          <Card.Title
+            className={mobileView ? styles.mobileTitleText : styles.titleText}
+            style={{
+              alignSelf: "center",
+              position: "absolute",
+              right: "0",
+            }}
+          >
+            Hope Sustains Life
+            <br />
+            Blogs
+          </Card.Title>
+          {!mobileView && (
+            <Card.Text
+              style={{
+                alignSelf: "center",
+                position: "absolute",
+                right: "0",
+                marginTop: "10em",
+                marginRight: "10em",
+                fontSize: "25px",
+                fontWeight: "lighter",
+                letterSpacing: ".07em",
+              }}
+            >
+              Latest News...
+            </Card.Text>
+          )}
+        </Card.ImgOverlay>
+      </Card>
     </>
   );
 };

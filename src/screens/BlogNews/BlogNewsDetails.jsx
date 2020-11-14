@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import DefaultImage from "../../../public/static/home-bg.jpg";
 import BlogCard from "../../components/Blogs/BlogCard";
+import styles from "./BlogNewsDetails.module.css";
+import { displayMobileView } from "../../../utils/screen.js";
 
 const BlogNewsDetails = ({ blog, recommendations }) => {
   const { image, title, subtitle, body } = blog;
@@ -10,15 +12,36 @@ const BlogNewsDetails = ({ blog, recommendations }) => {
     return <BlogCard blog={blog} key={blog._id} />;
   });
 
+  const isMobile = () => {
+    const mobile = displayMobileView();
+    return mobile;
+  };
+
+  const mobileView = isMobile();
+
   return (
-    <div>
-      <img src={image?.url || DefaultImage} />
-      <h1>{title}</h1>
-      <h3>{subtitle}</h3>
-      <div dangerouslySetInnerHTML={{ __html: body }} />
+    <div className={mobileView ? styles.centerMobile : styles.center}>
+      <img className={styles.mainImage} src={image?.url || DefaultImage} />
+      <div
+        className={mobileView ? styles.titlesMobile : styles.titles}
+        style={{ textAlign: "center" }}
+      >
+        <h1 style={mobileView ? { fontSize: "25px" } : {}}>{title}</h1>
+        <h3 style={mobileView ? { fontSize: "15px" } : {}}>{subtitle}</h3>
+      </div>
+      <div
+        style={
+          mobileView
+            ? { fontSize: "12px", marginBottom: "50px" }
+            : { fontSize: "18px", marginBottom: "200px" }
+        }
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
       {recommendedBlogsCards.length > 0 && (
         <div>
-          <h3>Recommended for you</h3>
+          <h3 style={mobileView ? { fontSize: "25px" } : {}}>
+            Recommended for you
+          </h3>
           <div>{recommendedBlogsCards}</div>
         </div>
       )}
