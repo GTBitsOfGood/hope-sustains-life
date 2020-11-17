@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./IndexPage.module.css";
-import { Button, Row, Col, Image } from "react-bootstrap";
+import { Button, Row, Col, Image, Card } from "react-bootstrap";
 import TanzaniaImage from "../../../public/static/tanzania.jpg";
 import BangledeshImage from "../../../public/static/bangledesh.jpg";
 import HaitiImage from "../../../public/static/haiti.jpg";
@@ -9,20 +9,24 @@ import InnovationImage from "../../../public/static/innovation.png";
 import TransparencyImage from "../../../public/static/transparency.png";
 import LineImage from "../../../public/static/line-1.png";
 import OurWorkImage from "../../../public/static/ourWork.png";
+import HomeImage from "../../../public/static/home-bg.jpg";
 import urls from "../../../utils/urls";
 
 const IndexPage = () => (
   <>
-    <div className={classes.general}>
-      <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
-      <p className={classes.centered}>
-        Educating the future, one student at a time
-      </p>
-      <Row>
-        <Col></Col>
-        <Col md="auto">
+        <Card className="bg-dark text-white">
+        <Card.Img src={HomeImage} alt="Card image" />
+        <Card.ImgOverlay className={classes.homeOverlay} >
+          <Card.Title
+            className={classes.homeTitle}
+          >
+            HOPE SUSTAINS LIFE          
+          </Card.Title>
+          <Card.Text className={classes.homeSubtitle}>
+          Educating the future, one student at a time
+          </Card.Text>
           <Button
-            href={urls.pages.learnMore}
+            href={urls.pages.ourStory}
             className="btn centerButton"
             type="submit"
             style={{
@@ -32,10 +36,8 @@ const IndexPage = () => (
           >
             Learn More
           </Button>
-        </Col>
-        <Col></Col>
-      </Row>
-    </div>
+        </Card.ImgOverlay>
+      </Card>
     <div className={classes.space}></div>
     <div className={classes.images}>
       <a href={urls.pages.tanzania}>
