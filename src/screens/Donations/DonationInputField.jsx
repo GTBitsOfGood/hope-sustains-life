@@ -10,6 +10,7 @@ const InputField = ({
   placeholder,
   formFieldName,
   required,
+  onChange,
 }) => {
   return (
     <Form.Group as={Row} controlId={formFieldName}>
@@ -21,6 +22,7 @@ const InputField = ({
           type={inputType}
           placeholder={placeholder}
           required={required}
+          onChange={onChange}
         />
       </Col>
     </Form.Group>
@@ -33,6 +35,7 @@ InputField.propTypes = {
   placeholder: PropTypes.string,
   formFieldName: PropTypes.string.isRequired,
   required: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 
 export default InputField;

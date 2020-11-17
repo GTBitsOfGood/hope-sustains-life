@@ -56,7 +56,7 @@ const NavBar = () => {
   );
 
   const donateButton = (
-    <Link href={urls.pages.donate}>
+    <Link href={urls.pages.donate.index}>
       <Button
         style={{
           backgroundColor: "#00ae99",
