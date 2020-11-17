@@ -14,3 +14,14 @@
   flex-direction: column;
   align-items: center;
 }
+
+.titleText {
+  font-size: 47px;
+  background: rgba(0,0,0, 0.3);
+  padding: 1em;
+}
+
+.mobileTitleText {
+  font-size: 25px;
+  background: rgba(0,0,0, 0.3);
+}
