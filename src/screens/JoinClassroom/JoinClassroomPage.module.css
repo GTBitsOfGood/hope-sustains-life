@@ -1,0 +1,214 @@
+.picture {
+    min-width: 100%;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .picture {
+      max-height: 881px;
+    }
+  } 
+  
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pageName {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -500px;
+    margin-bottom: 400px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.52);
+
+  }
+
+  .pictures {
+      padding-left: 100px;
+      padding-top: 100px;
+      width: 100%;
+      height: 100%;
+  }
+
+
+  .card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: left;
+    padding: 50px 10px;
+    width: 10%;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .card {
+      width: 95%;
+      padding: 50px 100px;
+      margin-top: 100px;
+      border-radius: 40px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .greenUnderline {
+    font-size: 35px;
+    border-bottom: 4px #03Ab99;
+    border-bottom-style: solid;
+    padding-left: -10px;
+    margin-left: -100px;
+  }
+  
+  .title {
+    line-height: 50px;
+    color: black;
+  }
+
+  .blueText {
+    color: #4ca899;
+}
+
+.background {
+  background-image: url("../../../public/static/HaitiImage2.png");
+  margin: 0;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+}
+
+.donateText {
+  left: 2.08%;
+  right: 56.25%;
+  top: 62.7%;
+  bottom: 34.58%;
+
+  padding-left: 100px;
+  padding-top: 350px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 60px;
+  /* or 158% */
+
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+
+  color: #FFFFFF;
+
+  text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
+}
+
+.donateButton {
+  background: #03AB99;
+  border: none;
+  color: white;
+  padding: 15px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  
+}
+
+.buttonDiv {
+  padding-top: 350;
+  padding-left: 230px; 
+}
+
+.classroom1 {
+  left: 36.88%;
+  right: 35.9%;
+  top: 40.93%;
+  bottom: 54.35%;
+  width: 407px;
+  height: 509px;
+}
+
+.classroom4 {
+  left: 36.88%;
+  right: 35.9%;
+  top: 40.93%;
+  bottom: 54.35%;
+  width: 392px;
+  height: 260px;
+}
+
+.classroom5 {
+  left: 36.88%;
+  right: 35.9%;
+  top: 45.85%;
+  bottom: 49.82%;
+  width: 392px;
+  height: 238px;
+}
+
+.classroom6 {
+  left: 64.93%;
+  right: 7.99%;
+  top: 40.93%;
+  bottom: 54.35%;
+  width: 390px;
+  height: 260px;
+}
+
+.classroom7 {
+  left: 64.93%;
+  right: 8.06%;
+  top: 45.85%;
+  bottom: 49.82%;
+  width: 389px;
+  height: 238px;
+}
+
+.classroom2 {
+  left: 7.71%;
+  right: 35.9%;
+  top: 50.36%;
+  bottom: 39.09%;
+  width: 812px;
+  height: 580px;
+}
+
+.classroom8 {
+  left: 64.93%;
+  right: 8.06%;
+  top: 50.36%;
+  bottom: 39.09%;
+  width: 389px;
+  height: 580px;
+}
+
+.classroom3 {
+  left: 7.71%;
+  right: 55.56%;
+  top: 61.13%;
+  bottom: 30.64%;
+  width: 529px;
+  height: 453px;
+}
+
+.classroom9 {
+  left: 45.07%;
+  right: 8.06%;
+  top: 61.11%;
+  bottom: 30.64%;
+  width: 675px;
+  height: 454px;
+}

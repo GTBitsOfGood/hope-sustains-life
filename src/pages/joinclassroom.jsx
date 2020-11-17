@@ -1,5 +1,3 @@
-import React from "react";
+import JoinClassroomPage from "../screens/JoinClassroom";
 
-const JoinClassroom = () => <h1>Join the Classroom!</h1>;
-
-export default JoinClassroom;
+export default JoinClassroomPage;
