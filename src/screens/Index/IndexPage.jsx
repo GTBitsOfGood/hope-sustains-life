@@ -22,8 +22,16 @@ const IndexPage = () => {
   return (
     <>
       <div className={mobileView ? classes.mobileGeneral : classes.general}>
-        <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
-        <p className={classes.centered}>
+        <h1
+          style={mobileView ? { fontSize: 35, paddingTop: 250 } : {}}
+          className={classes.centerText}
+        >
+          HOPE SUSTAINS LIFE
+        </h1>
+        <p
+          style={mobileView ? { fontSize: 20 } : {}}
+          className={classes.centered}
+        >
           Educating the future, one student at a time
         </p>
         <Row>
@@ -33,10 +41,18 @@ const IndexPage = () => {
               href={urls.pages.learnMore}
               className="btn centerButton"
               type="submit"
-              style={{
-                backgroundColor: "#00ae99",
-                borderColor: "#00ae99",
-              }}
+              style={
+                mobileView
+                  ? {
+                      marginLeft: "35%",
+                      backgroundColor: "#00ae99",
+                      borderColor: "#00ae99",
+                    }
+                  : {
+                      backgroundColor: "#00ae99",
+                      borderColor: "#00ae99",
+                    }
+              }
             >
               Learn More
             </Button>
@@ -45,15 +61,25 @@ const IndexPage = () => {
         </Row>
       </div>
       <div className={classes.space}></div>
-      <div className={classes.images}>
+      <div className={mobileView ? "" : classes.images}>
         <a href={urls.pages.tanzania}>
           <Image src={TanzaniaImage} className="pictures" fluid />
         </a>
         <a href={urls.pages.bangledesh}>
-          <Image src={BangledeshImage} className="pictures" fluid />
+          <Image
+            src={BangledeshImage}
+            style={mobileView ? { marginTop: "5%" } : {}}
+            className="pictures"
+            fluid
+          />
         </a>
         <a href={urls.pages.haiti}>
-          <Image src={HaitiImage} className="pictures" fluid />
+          <Image
+            src={HaitiImage}
+            style={mobileView ? { marginTop: "5%" } : {}}
+            className="pictures"
+            fluid
+          />
         </a>
       </div>
 
