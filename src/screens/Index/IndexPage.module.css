@@ -52,32 +52,20 @@ div.homeOverlay {
 }
 
 .ourPrinciples {
-    display: grid;
-    grid-template-columns: 600px 200px 250px 600px;
-    grid-gap: 0 px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.our {
-    padding-left: 100px;
-    padding-right: 0px;
+.leftWord {
+    padding-left: 75px;
+    padding-right: 10px;
 }
 
-.principles {
+.rightWord {
     color: #03AB99;
-    padding-right: 100px;
-    padding-left: 0px;
-}
-
-.lineOne {
-    padding-left: 300px;
-
-
-}
-
-.lineTwo {
-    padding-left: 12px;
-
-
+    padding-right: 75px;
+    padding-left: 10px;
 }
 
 .impactInnovationTransp {
@@ -153,16 +141,18 @@ div.homeOverlay {
 }
 
 .images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
     display: flex;
+    justify-content: center;
+}
+
+.ourPrinciplesImages {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
 }
 
 .impactImage {
-    padding-left: 130px;
-    padding-right: 100px;
-
     width: 307px;
     height: 230px;
     left: 155px;
@@ -170,9 +160,6 @@ div.homeOverlay {
 }
 
 .innovationImage {
-    padding-left: 130px;
-    padding-right: 100px;
-
     width: 271px;
     height: 203px;
     left: 585px;
@@ -180,10 +167,6 @@ div.homeOverlay {
 }
 
 .transparencyImage {
-    padding-left: 200px;
-    padding-right: 0;
-
-    padding-left: 0px;
     width: 312px;
     height: 234px;
     left: 979px;
@@ -256,15 +239,6 @@ div.homeOverlay {
     opacity: 0.8;
 }
 
-.where {
-    padding-left: 75px;
-    padding-right: 0px;
-}
-
-.weAre {
-    color: #03AB99;
-    padding-left: 50px;
-}
 
 
 .ourWorkGeneral {

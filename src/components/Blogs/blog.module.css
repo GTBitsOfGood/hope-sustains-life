@@ -10,22 +10,6 @@
   margin: auto;
 }
 
-/* .blogTableRow {
-  background: transparent;
-  border: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  border-right: 0px;
-  border-left: 0px;
-  border-top: 0px;
-  padding-top: 82px;
-  margin-left: 0%;
-  padding-bottom: 10px;
-  max-width: 881px;
-  width: 70%;
-  align-items: center;
-  display: inline-flex;
-} */
-
 .blogTableRow {
   background: transparent;
   border-bottom: 1px solid lightgray;

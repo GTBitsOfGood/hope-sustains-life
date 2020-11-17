@@ -14,30 +14,28 @@ import urls from "../../../utils/urls";
 
 const IndexPage = () => (
   <>
-        <Card className="bg-dark text-white">
-        <Card.Img src={HomeImage} alt="Card image" />
-        <Card.ImgOverlay className={classes.homeOverlay} >
-          <Card.Title
-            className={classes.homeTitle}
-          >
-            HOPE SUSTAINS LIFE          
-          </Card.Title>
-          <Card.Text className={classes.homeSubtitle}>
+    <Card className="bg-dark text-white">
+      <Card.Img src={HomeImage} alt="Card image" />
+      <Card.ImgOverlay className={classes.homeOverlay}>
+        <Card.Title className={classes.homeTitle}>
+          HOPE SUSTAINS LIFE
+        </Card.Title>
+        <Card.Text className={classes.homeSubtitle}>
           Educating the future, one student at a time
-          </Card.Text>
-          <Button
-            href={urls.pages.ourStory}
-            className="btn centerButton"
-            type="submit"
-            style={{
-              backgroundColor: "#00ae99",
-              borderColor: "#00ae99",
-            }}
-          >
-            Learn More
-          </Button>
-        </Card.ImgOverlay>
-      </Card>
+        </Card.Text>
+        <Button
+          href={urls.pages.ourStory}
+          className="btn centerButton"
+          type="submit"
+          style={{
+            backgroundColor: "#00ae99",
+            borderColor: "#00ae99",
+          }}
+        >
+          Learn More
+        </Button>
+      </Card.ImgOverlay>
+    </Card>
     <div className={classes.space}></div>
     <div className={classes.images}>
       <a href={urls.pages.tanzania}>
@@ -54,13 +52,13 @@ const IndexPage = () => (
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-      <h1 className={classes.our}>OUR</h1>
-      <h1 className={classes.principles}>PRINCIPLES</h1>
-      <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage}/>
+      <h1 className={classes.leftWord}>OUR</h1>
+      <h1 className={classes.rightWord}>PRINCIPLES</h1>
+      <Image src={LineImage} />
     </div>
 
-    <div className={classes.images}>
+    <div className={classes.ourPrinciplesImages}>
       <div className={classes.impactImage}>
         <Image src={ImpactImage} className={"pictures"} />
       </div>
@@ -103,19 +101,19 @@ const IndexPage = () => (
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-      <h1 className={classes.where}>WHERE</h1>
-      <h1 className={classes.weAre}>WE ARE</h1>
-      <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage} />
+      <h1 className={classes.leftWord}>WHERE</h1>
+      <h1 className={classes.rightWord}>WE ARE</h1>
+      <Image src={LineImage} />
     </div>
 
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-      <h1 className={classes.our}>OUR</h1>
-      <h1 className={classes.principles}>WORK</h1>
-      <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage}/>
+      <h1 className={classes.leftWord}>OUR</h1>
+      <h1 className={classes.rightWord}>WORK</h1>
+      <Image src={LineImage} />
     </div>
 
     <div className={classes.ourWorkGeneral}>
