@@ -98,10 +98,8 @@ const BlogTable = ({ blogs }) => {
       />
 
       <div className={styles.blogTable}>
-        <div style={{display: "flex", alignItems: "center"}}>
-        <h4>
-          Blogs/News
-          </h4>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h4>Blogs/News</h4>
           <Link href="./blogs/new">
             <Button
               style={{
@@ -115,9 +113,9 @@ const BlogTable = ({ blogs }) => {
               Add
             </Button>
           </Link>
-          </div>
+        </div>
         <br></br>
-        <div style={{width: "100%"}}>
+        <div style={{ width: "100%" }}>
           <div className={styles.tableHeader}>
             <label style={{ marginLeft: "15%", marginRight: 284 }}>BLOGS</label>
             <label style={{ marginLeft: 120, marginRight: 100 }}>

@@ -52,7 +52,7 @@ const IndexPage = () => (
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage}/>
+      <Image src={LineImage} />
       <h1 className={classes.leftWord}>OUR</h1>
       <h1 className={classes.rightWord}>PRINCIPLES</h1>
       <Image src={LineImage} />
@@ -110,7 +110,7 @@ const IndexPage = () => (
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage}/>
+      <Image src={LineImage} />
       <h1 className={classes.leftWord}>OUR</h1>
       <h1 className={classes.rightWord}>WORK</h1>
       <Image src={LineImage} />
