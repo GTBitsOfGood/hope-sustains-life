@@ -8,7 +8,7 @@ import ImpactImage from "../../../public/static/impact.png";
 import InnovationImage from "../../../public/static/innovation.png";
 import TransparencyImage from "../../../public/static/transparency.png";
 import LineImage from "../../../public/static/line-1.png";
-import OurWorkImage from "../../../public/static/ourWork.png";
+import OurWorkImage from "../../../public/static/ourWork2.png";
 import HomeImage from "../../../public/static/home-bg.jpg";
 import urls from "../../../utils/urls";
 
@@ -115,21 +115,30 @@ const IndexPage = () => (
       <h1 className={classes.rightWord}>WORK</h1>
       <Image src={LineImage} />
     </div>
-
-    <div className={classes.ourWorkGeneral}>
-      {/* <Image src={RectangleImage} className={classes.rectangle} fluid/> */}
-      <Row>
-        <Col></Col>
-        <Col></Col>
-        <Col></Col>
-        <Col lg="auto">
-          {/* <Button className={classes.viewMoreButton}>
-            View More
-          </Button> */}
-        </Col>
-        <Col></Col>
-      </Row>
-    </div>
+    <Card style={{ width: "80%", marginLeft: "auto", marginRight: "auto", marginTop:"40px"}} className="bg-dark text-white">
+        <Card.Img src={OurWorkImage} alt="Card image" />
+        <Card.ImgOverlay className={classes.donateCardOverlay}>
+          <Card.Title
+            className={classes.titleText}
+          >
+            Make A Difference.
+          </Card.Title>
+          <Card.Text className={classes.homeSubtitle}>
+          Read about what we're working on and how we plan to do it.
+        </Card.Text>
+        <Button
+          href={urls.pages.ourStory}
+          className="btn centerButton"
+          type="submit"
+          style={{
+            backgroundColor: "#00ae99",
+            borderColor: "#00ae99",
+          }}
+        >
+          View More
+        </Button>
+        </Card.ImgOverlay>
+      </Card>
   </>
 );
 

@@ -29,6 +29,20 @@ div.homeOverlay {
     background: linear-gradient(262.68deg, rgba(3, 171, 153, 0.5) -18.81%, rgba(3, 171, 153, 0) 56.51%, rgba(177, 224, 219, 0) 121.78%);
 }
 
+div.donateCardOverlay {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start; 
+    margin-left: 62%;
+}
+
+div.titleText {
+    font-size: 47px;
+    
+  }
+
+
 .space {
     padding: 3%;
 }
@@ -239,18 +253,6 @@ div.homeOverlay {
     opacity: 0.8;
 }
 
-
-
-.ourWorkGeneral {
-    background-image: url("../../../public/static/ourWork.png");
-    margin: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    padding-bottom: 50px;
-
-}
 
 .viewMoreButton {
     text-align: center;
