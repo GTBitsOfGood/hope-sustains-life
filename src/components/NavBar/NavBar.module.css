@@ -1,0 +1,53 @@
+.donateButton {
+  background-color: "#00ae99";
+  margin-right: 30px;
+  width: 100px;
+}
+
+.mobileNavBar {
+  background: #03ab99;
+  /* padding: 8em 1.5em 0; */
+  font-size: 1.15em;
+  color : white;
+  text-align: left;
+
+}
+
+
+
+.textColor {
+  color: white;
+}
+.mobileDonateButton {
+  background-color: "#00ae99";
+  width: 100px;
+}
+
+.bmMenu {
+  background: #03ab99;
+  padding: 8em 1.5em 0;
+  font-size: 1.15em;
+  top: 0px;
+}
+
+.bmBurgerButton {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  top: 30px;
+  right: 3%;
+  background-color: rgba(42, 45, 57, 0.6);
+}
+.bmBurgerBars {
+  background: #03ab99;
+  height: 10px;
+}
+
+.bmCrossButton {
+  height: 24px;
+  width: 24px;
+  margin-right: 250px;
+}
+.bmCross {
+  background: #bdc3c7;
+}
