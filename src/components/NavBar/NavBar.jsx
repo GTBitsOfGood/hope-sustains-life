@@ -95,6 +95,12 @@ const NavBar = () => {
     <Link href={urls.pages.donate}>
       <Button
         className={mobileView ? styles.mobileDonateButton : styles.donateButton}
+        style={{
+          backgroundColor: "#00ae99",
+          borderColor: "#00ae99",
+          marginRight: "30px",
+          width: "100px",
+        }}
       >
         Donate
       </Button>
