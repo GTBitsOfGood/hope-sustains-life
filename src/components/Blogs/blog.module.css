@@ -1,7 +1,7 @@
 .blogTable {
   max-width: 1279px;
   max-height: 774px;
-  width: 85%;
+  width: 90%;
   height: 85%;
   padding-left: 0px;
   padding-right: 0px;
@@ -17,7 +17,7 @@
   display: inline-flex;
   max-width: 1279px;
   max-height: 774px;
-  width: 90%;
+  width: 100%;
   height: 70%;
   padding-left: 0px;
   padding-right: 0px;
@@ -34,7 +34,7 @@
   display: inline-flex;
   max-width: 1279px;
   max-height: 774px;
-  width: 90%;
+  width: 100%;
   height: 70%;
   padding-left: 0px;
   padding-right: 0px;
@@ -59,7 +59,7 @@
   color: #03AB99;
 }
 
-.unpublishButton {
+button.unpublishButton {
   margin-left: 220px;
   background-color: gray;
   min-width: 100px;

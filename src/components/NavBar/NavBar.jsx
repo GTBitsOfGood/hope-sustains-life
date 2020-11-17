@@ -39,9 +39,6 @@ const NavBar = () => {
         <Link href={urls.pages.blogNews} passHref>
           <Item className={styles.textColor}>Blog/News</Item>
         </Link>
-        <Link href={urls.pages.hundredPromise} passHref>
-          <Item className={styles.textColor}>100% Promise</Item>
-        </Link>
       </NavDropdown>
 
       <Nav.Link
