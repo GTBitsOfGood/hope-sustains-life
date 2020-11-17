@@ -84,6 +84,7 @@ const NavBar = () => {
         crossClassName={styles.bmCross}
         outerContainerId={"outer-container"}
         pageWrapId={"page-wrap"}
+        id={"sidebar"}
       >
         <main id="page-wrap"></main>
         {navContents}
@@ -108,12 +109,12 @@ const NavBar = () => {
   );
 
   return (
-    <div id="outer-container">
       <BootstrapNavbar
         className="navbar-stuff"
         expand="md"
         fixed="top"
         variant="dark"
+        id="outer-container"
       >
         <Brand href="/">
           <Image
@@ -126,29 +127,18 @@ const NavBar = () => {
           ></Image>
         </Brand>
         <div className="d-flex flex-row">
-          {mobileView && donateButton}
-          {/* <Toggle aria-controls="basic-navbar-nav" /> */}
-        </div>
+        {mobileView && donateButton}
+      </div>
         {!mobileView && (
           <Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="ml-auto">
               {navContents}
-              {!mobileView && donateButton}
+              {donateButton}
             </Nav>
           </Collapse>
         )}
+        {mobileView && mobileNavContents}
       </BootstrapNavbar>
-      {mobileView && (
-        <BootstrapNavbar
-          className="navbar-stuff"
-          expand="md"
-          fixed="top"
-          variant="dark"
-        >
-          {mobileNavContents}
-        </BootstrapNavbar>
-      )}
-    </div>
   );
 };
 
