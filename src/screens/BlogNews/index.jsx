@@ -13,16 +13,16 @@ const BlogsNewsContainer = ({ blogs }) => (
     <BlogNews />
     <BlogList blogs={blogs || []} />
     <div className={classes.background}>
-          <h1 className={classes.donateText}>
-            Don’t wait to change the<br></br>world...the world needs the{" "}
-            <br></br>change you can bring now
-          </h1>
-          <div className={classes.buttonDiv}>
-            <Link href={urls.pages.donate.index}>
-            <Button className={classes.donateButton}>Donate</Button>
-            </Link>
-          </div>
-        </div>
+      <h1 className={classes.donateText}>
+        Don’t wait to change the<br></br>world...the world needs the <br></br>
+        change you can bring now
+      </h1>
+      <div className={classes.buttonDiv}>
+        <Link href={urls.pages.donate.index}>
+          <Button className={classes.donateButton}>Donate</Button>
+        </Link>
+      </div>
+    </div>
   </>
 );
 

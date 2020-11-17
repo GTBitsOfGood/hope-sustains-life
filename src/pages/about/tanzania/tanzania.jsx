@@ -6,7 +6,6 @@ import { displayMobileView } from "../../../../utils/screen";
 import urls from "../../../../utils/urls";
 import Link from "next/link";
 
-
 function Tanzania() {
   const isMobile = () => {
     const mobile = displayMobileView();
