@@ -105,7 +105,7 @@ function Haiti() {
             <br></br>change you can bring now
           </h1>
           <div className={classes.buttonDiv}>
-            <button className={classes.donateButton}>Donate</button>
+            <Button className={classes.donateButton}>Donate</Button>
           </div>
         </div>
       </>
