@@ -115,15 +115,21 @@ const IndexPage = () => (
       <h1 className={classes.rightWord}>WORK</h1>
       <Image src={LineImage} />
     </div>
-    <Card style={{ width: "80%", marginLeft: "auto", marginRight: "auto", marginTop:"40px"}} className="bg-dark text-white">
-        <Card.Img src={OurWorkImage} alt="Card image" />
-        <Card.ImgOverlay className={classes.donateCardOverlay}>
-          <Card.Title
-            className={classes.titleText}
-          >
-            Make A Difference.
-          </Card.Title>
-          <Card.Text className={classes.homeSubtitle}>
+    <Card
+      style={{
+        width: "80%",
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: "40px",
+      }}
+      className="bg-dark text-white"
+    >
+      <Card.Img src={OurWorkImage} alt="Card image" />
+      <Card.ImgOverlay className={classes.donateCardOverlay}>
+        <Card.Title className={classes.titleText}>
+          Make A Difference.
+        </Card.Title>
+        <Card.Text className={classes.homeSubtitle}>
           Read about what we're working on and how we plan to do it.
         </Card.Text>
         <Button
@@ -137,8 +143,8 @@ const IndexPage = () => (
         >
           View More
         </Button>
-        </Card.ImgOverlay>
-      </Card>
+      </Card.ImgOverlay>
+    </Card>
   </>
 );
 
