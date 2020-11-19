@@ -1,6 +1,7 @@
 import mongoDB from "../index";
 import BlogPost from "../models/BlogPost";
 import { deleteImage } from "../../actions/cloudinary";
+import { mod } from "./utils";
 
 export async function getBlogs() {
   await mongoDB();
@@ -160,20 +161,17 @@ export async function getRecommendedBlogs(orderIndex) {
 
   await mongoDB();
 
-  const numRecommended = 3;
+  const TOTAL_RECOMMENDED_BLOGS = 3;
   const orderIndices = [];
 
   try {
-    for (let i = 1; i <= numRecommended; i++) {
-      const otherIndex = orderIndex - i;
-
-      if (otherIndex < 0) break;
-
-      orderIndices.push(otherIndex);
+    const count = await BlogPost.countDocuments();
+    for (let i = 1; i <= TOTAL_RECOMMENDED_BLOGS; i++) {
+      orderIndices.push(mod(orderIndex - i, count));
     }
 
     return await BlogPost.find({ orderIndex: { $in: orderIndices } });
-  } catch (error) {
-    throw new Error(error.message);
+  } catch (err) {
+    return [];
   }
 }
