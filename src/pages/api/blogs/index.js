@@ -14,7 +14,9 @@ import {
 // @access  Admin
 const handler = (req, res) => {
   if (req.method === "GET") {
-    return getBlogs()
+    const isPublishedOnly = req.query.isPublished === "true";
+
+    return getBlogs(isPublishedOnly)
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })

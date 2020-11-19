@@ -3,11 +3,16 @@ import BlogPost from "../models/BlogPost";
 import { deleteImage } from "../../actions/cloudinary";
 import { mod } from "./utils";
 
-export async function getBlogs() {
+export async function getBlogs(isPublishedOnly) {
   await mongoDB();
 
   try {
-    return await BlogPost.find({}).sort("-orderIndex").exec();
+    let searchQuery = {};
+    if (isPublishedOnly) {
+      searchQuery = { isPublished: true };
+    }
+
+    return await BlogPost.find(searchQuery).sort("-orderIndex").exec();
   } catch (error) {
     throw new Error(error.message);
   }
@@ -170,7 +175,10 @@ export async function getRecommendedBlogs(orderIndex) {
       orderIndices.push(mod(orderIndex - i, count));
     }
 
-    return await BlogPost.find({ orderIndex: { $in: orderIndices } });
+    return await BlogPost.find({
+      orderIndex: { $in: orderIndices },
+      isPublished: true,
+    });
   } catch (err) {
     return [];
   }
