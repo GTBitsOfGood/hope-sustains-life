@@ -100,6 +100,18 @@ const IndexPage = () => (
         <h1 className={classes.where}>WHERE</h1>
         <h1 className={classes.weAre}>WE ARE</h1>
         <Image src={LineImage} className={classes.lineTwo} />
+        <iframe
+          src="https://www.mapscout.io/hopesustainslife"
+          style={{borderWidth: 0}}
+          name="mapscout"
+          scrolling="no"
+          frameborder="0"
+          marginheight="0px"
+          marginwidth="0px"
+          height="814px"
+          width="100%"
+          className ={classes.centerMap}
+          allowfullscreen/>
     </div>
 
     <div className={classes.space}></div>
