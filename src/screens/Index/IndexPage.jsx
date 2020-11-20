@@ -23,7 +23,11 @@ const IndexPage = () => {
     <>
       <div className={mobileView ? classes.mobileGeneral : classes.general}>
         <h1
-          style={mobileView ? { fontSize: 35, paddingTop: 250 } : {}}
+          style={
+            mobileView
+              ? { fontSize: 35, paddingTop: 250, fontFamily: "Montserrat" }
+              : {}
+          }
           className={classes.centerText}
         >
           HOPE SUSTAINS LIFE
@@ -66,35 +70,66 @@ const IndexPage = () => {
           <Image src={TanzaniaImage} className="pictures" fluid />
         </a>
         <a href={urls.pages.bangledesh}>
-          <Image
-            src={BangledeshImage}
-            style={mobileView ? { marginTop: "5%" } : {}}
-            className="pictures"
-            fluid
-          />
+          <Image src={BangledeshImage} className="pictures" fluid />
         </a>
         <a href={urls.pages.haiti}>
-          <Image
-            src={HaitiImage}
-            style={mobileView ? { marginTop: "5%" } : {}}
-            className="pictures"
-            fluid
-          />
+          <Image src={HaitiImage} className="pictures" fluid />
         </a>
       </div>
 
       <div className={classes.space}></div>
 
-      <div className={classes.ourPrinciples}>
-        <Image src={LineImage} className={classes.lineOne} />
-        <h1 className={classes.our}>OUR</h1>
-        <h1 className={classes.principles}>PRINCIPLES</h1>
-        <Image src={LineImage} className={classes.lineTwo} />
+      <div
+        className={
+          mobileView ? classes.mobileOurPrinciples : classes.ourPrinciples
+        }
+      >
+        <Image
+          style={
+            mobileView
+              ? {
+                  width: "50%",
+                  height: 2,
+                }
+              : {}
+          }
+          src={LineImage}
+          className={mobileView ? "" : classes.lineOne}
+        />
+        <h1 className={mobileView ? classes.mobileOur : classes.our}>OUR</h1>
+        <h1
+          className={mobileView ? classes.mobilePrinciples : classes.principles}
+        >
+          PRINCIPLES
+        </h1>
+        <Image
+          style={
+            mobileView
+              ? {
+                  width: "50%",
+                  height: 2,
+                  float: "right",
+                }
+              : {}
+          }
+          src={LineImage}
+          className={mobileView ? "" : classes.lineTwo}
+        />
       </div>
 
       <div className={classes.images}>
         <div className={classes.impactImage}>
-          <Image src={ImpactImage} className={"pictures"} />
+          <Image
+            style={
+              mobileView
+                ? {
+                    marginRight: 100,
+                  }
+                : {}
+            }
+            src={ImpactImage}
+            className={"pictures"}
+          />
         </div>
         <div className={classes.innovationImage}>
           <Image src={InnovationImage} className="pictures" />
@@ -105,7 +140,9 @@ const IndexPage = () => {
       </div>
 
       <div className={classes.impactInnovationTransp}>
-        <h2 className={classes.impact}>Impact</h2>
+        <h2 className={mobileView ? classes.mobileImpact : classes.impact}>
+          Impact
+        </h2>
         <h2 className={classes.innovation}>Innovation</h2>
         <h2 className={classes.transparency}>Transparency</h2>
       </div>

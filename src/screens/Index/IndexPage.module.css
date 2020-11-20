@@ -31,7 +31,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 50px;
+  padding-bottom: 50%;
+  margin-bottom: 10%;
 }
 
 .space {
@@ -81,16 +82,31 @@
   grid-template-columns: 600px 200px 250px 600px;
   grid-gap: 0 px;
 }
+.mobileOurPrinciples {
+  display: inline-flex;
+  justify-content: space-around;
+}
 
 .our {
   padding-left: 100px;
   padding-right: 0px;
 }
-
+.mobileOur {
+  font-size: 20px;
+  margin-right: 7px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
 .principles {
   color: #03ab99;
   padding-right: 100px;
   padding-left: 0px;
+}
+.mobilePrinciples {
+  color: #03ab99;
+  font-size: 20px;
+  margin-right: 10px;
+  top: -5%;
 }
 
 .lineOne {
@@ -126,6 +142,9 @@
   color: #03ab99;
 }
 
+.mobileImpact {
+  display: inline-block;
+}
 .innovation {
   padding-left: 220px;
   padding-right: 100px;
