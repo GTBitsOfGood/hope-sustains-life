@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import styles from "./blog.module.css";
 import { Button, Card } from "react-bootstrap";
-import DefaultImage from "../../../public/static/home-bg.jpg"
+import DefaultImage from "../../../public/static/home-bg.jpg";
 
 const BlogCard = ({ blog, index }) => {
   if (index < 11) {
@@ -12,7 +12,10 @@ const BlogCard = ({ blog, index }) => {
   return (
     <>
       <Card className={styles.card}>
-        <Card.Img variant="top" src={blog.image ? blog.image.url : DefaultImage} />
+        <Card.Img
+          variant="top"
+          src={blog.image ? blog.image.url : DefaultImage}
+        />
         <Card.Body>
           <Card.Title>{blog.title}</Card.Title>
           <Card.Text>{blog.subtitle}</Card.Text>

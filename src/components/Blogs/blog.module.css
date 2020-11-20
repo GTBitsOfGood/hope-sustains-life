@@ -40,6 +40,7 @@
   padding-top: 20px;
   padding-bottom: 20px;
   margin: auto;
+  flex-grow: 1;
 }
 
 .rowSelected {
@@ -60,7 +61,7 @@
 }
 
 .action {
-  margin-left: 95px;
+  /*margin-left: 185px; 95*/
   width: 250px;
 }
 
@@ -76,7 +77,8 @@
 }
 
 .unpublishButton {
-  margin-left: 220px;
+  /*margin-left: 220px;*/
+  margin-left: 60px;
   background-color: gray;
   min-width: 100px;
   border: none;  
