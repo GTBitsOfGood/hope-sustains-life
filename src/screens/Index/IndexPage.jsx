@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./IndexPage.module.css";
-import { Button, Row, Col, Image } from "react-bootstrap";
+import { Button, Row, Col, Image, Card } from "react-bootstrap";
 import TanzaniaImage from "../../../public/static/tanzania.jpg";
 import BangledeshImage from "../../../public/static/bangledesh.jpg";
 import HaitiImage from "../../../public/static/haiti.jpg";
@@ -8,34 +8,34 @@ import ImpactImage from "../../../public/static/impact.png";
 import InnovationImage from "../../../public/static/innovation.png";
 import TransparencyImage from "../../../public/static/transparency.png";
 import LineImage from "../../../public/static/line-1.png";
-import OurWorkImage from "../../../public/static/ourWork.png";
+import OurWorkImage from "../../../public/static/ourWork2.png";
+import HomeImage from "../../../public/static/home-bg.jpg";
 import urls from "../../../utils/urls";
 
 const IndexPage = () => (
   <>
-    <div className={classes.general}>
-      <h1 className={classes.centerText}>HOPE SUSTAINS LIFE</h1>
-      <p className={classes.centered}>
-        Educating the future, one student at a time
-      </p>
-      <Row>
-        <Col></Col>
-        <Col md="auto">
-          <Button
-            href={urls.pages.learnMore}
-            className="btn centerButton"
-            type="submit"
-            style={{
-              backgroundColor: "#00ae99",
-              borderColor: "#00ae99",
-            }}
-          >
-            Learn More
-          </Button>
-        </Col>
-        <Col></Col>
-      </Row>
-    </div>
+    <Card className="bg-dark text-white">
+      <Card.Img src={HomeImage} alt="Card image" />
+      <Card.ImgOverlay className={classes.homeOverlay}>
+        <Card.Title className={classes.homeTitle}>
+          HOPE SUSTAINS LIFE
+        </Card.Title>
+        <Card.Text className={classes.homeSubtitle}>
+          Educating the future, one student at a time
+        </Card.Text>
+        <Button
+          href={urls.pages.ourStory}
+          className="btn centerButton"
+          type="submit"
+          style={{
+            backgroundColor: "#00ae99",
+            borderColor: "#00ae99",
+          }}
+        >
+          Learn More
+        </Button>
+      </Card.ImgOverlay>
+    </Card>
     <div className={classes.space}></div>
     <div className={classes.images}>
       <a href={urls.pages.tanzania}>
@@ -52,13 +52,13 @@ const IndexPage = () => (
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-      <h1 className={classes.our}>OUR</h1>
-      <h1 className={classes.principles}>PRINCIPLES</h1>
-      <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage} />
+      <h1 className={classes.leftWord}>OUR</h1>
+      <h1 className={classes.rightWord}>PRINCIPLES</h1>
+      <Image src={LineImage} />
     </div>
 
-    <div className={classes.images}>
+    <div className={classes.ourPrinciplesImages}>
       <div className={classes.impactImage}>
         <Image src={ImpactImage} className={"pictures"} />
       </div>
@@ -101,35 +101,50 @@ const IndexPage = () => (
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-      <h1 className={classes.where}>WHERE</h1>
-      <h1 className={classes.weAre}>WE ARE</h1>
-      <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage} />
+      <h1 className={classes.leftWord}>WHERE</h1>
+      <h1 className={classes.rightWord}>WE ARE</h1>
+      <Image src={LineImage} />
     </div>
 
     <div className={classes.space}></div>
 
     <div className={classes.ourPrinciples}>
-      <Image src={LineImage} className={classes.lineOne} />
-      <h1 className={classes.our}>OUR</h1>
-      <h1 className={classes.principles}>WORK</h1>
-      <Image src={LineImage} className={classes.lineTwo} />
+      <Image src={LineImage} />
+      <h1 className={classes.leftWord}>OUR</h1>
+      <h1 className={classes.rightWord}>WORK</h1>
+      <Image src={LineImage} />
     </div>
-
-    <div className={classes.ourWorkGeneral}>
-      {/* <Image src={RectangleImage} className={classes.rectangle} fluid/> */}
-      <Row>
-        <Col></Col>
-        <Col></Col>
-        <Col></Col>
-        <Col lg="auto">
-          {/* <Button className={classes.viewMoreButton}>
-            View More
-          </Button> */}
-        </Col>
-        <Col></Col>
-      </Row>
-    </div>
+    <Card
+      style={{
+        width: "80%",
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: "40px",
+      }}
+      className="bg-dark text-white"
+    >
+      <Card.Img src={OurWorkImage} alt="Card image" />
+      <Card.ImgOverlay className={classes.donateCardOverlay}>
+        <Card.Title className={classes.titleText}>
+          Make A Difference.
+        </Card.Title>
+        <Card.Text className={classes.homeSubtitle}>
+          Read about what we're working on and how we plan to do it.
+        </Card.Text>
+        <Button
+          href={urls.pages.ourStory}
+          className="btn centerButton"
+          type="submit"
+          style={{
+            backgroundColor: "#00ae99",
+            borderColor: "#00ae99",
+          }}
+        >
+          View More
+        </Button>
+      </Card.ImgOverlay>
+    </Card>
   </>
 );
 

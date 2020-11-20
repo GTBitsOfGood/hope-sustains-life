@@ -7,6 +7,7 @@ import { reorderBlogs, deleteBlogById } from "../../actions/Blog";
 import BlogTableRow from "./BlogTableRow";
 import BlogDeleteModal from "./BlogDeleteModal";
 import styles from "./blog.module.css";
+import { Button } from "react-bootstrap";
 
 const reorder = (list, startIndex, endIndex) => {
   const newList = [...list];
@@ -97,24 +98,24 @@ const BlogTable = ({ blogs }) => {
       />
 
       <div className={styles.blogTable}>
-        <h4>
-          Blogs/News
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h4>Blogs/News</h4>
           <Link href="./blogs/new">
-            <button
+            <Button
               style={{
-                marginLeft: "75%",
                 backgroundColor: "#03AB99",
                 border: "none",
-                width: 90,
+                width: 150,
                 height: 35,
+                marginLeft: "auto",
               }}
             >
               Add
-            </button>
+            </Button>
           </Link>
-        </h4>
+        </div>
         <br></br>
-        <div>
+        <div style={{ width: "100%" }}>
           <div className={styles.tableHeader}>
             <label style={{ marginLeft: "12%", marginRight: 310 }}>BLOGS</label>
             <label style={{ marginLeft: 120, marginRight: 100 }}>
