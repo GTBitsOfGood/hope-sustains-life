@@ -98,8 +98,22 @@ const IndexPage = () => {
 
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
-        <h1 className={classes.leftWord}>OUR</h1>
-        <h1 className={classes.rightWord}>PRINCIPLES</h1>
+        <h1
+          style={
+            mobileView
+              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
+              : {}
+          }
+          className={classes.leftWord}
+        >
+          OUR
+        </h1>
+        <h1
+          style={mobileView ? { fontSize: 20, paddingRight: 20 } : {}}
+          className={classes.rightWord}
+        >
+          PRINCIPLES
+        </h1>
         <Image src={LineImage} />
       </div>
 
@@ -194,8 +208,22 @@ const IndexPage = () => {
 
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
-        <h1 className={classes.leftWord}>WHERE</h1>
-        <h1 className={classes.rightWord}>WE ARE</h1>
+        <h1
+          style={
+            mobileView
+              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
+              : {}
+          }
+          className={classes.leftWord}
+        >
+          WHERE
+        </h1>
+        <h1
+          style={mobileView ? { fontSize: 20, paddingRight: 20 } : {}}
+          className={classes.rightWord}
+        >
+          WE&nbsp;ARE
+        </h1>
         <Image src={LineImage} />
       </div>
 
@@ -203,8 +231,22 @@ const IndexPage = () => {
 
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
-        <h1 className={classes.leftWord}>OUR</h1>
-        <h1 className={classes.rightWord}>WORK</h1>
+        <h1
+          style={
+            mobileView
+              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
+              : {}
+          }
+          className={classes.leftWord}
+        >
+          OUR
+        </h1>
+        <h1
+          style={mobileView ? { fontSize: 20, paddingRight: 20 } : {}}
+          className={classes.rightWord}
+        >
+          WORK
+        </h1>
         <Image src={LineImage} />
       </div>
       <Card
