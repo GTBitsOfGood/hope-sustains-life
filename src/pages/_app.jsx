@@ -50,10 +50,10 @@ MyApp.getInitialProps = async (appContext) => {
     .then((user) => {
       if (route === urls.pages.admin.index) {
         if (res) {
-          res.writeHead(301, { Location: urls.pages.admin.home });
+          res.writeHead(301, { Location: urls.pages.admin.blogs });
           res.end();
         } else {
-          return Router.replace(urls.pages.admin.home);
+          return Router.replace(urls.pages.admin.blogs);
         }
       }
 

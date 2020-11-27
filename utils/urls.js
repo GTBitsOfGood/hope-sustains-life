@@ -20,7 +20,10 @@ export default {
     ourWork: "/ourwork",
     joinClassroom: "/joinclassroom",
     joinLibrary: "/joinlibrary",
-    donate: "/donate",
+    donate: {
+      index: "/donate",
+      confirmation: "/donate/confirmation",
+    },
     learnMore: "/learnmore",
     tanzania: "/about/tanzania",
     bangledesh: "/about/bangledesh",
@@ -44,6 +47,9 @@ export default {
     },
     email: {
       contactUs: "/api/email/contact-us",
+    },
+    donate: {
+      index: "/api/donate",
     },
   },
 };

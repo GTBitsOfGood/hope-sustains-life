@@ -2,24 +2,28 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import styles from "./blog.module.css";
+import urls from "../../../utils/urls";
 import { Button, Card } from "react-bootstrap";
-import DefaultImage from "../../../public/static/home-bg.jpg"
+import DefaultImage from "../../../public/static/home-bg.jpg";
 
-const BlogCard = ({ blog, index }) => {
-  if (index < 11) {
-    return <></>;
-  }
+const BlogCard = ({ blog }) => {
+  const blogUrl = `${urls.pages.blogNews}/${blog._id}`;
   return (
-    <>
+    <Link href={blogUrl}>
       <Card className={styles.card}>
-        <Card.Img variant="top" src={blog.image ? blog.image.url : DefaultImage} />
+        <Card.Img
+          variant="top"
+          src={blog.image ? blog.image.url : DefaultImage}
+        />
         <Card.Body>
-          <Card.Title>{blog.title}</Card.Title>
+          <Card.Title className={styles.title}>{blog.title}</Card.Title>
           <Card.Text>{blog.subtitle}</Card.Text>
-          <Card.Link href="#">Another Link</Card.Link>
+          <Card.Link className={styles.readMore} href="#">
+            Read More ⇒
+          </Card.Link>
         </Card.Body>
       </Card>
-    </>
+    </Link>
   );
 };
 

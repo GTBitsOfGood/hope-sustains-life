@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./IndexPage.module.css";
-import { Button, Row, Col, Image } from "react-bootstrap";
+import { Button, Row, Col, Image, Card } from "react-bootstrap";
 import TanzaniaImage from "../../../public/static/tanzania.jpg";
 import BangledeshImage from "../../../public/static/bangledesh.jpg";
 import HaitiImage from "../../../public/static/haiti.jpg";
@@ -202,8 +202,6 @@ const IndexPage = () => {
         </>
       )}
 
-      <div className={classes.space}></div>
-
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} className={classes.lineOne} />
         <h1 className={classes.where}>WHERE</h1>
@@ -214,28 +212,42 @@ const IndexPage = () => {
       <div className={classes.space}></div>
 
       <div className={classes.ourPrinciples}>
-        <Image src={LineImage} className={classes.lineOne} />
-        <h1 className={classes.our}>OUR</h1>
-        <h1 className={classes.principles}>WORK</h1>
-        <Image src={LineImage} className={classes.lineTwo} />
+        <Image src={LineImage} />
+        <h1 className={classes.leftWord}>OUR</h1>
+        <h1 className={classes.rightWord}>WORK</h1>
+        <Image src={LineImage} />
       </div>
-
-      <div className={classes.ourWorkGeneral}>
-        {/* <Image src={RectangleImage} className={classes.rectangle} fluid/> */}
-        <Row>
-          <Col></Col>
-          <Col></Col>
-          <Col></Col>
-          <Col lg="auto">
-            {/* <Button className={classes.viewMoreButton}>
+      <Card
+        style={{
+          width: "80%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "40px",
+        }}
+        className="bg-dark text-white"
+      >
+        <Card.Img src={OurWorkImage} alt="Card image" />
+        <Card.ImgOverlay className={classes.donateCardOverlay}>
+          <Card.Title className={classes.titleText}>
+            Make A Difference.
+          </Card.Title>
+          <Card.Text className={classes.homeSubtitle}>
+            Read about what we're working on and how we plan to do it.
+          </Card.Text>
+          <Button
+            href={urls.pages.ourStory}
+            className="btn centerButton"
+            type="submit"
+            style={{
+              backgroundColor: "#00ae99",
+              borderColor: "#00ae99",
+            }}
+          >
             View More
-          </Button> */}
-          </Col>
-          <Col></Col>
-        </Row>
-      </div>
+          </Button>
+        </Card.ImgOverlay>
+      </Card>
     </>
   );
 };
-
 export default IndexPage;
