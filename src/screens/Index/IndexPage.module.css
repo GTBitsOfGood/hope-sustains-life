@@ -408,6 +408,24 @@
   color: #03ab99;
 }
 
+.mobileImages {
+  vertical-align: middle;
+}
+
+.mobileImagesText {
+  color: #03ab99;
+  text-align: center;
+  padding-right: 11.2%;
+  padding-left: 11.47%;
+}
+
+.mobileImagesBody {
+  text-align: center;
+  line-height: 16px;
+  padding-right: 11.2%;
+  padding-left: 11.47%;
+}
+
 .paragraphs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -117,57 +117,90 @@ const IndexPage = () => {
         />
       </div>
 
-      <div className={classes.images}>
-        <div className={classes.impactImage}>
+      <div className={mobileView ? classes.mobileImages : classes.images}>
+        <div className={mobileView ? "" : classes.impactImage}>
           <Image
-            style={
-              mobileView
-                ? {
-                    marginRight: 100,
-                  }
-                : {}
-            }
+            style={mobileView ? { marginLeft: "10%" } : {}}
             src={ImpactImage}
             className={"pictures"}
           />
+          {mobileView && (
+            <>
+              <h2 className={classes.mobileImagesText}>Impact</h2>
+              <p className={classes.mobileImagesBody}>
+                We make sure to provide GPS locations and photos of the schools
+                we have built or partnered with to show the impact we have had
+                on the refugee population and the surrounding community
+              </p>
+            </>
+          )}
         </div>
-        <div className={classes.innovationImage}>
-          <Image src={InnovationImage} className="pictures" />
+        <div className={mobileView ? "" : classes.innovationImage}>
+          <Image
+            style={mobileView ? { marginLeft: "15%" } : {}}
+            src={InnovationImage}
+            className="pictures"
+          />
+          {mobileView && (
+            <>
+              <h2 className={classes.mobileImagesText}>Innovation</h2>
+              <p className={classes.mobileImagesBody}>
+                Traditional methods have not been working for many years. Our
+                team works on developing breakthrough solutions to build or
+                support schools for the refugee population.
+              </p>
+            </>
+          )}
         </div>
-        <div className={classes.transparencyImage}>
-          <Image src={TransparencyImage} className="pictures" />
+        <div className={mobileView ? "" : classes.transparencyImage}>
+          <Image
+            style={mobileView ? { marginLeft: "10%" } : {}}
+            src={TransparencyImage}
+            className="pictures"
+          />
+          {mobileView && (
+            <>
+              <h2 className={classes.mobileImagesText}>Transparency</h2>
+              <p className={classes.mobileImagesBody}>
+                We make sure 100% of your money goes to funding our educational
+                projects for the refugee population.
+              </p>
+            </>
+          )}
         </div>
       </div>
 
-      <div className={classes.impactInnovationTransp}>
-        <h2 className={mobileView ? classes.mobileImpact : classes.impact}>
-          Impact
-        </h2>
-        <h2 className={classes.innovation}>Innovation</h2>
-        <h2 className={classes.transparency}>Transparency</h2>
-      </div>
-      <div className={classes.paragraphs}>
-        <div className={classes.impactP}>
-          <p>
-            We make sure to provide GPS locations and photos of the schools we
-            have built or partnered with to show the impact we have had on the
-            refugee population and the surrounding community
-          </p>
-        </div>
-        <div className={classes.innovationP}>
-          <p>
-            Traditional methods have not been working for many years. Our team
-            works on developing breakthrough solutions to build or support
-            schools for the refugee population.
-          </p>
-        </div>
-        <div className={classes.transparencyP}>
-          <p>
-            We make sure 100% of your money goes to funding our educational
-            projects for the refugee population.
-          </p>
-        </div>
-      </div>
+      {!mobileView && (
+        <>
+          <div className={classes.impactInnovationTransp}>
+            <h2 className={classes.impact}>Impact</h2>
+            <h2 className={classes.innovation}>Innovation</h2>
+            <h2 className={classes.transparency}>Transparency</h2>
+          </div>
+          <div className={classes.paragraphs}>
+            <div className={classes.impactP}>
+              <p>
+                We make sure to provide GPS locations and photos of the schools
+                we have built or partnered with to show the impact we have had
+                on the refugee population and the surrounding community
+              </p>
+            </div>
+            <div className={classes.innovationP}>
+              <p>
+                Traditional methods have not been working for many years. Our
+                team works on developing breakthrough solutions to build or
+                support schools for the refugee population.
+              </p>
+            </div>
+            <div className={classes.transparencyP}>
+              <p>
+                We make sure 100% of your money goes to funding our educational
+                projects for the refugee population.
+              </p>
+            </div>
+          </div>
+        </>
+      )}
 
       <div className={classes.space}></div>
 
