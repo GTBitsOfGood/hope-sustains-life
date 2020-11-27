@@ -10,6 +10,7 @@ import TransparencyImage from "../../../public/static/transparency.png";
 import LineImage from "../../../public/static/line-1.png";
 import OurWorkImage from "../../../public/static/ourWork.png";
 import { displayMobileView } from "../../../utils/screen.js";
+import HomeImage from "../../../public/static/home-bg.jpg";
 import urls from "../../../utils/urls";
 
 const IndexPage = () => {
@@ -21,49 +22,28 @@ const IndexPage = () => {
   const mobileView = isMobile();
   return (
     <>
-      <div className={mobileView ? classes.mobileGeneral : classes.general}>
-        <h1
-          style={
-            mobileView
-              ? { fontSize: 35, paddingTop: 250, fontFamily: "Montserrat" }
-              : {}
-          }
-          className={classes.centerText}
-        >
-          HOPE SUSTAINS LIFE
-        </h1>
-        <p
-          style={mobileView ? { fontSize: 20 } : {}}
-          className={classes.centered}
-        >
-          Educating the future, one student at a time
-        </p>
-        <Row>
-          <Col></Col>
-          <Col md="auto">
-            <Button
-              href={urls.pages.learnMore}
-              className="btn centerButton"
-              type="submit"
-              style={
-                mobileView
-                  ? {
-                      marginLeft: "35%",
-                      backgroundColor: "#00ae99",
-                      borderColor: "#00ae99",
-                    }
-                  : {
-                      backgroundColor: "#00ae99",
-                      borderColor: "#00ae99",
-                    }
-              }
-            >
-              Learn More
-            </Button>
-          </Col>
-          <Col></Col>
-        </Row>
-      </div>
+      <Card className="bg-dark text-white">
+        <Card.Img src={HomeImage} alt="Card image" />
+        <Card.ImgOverlay className={classes.homeOverlay}>
+          <Card.Title className={classes.homeTitle}>
+            HOPE SUSTAINS LIFE
+          </Card.Title>
+          <Card.Text className={classes.homeSubtitle}>
+            Educating the future, one student at a time
+          </Card.Text>
+          <Button
+            href={urls.pages.ourStory}
+            className="btn centerButton"
+            type="submit"
+            style={{
+              backgroundColor: "#00ae99",
+              borderColor: "#00ae99",
+            }}
+          >
+            Learn More
+          </Button>
+        </Card.ImgOverlay>
+      </Card>
       <div className={classes.space}></div>
       <div className={mobileView ? "" : classes.images}>
         <a href={urls.pages.tanzania}>
