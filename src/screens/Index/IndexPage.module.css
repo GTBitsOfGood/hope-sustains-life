@@ -12,6 +12,17 @@
   color: #ffffff;
 }
 
+.mobileHomeSubtitle {
+  color: #ffffff;
+  padding-top: 0.3%;
+  padding-bottom: 2%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 31px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.38);
+}
+
 .general {
   background-image: url("../../../public/static/home-bg.jpg");
   margin: 0;
@@ -108,20 +119,11 @@ div.titleText {
   line-height: 27px;
 }
 
-.ourPrinciples {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .mobileOurPrinciples {
   display: inline-flex;
   justify-content: space-around;
 }
 
-.our {
-  padding-left: 100px;
-  padding-right: 0px;
-}
 .mobileOur {
   font-size: 20px;
   margin-right: 7px;
@@ -223,15 +225,11 @@ div.titleText {
 }
 
 .images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .impactImage {
-  padding-left: 130px;
-  padding-right: 100px;
-
   width: 307px;
   height: 230px;
   left: 155px;
@@ -239,9 +237,6 @@ div.titleText {
 }
 
 .innovationImage {
-  padding-left: 130px;
-  padding-right: 100px;
-
   width: 271px;
   height: 203px;
   left: 585px;
@@ -249,9 +244,6 @@ div.titleText {
 }
 
 .transparencyImage {
-  padding-left: 200px;
-  padding-right: 0;
-
   padding-left: 0px;
   width: 312px;
   height: 234px;
@@ -350,17 +342,9 @@ div.titleText {
   justify-content: right;
 }
 .ourPrinciples {
-  display: grid;
-  grid-template-columns: 600px 200px 250px 600px;
-  grid-gap: 0 px;
-}
-
-.lineOne {
-  padding-left: 300px;
-}
-
-.lineTwo {
-  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileImages {

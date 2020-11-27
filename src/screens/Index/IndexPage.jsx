@@ -96,45 +96,18 @@ const IndexPage = () => {
 
       <div className={classes.space}></div>
 
-      <div
-        className={
-          mobileView ? classes.mobileOurPrinciples : classes.ourPrinciples
-        }
-      >
-        <Image
-          style={
-            mobileView
-              ? {
-                  width: "50%",
-                  height: 2,
-                }
-              : {}
-          }
-          src={LineImage}
-          className={mobileView ? "" : classes.lineOne}
-        />
-        <h1 className={mobileView ? classes.mobileOur : classes.our}>OUR</h1>
-        <h1
-          className={mobileView ? classes.mobilePrinciples : classes.principles}
-        >
-          PRINCIPLES
-        </h1>
-        <Image
-          style={
-            mobileView
-              ? {
-                  width: "50%",
-                  height: 2,
-                  float: "right",
-                }
-              : {}
-          }
-          src={LineImage}
-          className={mobileView ? "" : classes.lineTwo}
-        />
+      <div className={classes.ourPrinciples}>
+        <Image src={LineImage} />
+        <h1 className={classes.leftWord}>OUR</h1>
+        <h1 className={classes.rightWord}>PRINCIPLES</h1>
+        <Image src={LineImage} />
       </div>
 
-      <div className={mobileView ? classes.mobileImages : classes.images}>
+      <div
+        className={
+          mobileView ? classes.mobileImages : classes.ourPrinciplesImages
+        }
+      >
         <div className={mobileView ? "" : classes.impactImage}>
           <Image
             style={mobileView ? { marginLeft: "10%" } : {}}
@@ -220,10 +193,10 @@ const IndexPage = () => {
       )}
 
       <div className={classes.ourPrinciples}>
-        <Image src={LineImage} className={classes.lineOne} />
-        <h1 className={classes.where}>WHERE</h1>
-        <h1 className={classes.weAre}>WE ARE</h1>
-        <Image src={LineImage} className={classes.lineTwo} />
+        <Image src={LineImage} />
+        <h1 className={classes.leftWord}>WHERE</h1>
+        <h1 className={classes.rightWord}>WE ARE</h1>
+        <Image src={LineImage} />
       </div>
 
       <div className={classes.space}></div>
