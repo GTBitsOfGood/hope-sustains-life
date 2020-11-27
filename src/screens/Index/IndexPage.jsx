@@ -22,23 +22,60 @@ const IndexPage = () => {
   const mobileView = isMobile();
   return (
     <>
-      <Card className="bg-dark text-white">
-        <Card.Img src={HomeImage} alt="Card image" />
+      <Card
+        style={
+          mobileView
+            ? {
+                height: "90%",
+                width: "100%",
+                alignItems: "center",
+                marginBottom: "10%",
+              }
+            : {}
+        }
+        className="bg-dark text-white"
+      >
+        <Card.Img
+          style={
+            mobileView
+              ? {
+                  height: "100%",
+                  width: "300%",
+                }
+              : {}
+          }
+          src={HomeImage}
+          alt="Card image"
+        />
         <Card.ImgOverlay className={classes.homeOverlay}>
-          <Card.Title className={classes.homeTitle}>
+          <Card.Title
+            className={mobileView ? classes.mobileTitle : classes.homeTitle}
+          >
             HOPE SUSTAINS LIFE
           </Card.Title>
-          <Card.Text className={classes.homeSubtitle}>
+          <Card.Text
+            style={mobileView ? { fontSize: 15 } : {}}
+            className={classes.homeSubtitle}
+          >
             Educating the future, one student at a time
           </Card.Text>
           <Button
             href={urls.pages.ourStory}
             className="btn centerButton"
             type="submit"
-            style={{
-              backgroundColor: "#00ae99",
-              borderColor: "#00ae99",
-            }}
+            style={
+              mobileView
+                ? {
+                    backgroundColor: "#00ae99",
+                    borderColor: "#00ae99",
+                    width: "60%",
+                    alignSelf: "center",
+                  }
+                : {
+                    backgroundColor: "#00ae99",
+                    borderColor: "#00ae99",
+                  }
+            }
           >
             Learn More
           </Button>

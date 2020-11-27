@@ -1,15 +1,13 @@
-.centerText {
+.mobileTitle {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 20%;
 
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 85px;
-  line-height: 100px;
+  font-size: 35px;
 
   color: #ffffff;
 }
