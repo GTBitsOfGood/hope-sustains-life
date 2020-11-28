@@ -49,7 +49,12 @@ const IndexPage = () => {
         />
         <Card.ImgOverlay className={classes.homeOverlay}>
           <Card.Title
-            className={mobileView ? classes.mobileTitle : classes.homeTitle}
+            style={
+              mobileView
+                ? { fontSize: 35, lineHeight: 1, textAlign: "center" }
+                : {}
+            }
+            className={classes.homeTitle}
           >
             HOPE SUSTAINS LIFE
           </Card.Title>
@@ -90,7 +95,12 @@ const IndexPage = () => {
           <Image src={BangledeshImage} className="pictures" fluid />
         </a>
         <a href={urls.pages.haiti}>
-          <Image src={HaitiImage} className="pictures" fluid />
+          <Image
+            style={mobileView ? { marginBottom: "20%" } : {}}
+            src={HaitiImage}
+            className="pictures"
+            fluid
+          />
         </a>
       </div>
 
@@ -101,7 +111,11 @@ const IndexPage = () => {
         <h1
           style={
             mobileView
-              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
+              ? {
+                  fontSize: 20,
+                  marginRight: -10,
+                  paddingLeft: 20,
+                }
               : {}
           }
           className={classes.leftWord}
@@ -229,7 +243,10 @@ const IndexPage = () => {
 
       <div className={classes.space}></div>
 
-      <div className={classes.ourPrinciples}>
+      <div
+        style={mobileView ? { marginBottom: "20%" } : {}}
+        className={classes.ourPrinciples}
+      >
         <Image src={LineImage} />
         <h1
           style={
@@ -249,31 +266,60 @@ const IndexPage = () => {
         </h1>
         <Image src={LineImage} />
       </div>
+
       <Card
-        style={{
-          width: "80%",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: "40px",
-        }}
+        style={
+          mobileView
+            ? {
+                borderRadius: 0,
+                height: "35%",
+                alignItems: "center",
+              }
+            : {
+                width: "80%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginTop: "40px",
+              }
+        }
         className="bg-dark text-white"
       >
-        <Card.Img src={OurWorkImage} alt="Card image" />
+        <Card.Img
+          style={mobileView ? { height: "100%", width: "120%" } : {}}
+          src={OurWorkImage}
+          alt="Card image"
+        />
         <Card.ImgOverlay className={classes.donateCardOverlay}>
-          <Card.Title className={classes.titleText}>
+          <Card.Title
+            style={mobileView ? { fontSize: 15 } : {}}
+            className={classes.titleText}
+          >
             Make A Difference.
           </Card.Title>
-          <Card.Text className={classes.homeSubtitle}>
+          <Card.Text
+            className={
+              mobileView ? classes.mobileHomeSubtitle : classes.homeSubtitle
+            }
+          >
             Read about what we're working on and how we plan to do it.
           </Card.Text>
           <Button
             href={urls.pages.ourStory}
             className="btn centerButton"
             type="submit"
-            style={{
-              backgroundColor: "#00ae99",
-              borderColor: "#00ae99",
-            }}
+            style={
+              mobileView
+                ? {
+                    backgroundColor: "#00ae99",
+                    borderColor: "#00ae99",
+                    fontSize: 12,
+                    width: "95%",
+                  }
+                : {
+                    backgroundColor: "#00ae99",
+                    borderColor: "#00ae99",
+                  }
+            }
           >
             View More
           </Button>
