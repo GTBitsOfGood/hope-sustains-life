@@ -21,7 +21,6 @@ const NavBar = () => {
 
   const navContents = (
     <>
-
       {/* <DropdownButton
         title ="test"
         className={mobileView ? styles.mobileNavBar : "mr-3"}
@@ -29,22 +28,18 @@ const NavBar = () => {
           <Dropdown.Item>Hey</Dropdown.Item>
         </DropdownButton> */}
       <NavDropdown
-        title={<span className= {styles.textColor}>ABOUT US</span>}
+        title={<span className={styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
-        className={mobileView ? styles.mobileNavBar : "mr-3"}>
-
+        className={mobileView ? styles.mobileNavBar : "mr-3"}
+      >
         <Link href={urls.pages.ourStory} passHref>
-          <Item className = {styles.textColor}>Our Story</Item>
+          <Item className={styles.textColor}>Our Story</Item>
         </Link>
         <Link href={urls.pages.blogNews} passHref>
-          <Item className = {styles.textColor}>Blog/News</Item>
-        </Link>
-        <Link href={urls.pages.hundredPromise} passHref>
-          <Item className = {styles.textColor}>100% Promise</Item>
+          <Item className={styles.textColor}>Blog/News</Item>
         </Link>
       </NavDropdown>
-
 
       <Nav.Link
         href={urls.pages.ourWork}
@@ -53,21 +48,20 @@ const NavBar = () => {
         OUR WORK
       </Nav.Link>
 
-
       <NavDropdown
-        title={<span className= {styles.textColor}>GET INVOLVED</span>}
+        title={<span className={styles.textColor}>GET INVOLVED</span>}
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
         className={mobileView ? styles.mobileNavBar : "mr-3"}
       >
         <Link href={urls.pages.joinClassroom} passHref>
-          <Item className = {styles.textColor}>Join the Classroom</Item>
+          <Item className={styles.textColor}>Join the Classroom</Item>
         </Link>
         <Link href={urls.pages.joinLibrary} passHref>
-          <Item className = {styles.textColor}>Join the Library</Item>
+          <Item className={styles.textColor}>Join the Library</Item>
         </Link>
         <Link href={urls.pages.contactUs} passHref>
-          <Item className = {styles.textColor}>Contact Us</Item>
+          <Item className={styles.textColor}>Contact Us</Item>
         </Link>
       </NavDropdown>
     </>
@@ -84,6 +78,7 @@ const NavBar = () => {
         crossClassName={styles.bmCross}
         outerContainerId={"outer-container"}
         pageWrapId={"page-wrap"}
+        id={"sidebar"}
       >
         <main id="page-wrap"></main>
         {navContents}
@@ -92,9 +87,15 @@ const NavBar = () => {
   );
 
   const donateButton = (
-    <Link href={urls.pages.donate}>
+    <Link href={urls.pages.donate.index}>
       <Button
         className={mobileView ? styles.mobileDonateButton : styles.donateButton}
+        style={{
+          backgroundColor: "#00ae99",
+          borderColor: "#00ae99",
+          marginRight: "30px",
+          width: "100px",
+        }}
       >
         Donate
       </Button>
@@ -102,47 +103,34 @@ const NavBar = () => {
   );
 
   return (
-    <div id="outer-container">
-      <BootstrapNavbar
-        className="navbar-stuff"
-        expand="md"
-        fixed="top"
-        variant="dark"
-      >
-        <Brand href="/">
-          <Image
-            src="/static/hsl-logo-transparent.png"
-            className="large-logo"
-          ></Image>
-          <Image
-            src="/static/hsl-logo-transparent-mobile.png"
-            className="mobile-logo"
-          ></Image>
-        </Brand>
-        <div className="d-flex flex-row">
-          {mobileView && donateButton}
-          {/* <Toggle aria-controls="basic-navbar-nav" /> */}
-        </div>
-        {!mobileView && (
-          <Collapse id="basic-navbar-nav" className="justify-content-end">
-            <Nav className="ml-auto">
-              {navContents}
-              {!mobileView && donateButton}
-            </Nav>
-          </Collapse>
-        )}
-      </BootstrapNavbar>
-      {mobileView && (
-        <BootstrapNavbar
-          className="navbar-stuff"
-          expand="md"
-          fixed="top"
-          variant="dark"
-        >
-          {mobileNavContents}
-        </BootstrapNavbar>
+    <BootstrapNavbar
+      className="navbar-stuff"
+      expand="md"
+      fixed="top"
+      variant="dark"
+      id="outer-container"
+    >
+      <Brand href="/">
+        <Image
+          src="/static/hsl-logo-transparent.png"
+          className="large-logo"
+        ></Image>
+        <Image
+          src="/static/hsl-logo-transparent-mobile.png"
+          className="mobile-logo"
+        ></Image>
+      </Brand>
+      <div className="d-flex flex-row">{mobileView && donateButton}</div>
+      {!mobileView && (
+        <Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav className="ml-auto">
+            {navContents}
+            {donateButton}
+          </Nav>
+        </Collapse>
       )}
-    </div>
+      {mobileView && mobileNavContents}
+    </BootstrapNavbar>
   );
 };
 

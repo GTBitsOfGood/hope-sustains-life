@@ -1,0 +1,35 @@
+.centerMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 25px 0px 25px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 100px 0px 100px;
+}
+
+.mainImage {
+  height: auto;
+  width: 100%;
+}
+
+.titles {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.titlesMobile {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.title {
+  font-size: 25px;
+}
+

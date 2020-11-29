@@ -58,7 +58,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-stripe-elements": "^6.1.2",
-    "react-toastify": "^6.0.8"
+    "react-toastify": "^6.0.8",
+    "stripe": "^8.120.0"
   },
   "devDependencies": {
     "@bitwarden/cli": "^1.11.0",

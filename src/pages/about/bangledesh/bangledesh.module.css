@@ -106,7 +106,7 @@
 
 }
 
-.donateText {
+h1.donateText {
     left: 2.08%;
     right: 56.25%;
     top: 62.7%;
@@ -131,7 +131,7 @@
     text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
 }
 
-.donateButton {
+ button.donateButton {
     background: #03AB99;
     border: none;
     color: white;
@@ -150,3 +150,4 @@
     padding-top: 350;
     padding-left: 230px; 
 }
+

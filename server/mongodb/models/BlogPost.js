@@ -54,6 +54,20 @@ BlogPostSchema.pre("save", function (next) {
   }
 });
 
+BlogPostSchema.post("remove", async function () {
+  const blogs = await BlogPostModel.find({}).sort("orderIndex").exec();
+  const bulkUpdates = blogs.map((blog, index) => {
+    return {
+      updateOne: {
+        filter: { _id: blog.id },
+        update: { orderIndex: index },
+      },
+    };
+  });
+
+  await BlogPostModel.bulkWrite(bulkUpdates);
+});
+
 const BlogPostModel =
   mongoose.models.BlogPost ?? mongoose.model("BlogPost", BlogPostSchema);
 export default BlogPostModel;

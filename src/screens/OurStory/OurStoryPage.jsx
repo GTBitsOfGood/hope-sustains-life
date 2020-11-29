@@ -4,6 +4,8 @@ import { Button, Row, Col, Image } from "react-bootstrap";
 
 import TheodoreImage from "../../../public/static/Theodore_headshot.jpg";
 import BernardImage from "../../../public/static/Bernard_headshot.jpg";
+import urls from "../../../utils/urls";
+import Link from "next/link";
 
 const OurStoryPage = () => (
   <>
@@ -161,20 +163,16 @@ const OurStoryPage = () => (
         </Col>
       </Row>
     </div>
-    <div className={classes.donate}>
-      <Row>
-        <Col className={classes.centerContent}>
-          <p className={classes.donateText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing
-          </p>
-          <br />
-          <br />
-          <Button className={classes.donateButton} type="submit" href="/donate">
-            Donate
-          </Button>
-        </Col>
-        `
-      </Row>
+    <div className={classes.background}>
+      <h1 className={classes.donateText}>
+        Don’t wait to change the<br></br>world...the world needs the <br></br>
+        change you can bring now
+      </h1>
+      <div className={classes.buttonDiv}>
+        <Link href={urls.pages.donate.index}>
+          <Button className={classes.donateButton}>Donate</Button>
+        </Link>
+      </div>
     </div>
   </>
 );

@@ -152,3 +152,28 @@ export async function updateBlog(
     throw new Error(error.message);
   }
 }
+
+export async function getRecommendedBlogs(orderIndex) {
+  if (orderIndex < 0) {
+    throw new Error("Invalid order index");
+  }
+
+  await mongoDB();
+
+  const numRecommended = 3;
+  const orderIndices = [];
+
+  try {
+    for (let i = 1; i <= numRecommended; i++) {
+      const otherIndex = orderIndex - i;
+
+      if (otherIndex < 0) break;
+
+      orderIndices.push(otherIndex);
+    }
+
+    return await BlogPost.find({ orderIndex: { $in: orderIndices } });
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}

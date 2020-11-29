@@ -1,36 +1,50 @@
-.centerText {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20%;
 
-    font-family: Roboto;
+div.homeTitle {
+    font-family: sans-serif;
     font-style: normal;
-    font-weight: 500;
-    font-size: 85px;
+    font-weight: 400;
+    font-size: 75px;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.34);
     line-height: 100px;
-
     color: #FFFFFF;
-
 }
 
-.general {
-    background-image: url("../../../public/static/home-bg.jpg");
-    margin: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 50px;
+p.homeSubtitle {
+    color: #FFFFFF;
+    padding-top: 0.3%;
+    padding-bottom: 2%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 31px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.38);
 }
+
+div.homeOverlay {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start; 
+    margin-left: 20px;
+    background: linear-gradient(262.68deg, rgba(3, 171, 153, 0.5) -18.81%, rgba(3, 171, 153, 0) 56.51%, rgba(177, 224, 219, 0) 121.78%);
+}
+
+div.donateCardOverlay {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start; 
+    margin-left: 62%;
+}
+
+div.titleText {
+    font-size: 47px;
+    
+  }
+
 
 .space {
     padding: 3%;
-}
-
-.images {
-    display: flex;
 }
 
 .pictures {
@@ -58,51 +72,21 @@
     justify-content: center;
 }
 
-
-
-.centered {
-    text-align: center;
-    color: #FFFFFF;
+.ourPrinciples {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 0.3%;
-    padding-bottom: 2%;
-    
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 27px;
 }
 
-.ourPrinciples {
-    display: grid;
-    grid-template-columns: 600px 200px 250px 600px;
-    grid-gap: 0 px;
+.leftWord {
+    padding-left: 75px;
+    padding-right: 10px;
 }
 
-.our {
-    padding-left: 100px;
-    padding-right: 0px;
-}
-
-.principles {
+.rightWord {
     color: #03AB99;
-    padding-right: 100px;
-    padding-left: 0px;
-}
-
-.lineOne {
-    padding-left: 300px;
-
-
-}
-
-.lineTwo {
-    padding-left: 12px;
-
-
+    padding-right: 75px;
+    padding-left: 10px;
 }
 
 .impactInnovationTransp {
@@ -178,15 +162,18 @@
 }
 
 .images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.ourPrinciplesImages {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
 }
 
 .impactImage {
-    padding-left: 130px;
-    padding-right: 100px;
-
     width: 307px;
     height: 230px;
     left: 155px;
@@ -194,9 +181,6 @@
 }
 
 .innovationImage {
-    padding-left: 130px;
-    padding-right: 100px;
-
     width: 271px;
     height: 203px;
     left: 585px;
@@ -204,10 +188,6 @@
 }
 
 .transparencyImage {
-    padding-left: 200px;
-    padding-right: 0;
-
-    padding-left: 0px;
     width: 312px;
     height: 234px;
     left: 979px;
@@ -268,8 +248,6 @@
 
 }
 
-
-
 .rectangle {
     height: 668.3804321289062px;
     width: 469.0205078125px;
@@ -282,263 +260,6 @@
     opacity: 0.8;
 }
 
-.where {
-    padding-left: 75px;
-    padding-right: 0px;
-}
-
-.weAre {
-    color: #03AB99;
-    padding-left: 50px;
-}
-
-
-.ourWorkGeneral {
-    background-image: url("../../../public/static/ourWork.png");
-    margin: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    padding-bottom: 50px;
-
-}
-
-.viewMoreButton {
-    text-align: center;
-    display: flex;
-    float: right;
-    align-items: right;
-    justify-content: right;
-
-}
-.ourPrinciples {
-    display: grid;
-    grid-template-columns: 600px 200px 250px 600px;
-    grid-gap: 0 px;
-}
-
-.our {
-    padding-left: 100px;
-    padding-right: 0px;
-}
-
-.principles {
-    color: #03AB99;
-    padding-right: 100px;
-    padding-left: 0px;
-}
-
-.lineOne {
-    padding-left: 300px;
-
-
-}
-
-.lineTwo {
-    padding-left: 12px;
-
-
-}
-
-.impactInnovationTransp {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.impact {
-
-    padding-left: 240px;
-    padding-right: 100px;
-    width: 264px;
-    height: 67px;
-    left: 257px;
-    top: 1686px;
-
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-end;
-
-    color: #03AB99;
-}
-
-.innovation {
-    padding-left: 220px;
-    padding-right: 100px;
-
-    width: 138px;
-    height: 67px;
-    left: 651px;
-    top: 1686px;
-
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-end;
-
-    color: #03AB99;
-}
-
-.transparency {
-    padding-left: 250px;
-    padding-right: 100px;
-
-    width: 264px;
-    height: 67px;
-    left: 1045px;
-    top: 1686px;
-
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 30px;
-    display: flex;
-    align-items: flex-end;
-
-    color: #03AB99;
-}
-
-.paragraphs {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.impactImage {
-    padding-left: 130px;
-    padding-right: 100px;
-
-    width: 307px;
-    height: 230px;
-    left: 155px;
-    top: 1504px;
-}
-
-.innovationImage {
-    padding-left: 130px;
-    padding-right: 100px;
-
-    width: 271px;
-    height: 203px;
-    left: 585px;
-    top: 1504px;
-}
-
-.transparencyImage {
-    padding-left: 200px;
-    padding-right: 0;
-
-    padding-left: 0px;
-    width: 312px;
-    height: 234px;
-    left: 979px;
-    top: 1510px;
-}
-
-.impactP {
-    left: 8%;
-    right: 65.83%;
-    top: 29.58%;
-    bottom: 65.64%;
-
-    padding-left: 100px;
-    padding-right: 100px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 20px;
-    
-    text-align: center;
-
-}
-
-.innovationP {
-    left: 38.4%;
-    right: 37.85%;
-    top: 29.58%;
-    bottom: 65.64%;
-
-    padding-left: 100px;
-    padding-right: 100px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 20px;
-
-    text-align: center;
-
-}
-
-.transparencyP {
-    left: 67.99%;
-    right: 9.93%;
-    top: 32.56%;
-    bottom: 62.65%;
-
-    padding-left: 100px;
-    padding-right: 100px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 20px;
-
-    text-align: center;
-
-}
-
-
-
-.rectangle {
-    height: 668.3804321289062px;
-    width: 469.0205078125px;
-    position: relative;
-    left: 58.8%;
-    right: 7.31%;
-    top: 15.2%;
-    bottom: 21.65%;
-    background: #2A2D39;
-    opacity: 0.8;
-}
-
-.where {
-    padding-left: 75px;
-    padding-right: 0px;
-}
-
-.weAre {
-    color: #03AB99;
-    padding-left: 50px;
-}
-
-
-.ourWorkGeneral {
-    background-image: url("../../../public/static/ourWork.png");
-    margin: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    padding-bottom: 50px;
-
-}
 
 .viewMoreButton {
     text-align: center;

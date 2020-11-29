@@ -13,7 +13,7 @@ const LoginPage = () => {
     event.preventDefault();
 
     return login(email, password)
-      .then(() => router.replace(urls.pages.admin.home))
+      .then(() => router.replace(urls.pages.admin.blogs))
       .catch((error) => window.alert(error.message));
   };
 

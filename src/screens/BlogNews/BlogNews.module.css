@@ -1,0 +1,80 @@
+.picture {
+  height: 200px;
+  min-width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .picture {
+    height: 550px;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.titleText {
+  font-size: 47px;
+  background: rgba(0,0,0, 0.3);
+  padding: 1em;
+}
+
+div.mobileTitleText {
+  font-size: 25px;
+  background: rgba(0,0,0, 0.3);
+}
+
+.background {
+  background-image: url("../../../public/static/HaitiImage2.png");
+  margin: 0;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 50px;
+}
+
+h1.donateText {
+  left: 2.08%;
+  right: 56.25%;
+  top: 62.7%;
+  bottom: 34.58%;
+
+  padding-left: 100px;
+  padding-top: 350px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 60px;
+  /* or 158% */
+
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+
+  color: #FFFFFF;
+
+  text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
+}
+
+button.donateButton {
+  background: #03AB99;
+  border: none;
+  color: white;
+  padding: 15px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.buttonDiv {
+  padding-top: 350;
+  padding-left: 230px; 
+}
+

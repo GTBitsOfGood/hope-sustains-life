@@ -3,6 +3,8 @@ import classes from "./bangledesh.module.css";
 import { Image, Button } from "react-bootstrap";
 import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
 import { displayMobileView } from "../../../../utils/screen";
+import urls from "../../../../utils/urls";
+import Link from "next/link";
 
 function Bangledesh() {
   const isMobile = () => {
@@ -15,7 +17,6 @@ function Bangledesh() {
   if (mobileView) {
     return (
       <>
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Bangladesh</h1>
         </div>
@@ -59,7 +60,6 @@ function Bangledesh() {
   } else {
     return (
       <>
-
         <div className={classes.general}>
           <h1 className={classes.centerText}>Bangladesh</h1>
         </div>
@@ -95,7 +95,9 @@ function Bangledesh() {
             <br></br>change you can bring now
           </h1>
           <div className={classes.buttonDiv}>
-            <button className={classes.donateButton}>Donate</button>
+            <Link href={urls.pages.donate.index}>
+              <Button className={classes.donateButton}>Donate</Button>
+            </Link>
           </div>
         </div>
       </>

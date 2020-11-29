@@ -3,6 +3,8 @@ import classes from "./tanzania.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
 import { displayMobileView } from "../../../../utils/screen";
+import urls from "../../../../utils/urls";
+import Link from "next/link";
 
 function Tanzania() {
   const isMobile = () => {
@@ -90,7 +92,9 @@ function Tanzania() {
             <br></br>change you can bring now
           </h1>
           <div className={classes.buttonDiv}>
-            <button className={classes.donateButton}>Donate</button>
+            <Link href={urls.pages.donate.index}>
+              <Button className={classes.donateButton}>Donate</Button>
+            </Link>
           </div>
         </div>
       </>

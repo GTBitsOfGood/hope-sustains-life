@@ -1,13 +1,12 @@
 .picture {
-  height: 200px;
   min-width: 100%;
 }
 
 @media screen and (min-width: 600px) {
   .picture {
-    height: 550px;
+    max-height: 775px;
   }
-}
+} 
 
 .mainContainer {
   display: flex;
