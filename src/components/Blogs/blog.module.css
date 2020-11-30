@@ -110,7 +110,6 @@ button.unpublishButton {
 .card {
   width: 300px;
   margin: 15px;
-  cursor: pointer;
   box-shadow: 0px 4px 15px 0px #000000 15%;
 }
 

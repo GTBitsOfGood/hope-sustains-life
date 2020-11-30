@@ -59,7 +59,9 @@ const BlogTable = ({ blogs }) => {
     );
 
     // Retrieve the blog id and their new order index
-    const newBlogOrderIndexes = newBlogs.map((blog, index) => {
+    // React-DND sets first blog's index to 0 but we want it to be the largest
+    // This simplifies the backend implementation for ordering
+    const newBlogOrderIndexes = [...newBlogs].reverse().map((blog, index) => {
       return {
         id: blog._id,
         orderIndex: index,

@@ -42,7 +42,9 @@ const BlogNewsDetails = ({ blog, recommendations }) => {
           <h3 style={mobileView ? { fontSize: "25px" } : {}}>
             Recommended for you
           </h3>
-          <div>{recommendedBlogsCards}</div>
+          <div className={styles.recommendedBlogContainer}>
+            {recommendedBlogsCards}
+          </div>
         </div>
       )}
     </div>

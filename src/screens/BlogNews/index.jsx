@@ -27,7 +27,7 @@ const BlogsNewsContainer = ({ blogs }) => (
 );
 
 BlogsNewsContainer.getInitialProps = async () => {
-  return getBlogs()
+  return getBlogs(true)
     .then((blogs) => {
       return { blogs };
     })

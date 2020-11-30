@@ -1,8 +1,9 @@
 import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
 
-export const getBlogs = () =>
-  fetch(urls.baseUrl + urls.api.blogs.index, {
+export const getBlogs = (isPublished = false) => {
+  const endpoint = urls.baseUrl + urls.api.blogs.index;
+  return fetch(endpoint + `?isPublished=${encodeURIComponent(isPublished)}`, {
     method: "GET",
     mode: "same-origin",
     headers: {
@@ -19,6 +20,7 @@ export const getBlogs = () =>
 
       return json.payload;
     });
+};
 
 export const createBlog = (
   title,
