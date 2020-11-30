@@ -65,6 +65,13 @@ div.titleText {
     padding-top: 100%;
 }
 
+.centerMap {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ourPrinciples {
     display: flex;
     align-items: center;
