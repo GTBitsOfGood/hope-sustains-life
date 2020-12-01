@@ -241,6 +241,20 @@ const IndexPage = () => {
         <Image src={LineImage} />
       </div>
 
+      <iframe
+        src="https://www.mapscout.io/hopesustainslife"
+        style={{ borderWidth: 0 }}
+        name="mapscout"
+        scrolling="no"
+        frameBorder="0"
+        marginHeight="0px"
+        marginWidth="0px"
+        height="814px"
+        width="100%"
+        className={classes.centerMap}
+        allowFullScreen
+      />
+
       <div className={classes.space}></div>
 
       <div
