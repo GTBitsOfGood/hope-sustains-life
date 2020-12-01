@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Draggable } from "react-beautiful-dnd";
 import Link from "next/link";
 import classes from "./blog.module.css";
-import { Button } from "react-bootstrap";
+import { Button, Row, Col, Container } from "react-bootstrap";
 import { publishBlog } from "../../actions/Blog";
 
 const BlogTableRow = ({ blog, index, onDeleteClick }) => {
@@ -22,7 +22,7 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
     maxHeight: "774px",
     width: "90%",
     height: "70%",
-    paddingLeft: "150px",
+    //paddingLeft: "150px",
     paddingRight: "0px",
     paddingTop: "20px",
     paddingBottom: "20px",
@@ -53,7 +53,12 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
           {...provided.dragHandleProps}
         >
           <div style={getItemStyle(snapshot.isDragging)}>
-            <div style={{ marginRight: 120, width: 300 }}>{title}</div>
+		  <Container fluid>
+		  <Row>
+		  <Col xs={{ span: 2, offset: 1 }}>
+            {title}
+		  </Col>
+		  <Col xs={{ span: 3, offset: 3 }}>
             <div className={classes.action}>
               <Link href={`/admin/blogs/${_id}`}>
                 <button className={classes.actionButtons}> View </button>
@@ -65,6 +70,8 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
                 Delete
               </button>
             </div>
+		  </Col>
+		  <Col xs={{ span: 2, offset: 1 }}>
             <div>
               <Button
                 className={classes.unpublishButton}
@@ -74,6 +81,9 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
                 {isLoading ? "..." : published ? "Unpublish" : "Publish"}
               </Button>
             </div>
+		  </Col>
+		  </Row>
+		  </Container>
           </div>
         </div>
       )}

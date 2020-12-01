@@ -1,5 +1,3 @@
-import React from "react";
+import JoinLibraryPage from "../screens/JoinLibrary";
 
-const JoinLibrary = () => <h1>Join the Library!</h1>;
-
-export default JoinLibrary;
+export default JoinLibraryPage;

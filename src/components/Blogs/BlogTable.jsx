@@ -119,7 +119,7 @@ const BlogTable = ({ blogs }) => {
         <br></br>
         <div style={{ width: "100%" }}>
           <div className={styles.tableHeader}>
-            <label style={{ marginLeft: "15%", marginRight: 284 }}>BLOGS</label>
+            <label style={{ marginLeft: "12%", marginRight: 310 }}>BLOGS</label>
             <label style={{ marginLeft: 120, marginRight: 100 }}>
               {" "}
               ACTIONS{" "}
