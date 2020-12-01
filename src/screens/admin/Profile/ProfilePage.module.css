@@ -6,3 +6,82 @@
 .container {
     margin-left: 0;
 }
+
+.editProfile {
+    width: 391px;
+    height: 89px;
+    left: 134px;
+    top: 287px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 42px;
+    /* or 140% */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.namesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.space {
+    padding: 3%;
+}
+
+.firstNameTitle {
+    padding-left: 300px;
+}
+
+.firstNameText {
+    padding-left: 300px;
+
+}
+
+.lastNameTitle {
+    padding-left: 300px;
+
+}
+
+.lastNameText {
+    padding-left: 200px;
+}
+
+.backButton {
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 5%;
+  }
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-right: 5px;
+  }
+
+  .buttonDiv {
+    padding-top: 50px;
+    padding-left: 1000px; 
+}
+
+
+button.donateButton {
+    background: #03AB99;
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}   
+
+
