@@ -22,6 +22,26 @@ function JoinClassroomPage() {
   };
   const mobileView = isMobile();
 
+  const photoGrid = (
+    <Row>
+      <Col md={4} className="d-flex flex-column px-0">
+        <Image src={ClassroomPic2} className={classes.classroomPicture}></Image>
+        <Image src={ClassroomPic3} className={classes.classroomPicture}></Image>
+        <Image src={ClassroomPic6} className={classes.classroomPicture}></Image>
+      </Col>
+      <Col md={4} className="d-flex flex-column px-0">
+        <Image src={ClassroomPic8} className={classes.classroomPicture}></Image>
+        <Image src={ClassroomPic1} className={classes.classroomPicture}></Image>
+      </Col>
+      <Col md={4} className="d-flex flex-column px-0">
+        <Image src={ClassroomPic4} className={classes.classroomPicture}></Image>
+        <Image src={ClassroomPic7} className={classes.classroomPicture}></Image>
+        <Image src={ClassroomPic5} className={classes.classroomPicture}></Image>
+        <Image src={ClassroomPic9} className={classes.classroomPicture}></Image>
+      </Col>
+    </Row>
+  );
+
   if (mobileView) {
     return (
       <>
@@ -86,73 +106,7 @@ function JoinClassroomPage() {
               <br />
             </div>
           </div>
-          <div className={classes.pictures}>
-            <Row>
-              <Col md={3}>
-                {" "}
-                <Image
-                  className={classes.classroom1}
-                  src={ClassroomPic1}
-                ></Image>
-              </Col>
-              <Col>
-                <Col style={{ marginLeft: "40px" }} md={5}>
-                  <Image
-                    src={ClassroomPic4}
-                    className={classes.classroom4}
-                  ></Image>
-                </Col>
-                <Col style={{ marginLeft: "40px", marginTop: "10px" }} md={5}>
-                  <Image
-                    src={ClassroomPic5}
-                    className={classes.classroom5}
-                  ></Image>
-                </Col>
-              </Col>
-              <Col>
-                <Col style={{ marginTop: "10px", marginRight: "150px" }}>
-                  <Image
-                    src={ClassroomPic6}
-                    className={classes.classroom6}
-                  ></Image>
-                </Col>
-                <Col style={{ marginTop: "10px" }}>
-                  <Image
-                    src={ClassroomPic7}
-                    className={classes.classroom7}
-                  ></Image>
-                </Col>
-              </Col>
-            </Row>
-            <Row style={{ marginTop: "10px" }}>
-              <Col>
-                <Image
-                  src={ClassroomPic2}
-                  className={classes.classroom2}
-                ></Image>
-              </Col>
-              <Col style={{ marginLeft: "10px" }}>
-                <Image
-                  src={ClassroomPic8}
-                  className={classes.classroom8}
-                ></Image>
-              </Col>
-            </Row>
-            <Row style={{ marginTop: "20px" }}>
-              <Col>
-                <Image
-                  src={ClassroomPic3}
-                  className={classes.classroom3}
-                ></Image>
-              </Col>
-              <Col style={{ marginRight: "190px" }}>
-                <Image
-                  src={ClassroomPic9}
-                  className={classes.classroom9}
-                ></Image>
-              </Col>
-            </Row>
-          </div>
+          <div className={classes.pictures}>{photoGrid}</div>
           <br />
           <br />
           <div className={classes.background}>
@@ -231,73 +185,7 @@ function JoinClassroomPage() {
               <br />
             </div>
           </div>
-          <div className={classes.pictures}>
-            <Row>
-              <Col md={3}>
-                {" "}
-                <Image
-                  className={classes.classroom1}
-                  src={ClassroomPic1}
-                ></Image>
-              </Col>
-              <Col>
-                <Col style={{ marginLeft: "40px" }} md={5}>
-                  <Image
-                    src={ClassroomPic4}
-                    className={classes.classroom4}
-                  ></Image>
-                </Col>
-                <Col style={{ marginLeft: "40px", marginTop: "10px" }} md={5}>
-                  <Image
-                    src={ClassroomPic5}
-                    className={classes.classroom5}
-                  ></Image>
-                </Col>
-              </Col>
-              <Col>
-                <Col style={{ marginTop: "10px", marginRight: "150px" }}>
-                  <Image
-                    src={ClassroomPic6}
-                    className={classes.classroom6}
-                  ></Image>
-                </Col>
-                <Col style={{ marginTop: "10px" }}>
-                  <Image
-                    src={ClassroomPic7}
-                    className={classes.classroom7}
-                  ></Image>
-                </Col>
-              </Col>
-            </Row>
-            <Row style={{ marginTop: "10px" }}>
-              <Col>
-                <Image
-                  src={ClassroomPic2}
-                  className={classes.classroom2}
-                ></Image>
-              </Col>
-              <Col style={{ marginLeft: "10px" }}>
-                <Image
-                  src={ClassroomPic8}
-                  className={classes.classroom8}
-                ></Image>
-              </Col>
-            </Row>
-            <Row style={{ marginTop: "20px" }}>
-              <Col>
-                <Image
-                  src={ClassroomPic3}
-                  className={classes.classroom3}
-                ></Image>
-              </Col>
-              <Col style={{ marginRight: "190px" }}>
-                <Image
-                  src={ClassroomPic9}
-                  className={classes.classroom9}
-                ></Image>
-              </Col>
-            </Row>
-          </div>
+          <div className={classes.pictures}>{photoGrid}</div>
           <br />
           <br />
           <div className={classes.background}>
