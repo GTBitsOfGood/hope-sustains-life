@@ -9,6 +9,12 @@
   }
 }
 
+.jumbotron {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -16,18 +22,24 @@
 }
 
 .pageName {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -500px;
-  margin-bottom: 400px;
-  font-style: normal;
   font-weight: 500;
   font-size: 85px;
   line-height: 100px;
   color: #FFFFFF;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.52);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .pageName {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 50px;
+    top: 75%;    
+  }
 }
 
 .pictures {
@@ -49,7 +61,7 @@
   justify-content: stretch;
   align-items: left;
   padding: 50px 10px;
-  width: 10%;
+  width: 95%;
 }
 
 @media screen and (min-width: 600px) {
@@ -102,6 +114,24 @@
   font-size: 50px;
   line-height: 60px;
   /* or 158% */
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
+}
+
+.donateTextMobile {
+  left: 2.08%;
+  right: 56.25%;
+  top: 62.7%;
+  bottom: 34.58%;
+  padding-top: 350px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: auto;
   display: flex;
   align-items: flex-end;
   text-align: center;
