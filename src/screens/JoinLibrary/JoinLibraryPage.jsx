@@ -13,13 +13,8 @@ import LibraryPic9 from "../../../public/static/libraryPic9.png";
 import classes from "./JoinLibraryPage.module.css";
 import { Image, Col, Row } from "react-bootstrap";
 
-import {
-  BrowserView,
-  MobileView,
-} from "react-device-detect";
+import { BrowserView, MobileView } from "react-device-detect";
 import { displayMobileView } from "../../../utils/screen.js";
-
-
 
 const JoinLibraryPage = () => {
   const isMobile = () => {
@@ -27,7 +22,7 @@ const JoinLibraryPage = () => {
     return mobile;
   };
   const mobileView = isMobile();
-  
+
   const displayView = (mobileView) => {
     if (mobileView) {
       return (
