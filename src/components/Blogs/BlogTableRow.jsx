@@ -53,37 +53,38 @@ const BlogTableRow = ({ blog, index, onDeleteClick }) => {
           {...provided.dragHandleProps}
         >
           <div style={getItemStyle(snapshot.isDragging)}>
-		  <Container fluid>
-		  <Row>
-		  <Col xs={{ span: 2, offset: 1 }}>
-            {title}
-		  </Col>
-		  <Col xs={{ span: 3, offset: 3 }}>
-            <div className={classes.action}>
-              <Link href={`/admin/blogs/${_id}`}>
-                <button className={classes.actionButtons}> View </button>
-              </Link>
-              <Link href={`/admin/blogs/edit/${_id}`}>
-                <button className={classes.actionButtons}> Edit </button>
-              </Link>
-              <button className={classes.actionButtons} onClick={onDeleteClick}>
-                Delete
-              </button>
-            </div>
-		  </Col>
-		  <Col xs={{ span: 2, offset: 1 }}>
-            <div>
-              <Button
-                className={classes.unpublishButton}
-                disabled={isLoading}
-                onClick={publish}
-              >
-                {isLoading ? "..." : published ? "Unpublish" : "Publish"}
-              </Button>
-            </div>
-		  </Col>
-		  </Row>
-		  </Container>
+            <Container fluid>
+              <Row>
+                <Col xs={{ span: 2, offset: 1 }}>{title}</Col>
+                <Col xs={{ span: 3, offset: 3 }}>
+                  <div className={classes.action}>
+                    <Link href={`/admin/blogs/${_id}`}>
+                      <button className={classes.actionButtons}> View </button>
+                    </Link>
+                    <Link href={`/admin/blogs/edit/${_id}`}>
+                      <button className={classes.actionButtons}> Edit </button>
+                    </Link>
+                    <button
+                      className={classes.actionButtons}
+                      onClick={onDeleteClick}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </Col>
+                <Col xs={{ span: 2, offset: 1 }}>
+                  <div>
+                    <Button
+                      className={classes.unpublishButton}
+                      disabled={isLoading}
+                      onClick={publish}
+                    >
+                      {isLoading ? "..." : published ? "Unpublish" : "Publish"}
+                    </Button>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
           </div>
         </div>
       )}
