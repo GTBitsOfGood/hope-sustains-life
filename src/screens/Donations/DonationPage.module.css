@@ -1,7 +1,7 @@
 .page {
   width: 100%;
   margin-top: 0;
-  background: linear-gradient(rgba(255,255,255,0.40),rgba(255,255,255,0.40)), url("../../../public/static/donate.jpg");
+  background: linear-gradient(rgba(255,255,255,0.40),rgba(255,255,255,0.40)), url("../../../public/static/DonateBackground.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +12,8 @@
   flex-direction: row;
   justify-content: flex-start;
   margin-left: 100px;
-  width: 60%;
+  padding-top: 200px;
+  width: 70%;
 }
 .mobileContainer {
   display: flex;
@@ -23,23 +24,33 @@
   width: 100%;
 }
 .mainHeader {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: bold;
-  margin-left: 35%;
   color: #03AB99;
+  text-shadow: 0.25px 0.25px 1px #C4C4C4;
+  position: absolute;
+  left: 40.92%;
+  right: 12.47%;
+  top: 12.14%;
+  bottom: 92.86%;
+  text-align: right;
 }
 .mainHeaderMobile {
   font-size: 25px;
   font-weight: bold;
   margin: 45% 0 3% 25%;
+  text-align: right;
   color: #03AB99;
   letter-spacing: .05em;
 }
 .mainText {
-  margin-top: 30%;
-  margin-left: 20%;
-  line-height: 1.25em;
-  font-size: 20px;
+  position: absolute;
+  left: 62.42%;
+  right: 7.97%;
+  top: 29.97%;
+  bottom: 77.68%;
+  font-weight: 500;
+  font-size: 34px;
 }
 .mainTextMobile {
   font-size: 14px;
@@ -73,24 +84,24 @@
   margin-bottom: 5%;
   margin-top: .5em;
 }
-.donationFreqButtons {
+button.donationFreqButtons {
   border-radius: 0px;
   background-color: white;
   border-color: #03ab99;
   color: #03ab99;
   width: 50%;
 }
-.donationFreqButtons:hover {
+button.donationFreqButtons:hover {
   border-radius: 0px;
   background-color: #03ab99;
   border-color: #03ab99;
   color: white;
 }
-.amountButtons {
+button.amountButtons {
   justify-items: flex-start;
   width: 100%;
 }
-.amtButton {
+button.amtButton {
   background-color: #c4c4c4;
   border-color: #c4c4c4;
   width: 30%;
@@ -98,16 +109,26 @@
   margin-right: 10px;
   margin-top: 13px;
 }
+button.amtButton:hover {
+  background-color: #03ab99;
+  border-color: #03ab99;
+  color: white;
+}
 .headers {
   border-bottom-style: solid;
   border-bottom-color: #03ab99;
   margin-top: 40px;
   text-align: center;
 }
-.completeDonation {
+button.completeDonation {
   border-radius: 0px;
   background-color: white;
   border-color: #03ab99;
   color: #03ab99;
   width: 100%;
+}
+button.completeDonation:hover {
+  background-color: #03ab99;
+  border-color: #03ab99;
+  color: white;
 }
