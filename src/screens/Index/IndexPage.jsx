@@ -12,6 +12,7 @@ import OurWorkImage from "../../../public/static/ourWork.png";
 import { displayMobileView } from "../../../utils/screen.js";
 import HomeImage from "../../../public/static/home-bg.jpg";
 import urls from "../../../utils/urls";
+import Link from "next/link";
 
 const IndexPage = () => {
   const isMobile = () => {
@@ -44,8 +45,8 @@ const IndexPage = () => {
           >
             Educating the future, one student at a time
           </Card.Text>
+          <Link href={urls.pages.ourStory}>
           <Button
-            href={urls.pages.ourStory}
             className="btn centerButton"
             type="submit"
             style={
@@ -64,6 +65,7 @@ const IndexPage = () => {
           >
             Learn More
           </Button>
+          </Link> 
         </Card.ImgOverlay>
       </Card>
       <div className={classes.space}></div>
