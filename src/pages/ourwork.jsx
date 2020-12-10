@@ -1,5 +1,3 @@
-import React from "react";
+import OurWorkPage from "../screens/OurWork/OurWorkPage";
 
-const OurWork = () => <h1>Our Work!</h1>;
-
-export default OurWork;
+export default OurWorkPage;

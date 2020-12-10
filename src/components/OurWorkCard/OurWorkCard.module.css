@@ -1,0 +1,16 @@
+div.roundedCard {
+    border-radius: 20px;
+    background: #FAFAFA;
+    padding: 20px;
+    width: 283px;
+    height: 338px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+img.icon {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

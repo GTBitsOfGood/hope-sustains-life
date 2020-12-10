@@ -23,37 +23,17 @@ const IndexPage = () => {
   return (
     <>
       <Card
-        style={
-          mobileView
-            ? {
-                height: "90%",
-                width: "100%",
-                alignItems: "center",
-                marginBottom: "10%",
-              }
-            : {}
-        }
+        style={mobileView ? { height: "80%", width: "100%", alignItems: "center", marginBottom: "10%", } : {}}
         className="bg-dark text-white"
       >
         <Card.Img
-          style={
-            mobileView
-              ? {
-                  height: "100%",
-                  width: "300%",
-                }
-              : {}
-          }
+          style={mobileView ? { height: "100%", width: "300%", } : {}}
           src={HomeImage}
           alt="Card image"
         />
         <Card.ImgOverlay className={classes.homeOverlay}>
           <Card.Title
-            style={
-              mobileView
-                ? { fontSize: 35, lineHeight: 1, textAlign: "center" }
-                : {}
-            }
+            style={mobileView ? { fontSize: 35, lineHeight: 1, textAlign: "center" } : {}}
             className={classes.homeTitle}
           >
             HOPE SUSTAINS LIFE
@@ -109,15 +89,7 @@ const IndexPage = () => {
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
         <h1
-          style={
-            mobileView
-              ? {
-                  fontSize: 20,
-                  marginRight: -10,
-                  paddingLeft: 20,
-                }
-              : {}
-          }
+          style={mobileView ? { fontSize: 20, marginRight: -10, paddingLeft: 20, } : {}}
           className={classes.leftWord}
         >
           OUR
@@ -132,9 +104,7 @@ const IndexPage = () => {
       </div>
 
       <div
-        className={
-          mobileView ? classes.mobileImages : classes.ourPrinciplesImages
-        }
+        className={mobileView ? classes.mobileImages : classes.ourPrinciplesImages}
       >
         <div className={mobileView ? "" : classes.impactImage}>
           <Image
@@ -223,11 +193,7 @@ const IndexPage = () => {
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
         <h1
-          style={
-            mobileView
-              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
-              : {}
-          }
+          style={mobileView ? { fontSize: 20, marginRight: -10, paddingLeft: 20 } : {}}
           className={classes.leftWord}
         >
           WHERE
@@ -263,11 +229,7 @@ const IndexPage = () => {
       >
         <Image src={LineImage} />
         <h1
-          style={
-            mobileView
-              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
-              : {}
-          }
+          style={mobileView ? { fontSize: 20, marginRight: -10, paddingLeft: 20 } : {}}
           className={classes.leftWord}
         >
           OUR
