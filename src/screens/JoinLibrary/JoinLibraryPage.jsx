@@ -16,19 +16,18 @@ import { Image, Col, Row } from "react-bootstrap";
 import {
   BrowserView,
   MobileView,
-  isBrowser,
-  isMobile,
 } from "react-device-detect";
+import { displayMobileView } from "../../../utils/screen.js";
 
-import displayMobileView from "../../../utils/screen";
 
-const isitMobile = () => {
-  const mobile = displayMobileView();
-  return mobile;
-};
-const mobileView = isitMobile();
 
 const JoinLibraryPage = () => {
+  const isMobile = () => {
+    const mobile = displayMobileView();
+    return mobile;
+  };
+  const mobileView = isMobile();
+  
   const displayView = (mobileView) => {
     if (mobileView) {
       return (
