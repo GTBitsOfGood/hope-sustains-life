@@ -95,7 +95,6 @@ const OurStoryPage = () => (
           <span className={classes.blueText}>Team</span>
         </span>
       </h1>
-
       <p className={classes.ourTeamText}>
         All great things begin small and Hope Sustains Life is no different. For
         years, it has just been my father and I working together as a two-man
@@ -107,61 +106,54 @@ const OurStoryPage = () => (
         bigger and bigger. Bit by bit, we hope to expand our reach and help the
         international refugee population.
       </p>
-
-      <Row style={{ marginLeft: "150px", marginRight: "150px" }}>
-        <Col className={classes.leftContent}>
-          {/* <div className={classes.Bernard}></div> */}
+      <div className={classes.founderContainer}>
+        <div className={classes.bernard}>
           <Image
             src={BernardImage}
-            style={{ maxWidth: "500px" }}
-            className={classes.pictures}
+            className={classes.bernardImage}
             fluid
             rounded
           />
-        </Col>
-        <Col md={4} className={classes.leftContent}>
-          <h1>Bernard Michel</h1>
-          <h2 className={classes.blueText2}>Co-Founder / CEO</h2>
-          <p className={classes.ourTeamText}>
-            Bernard has been working as a clinical researcher in the US for 8
-            years. He also volunteers at Catholic Charities of Atlanta. It was a
-            perfect opportunity for him to help refugees, like his parents,
-            settle into the U.S. and begin their new lives. Bernard followed his
-            father's footsteps by earning his own black belt in Judo. The
-            inspiration doesn't stop there. When his father, Theodore, would
-            return from his trips to Haiti, Bernard would get the chance to
-            fiddle with his photographs and nurture his passion in photo and
-            video editing. Through the camera lenses, Bernard could see the love
-            his father had for Haiti and how its people suffered.
+          <div className={classes.bernardInfo}>
+            <h1 className={classes.name} >Bernard Michel</h1>
+            <h2 className={classes.founderTitle}>Co-Founder / CEO</h2>
+            <p className={classes.ourTeamText}>
+              Bernard has been working as a clinical researcher in the US for 8
+              years. He also volunteers at Catholic Charities of Atlanta. It was a
+              perfect opportunity for him to help refugees, like his parents,
+              settle into the U.S. and begin their new lives. Bernard followed his
+              father's footsteps by earning his own black belt in Judo. The
+              inspiration doesn't stop there. When his father, Theodore, would
+              return from his trips to Haiti, Bernard would get the chance to
+              fiddle with his photographs and nurture his passion in photo and
+              video editing. Through the camera lenses, Bernard could see the love
+              his father had for Haiti and how its people suffered.
           </p>
-        </Col>
-      </Row>
-
-      <Row style={{ marginLeft: "150px", marginRight: "150px" }}>
-        <Col className={classes.leftContent}>
+          </div>
+        </div>
+        <div className={classes.theodore}>
           <Image
             src={TheodoreImage}
-            style={{ maxWidth: "500px" }}
-            className="pictures"
+            className={classes.theodoreImage}
             fluid
             rounded
           />
-        </Col>
-        <Col md={4} className={classes.leftContent}>
-          <h1>Theodore Michel</h1>
-          <h2 className={classes.blueText2}>Founder</h2>
-          <p className={classes.ourTeamText}>
-            Theodore is an immigrant from Haiti who was forced to leave home and
-            come to the US in the 1960's to flee from a dictatorship. He became
-            a teacher, winning the Teacher of the Year award in New York City in
-            1993. In his spare time, he likes to practice Kyokushin and
-            Shotokan, which are two forms of martial arts, eventually earning a
-            black belt in both. Theodore has dedicated his life to ensuring that
-            those he left behind in Haiti get a fair chance at a life filled
-            with love and hope, just as his family got.
+          <div className={classes.theodoreInfo}>
+            <h1 className={classes.name}>Theodore Michel</h1>
+            <h2 className={classes.founderTitle}>Founder</h2>
+            <p className={classes.ourTeamText}>
+              Theodore is an immigrant from Haiti who was forced to leave home and
+              come to the US in the 1960's to flee from a dictatorship. He became
+              a teacher, winning the Teacher of the Year award in New York City in
+              1993. In his spare time, he likes to practice Kyokushin and
+              Shotokan, which are two forms of martial arts, eventually earning a
+              black belt in both. Theodore has dedicated his life to ensuring that
+              those he left behind in Haiti get a fair chance at a life filled
+              with love and hope, just as his family got.
           </p>
-        </Col>
-      </Row>
+          </div>
+        </div>
+      </div>
     </div>
     <div className={classes.background}>
       <h1 className={classes.donateText}>
@@ -176,4 +168,5 @@ const OurStoryPage = () => (
     </div>
   </>
 );
+
 export default OurStoryPage;

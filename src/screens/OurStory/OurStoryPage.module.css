@@ -85,10 +85,15 @@
 
 /* Our Team */
 
-.ourTeamText{
+.ourTeam{
+    margin: 0% 10% 0% 10%
+}
+p.ourTeamText{
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 75px;
+    font-size: calc(14px + 0.25vw);
+    line-height: 26px;
     text-align: left;
     align-items: left;
 
@@ -112,23 +117,6 @@
     align-items: center;
 }
 
-.ourTeam{
-    padding: 117px 0px 120px 117px;
-}
-
-.Bernard {
-    background-image: url("../../../public/static/Bernard_headshot.jpg");
-    margin: 0;
-    height: 739px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.blueText2 {
-    color: #4ca899;
-    text-align: left;
-}
 
 .centerContent {
     display: flex;
@@ -146,17 +134,6 @@
     align-content: stretch;
     flex-wrap: wrap;
 }
-/* Donate */
-/* Could be useful for donate button */
-/* .centerButton {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100%;
-} */
-
-/* Donate */
 .donate {
     background: linear-gradient(270.01deg, rgba(196, 196, 196, 0.126) -43.35%, rgba(207, 207, 207, 0.2) 29.99%, rgba(229, 229, 229, 0.2) 105.19%), url("../../../public/static/seth-doyle-78210-unsplash.jpg");
     background-size: cover;
@@ -230,3 +207,52 @@ h1.donateText {
     padding-top: 350;
     padding-left: 230px; 
 }
+
+
+h2.founderTitle {
+    color: #4ca899;
+    text-align: left;
+    font-size: calc(12px + 1.25vw)
+}
+
+h1.name {
+    font-size: calc(12px + 1.75vw)
+}
+
+div.founderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top: 80px;
+    margin-left: 5%;
+
+}
+
+div.bernard {
+    display: grid;
+    margin-bottom: 100px;
+    align-items: center; 
+    gap: 0px 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "bernardImage bernardInfo bernardInfo";
+  }
+  img.bernardImage { grid-area: bernardImage; width: 100%; min-width: 300px}
+  div.bernardInfo { grid-area: bernardInfo; width: 100% }
+
+
+div.theodore {
+    display: grid;
+    margin-bottom: 100px;
+    align-items: center;
+    gap: 0px 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "theodoreImage theodoreInfo theodoreInfo";
+  }
+  img.theodoreImage { grid-area: theodoreImage; width: 100%; min-width: 300px}
+  div.theodoreInfo { grid-area: theodoreInfo; }
