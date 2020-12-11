@@ -24,17 +24,7 @@ const IndexPage = () => {
   return (
     <>
       <Card
-        style={
-          mobileView
-            ? {
-                height: "80%",
-                width: "100%",
-                alignItems: "center",
-                marginBottom: "10%",
-              }
-            : {}
-        }
-        className="bg-dark text-white"
+        className={mobileView ? `bg-dark text-white ${classes.mobileHeaderCard}` : "bg-dark text-white"}
       >
         <Card.Img
           style={mobileView ? { height: "100%", width: "300%" } : {}}
@@ -43,12 +33,7 @@ const IndexPage = () => {
         />
         <Card.ImgOverlay className={classes.homeOverlay}>
           <Card.Title
-            style={
-              mobileView
-                ? { fontSize: 35, lineHeight: 1, textAlign: "center" }
-                : {}
-            }
-            className={classes.homeTitle}
+            className={mobileView ? classes.mobileHomeTitle : classes.homeTitle}
           >
             HOPE SUSTAINS LIFE
           </Card.Title>
@@ -60,21 +45,7 @@ const IndexPage = () => {
           </Card.Text>
           <Link href={urls.pages.ourStory}>
             <Button
-              className="btn centerButton"
-              type="submit"
-              style={
-                mobileView
-                  ? {
-                      backgroundColor: "#00ae99",
-                      borderColor: "#00ae99",
-                      width: "60%",
-                      alignSelf: "center",
-                    }
-                  : {
-                      backgroundColor: "#00ae99",
-                      borderColor: "#00ae99",
-                    }
-              }
+              className={mobileView ? classes.mobileLearnMore : classes.learnMore}
             >
               Learn More
             </Button>
@@ -83,20 +54,20 @@ const IndexPage = () => {
       </Card>
       <div className={classes.space}></div>
       <div className={mobileView ? "" : classes.images}>
-        <a href={urls.pages.tanzania}>
+        <Link href={urls.pages.tanzania}>
           <Image src={TanzaniaImage} className="pictures" fluid />
-        </a>
-        <a href={urls.pages.bangledesh}>
+        </Link>
+        <Link href={urls.pages.bangledesh}>
           <Image src={BangledeshImage} className="pictures" fluid />
-        </a>
-        <a href={urls.pages.haiti}>
+        </Link>
+        <Link href={urls.pages.haiti}>
           <Image
             style={mobileView ? { marginBottom: "20%" } : {}}
             src={HaitiImage}
             className="pictures"
             fluid
           />
-        </a>
+        </Link>
       </div>
 
       <div className={classes.space}></div>
@@ -273,21 +244,7 @@ const IndexPage = () => {
       </div>
 
       <Card
-        style={
-          mobileView
-            ? {
-                borderRadius: 0,
-                height: "35%",
-                alignItems: "center",
-              }
-            : {
-                width: "80%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                marginTop: "40px",
-              }
-        }
-        className="bg-dark text-white"
+        className={mobileView? `bg-dark text-white ${classes.mobileHeaderCard}` : "bg-dark text-white" }
       >
         <Card.Img
           style={mobileView ? { height: "100%", width: "120%" } : {}}
@@ -302,32 +259,15 @@ const IndexPage = () => {
             Make A Difference.
           </Card.Title>
           <Card.Text
-            className={
-              mobileView ? classes.mobileHomeSubtitle : classes.homeSubtitle
-            }
+            className={mobileView ? classes.mobileHomeSubtitle : classes.homeSubtitle}
           >
             Read about what we're working on and how we plan to do it.
           </Card.Text>
-          <Button
-            href={urls.pages.ourStory}
-            className="btn centerButton"
-            type="submit"
-            style={
-              mobileView
-                ? {
-                    backgroundColor: "#00ae99",
-                    borderColor: "#00ae99",
-                    fontSize: 12,
-                    width: "95%",
-                  }
-                : {
-                    backgroundColor: "#00ae99",
-                    borderColor: "#00ae99",
-                  }
-            }
-          >
+          <Link href={urls.pages.ourStory}>
+          <Button className={mobileView ? classes.mobileViewMore : classes.viewMore}>
             View More
           </Button>
+          </Link>
         </Card.ImgOverlay>
       </Card>
     </>

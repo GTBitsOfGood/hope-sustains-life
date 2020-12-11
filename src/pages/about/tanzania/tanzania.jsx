@@ -50,7 +50,9 @@ function Tanzania() {
             <br></br>change you can bring now
           </h1>
           <div className={classes.buttonDiv}>
-            <button className={classes.donateButton}>Donate</button>
+            <Link href={urls.pages.donate.index}>
+              <Button className={classes.donateButton}>Donate</Button>
+            </Link>
           </div>
         </div>
       </>

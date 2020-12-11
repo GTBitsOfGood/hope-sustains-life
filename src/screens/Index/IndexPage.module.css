@@ -7,6 +7,12 @@
   font-size: 12px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.38);
 }
+div.mobileHeaderCard {
+  height: 80%;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10%;
+}
 
 .general {
   background-image: url("../../../public/static/home-bg.jpg");
@@ -39,6 +45,17 @@ div.homeTitle {
   color: #ffffff;
 }
 
+div.mobileHomeTitle {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  text-align: center;
+  text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.34);
+  line-height: 1;
+  color: #ffffff;
+}
+
 p.homeSubtitle {
   color: #ffffff;
   padding-top: 0.3%;
@@ -62,6 +79,18 @@ div.homeOverlay {
     rgba(3, 171, 153, 0) 56.51%,
     rgba(177, 224, 219, 0) 121.78%
   );
+}
+
+button.learnMore {
+  background-color: #00ae99;
+  border-color: #00ae99;
+}
+
+button.mobileLearnMore {
+  background-color:#00ae99;
+  border-color: #00ae99;
+  width: 60%;
+  align-self: center;
 }
 
 div.donateCardOverlay {
@@ -327,13 +356,31 @@ div.titleText {
   padding-bottom: 50px;
 }
 
-.viewMoreButton {
-  text-align: center;
-  display: flex;
-  float: right;
-  align-items: right;
-  justify-content: right;
+button.mobileViewMore {
+  background-color: #00ae99;
+  border-color: #00ae99;
+  font-size: 12;
+  width: 95%;
 }
+
+button.viewMore {
+  background-color: #00ae99;
+  border-color: #00ae99;
+}
+
+div.differenceCard {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+div.mobileDifferenceCard {
+  border-radius: 0;
+  height: 35%;
+  align-items: center;
+}
+
 .ourPrinciples {
   display: flex;
   align-items: center;
