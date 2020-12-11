@@ -1,15 +1,11 @@
 import React from "react";
 import styles from "./JoinClassroomPage.module.css";
 import MainPic from "../../../public/static/main-classroom.png";
-import ClassroomPic1 from "../../../public/static/classroom1.png";
-import ClassroomPic2 from "../../../public/static/classroom2.png";
-import ClassroomPic3 from "../../../public/static/classroom3.png";
-import ClassroomPic4 from "../../../public/static/classroom4.png";
-import ClassroomPic5 from "../../../public/static/classroom5.png";
-import ClassroomPic6 from "../../../public/static/classroom6.png";
-import ClassroomPic7 from "../../../public/static/classroom7.png";
-import ClassroomPic8 from "../../../public/static/classroom8.png";
-import ClassroomPic9 from "../../../public/static/classroom9.png";
+import {
+  ClassroomPic1, ClassroomPic2, ClassroomPic3, ClassroomPic4, ClassroomPic5, ClassroomPic6, ClassroomPic7, ClassroomPic8, ClassroomPic9
+
+
+} from "../../../public/static/ClassroomCollage";
 
 import classes from "./JoinClassroomPage.module.css";
 import { Image, Col, Row } from "react-bootstrap";
