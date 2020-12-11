@@ -2,9 +2,15 @@ import React from "react";
 import styles from "./JoinClassroomPage.module.css";
 import MainPic from "../../../public/static/main-classroom.png";
 import {
-  ClassroomPic1, ClassroomPic2, ClassroomPic3, ClassroomPic4, ClassroomPic5, ClassroomPic6, ClassroomPic7, ClassroomPic8, ClassroomPic9
-
-
+  ClassroomPic1,
+  ClassroomPic2,
+  ClassroomPic3,
+  ClassroomPic4,
+  ClassroomPic5,
+  ClassroomPic6,
+  ClassroomPic7,
+  ClassroomPic8,
+  ClassroomPic9,
 } from "../../../public/static/ClassroomCollage";
 
 import classes from "./JoinClassroomPage.module.css";
