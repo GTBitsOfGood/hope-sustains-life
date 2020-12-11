@@ -155,17 +155,13 @@ button.donateButton {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-
-    
 }
 
-.donateButton:hover {
+button.donateButton:hover {
     text-align: center;
     border-color: #FFFFFF;
     color: #03AB99;
     background: #FFFFFF;
-    width: 200px;
-    height: 40px;
 }
 
 .background {
@@ -189,7 +185,7 @@ h1.donateText {
 
     font-style: normal;
     font-weight: 500;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 60px;
     /* or 158% */
 

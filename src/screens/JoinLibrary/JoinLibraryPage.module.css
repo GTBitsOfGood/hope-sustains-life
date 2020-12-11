@@ -129,10 +129,9 @@
   bottom: 34.58%;
   padding-left: 100px;
   padding-top: 350px;
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 60px;
   /* or 158% */
   display: flex;
@@ -148,7 +147,6 @@
   top: 62.7%;
   bottom: 34.58%;
   padding-top: 350px;
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -160,7 +158,7 @@
   text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
 }
 
-.donateButton {
+button.donateButton {
   background: #03AB99;
   border: none;
   color: white;
@@ -171,6 +169,13 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+button.donateButton:hover {
+  text-align: center;
+  border-color: #FFFFFF;
+  color: #03AB99;
+  background: #FFFFFF;
 }
 
 .buttonDiv {

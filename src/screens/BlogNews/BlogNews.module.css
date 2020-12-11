@@ -47,7 +47,7 @@ h1.donateText {
 
   font-style: normal;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 60px;
   /* or 158% */
 
@@ -70,7 +70,14 @@ button.donateButton {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
+  cursor: pointer;  
+}
+
+button.donateButton:hover {
+  text-align: center;
+  border-color: #FFFFFF;
+  color: #03AB99;
+  background: #FFFFFF;
 }
 
 .buttonDiv {

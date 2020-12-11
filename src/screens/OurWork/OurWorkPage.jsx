@@ -2,16 +2,25 @@ import React from "react";
 import classes from "./OurWorkPage.module.css";
 import { Button, Row, Col, Image, Card } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen.js";
-import { OurWorkImage, TanzaniaImage, BangladeshImage, HaitiImage } from "../../../public/static/OurWorkImages";
-import { MagnifyingGlass, TwoPeople, House, Handshake, RightArrow } from "../../../public/static/OurWorkIcons";
+import {
+  OurWorkImage,
+  TanzaniaImage,
+  BangladeshImage,
+  HaitiImage,
+} from "../../../public/static/OurWorkImages";
+import {
+  MagnifyingGlass,
+  TwoPeople,
+  House,
+  Handshake,
+  RightArrow,
+} from "../../../public/static/OurWorkIcons";
 import OurWorkCard from "../../components/OurWorkCard";
 import { text1, text2, text3, text4 } from "./OurWorkText.jsx";
 import OurLocationCard from "../../components/OurLocationCard";
 import urls from "../../../utils/urls";
 
-
 const OurWorkPage = () => {
-
   const isMobile = () => {
     const mobile = displayMobileView();
     return mobile;
@@ -19,15 +28,23 @@ const OurWorkPage = () => {
 
   const mobileView = isMobile();
 
-
   return (
     <>
       <Card
-        style={mobileView ? { height: "80%", width: "100%", alignItems: "center", marginBottom: "10%", } : {}}
+        style={
+          mobileView
+            ? {
+                height: "80%",
+                width: "100%",
+                alignItems: "center",
+                marginBottom: "10%",
+              }
+            : {}
+        }
         className="bg-dark text-white"
       >
         <Card.Img
-          style={mobileView ? { height: "100%", width: "300%", } : {}}
+          style={mobileView ? { height: "100%", width: "300%" } : {}}
           src={OurWorkImage}
           alt="Card image"
         />
@@ -51,10 +68,25 @@ const OurWorkPage = () => {
         <OurWorkCard image={Handshake} text={text4} />
       </div>
 
-      <OurLocationCard image={TanzaniaImage} title="Nyarugusu refugee camp" location="Kigoma, Tanzania" navlink={urls.pages.tanzania}/>
-      <OurLocationCard image={BangladeshImage} title="Kutupalong refugee camp" location="Coxx Bazaar, Bangladash" navlink={urls.pages.bangledesh}/>
-      <OurLocationCard image={HaitiImage} title="Dubedou" location="Haiti" navlink={urls.pages.haiti}/>
+      <OurLocationCard
+        image={TanzaniaImage}
+        title="Nyarugusu refugee camp"
+        location="Kigoma, Tanzania"
+        navlink={urls.pages.tanzania}
+      />
+      <OurLocationCard
+        image={BangladeshImage}
+        title="Kutupalong refugee camp"
+        location="Coxx Bazaar, Bangladash"
+        navlink={urls.pages.bangledesh}
+      />
+      <OurLocationCard
+        image={HaitiImage}
+        title="Dubedou"
+        location="Haiti"
+        navlink={urls.pages.haiti}
+      />
     </>
   );
-}
+};
 export default OurWorkPage;

@@ -115,20 +115,20 @@ const OurStoryPage = () => (
             rounded
           />
           <div className={classes.bernardInfo}>
-            <h1 className={classes.name} >Bernard Michel</h1>
+            <h1 className={classes.name}>Bernard Michel</h1>
             <h2 className={classes.founderTitle}>Co-Founder / CEO</h2>
             <p className={classes.ourTeamText}>
               Bernard has been working as a clinical researcher in the US for 8
-              years. He also volunteers at Catholic Charities of Atlanta. It was a
-              perfect opportunity for him to help refugees, like his parents,
-              settle into the U.S. and begin their new lives. Bernard followed his
-              father's footsteps by earning his own black belt in Judo. The
+              years. He also volunteers at Catholic Charities of Atlanta. It was
+              a perfect opportunity for him to help refugees, like his parents,
+              settle into the U.S. and begin their new lives. Bernard followed
+              his father's footsteps by earning his own black belt in Judo. The
               inspiration doesn't stop there. When his father, Theodore, would
               return from his trips to Haiti, Bernard would get the chance to
               fiddle with his photographs and nurture his passion in photo and
-              video editing. Through the camera lenses, Bernard could see the love
-              his father had for Haiti and how its people suffered.
-          </p>
+              video editing. Through the camera lenses, Bernard could see the
+              love his father had for Haiti and how its people suffered.
+            </p>
           </div>
         </div>
         <div className={classes.theodore}>
@@ -142,15 +142,16 @@ const OurStoryPage = () => (
             <h1 className={classes.name}>Theodore Michel</h1>
             <h2 className={classes.founderTitle}>Founder</h2>
             <p className={classes.ourTeamText}>
-              Theodore is an immigrant from Haiti who was forced to leave home and
-              come to the US in the 1960's to flee from a dictatorship. He became
-              a teacher, winning the Teacher of the Year award in New York City in
-              1993. In his spare time, he likes to practice Kyokushin and
-              Shotokan, which are two forms of martial arts, eventually earning a
-              black belt in both. Theodore has dedicated his life to ensuring that
-              those he left behind in Haiti get a fair chance at a life filled
-              with love and hope, just as his family got.
-          </p>
+              Theodore is an immigrant from Haiti who was forced to leave home
+              and come to the US in the 1960's to flee from a dictatorship. He
+              became a teacher, winning the Teacher of the Year award in New
+              York City in 1993. In his spare time, he likes to practice
+              Kyokushin and Shotokan, which are two forms of martial arts,
+              eventually earning a black belt in both. Theodore has dedicated
+              his life to ensuring that those he left behind in Haiti get a fair
+              chance at a life filled with love and hope, just as his family
+              got.
+            </p>
           </div>
         </div>
       </div>

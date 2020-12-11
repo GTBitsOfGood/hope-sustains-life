@@ -115,7 +115,6 @@ h1.donateText {
     padding-left: 100px;
     padding-top: 350px;
 
-    font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     font-size: 50px;
@@ -131,7 +130,7 @@ h1.donateText {
     text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
 }
 
- button.donateButton {
+button.donateButton {
     background: #03AB99;
     border: none;
     color: white;
@@ -142,8 +141,13 @@ h1.donateText {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
 
-    
+button.donateButton:hover {
+    text-align: center;
+    border-color: #FFFFFF;
+    color: #03AB99;
+    background: #FFFFFF;
 }
 
 .buttonDiv {

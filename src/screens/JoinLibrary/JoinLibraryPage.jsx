@@ -14,8 +14,10 @@ import {
 } from "../../../public/static/LibraryCollage";
 
 import classes from "./JoinLibraryPage.module.css";
-import { Image, Col, Row } from "react-bootstrap";
+import { Image, Col, Button } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen";
+import Link from "next/link";
+import urls from "../../../utils/urls";
 
 function JoinLibraryPage() {
   const isMobile = () => {
@@ -120,7 +122,9 @@ function JoinLibraryPage() {
               Don’t wait to change the world...the world needs the change you
               can bring now
             </h1>
-            <button className={classes.donateButton}>Donate</button>
+            <Link href={urls.pages.donate.index}>
+              <Button className={classes.donateButton}>Donate</Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -141,7 +145,9 @@ function JoinLibraryPage() {
               change you can bring now
             </h1>
             <div className={classes.buttonDiv}>
-              <button className={classes.donateButton}>Donate</button>
+              <Link href={urls.pages.donate.index}>
+                <Button className={classes.donateButton}>Donate</Button>
+              </Link>
             </div>
           </div>
         </div>

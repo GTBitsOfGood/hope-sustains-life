@@ -14,8 +14,10 @@ import {
 } from "../../../public/static/ClassroomCollage";
 
 import classes from "./JoinClassroomPage.module.css";
-import { Image, Col, Row } from "react-bootstrap";
+import { Image, Col, Row, Button } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen";
+import Link from "next/link";
+import urls from "../../../utils/urls";
 
 function JoinClassroomPage() {
   const isMobile = () => {
@@ -140,7 +142,9 @@ function JoinClassroomPage() {
               change you can bring now
             </h1>
             <div className={classes.buttonDiv}>
-              <button className={classes.donateButton}>Donate</button>
+              <Link href={urls.pages.donate.index}>
+                <Button className={classes.donateButton}>Donate</Button>
+              </Link>
             </div>
           </div>
         </div>
