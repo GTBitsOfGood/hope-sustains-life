@@ -37,5 +37,18 @@ h1.location {
 
 button.viewMore {
   background: #03AB99;
+  border-color: #03AB99;
   width: 160px;
+}
+
+button.viewMore:hover {
+  border-color: #03AB99;
+  color: #03AB99;
+  background-color: #FFFFFF;
+  width: 160px;
+}
+
+button.viewMore:active{
+  background-color: #03AB99 !important;
+  border-color: #03AB99 !important;
 }

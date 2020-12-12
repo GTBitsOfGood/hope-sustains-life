@@ -37,13 +37,19 @@ const IndexPage = () => {
         />
         <Card.ImgOverlay className={classes.homeOverlay}>
           <Card.Title
-          style={mobileView ? {marginRight: "auto", marginLeft: "auto"} : {}}
+            style={
+              mobileView ? { marginRight: "auto", marginLeft: "auto" } : {}
+            }
             className={mobileView ? classes.mobileHomeTitle : classes.homeTitle}
           >
             HOPE SUSTAINS LIFE
           </Card.Title>
           <Card.Text
-            style={mobileView ? { fontSize: "20px", marginLeft: "auto", marginRight: "auto" } : {}}
+            style={
+              mobileView
+                ? { fontSize: "20px", marginLeft: "auto", marginRight: "auto" }
+                : {}
+            }
             className={classes.homeSubtitle}
           >
             Educating the future, one student at a time
@@ -62,10 +68,18 @@ const IndexPage = () => {
       <div className={classes.space}></div>
       <div className={mobileView ? "" : classes.images}>
         <Link href={urls.pages.tanzania}>
-          <Image src={TanzaniaImage} className={mobileView ? {} : classes.pictures} fluid/>
+          <Image
+            src={TanzaniaImage}
+            className={mobileView ? {} : classes.pictures}
+            fluid
+          />
         </Link>
         <Link href={urls.pages.bangledesh}>
-          <Image src={BangledeshImage} className={mobileView ? {} : classes.pictures} fluid/>
+          <Image
+            src={BangledeshImage}
+            className={mobileView ? {} : classes.pictures}
+            fluid
+          />
         </Link>
         <Link href={urls.pages.haiti}>
           <Image
