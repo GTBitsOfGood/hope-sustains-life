@@ -9,11 +9,13 @@ import {
 import TextEditor from "../TextEditor";
 import ImageUploader from "../ImageUploader";
 import classes from "./blogPostForm.module.css";
+import { updateBlog, publishBlog } from "../../actions/Blog";
 
-const BlogPostForm = ({ blogPost, handleSavePublish }) => {
+const BlogPostForm = ({ blogPost }) => {
   const [title, setTitle] = React.useState(blogPost?.title);
   const [subtitle, setSubtitle] = React.useState(blogPost?.subtitle);
   const [body, setBody] = React.useState(blogPost?.body);
+  const [published, setPublished] = React.useState(blogPost?.isPublished);
   const [uploadedImage, setUploadedImage] = React.useState();
   const [references, setReferences] = React.useState(blogPost?.references);
   const [deleteOriginalImage, setDeleteOriginalImage] = React.useState(false);
@@ -42,20 +44,23 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
     return {};
   };
 
-  const saveBlog = async () => {
+  const save = async () => {
     try {
       setSaving(true);
-      showSuccessNotification("Saving blog post");
       const cloudinaryImage = await uploadImage();
-      await handleSavePublish(
+
+      await updateBlog(
+        blogPost._id,
         title,
         subtitle,
         body,
         references,
-        false,
+        published,
         cloudinaryImage,
         deleteOriginalImage
       );
+
+      showSuccessNotification("Saved blog post");
     } catch (error) {
       showErrorNotification(error.message);
     } finally {
@@ -63,20 +68,14 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
     }
   };
 
-  const publishBlog = async () => {
+  const publish = async () => {
     try {
       setSaving(true);
-      showSuccessNotification("Publishing blog post");
-      const cloudinaryImage = await uploadImage();
-      await handleSavePublish(
-        title,
-        subtitle,
-        body,
-        references,
-        true,
-        cloudinaryImage,
-        deleteOriginalImage
-      );
+
+      await publishBlog(blogPost._id, !published);
+      setPublished(!published);
+
+      showSuccessNotification("Published blog post");
     } catch (error) {
       showErrorNotification(error.message);
     } finally {
@@ -98,7 +97,7 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
     <div className={classes.blogContainer}>
       <div className={classes.buttonContainer}>
         <Button
-          onClick={saveBlog}
+          onClick={save}
           className={classes.blogButton}
           disabled={saving}
           variant="dark"
@@ -106,12 +105,12 @@ const BlogPostForm = ({ blogPost, handleSavePublish }) => {
           Save & Finish
         </Button>
         <Button
-          onClick={publishBlog}
+          onClick={publish}
           className={classes.blogButton}
           disabled={saving}
           variant="dark"
         >
-          Publish
+          {saving ? "..." : published ? "Unpublish" : "Publish"}
         </Button>
       </div>
       <ImageUploader
@@ -172,13 +171,13 @@ BlogPostForm.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
+    isPublished: PropTypes.bool.isRequired,
     references: PropTypes.string,
     image: PropTypes.shape({
       public_id: PropTypes.string,
       url: PropTypes.string,
     }),
   }),
-  handleSavePublish: PropTypes.func.isRequired,
 };
 
 export default BlogPostForm;
