@@ -82,7 +82,9 @@ const NavBar = () => {
 
   const donateButton = (
     <Link href={urls.pages.donate.index}>
-      <Button className={mobileView ? styles.mobileDonateButton : styles.donateButton}>
+      <Button
+        className={mobileView ? styles.mobileDonateButton : styles.donateButton}
+      >
         Donate
       </Button>
     </Link>

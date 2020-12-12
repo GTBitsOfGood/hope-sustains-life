@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import styles from "./DonationConfirmation.module.css";
+import Link from "next/link";
 
 const Donation = () => (
   <div className={styles.page}>
@@ -8,9 +9,11 @@ const Donation = () => (
       <h1>Thank you for your Donation</h1>
       <hr />
       <p>The receipt has been sent to your email</p>
-      <Button href="/" variant="success">
-        Go to Homepage
-      </Button>
+      <Link href="/">
+        <Button variant="success">
+          Go to Homepage
+        </Button>
+      </Link>
     </div>
   </div>
 );
