@@ -10,9 +10,7 @@ const Donation = () => (
       <hr />
       <p>The receipt has been sent to your email</p>
       <Link href="/">
-        <Button variant="success">
-          Go to Homepage
-        </Button>
+        <Button variant="success">Go to Homepage</Button>
       </Link>
     </div>
   </div>

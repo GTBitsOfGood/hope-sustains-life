@@ -68,6 +68,17 @@ p.homeSubtitle {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.38);
 }
 
+p.differenceSubtitle {
+  color: #ffffff;
+  padding-top: 0.3%;
+  padding-bottom: 2%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(6px + 1.5vw);
+  line-height: 31px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.38);
+}
+
 div.homeOverlay {
   display: flex;
   flex-direction: column;
@@ -88,11 +99,25 @@ button.learnMore {
   width: calc(100px + 4vw);
 }
 
+button.learnMore:hover {
+  text-align: center;
+  border-color: #FFFFFF;
+  color: #03AB99;
+  background: #FFFFFF;
+}
+
 button.mobileLearnMore {
   background-color:#00ae99;
   border-color: #00ae99;
   width: 60%;
   align-self: center;
+}
+
+button.mobileLearnMore:hover {
+  text-align: center;
+  border-color: #FFFFFF;
+  color: #03AB99;
+  background: #FFFFFF;
 }
 
 div.donateCardOverlay {
@@ -137,28 +162,12 @@ div.titleText {
   line-height: 27px;
 }
 
-.mobileOurPrinciples {
-  display: inline-flex;
-  justify-content: space-around;
-}
-
-.mobileOur {
-  font-size: 20px;
-  margin-right: 7px;
-  padding-bottom: 5px;
-  margin-left: 10px;
-}
 .principles {
   color: #03ab99;
   padding-right: 100px;
   padding-left: 0px;
 }
-.mobilePrinciples {
-  color: #03ab99;
-  font-size: 20px;
-  margin-right: 10px;
-  top: -5%;
-}
+
 .centerMap {
   text-align: center;
   display: flex;
@@ -166,80 +175,29 @@ div.titleText {
   justify-content: center;
 }
 
-.leftWord {
+h1.leftWord {
   padding-left: 75px;
   padding-right: 10px;
 }
 
-.rightWord {
+h1.mobileLeftWord {
+  font-size: 20;
+  margin-right: -10;
+  padding-right: 10px;
+  padding-left: 20; 
+}
+
+h1.rightWord {
   color: #03ab99;
   padding-right: 75px;
   padding-left: 10px;
 }
 
-.impactInnovationTransp {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
-
-.impact {
-  padding-left: 240px;
-  padding-right: 100px;
-  width: 264px;
-  height: 67px;
-  left: 257px;
-  top: 1686px;
-
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  display: flex;
-  align-items: flex-end;
-
+h1.mobileRightWord {
   color: #03ab99;
-}
-
-.innovation {
-  padding-left: 220px;
-  padding-right: 100px;
-
-  width: 138px;
-  height: 67px;
-  left: 651px;
-  top: 1686px;
-
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  display: flex;
-  align-items: flex-end;
-
-  color: #03ab99;
-}
-
-.transparency {
-  padding-left: 250px;
-  padding-right: 100px;
-
-  width: 264px;
-  height: 67px;
-  left: 1045px;
-  top: 1686px;
-
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  display: flex;
-  align-items: flex-end;
-
-  color: #03ab99;
+  padding-right: 20px;
+  padding-left: 10px;
+  font-size: 20px;
 }
 
 .paragraphs {
@@ -256,91 +214,6 @@ img.pictures {
   width: 33.33%
 }
 
-.impactImage {
-  width: 307px;
-  height: 230px;
-  left: 155px;
-  top: 1504px;
-}
-
-.innovationImage {
-  width: 271px;
-  height: 203px;
-  left: 585px;
-  top: 1504px;
-}
-
-.transparencyImage {
-  padding-left: 0px;
-  width: 312px;
-  height: 234px;
-  left: 979px;
-  top: 1510px;
-}
-
-.impactP {
-  left: 8%;
-  right: 65.83%;
-  top: 29.58%;
-  bottom: 65.64%;
-
-  padding-left: 100px;
-  padding-right: 100px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 20px;
-
-  text-align: center;
-}
-
-.innovationP {
-  left: 38.4%;
-  right: 37.85%;
-  top: 29.58%;
-  bottom: 65.64%;
-
-  padding-left: 100px;
-  padding-right: 100px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 20px;
-
-  text-align: center;
-}
-
-.transparencyP {
-  left: 67.99%;
-  right: 9.93%;
-  top: 32.56%;
-  bottom: 62.65%;
-
-  padding-left: 100px;
-  padding-right: 100px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 20px;
-
-  text-align: center;
-}
-
-.rectangle {
-  height: 668.3804321289062px;
-  width: 469.0205078125px;
-  position: relative;
-  left: 58.8%;
-  right: 7.31%;
-  top: 15.2%;
-  bottom: 21.65%;
-  background: #2a2d39;
-  opacity: 0.8;
-}
-
 .where {
   padding-left: 75px;
   padding-right: 0px;
@@ -351,16 +224,6 @@ img.pictures {
   padding-left: 50px;
 }
 
-.ourWorkGeneral {
-  background-image: url("../../../public/static/ourWork.png");
-  margin: 0;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  padding-bottom: 50px;
-}
-
 button.mobileViewMore {
   background-color: #00ae99;
   border-color: #00ae99;
@@ -368,9 +231,24 @@ button.mobileViewMore {
   width: 95%;
 }
 
+button.mobileViewMore:hover {
+  text-align: center;
+  border-color: #FFFFFF;
+  color: #03AB99;
+  background: #FFFFFF;
+}
+
 button.viewMore {
   background-color: #00ae99;
   border-color: #00ae99;
+  width: calc(100px + 4vw);
+}
+
+button.viewMore:hover {
+  text-align: center;
+  border-color: #FFFFFF;
+  color: #03AB99;
+  background: #FFFFFF;
 }
 
 div.differenceCard {
@@ -415,4 +293,21 @@ div.mobileDifferenceCard {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+}
+
+.principlesContainer {
+  display: grid;
+  margin-left: 5%;
+  margin-right: 5%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 2px;
+  grid-template-areas:
+    ". . .";
+}
+
+.mobilePrinciplesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

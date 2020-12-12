@@ -11,8 +11,11 @@ import LineImage from "../../../public/static/line-1.png";
 import OurWorkImage from "../../../public/static/ourWork.png";
 import { displayMobileView } from "../../../utils/screen.js";
 import HomeImage from "../../../public/static/home-bg.jpg";
+import HomePrinciple from "../../components/HomePrinciple";
+import {impactText, innovationText, transparencyText } from "./PrincipleDescriptions";
 import urls from "../../../utils/urls";
 import Link from "next/link";
+
 
 const IndexPage = () => {
   const isMobile = () => {
@@ -96,113 +99,24 @@ const IndexPage = () => {
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
         <h1
-          style={
-            mobileView
-              ? { fontSize: 20, marginRight: -10, paddingLeft: 20 }
-              : {}
-          }
-          className={classes.leftWord}
+          className={mobileView ? classes.mobileLeftWord : classes.leftWord}
         >
           OUR
         </h1>
         <h1
-          style={mobileView ? { fontSize: 20, paddingRight: 20 } : {}}
-          className={classes.rightWord}
+          className={mobileView ? classes.mobileRightWord : classes.rightWord}
         >
           PRINCIPLES
         </h1>
         <Image src={LineImage} />
       </div>
 
-      <div
-        className={
-          mobileView ? classes.mobileImages : classes.ourPrinciplesImages
-        }
-      >
-        <div className={mobileView ? "" : classes.impactImage}>
-          <Image
-            style={mobileView ? { marginLeft: "10%" } : {}}
-            src={ImpactImage}
-            className={"pictures"}
-          />
-          {mobileView && (
-            <>
-              <h2 className={classes.mobileImagesText}>Impact</h2>
-              <p className={classes.mobileImagesBody}>
-                We make sure to provide GPS locations and photos of the schools
-                we have built or partnered with to show the impact we have had
-                on the refugee population and the surrounding community
-              </p>
-            </>
-          )}
-        </div>
-        <div className={mobileView ? "" : classes.innovationImage}>
-          <Image
-            style={mobileView ? { marginLeft: "15%" } : {}}
-            src={InnovationImage}
-            className="pictures"
-          />
-          {mobileView && (
-            <>
-              <h2 className={classes.mobileImagesText}>Innovation</h2>
-              <p className={classes.mobileImagesBody}>
-                Traditional methods have not been working for many years. Our
-                team works on developing breakthrough solutions to build or
-                support schools for the refugee population.
-              </p>
-            </>
-          )}
-        </div>
-        <div className={mobileView ? "" : classes.transparencyImage}>
-          <Image
-            style={mobileView ? { marginLeft: "10%" } : {}}
-            src={TransparencyImage}
-            className="pictures"
-          />
-          {mobileView && (
-            <>
-              <h2 className={classes.mobileImagesText}>Transparency</h2>
-              <p className={classes.mobileImagesBody}>
-                We make sure 100% of your money goes to funding our educational
-                projects for the refugee population.
-              </p>
-            </>
-          )}
-        </div>
+      <div className={mobileView ? classes.mobilePrinciplesContainer : classes.principlesContainer}>
+          <HomePrinciple image={ImpactImage} title="Impact" text={impactText} isMobile={mobileView}/>
+          <HomePrinciple image={InnovationImage} title="Innovation" text={innovationText} isMobile={mobileView}/>
+          <HomePrinciple image={TransparencyImage} title="Transparency" text={transparencyText} isMobile={mobileView}/>
+
       </div>
-
-      {!mobileView && (
-        <>
-          <div className={classes.impactInnovationTransp}>
-            <h2 className={classes.impact}>Impact</h2>
-            <h2 className={classes.innovation}>Innovation</h2>
-            <h2 className={classes.transparency}>Transparency</h2>
-          </div>
-          <div className={classes.paragraphs}>
-            <div className={classes.impactP}>
-              <p>
-                We make sure to provide GPS locations and photos of the schools
-                we have built or partnered with to show the impact we have had
-                on the refugee population and the surrounding community
-              </p>
-            </div>
-            <div className={classes.innovationP}>
-              <p>
-                Traditional methods have not been working for many years. Our
-                team works on developing breakthrough solutions to build or
-                support schools for the refugee population.
-              </p>
-            </div>
-            <div className={classes.transparencyP}>
-              <p>
-                We make sure 100% of your money goes to funding our educational
-                projects for the refugee population.
-              </p>
-            </div>
-          </div>
-        </>
-      )}
-
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
         <h1
@@ -226,14 +140,12 @@ const IndexPage = () => {
 
       <iframe
         src="https://www.mapscout.io/hopesustainslife"
-        style={{ borderWidth: 0 }}
+        style={{ borderWidth: 0, marginTop: "40px", marginRight: "auto", marginLeft: "auto" }}
         name="mapscout"
         scrolling="no"
         frameBorder="0"
-        marginHeight="0px"
-        marginWidth="0px"
         height="814px"
-        width="100%"
+        width="90%"
         className={classes.centerMap}
         allowFullScreen
       />
@@ -268,7 +180,7 @@ const IndexPage = () => {
         className={
           mobileView
             ? `bg-dark text-white ${classes.mobileHeaderCard}`
-            : "bg-dark text-white"
+            : `bg-dark text-white ${classes.differenceCard}`
         }
       >
         <Card.Img
@@ -285,7 +197,7 @@ const IndexPage = () => {
           </Card.Title>
           <Card.Text
             className={
-              mobileView ? classes.mobileHomeSubtitle : classes.homeSubtitle
+              mobileView ? classes.mobileHomeSubtitle : classes.differenceSubtitle
             }
           >
             Read about what we're working on and how we plan to do it.
