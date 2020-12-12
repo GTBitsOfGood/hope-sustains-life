@@ -4,10 +4,7 @@ import {
   reorderBlogs,
 } from "../../../../server/mongodb/actions/Blog";
 
-import {
-  verifyToken,
-  getUserFromToken,
-} from "../../../../server/mongodb/actions/User";
+import { verifyToken } from "../../../../server/mongodb/actions/User";
 
 const handler = (req, res) => {
   const action = req.query.action;
@@ -24,17 +21,9 @@ const handler = (req, res) => {
     const { title, subtitle, body, references, isPublished, image } = req.body;
     const token = req.cookies.token;
 
-    return getUserFromToken(token)
-      .then((user) =>
-        createBlog(
-          user.email,
-          title,
-          subtitle,
-          body,
-          references,
-          isPublished,
-          image
-        )
+    return verifyToken(token)
+      .then(({ email }) =>
+        createBlog(email, title, subtitle, body, references, isPublished, image)
       )
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>

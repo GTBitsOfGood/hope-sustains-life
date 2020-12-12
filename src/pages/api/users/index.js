@@ -1,6 +1,6 @@
 import {
   login,
-  getUserFromToken,
+  verifyToken,
   updateUser,
 } from "../../../../server/mongodb/actions/User";
 import { createCookie, removeCookie } from "../../../../utils/tokens";
@@ -9,7 +9,7 @@ const handler = (req, res) => {
   const action = req.query.action;
 
   if (req.method === "GET") {
-    return getUserFromToken(req.cookies?.token)
+    return verifyToken(req.cookies?.token)
       .then((user) =>
         res.status(200).json({
           success: true,
@@ -32,7 +32,6 @@ const handler = (req, res) => {
 
           return res.status(200).json({
             success: true,
-            payload: token,
           });
         })
         .catch((error) =>
@@ -57,7 +56,7 @@ const handler = (req, res) => {
         res.setHeader("Set-Cookie", removeCookie());
         res.setHeader("Set-Cookie", createCookie(token, 604800));
 
-        return res.status(200).json({ success: true, payload: token });
+        return res.status(200).json({ success: true });
       })
       .catch((error) =>
         res.status(400).json({ success: false, payload: error.message })

@@ -25,6 +25,7 @@ export async function login({ email, password }) {
   return jwt.sign(
     {
       id: user._id,
+      email: user.email,
     },
     process.env.JWT_SECRET,
     {
@@ -32,60 +33,6 @@ export async function login({ email, password }) {
     }
   );
 }
-
-export async function signUp({ email, password }) {
-  if (email == null || password == null) {
-    throw new Error("All parameters must be provided!");
-  }
-
-  await mongoDB();
-
-  return bcrypt
-    .hash(password, 10)
-    .then((hashedPassword) =>
-      User.create({
-        email,
-        password: hashedPassword,
-      })
-    )
-    .then((user) =>
-      jwt.sign(
-        {
-          id: user._id,
-          email: user.email,
-        },
-        process.env.JWT_SECRET,
-        {
-          expiresIn: "7d",
-        }
-      )
-    );
-}
-
-export const getUserFromToken = async (token) => {
-  if (token == null) {
-    throw new Error("User is not signed in!");
-  }
-
-  await mongoDB();
-
-  try {
-    const { id } = jwt.verify(token, process.env.JWT_SECRET);
-
-    const user = await User.findOne({ _id: id });
-
-    if (user == null) {
-      throw new Error();
-    }
-
-    return {
-      id,
-      email: user.email,
-    };
-  } catch (e) {
-    throw new Error("Invalid token!");
-  }
-};
 
 export const updateUser = async (email, password, token) => {
   if (token == null) {
@@ -127,7 +74,13 @@ export const verifyToken = async (token) => {
   }
 
   try {
-    return jwt.verify(token, process.env.JWT_SECRET);
+    const { id, email } = jwt.verify(token, process.env.JWT_SECRET);
+
+    if (id == null) {
+      throw new Error("User unknown!");
+    }
+
+    return { id, email };
   } catch (error) {
     throw new Error("Invalid token!");
   }

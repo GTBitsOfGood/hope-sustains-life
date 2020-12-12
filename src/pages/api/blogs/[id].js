@@ -5,10 +5,7 @@ import {
   setPublished,
 } from "../../../../server/mongodb/actions/Blog";
 
-import {
-  verifyToken,
-  getUserFromToken,
-} from "../../../../server/mongodb/actions/User";
+import { verifyToken } from "../../../../server/mongodb/actions/User";
 
 const handler = (req, res) => {
   const action = req.query.action;
@@ -44,10 +41,10 @@ const handler = (req, res) => {
       deleteOriginalImage,
     } = req.body;
 
-    return getUserFromToken(token)
-      .then((user) =>
+    return verifyToken(token)
+      .then(({ email }) =>
         updateBlog(
-          user.email,
+          email,
           title,
           subtitle,
           body,
