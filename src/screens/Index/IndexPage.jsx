@@ -24,7 +24,11 @@ const IndexPage = () => {
   return (
     <>
       <Card
-        className={mobileView ? `bg-dark text-white ${classes.mobileHeaderCard}` : "bg-dark text-white"}
+        className={
+          mobileView
+            ? `bg-dark text-white ${classes.mobileHeaderCard}`
+            : "bg-dark text-white"
+        }
       >
         <Card.Img
           style={mobileView ? { height: "100%", width: "300%" } : {}}
@@ -33,19 +37,22 @@ const IndexPage = () => {
         />
         <Card.ImgOverlay className={classes.homeOverlay}>
           <Card.Title
+          style={mobileView ? {marginRight: "auto", marginLeft: "auto"} : {}}
             className={mobileView ? classes.mobileHomeTitle : classes.homeTitle}
           >
             HOPE SUSTAINS LIFE
           </Card.Title>
           <Card.Text
-            style={mobileView ? { fontSize: 15 } : {}}
+            style={mobileView ? { fontSize: "20px", marginLeft: "auto", marginRight: "auto" } : {}}
             className={classes.homeSubtitle}
           >
             Educating the future, one student at a time
           </Card.Text>
           <Link href={urls.pages.ourStory}>
             <Button
-              className={mobileView ? classes.mobileLearnMore : classes.learnMore}
+              className={
+                mobileView ? classes.mobileLearnMore : classes.learnMore
+              }
             >
               Learn More
             </Button>
@@ -55,16 +62,16 @@ const IndexPage = () => {
       <div className={classes.space}></div>
       <div className={mobileView ? "" : classes.images}>
         <Link href={urls.pages.tanzania}>
-          <Image src={TanzaniaImage} className="pictures" fluid />
+          <Image src={TanzaniaImage} className={mobileView ? {} : classes.pictures} fluid/>
         </Link>
         <Link href={urls.pages.bangledesh}>
-          <Image src={BangledeshImage} className="pictures" fluid />
+          <Image src={BangledeshImage} className={mobileView ? {} : classes.pictures} fluid/>
         </Link>
         <Link href={urls.pages.haiti}>
           <Image
             style={mobileView ? { marginBottom: "20%" } : {}}
             src={HaitiImage}
-            className="pictures"
+            className={mobileView ? {} : classes.pictures}
             fluid
           />
         </Link>
@@ -244,7 +251,11 @@ const IndexPage = () => {
       </div>
 
       <Card
-        className={mobileView? `bg-dark text-white ${classes.mobileHeaderCard}` : "bg-dark text-white" }
+        className={
+          mobileView
+            ? `bg-dark text-white ${classes.mobileHeaderCard}`
+            : "bg-dark text-white"
+        }
       >
         <Card.Img
           style={mobileView ? { height: "100%", width: "120%" } : {}}
@@ -259,14 +270,18 @@ const IndexPage = () => {
             Make A Difference.
           </Card.Title>
           <Card.Text
-            className={mobileView ? classes.mobileHomeSubtitle : classes.homeSubtitle}
+            className={
+              mobileView ? classes.mobileHomeSubtitle : classes.homeSubtitle
+            }
           >
             Read about what we're working on and how we plan to do it.
           </Card.Text>
           <Link href={urls.pages.ourStory}>
-          <Button className={mobileView ? classes.mobileViewMore : classes.viewMore}>
-            View More
-          </Button>
+            <Button
+              className={mobileView ? classes.mobileViewMore : classes.viewMore}
+            >
+              View More
+            </Button>
           </Link>
         </Card.ImgOverlay>
       </Card>

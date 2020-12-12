@@ -11,6 +11,7 @@ div.mobileHeaderCard {
   height: 80%;
   width: 100%;
   align-items: center;
+  text-align: center;
   margin-bottom: 10%;
 }
 
@@ -39,9 +40,9 @@ div.homeTitle {
   font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 75px;
+  font-size: calc(30px + 4vw);
   text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.34);
-  line-height: 100px;
+  line-height: 90px;
   color: #ffffff;
 }
 
@@ -62,7 +63,7 @@ p.homeSubtitle {
   padding-bottom: 2%;
   font-style: normal;
   font-weight: normal;
-  font-size: 26px;
+  font-size: calc(8px + 2vw);
   line-height: 31px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.38);
 }
@@ -84,6 +85,7 @@ div.homeOverlay {
 button.learnMore {
   background-color: #00ae99;
   border-color: #00ae99;
+  width: calc(100px + 4vw);
 }
 
 button.mobileLearnMore {
@@ -246,9 +248,12 @@ div.titleText {
   grid-gap: 20px;
 }
 
-.images {
+div.images {
+  width: 100%;
   display: flex;
-  justify-content: center;
+}
+img.pictures {
+  width: 33.33%
 }
 
 .impactImage {
