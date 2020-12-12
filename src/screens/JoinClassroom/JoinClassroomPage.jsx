@@ -65,9 +65,9 @@ function JoinClassroomPage() {
       </p>
       <p>
         The Classroom is our group of public donors that are opening up
-        opportunities to the next generation of children. Their <br></br>
+        opportunities to the next generation of children. Their 
         donations are put into the necessities that we take for granted: the
-        school, their school materials, and the meals. This <br></br>community
+        school, their school materials, and the meals. This community
         can follow as blogs are posted on world updates and how the Hope
         Sustains Life projects are progressing.
       </p>
@@ -82,11 +82,11 @@ function JoinClassroomPage() {
       <br />
       <p>
         Education gives these young minds HOPE. Your contribution is an
-        investment in the astounding number of refugee <br></br>children out of
+        investment in the astounding number of refugee children out of
         school. Imagine navigating the world without anything or anyone to
-        believe in you. Education paves a <br></br>brighter path to becoming
+        believe in you. Education paves a brighter path to becoming
         self-sufficient individuals that are capable of achieving incredible
-        feats, just as long as <br></br>they’re given the tools to harness those
+        feats, just as long as they’re given the tools to harness those
         strengths.
       </p>
       <br />
@@ -100,8 +100,8 @@ function JoinClassroomPage() {
       <br />
       <p>
         Check out the Our Work page and donate to aid the projects that we’re
-        currently involved with. If you have any further <br></br>
-        questions, visit our Contact Us page and shoot us an email.
+        currently involved with. If you have any further questions, visit our 
+        Contact Us page and shoot us an email.
       </p>
     </>
   );
