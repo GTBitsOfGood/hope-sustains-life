@@ -21,12 +21,6 @@ const NavBar = () => {
 
   const navContents = (
     <>
-      {/* <DropdownButton
-        title ="test"
-        className={mobileView ? styles.mobileNavBar : "mr-3"}
-        >
-          <Dropdown.Item>Hey</Dropdown.Item>
-        </DropdownButton> */}
       <NavDropdown
         title={<span className={styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
@@ -110,7 +104,9 @@ const NavBar = () => {
       variant="dark"
       id="outer-container"
     >
-      <Brand href="/">
+      <Link href="/">
+ 
+      <Brand>
         <Image
           src="/static/hsl-logo-transparent.png"
           className="large-logo"
@@ -120,6 +116,7 @@ const NavBar = () => {
           className="mobile-logo"
         ></Image>
       </Brand>
+      </Link>
       <div className="d-flex flex-row">{mobileView && donateButton}</div>
       {!mobileView && (
         <Collapse id="basic-navbar-nav" className="justify-content-end">
