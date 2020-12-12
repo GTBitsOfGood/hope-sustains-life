@@ -7,8 +7,18 @@ div.roundedCard {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
 
-  }
+div.mobileRoundedCard {
+  border-radius: 20px;
+  background: #FAFAFA;
+  padding: 20px;
+  width: 75vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
 img.icon {
     margin-top: 20px;
