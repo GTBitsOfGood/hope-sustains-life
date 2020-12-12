@@ -4,7 +4,7 @@ import appRequest from "../../utils/requests";
 
 export const verifyPayment = async (name, email, amount) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.donate.index,
+    url: urls.baseUrl + urls.api.donations,
     method: "POST",
     body: {
       name,

@@ -4,7 +4,7 @@ import appRequest from "../../utils/requests";
 
 export const login = async (email, password) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.user.login,
+    url: urls.baseUrl + urls.api.users + "?action=LOGIN",
     method: "POST",
     body: {
       email,
@@ -16,7 +16,7 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.user.logout,
+    url: urls.baseUrl + urls.api.users + "?action=LOGOUT",
     method: "POST",
     isSecure: false,
   });
@@ -24,7 +24,7 @@ export const logout = async () => {
 
 export const updateCurrentUser = async (email, password) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.user.updateCurrent,
+    url: urls.baseUrl + urls.api.users,
     method: "PATCH",
     body: {
       email,
@@ -44,7 +44,7 @@ export const getCurrentUser = async (cookies) => {
     };
   }
 
-  return await fetch(urls.baseUrl + urls.api.user.getCurrent, {
+  return await fetch(urls.baseUrl + urls.api.users, {
     method: "GET",
     mode: "same-origin",
     credentials: "include",

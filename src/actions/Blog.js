@@ -5,7 +5,7 @@ export const getBlogs = async (isPublished = false) => {
   return await appRequest({
     url:
       urls.baseUrl +
-      urls.api.blogs.index +
+      urls.api.blogs +
       `?isPublished=${encodeURIComponent(isPublished)}`,
     method: "GET",
     isSecure: false,
@@ -14,7 +14,7 @@ export const getBlogs = async (isPublished = false) => {
 
 export const getBlogById = async (id) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.blogs.index + `/${id}`,
+    url: urls.baseUrl + urls.api.blogs + `/${id}`,
     method: "GET",
     isSecure: false,
   });
@@ -29,7 +29,7 @@ export const createBlog = async (
   image
 ) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.blogs.index,
+    url: urls.baseUrl + urls.api.blogs,
     method: "POST",
     body: {
       title,
@@ -54,8 +54,8 @@ export const updateBlog = async (
   deleteOriginalImage
 ) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.blogs.index + `/${id}`,
-    method: "PUT",
+    url: urls.baseUrl + urls.api.blogs + `/${id}`,
+    method: "PATCH",
     body: {
       title,
       subtitle,
@@ -71,7 +71,7 @@ export const updateBlog = async (
 
 export const deleteBlogById = async (id) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.blogs.index + `/${id}`,
+    url: urls.baseUrl + urls.api.blogs + `/${id}`,
     method: "DELETE",
     isSecure: true,
   });
@@ -79,7 +79,7 @@ export const deleteBlogById = async (id) => {
 
 export const publishBlog = async (id, isPublished) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.blogs.publish + `/${id}`,
+    url: urls.baseUrl + urls.api.blogs + `/${id}` + "?action=PUBLISH",
     method: "PATCH",
     body: {
       isPublished,
@@ -90,11 +90,10 @@ export const publishBlog = async (id, isPublished) => {
 
 export const reorderBlogs = async (blogs) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.blogs.index,
+    url: urls.baseUrl + urls.api.blogs + "?action=REORDER",
     method: "PUT",
     body: {
       blogs,
-      action: "REORDER_BLOGS",
     },
     isSecure: true,
   });

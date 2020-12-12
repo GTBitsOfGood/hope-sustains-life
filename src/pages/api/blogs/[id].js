@@ -2,6 +2,7 @@ import {
   getBlogById,
   deleteBlogById,
   updateBlog,
+  setPublished,
 } from "../../../../server/mongodb/actions/Blog";
 
 import {
@@ -9,26 +10,29 @@ import {
   getUserFromToken,
 } from "../../../../server/mongodb/actions/User";
 
-// @route   GET POST DELETE api/blogs/:id
-// @desc    Blog Retrieval, Update, or Deletion
-// @access  Admin
 const handler = (req, res) => {
+  const action = req.query.action;
+  const blogId = req.query.id;
+
   if (req.method === "GET") {
-    return getBlogById(req.query.id)
+    return getBlogById(blogId)
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })
       );
-  } else if (req.method === "DELETE") {
-    const token = req.cookies.token;
+  } else if (req.method === "PATCH") {
+    if (action === "PUBLISH") {
+      const isPublished = req.body.isPublished;
+      const token = req.cookies.token;
 
-    return verifyToken(token)
-      .then(() => deleteBlogById(req.query.id))
-      .then(() => res.status(200).json({ success: true }))
-      .catch((error) =>
-        res.status(400).json({ success: false, message: error.message })
-      );
-  } else if (req.method === "PUT") {
+      return verifyToken(token)
+        .then(() => setPublished(blogId, isPublished))
+        .then(() => res.status(200).json({ success: true }))
+        .catch((error) =>
+          res.status(400).json({ success: false, message: error.message })
+        );
+    }
+
     const token = req.cookies.token;
     const {
       title,
@@ -50,10 +54,19 @@ const handler = (req, res) => {
           references,
           isPublished,
           image,
-          req.query.id,
+          blogId,
           deleteOriginalImage
         )
       )
+      .then(() => res.status(200).json({ success: true }))
+      .catch((error) =>
+        res.status(400).json({ success: false, message: error.message })
+      );
+  } else if (req.method === "DELETE") {
+    const token = req.cookies.token;
+
+    return verifyToken(token)
+      .then(() => deleteBlogById(blogId))
       .then(() => res.status(200).json({ success: true }))
       .catch((error) =>
         res.status(400).json({ success: false, message: error.message })
