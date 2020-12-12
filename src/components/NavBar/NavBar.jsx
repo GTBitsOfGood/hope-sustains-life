@@ -82,15 +82,7 @@ const NavBar = () => {
 
   const donateButton = (
     <Link href={urls.pages.donate.index}>
-      <Button
-        className={mobileView ? styles.mobileDonateButton : styles.donateButton}
-        style={{
-          backgroundColor: "#00ae99",
-          borderColor: "#00ae99",
-          marginRight: "30px",
-          width: "100px",
-        }}
-      >
+      <Button className={mobileView ? styles.mobileDonateButton : styles.donateButton}>
         Donate
       </Button>
     </Link>
@@ -105,17 +97,16 @@ const NavBar = () => {
       id="outer-container"
     >
       <Link href="/">
- 
-      <Brand>
-        <Image
-          src="/static/hsl-logo-transparent.png"
-          className="large-logo"
-        ></Image>
-        <Image
-          src="/static/hsl-logo-transparent-mobile.png"
-          className="mobile-logo"
-        ></Image>
-      </Brand>
+        <Brand>
+          <Image
+            src="/static/hsl-logo-transparent.png"
+            className="large-logo"
+          ></Image>
+          <Image
+            src="/static/hsl-logo-transparent-mobile.png"
+            className="mobile-logo"
+          ></Image>
+        </Brand>
       </Link>
       <div className="d-flex flex-row">{mobileView && donateButton}</div>
       {!mobileView && (
