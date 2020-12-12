@@ -12,10 +12,13 @@ import OurWorkImage from "../../../public/static/ourWork.png";
 import { displayMobileView } from "../../../utils/screen.js";
 import HomeImage from "../../../public/static/home-bg.jpg";
 import HomePrinciple from "../../components/HomePrinciple";
-import {impactText, innovationText, transparencyText } from "./PrincipleDescriptions";
+import {
+  impactText,
+  innovationText,
+  transparencyText,
+} from "./PrincipleDescriptions";
 import urls from "../../../utils/urls";
 import Link from "next/link";
-
 
 const IndexPage = () => {
   const isMobile = () => {
@@ -98,9 +101,7 @@ const IndexPage = () => {
 
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
-        <h1
-          className={mobileView ? classes.mobileLeftWord : classes.leftWord}
-        >
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
           OUR
         </h1>
         <h1
@@ -111,11 +112,31 @@ const IndexPage = () => {
         <Image src={LineImage} />
       </div>
 
-      <div className={mobileView ? classes.mobilePrinciplesContainer : classes.principlesContainer}>
-          <HomePrinciple image={ImpactImage} title="Impact" text={impactText} isMobile={mobileView}/>
-          <HomePrinciple image={InnovationImage} title="Innovation" text={innovationText} isMobile={mobileView}/>
-          <HomePrinciple image={TransparencyImage} title="Transparency" text={transparencyText} isMobile={mobileView}/>
-
+      <div
+        className={
+          mobileView
+            ? classes.mobilePrinciplesContainer
+            : classes.principlesContainer
+        }
+      >
+        <HomePrinciple
+          image={ImpactImage}
+          title="Impact"
+          text={impactText}
+          isMobile={mobileView}
+        />
+        <HomePrinciple
+          image={InnovationImage}
+          title="Innovation"
+          text={innovationText}
+          isMobile={mobileView}
+        />
+        <HomePrinciple
+          image={TransparencyImage}
+          title="Transparency"
+          text={transparencyText}
+          isMobile={mobileView}
+        />
       </div>
       <div className={classes.ourPrinciples}>
         <Image src={LineImage} />
@@ -140,7 +161,12 @@ const IndexPage = () => {
 
       <iframe
         src="https://www.mapscout.io/hopesustainslife"
-        style={{ borderWidth: 0, marginTop: "40px", marginRight: "auto", marginLeft: "auto" }}
+        style={{
+          borderWidth: 0,
+          marginTop: "40px",
+          marginRight: "auto",
+          marginLeft: "auto",
+        }}
         name="mapscout"
         scrolling="no"
         frameBorder="0"
@@ -197,7 +223,9 @@ const IndexPage = () => {
           </Card.Title>
           <Card.Text
             className={
-              mobileView ? classes.mobileHomeSubtitle : classes.differenceSubtitle
+              mobileView
+                ? classes.mobileHomeSubtitle
+                : classes.differenceSubtitle
             }
           >
             Read about what we're working on and how we plan to do it.

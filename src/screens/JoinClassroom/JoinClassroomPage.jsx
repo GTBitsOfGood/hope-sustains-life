@@ -120,7 +120,9 @@ function JoinClassroomPage() {
               Don’t wait to change the world...the world needs the change you
               can bring now
             </h1>
-            <button className={classes.donateButton}>Donate</button>
+            <Link href={urls.pages.donate.index}>
+              <Button className={classes.donateButton}>Donate</Button>
+            </Link>
           </div>
         </div>
       </div>

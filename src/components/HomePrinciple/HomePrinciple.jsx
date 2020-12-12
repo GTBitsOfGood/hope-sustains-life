@@ -6,7 +6,7 @@ import classes from "./HomePrinciple.module.css";
  * Component for Home Principle
  */
 
-const HomePrinciple = ({ image, title, text, isMobile=false }) => {
+const HomePrinciple = ({ image, title, text, isMobile = false }) => {
   return (
     <div className={isMobile ? classes.mobileCard : classes.card}>
       <Image className={classes.icon} src={image} fluid />

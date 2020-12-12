@@ -1,5 +1,5 @@
 .general {
-    background-image: url("../../../../public/static/realHaiti.png");
+    background-image: url("../../../../public/static/haitipic.png");
     margin: 0;
     height: 100%;
     background-position: center;
@@ -15,45 +15,68 @@
     justify-content: center;
     padding-top: 20%;
 
-    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 85px;
     line-height: 100px;
 
     color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .space {
     padding: 3%;
 }
 
-.grid {
+div.gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* grid-gap: 20px; */
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    grid-template-rows: 1fr;
+    width: 90%;
+    gap: 0px 50px;
+    grid-template-areas:
+      ". .";
+}
+div.mobileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.description {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.mobileDescription {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
 .gridImage {
-    padding-left: 50px;
-    
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+.mobileImage {
+    width: 90%;
 }
 
 .gridText {
-    left: 57.01%;
-    right: 5.21%;
-    top: 29.54%;
-    bottom: 68.23%;
-
-    font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 30px;
+    line-height: calc(16px + 1vw);
     /* or 187% */
-
-    text-align: center;
-
     color: #000000;
 }
 
@@ -69,39 +92,21 @@
 }
 
 .dubedou {
-    left: 53.4%;
-    right: 1.67%;
-    top: 25.71%;
-    bottom: 71.33%;
-
-    font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
     line-height: 45px;
     /* or 173% */
-
-    text-align: center;
-
     color: #2A2D39;
 
 }
 
 .haiti {
-    left: 53.4%;
-    right: 1.67%;
-    top: 25.71%;
-    bottom: 71.33%;
-
-    font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
-    font-size: 50px;
+    font-size: calc(20px + 2vw);
     line-height: 45px;
     /* or 173% */
-
-    text-align: center;
-
     color: #03AB99;
 
 }
@@ -111,26 +116,38 @@ h1.donateText {
     right: 56.25%;
     top: 62.7%;
     bottom: 34.58%;
-
     padding-left: 100px;
     padding-top: 350px;
-
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
     line-height: 60px;
     /* or 158% */
-
     display: flex;
     align-items: flex-end;
     text-align: center;
-
     color: #FFFFFF;
-
     text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-}
-
-button.donateButton {
+  }
+  
+  h1.donateTextMobile {
+    left: 2.08%;
+    right: 56.25%;
+    top: 62.7%;
+    bottom: 34.58%;
+    padding-top: 350px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: auto;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
+  }
+  
+  button.donateButton {
     background: #03AB99;
     border: none;
     color: white;
@@ -141,15 +158,14 @@ button.donateButton {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-}
-
-button.donateButton:hover {
+  }
+  
+  button.donateButton:hover {
     text-align: center;
     border-color: #FFFFFF;
     color: #03AB99;
     background: #FFFFFF;
-}
-
+  }
 .buttonDiv {
     padding-top: 350;
     padding-left: 230px; 

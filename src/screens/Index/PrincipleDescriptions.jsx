@@ -4,4 +4,4 @@ export const innovationText =
   "Traditional methods have not been working for many years. Our team works on developing breakthrough solutions to build or support schools for the refugee population.";
 
 export const transparencyText =
-  "We make sure 100% of your money goes to funding our educational projects for the refugee population."
+  "We make sure 100% of your money goes to funding our educational projects for the refugee population.";
