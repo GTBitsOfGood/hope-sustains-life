@@ -8,12 +8,12 @@
     background-size: cover;
 }
 
-.headerTitle {
+h1.headerTitle {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10%;
+    padding-top: 150px;
 
     font-style: normal;
     font-weight: 500;
@@ -21,9 +21,25 @@
     line-height: 100px;
 
     color: #FFFFFF;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-.headerText {
+h1.mobileHeaderTitle {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 200px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 100px;
+
+    color: #FFFFFF;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+p.headerText {
     text-align: center;
     color: #FFFFFF;
     display: flex;
@@ -39,6 +55,21 @@
     line-height: 27px;
 }
 
+p.mobileHeaderText {
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.3%;
+    padding-bottom: 2%;
+    
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+}
 /* Our Story/Issue CSS */
 .centerContent {
     display: flex;
@@ -61,18 +92,30 @@
     color: #4ca899;
 }
 
-.ourStory {
+div.ourStory {
     padding: 117px 128px 120px 0px;
 }
 
-.blueLineStory {
-    border-bottom: 4px #03Ab99;
-    border-bottom-style: solid;
+div.mobileOurStory {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-.blueLineIssue {
+h1.blueLineStory {
+    border-bottom: 4px #03Ab99;
+    border-bottom-style: solid;
+    margin-top: 50px;
+}
+
+h1.blueLineIssue {
     border-top: 4px #03Ab99;
     border-top-style: solid;
+}
+
+h1.issueLineBottom {
+    border-bottom: 4px #03Ab99;
+    border-bottom-style: solid;
+    padding-top: 30px;
 }
 
 .issueTackling {
@@ -82,6 +125,13 @@
     padding: 117px 0px 120px 117px;
     z-index: 0;
 }
+.mobileIssueTackling {
+    background: linear-gradient(rgba(255,255,255,0.80),rgba(255,255,255,0.80)), url("../../../public/static/martin-bekerman.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 0; 
+    margin-bottom: 40px;
+}
 
 /* Our Team */
 
@@ -90,8 +140,6 @@
 }
 p.ourTeamText{
     padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 75px;
     font-size: calc(14px + 0.25vw);
     line-height: 26px;
     text-align: left;
@@ -125,6 +173,14 @@ p.ourTeamText{
     justify-content: left;
 }
 
+.mobileCenterContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 .pictures {
     height: auto;
     position: absolute;
@@ -174,31 +230,43 @@ button.donateButton:hover {
     padding-bottom: 50px;
 }
 
+
 h1.donateText {
     left: 2.08%;
     right: 56.25%;
     top: 62.7%;
     bottom: 34.58%;
-
     padding-left: 100px;
     padding-top: 350px;
-
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
     line-height: 60px;
     /* or 158% */
-
     display: flex;
     align-items: flex-end;
     text-align: center;
-
     color: #FFFFFF;
-
     text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-}
-
-
+  }
+  
+h1.donateTextMobile {
+    left: 2.08%;
+    right: 56.25%;
+    top: 62.7%;
+    bottom: 34.58%;
+    padding-top: 350px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: auto;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
+  }
+  
 .buttonDiv {
     padding-top: 350;
     padding-left: 230px; 
@@ -207,7 +275,6 @@ h1.donateText {
 
 h2.founderTitle {
     color: #4ca899;
-    text-align: left;
     font-size: calc(12px + 1.25vw)
 }
 
@@ -215,6 +282,10 @@ h1.name {
     font-size: calc(12px + 1.75vw)
 }
 
+h1.mobileName {
+    font-size: calc(12px + 1.75vw);
+    padding-top: 30px;
+}
 div.founderContainer {
     display: flex;
     flex-direction: column;
@@ -222,8 +293,6 @@ div.founderContainer {
     flex-flow: row wrap;
     align-items: center;
     margin-top: 80px;
-    margin-left: 5%;
-
 }
 
 div.bernard {
@@ -239,6 +308,15 @@ div.bernard {
   img.bernardImage { grid-area: bernardImage; width: 100%; min-width: 300px}
   div.bernardInfo { grid-area: bernardInfo; width: 100% }
 
+div.mobileBernard {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
 div.theodore {
     display: grid;
@@ -252,3 +330,13 @@ div.theodore {
   }
   img.theodoreImage { grid-area: theodoreImage; width: 100%; min-width: 300px}
   div.theodoreInfo { grid-area: theodoreInfo; }
+
+  div.mobileTheodore {
+      margin-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+  }
