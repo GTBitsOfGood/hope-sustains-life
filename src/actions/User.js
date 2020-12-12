@@ -1,70 +1,41 @@
 import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
+import appRequest from "../../utils/requests";
 
-export const signUp = (email, password) =>
-  fetch(urls.baseUrl + urls.api.user.signUp, {
-    method: "post",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return json.payload;
-    });
-
-export const login = (email, password) =>
-  fetch(urls.baseUrl + urls.api.user.login, {
+export const login = async (email, password) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.user.login,
     method: "POST",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+    body: {
       email,
       password,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
+    },
+    isSecure: false,
+  });
+};
 
-      return json.payload;
-    });
+export const logout = async () => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.user.logout,
+    method: "POST",
+    isSecure: false,
+  });
+};
 
-export const logout = () =>
-  fetch(urls.baseUrl + urls.api.user.logout, {
-    method: "GET",
-    mode: "same-origin",
-    credentials: "include",
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      }
+export const updateCurrentUser = async (email, password) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.user.updateCurrent,
+    method: "PATCH",
+    body: {
+      email,
+      password,
+    },
+    isSecure: true,
+  });
+};
 
-      return json.success;
-    });
-
-export const getCurrentUser = (cookies) => {
+// Not changing app request for one unique request so using normal fetch here
+export const getCurrentUser = async (cookies) => {
   const conditionals = {};
 
   if (cookies != null) {
@@ -73,7 +44,7 @@ export const getCurrentUser = (cookies) => {
     };
   }
 
-  return fetch(urls.baseUrl + urls.api.user.getCurrent, {
+  return await fetch(urls.baseUrl + urls.api.user.getCurrent, {
     method: "GET",
     mode: "same-origin",
     credentials: "include",
@@ -90,27 +61,3 @@ export const getCurrentUser = (cookies) => {
       return json.payload;
     });
 };
-
-export const updateCurrentUser = (email, password) =>
-  fetch(urls.baseUrl + urls.api.user.updateCurrent, {
-    method: "PATCH",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email,
-      password,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return json.payload;
-    });
