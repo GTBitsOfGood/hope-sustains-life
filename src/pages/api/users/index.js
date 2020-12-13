@@ -51,7 +51,8 @@ const handler = (req, res) => {
     const { email, password } = req.body;
     const token = req.cookies.token;
 
-    return updateUser(email, password, token)
+    return verifyToken(token)
+      .then(({ id }) => updateUser(id, email, password))
       .then((token) => {
         res.setHeader("Set-Cookie", removeCookie());
         res.setHeader("Set-Cookie", createCookie(token, 604800));

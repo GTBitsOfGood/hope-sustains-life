@@ -34,17 +34,14 @@ export async function login({ email, password }) {
   );
 }
 
-export const updateUser = async (email, password, token) => {
-  if (token == null) {
-    throw new Error("User is not signed in!");
-  } else if (email == null || password == null) {
+export const updateUser = async (id, email, password) => {
+  if (email == null || password == null) {
     throw new Error("Email and password must be provided!");
   }
 
   await mongoDB();
 
   try {
-    const { id } = jwt.verify(token, process.env.JWT_SECRET);
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.findOneAndUpdate(

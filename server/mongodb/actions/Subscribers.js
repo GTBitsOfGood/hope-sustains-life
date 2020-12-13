@@ -19,7 +19,7 @@ export async function addSubscriber(email) {
   await mongoDB();
 
   try {
-    return Subscriber.create({ email: email });
+    return await Subscriber.create({ email: email });
   } catch (error) {
     throw new Error(error.message);
   }
@@ -32,7 +32,9 @@ export async function deleteSubscriber(id) {
 
   await mongoDB();
 
-  return await Subscriber.findByIdAndDelete(id).catch((err) => {
-    throw new Error(err.message);
-  });
+  try {
+    return await Subscriber.findByIdAndDelete(id);
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
