@@ -1,11 +1,11 @@
-import { login } from "../../../../server/mongodb/actions/User";
+import { signUp } from "../../../../server/mongodb/actions/User";
 import { createCookie } from "../../../../utils/tokens";
 
 // @route   POST api/user/login
 // @desc    Login Request
 // @access  Public
 const handler = (req, res) =>
-  login(req.body)
+  signUp(req.body)
     .then((token) => {
       res.setHeader("Set-Cookie", createCookie(token, 604800));
 
