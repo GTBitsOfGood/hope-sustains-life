@@ -6,9 +6,9 @@ import classes from "./OurWorkCard.module.css";
  * Component for Our Work Cards
  */
 
-const OurWorkCard = ({ image, text }) => {
+const OurWorkCard = ({ image, text, isMobile=false }) => {
   return (
-    <div className={classes.roundedCard}>
+    <div className={isMobile? classes.mobileRoundedCard : classes.roundedCard}>
       <Image className={classes.icon} src={image}></Image>
       <p>{text}</p>
     </div>
