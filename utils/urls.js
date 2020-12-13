@@ -16,7 +16,6 @@ export default {
     index: "/",
     ourStory: "/ourstory",
     blogNews: "/blognews",
-    hundredPromise: "/hundredpromise",
     ourWork: "/ourwork",
     joinClassroom: "/joinclassroom",
     joinLibrary: "/joinlibrary",
