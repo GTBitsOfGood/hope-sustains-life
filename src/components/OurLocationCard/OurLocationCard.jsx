@@ -7,31 +7,28 @@ import Link from "next/link";
  * Component for Our Location Cards
  */
 
-const OurLocationCard = ({ image, title, location, navlink, isMobile = false }) => {
+const OurLocationCard = ({
+  image,
+  title,
+  location,
+  navlink,
+  isMobile = false,
+}) => {
   if (isMobile) {
-    return(
-    <Card className={classes.mobileCard}>
-      <Card.Img
-        src={image}
-        alt="Card image"
-      />
+    return (
+      <Card className={classes.mobileCard}>
+        <Card.Img src={image} alt="Card image" />
         <Card.ImgOverlay className={classes.cardOverlay}>
           <div>
-            <Card.Title className={classes.titleText}>
-              {title}
-            </Card.Title>
-            <Card.Text className={classes.locationText}>
-              {location}
-            </Card.Text>
+            <Card.Title className={classes.titleText}>{title}</Card.Title>
+            <Card.Text className={classes.locationText}>{location}</Card.Text>
             <Link href={navlink}>
-              <Button className={classes.viewMore}>
-                View More
-        </Button>
+              <Button className={classes.viewMore}>View More</Button>
             </Link>
           </div>
         </Card.ImgOverlay>
       </Card>
-    )
+    );
   } else {
     return (
       <div className={classes.roundedCard}>

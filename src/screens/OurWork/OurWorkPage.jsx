@@ -50,35 +50,54 @@ const OurWorkPage = () => {
           alt="Card image"
         />
         <Card.ImgOverlay className={classes.homeOverlay}>
-          <Card.Title className={mobileView ? classes.mobileCardTitle : classes.cardTitle}>
+          <Card.Title
+            className={mobileView ? classes.mobileCardTitle : classes.cardTitle}
+          >
             Our Work
           </Card.Title>
-          <Card.Text className={mobileView ? classes.mobileCardSubtitle : classes.cardSubtitle}>
+          <Card.Text
+            className={
+              mobileView ? classes.mobileCardSubtitle : classes.cardSubtitle
+            }
+          >
             Educating the future, one student at a time
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
-      <h1 className={mobileView ? classes.mobileProcessTitle : classes.processTitle}>At a glance</h1>
-      {!mobileView && (<div className={classes.processContainer}>
-        <OurWorkCard image={MagnifyingGlass} text={text1} />
-        <Image src={RightArrow} />
-        <OurWorkCard image={TwoPeople} text={text2} />
-        <Image src={RightArrow} />
-        <OurWorkCard image={House} text={text3} />
-        <Image src={RightArrow} />
-        <OurWorkCard image={Handshake} text={text4} />
-      </div>
+      <h1
+        className={
+          mobileView ? classes.mobileProcessTitle : classes.processTitle
+        }
+      >
+        At a glance
+      </h1>
+      {!mobileView && (
+        <div className={classes.processContainer}>
+          <OurWorkCard image={MagnifyingGlass} text={text1} />
+          <Image src={RightArrow} />
+          <OurWorkCard image={TwoPeople} text={text2} />
+          <Image src={RightArrow} />
+          <OurWorkCard image={House} text={text3} />
+          <Image src={RightArrow} />
+          <OurWorkCard image={Handshake} text={text4} />
+        </div>
       )}
-      {mobileView && (<div className={classes.mobileProcessContainer}>
-        <OurWorkCard image={MagnifyingGlass} text={text1} isMobile={mobileView}/>
-        <Image src={DownArrow} />
-        <OurWorkCard image={TwoPeople} text={text2} isMobile={mobileView} />
-        <Image src={DownArrow} />
-        <OurWorkCard image={House} text={text3} isMobile={mobileView}/>
-        <Image src={DownArrow} />
-        <OurWorkCard image={Handshake} text={text4} isMobile={mobileView} />
-      </div>)}
-      
+      {mobileView && (
+        <div className={classes.mobileProcessContainer}>
+          <OurWorkCard
+            image={MagnifyingGlass}
+            text={text1}
+            isMobile={mobileView}
+          />
+          <Image src={DownArrow} />
+          <OurWorkCard image={TwoPeople} text={text2} isMobile={mobileView} />
+          <Image src={DownArrow} />
+          <OurWorkCard image={House} text={text3} isMobile={mobileView} />
+          <Image src={DownArrow} />
+          <OurWorkCard image={Handshake} text={text4} isMobile={mobileView} />
+        </div>
+      )}
+
       <OurLocationCard
         image={TanzaniaImage}
         title="Nyarugusu refugee camp"
