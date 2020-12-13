@@ -7,11 +7,6 @@ const routes = [
     auth: false,
   },
   {
-    name: "DONATIONS",
-    link: urls.pages.admin.donations,
-    auth: false,
-  },
-  {
     name: "SUBSCRIBERS",
     link: urls.pages.admin.subscribers,
     auth: false,
