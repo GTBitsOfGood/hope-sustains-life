@@ -26,11 +26,6 @@ const Footer = () => {
             <a>Blogs/News</a>
           </Link>
         </div>
-        <div className={styles.sublinks}>
-          <Link href={urls.pages.hundredPromise} passHref>
-            <a>100% Promise</a>
-          </Link>
-        </div>
       </Col>
 
       <Col>
