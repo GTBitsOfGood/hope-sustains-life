@@ -54,13 +54,25 @@ const Footer = () => {
 
   const socialIcons = (
     <Row>
-      <a href="https://www.Facebook.com/hope-sustains-life-106186367738715" target="_blank" className={styles.icon}>
+      <a
+        href="https://www.Facebook.com/hope-sustains-life-106186367738715"
+        target="_blank"
+        className={styles.icon}
+      >
         <Image src={facebookLogo}></Image>
       </a>
-      <a href="https://www.instagram.com/hopesustainslife1/" target="_blank" className={styles.icon}>
+      <a
+        href="https://www.instagram.com/hopesustainslife1/"
+        target="_blank"
+        className={styles.icon}
+      >
         <Image src={instagramLogo}></Image>
       </a>
-      <a href="https://Twitter.com/hopesuslife" target="_blank" className={styles.icon}>
+      <a
+        href="https://Twitter.com/hopesuslife"
+        target="_blank"
+        className={styles.icon}
+      >
         <Image src={twitterLogo}></Image>
       </a>
       <a className={styles.icon}>
