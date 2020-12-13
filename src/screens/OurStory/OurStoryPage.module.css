@@ -6,6 +6,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 h1.headerTitle {
@@ -13,13 +16,10 @@ h1.headerTitle {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 150px;
-
     font-style: normal;
     font-weight: 500;
     font-size: 85px;
     line-height: 100px;
-
     color: #FFFFFF;
     text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
@@ -27,15 +27,11 @@ h1.headerTitle {
 h1.mobileHeaderTitle {
     text-align: center;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-top: 200px;
-
     font-style: normal;
     font-weight: 500;
     font-size: 45px;
     line-height: 100px;
-
     color: #FFFFFF;
     text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
@@ -136,7 +132,7 @@ h1.issueLineBottom {
 /* Our Team */
 
 .ourTeam{
-    margin: 0% 10% 0% 10%
+    margin: 5% 10% 0% 10%
 }
 p.ourTeamText{
     padding-top: 30px;
