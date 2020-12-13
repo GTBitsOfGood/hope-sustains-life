@@ -5,7 +5,7 @@ export async function getSubscribers() {
   await mongoDB();
 
   try {
-    return Subscriber.find({});
+    return await Subscriber.find({});
   } catch (error) {
     throw new Error(error.message);
   }
