@@ -30,25 +30,10 @@ export default {
     contactUs: "/contactus",
   },
   api: {
-    user: {
-      signUp: "/api/user/sign-up",
-      login: "/api/user/login",
-      logout: "/api/user/logout",
-      getCurrent: "/api/user/get-current",
-      updateCurrent: "/api/user/update-current",
-    },
-    blogs: {
-      index: "/api/blogs",
-      publish: "/api/blogs/publish",
-    },
-    subscribers: {
-      index: "/api/subscribers",
-    },
-    email: {
-      contactUs: "/api/email/contact-us",
-    },
-    donate: {
-      index: "/api/donate",
-    },
+    users: "/api/users",
+    blogs: "/api/blogs",
+    subscribers: "/api/subscribers",
+    emails: "/api/emails",
+    donations: "/api/donations",
   },
 };

@@ -1,61 +1,47 @@
-import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
+import appRequest from "../../utils/requests";
 
-export const getBlogs = (isPublished = false) => {
-  const endpoint = urls.baseUrl + urls.api.blogs.index;
-  return fetch(endpoint + `?isPublished=${encodeURIComponent(isPublished)}`, {
+export const getBlogs = async (isPublished = false) => {
+  return await appRequest({
+    url:
+      urls.baseUrl +
+      urls.api.blogs +
+      `?isPublished=${encodeURIComponent(isPublished)}`,
     method: "GET",
-    mode: "same-origin",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return json.payload;
-    });
+    isSecure: false,
+  });
 };
 
-export const createBlog = (
+export const getBlogById = async (id) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.blogs + `/${id}`,
+    method: "GET",
+    isSecure: false,
+  });
+};
+
+export const createBlog = async (
   title,
   subtitle,
   body,
   references,
   isPublished,
   image
-) =>
-  fetch(urls.baseUrl + urls.api.blogs.index, {
+) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.blogs,
     method: "POST",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+    body: {
       title,
       subtitle,
       body,
       references,
       isPublished,
       image,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return;
-    });
+    },
+    isSecure: true,
+  });
+};
 
 export const updateBlog = async (
   id,
@@ -67,14 +53,10 @@ export const updateBlog = async (
   image,
   deleteOriginalImage
 ) => {
-  fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
-    method: "PUT",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+  return await appRequest({
+    url: urls.baseUrl + urls.api.blogs + `/${id}`,
+    method: "PATCH",
+    body: {
       title,
       subtitle,
       body,
@@ -82,102 +64,37 @@ export const updateBlog = async (
       isPublished,
       image,
       deleteOriginalImage,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return;
-    });
+    },
+    isSecure: true,
+  });
 };
 
-export const deleteBlogById = (id) =>
-  fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
+export const deleteBlogById = async (id) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.blogs + `/${id}`,
     method: "DELETE",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
+    isSecure: true,
+  });
+};
 
-      return;
-    });
-
-export const getBlogById = (id) =>
-  fetch(urls.baseUrl + urls.api.blogs.index + `/${id}`, {
-    method: "GET",
-    mode: "same-origin",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return json.payload;
-    });
-
-export const publishBlog = (id, isPublished) =>
-  fetch(urls.baseUrl + urls.api.blogs.publish + `/${id}`, {
+export const publishBlog = async (id, isPublished) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.blogs + `/${id}` + "?action=PUBLISH",
     method: "PATCH",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+    body: {
       isPublished,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return;
-    });
-
-export const reorderBlogs = async (blogs) =>
-  fetch(urls.baseUrl + urls.api.blogs.index, {
-    method: "PUT",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      blogs,
-      action: "REORDER_BLOGS",
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
+    isSecure: true,
+  });
+};
 
-      return;
-    });
+export const reorderBlogs = async (blogs) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.blogs + "?action=REORDER",
+    method: "PUT",
+    body: {
+      blogs,
+    },
+    isSecure: true,
+  });
+};

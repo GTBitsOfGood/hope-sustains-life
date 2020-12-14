@@ -1,64 +1,29 @@
-import fetch from "isomorphic-unfetch";
 import urls from "../../utils/urls";
+import appRequest from "../../utils/requests";
 
-export const getSubscribers = () =>
-  fetch(urls.baseUrl + urls.api.subscribers.index, {
+export const getSubscribers = async () => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.subscribers,
     method: "GET",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
+    isSecure: true,
+  });
+};
 
-      return json.payload;
-    });
-
-export const addSubscriber = (email) =>
-  fetch(urls.baseUrl + urls.api.subscribers.index, {
+export const addSubscriber = async (email) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.subscribers,
     method: "POST",
-    mode: "same-origin",
-    headers: {
-      "Content-Type": "application/json",
+    body: {
+      email,
     },
-    body: JSON.stringify({
-      email: email,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
+    isSecure: false,
+  });
+};
 
-      return;
-    });
-
-export const deleteSubscriber = (id) =>
-  fetch(urls.baseUrl + urls.api.subscribers.index + `/${id}`, {
+export const deleteSubscriber = async (id) => {
+  return await appRequest({
+    url: urls.baseUrl + urls.api.subscribers + `/${id}`,
     method: "DELETE",
-    mode: "same-origin",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      if (json == null) {
-        throw new Error("Could not connect to API!");
-      } else if (!json.success) {
-        throw new Error(json.message);
-      }
-
-      return json.payload;
-    });
+    isSecure: true,
+  });
+};
