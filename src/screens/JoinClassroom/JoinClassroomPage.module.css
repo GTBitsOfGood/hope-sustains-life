@@ -78,7 +78,7 @@
 .sectionTitle {
   width: 260px;
   font-size: 35px;
-  border-bottom: 4px #03Ab99;
+  border-bottom: 3px #03Ab99;
   border-bottom-style: solid;
   margin-left: -100px;
   margin-top: 50px;
@@ -90,7 +90,7 @@
   color: black;
 }
 
-.blueText {
+.greenText {
   color: #4ca899;
 }
 

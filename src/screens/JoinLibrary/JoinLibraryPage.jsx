@@ -51,7 +51,7 @@ function JoinLibraryPage() {
     <>
       <h1 className={classes.title}>
         We welcome visionaries, business owners, and entrepreneurs! Interested
-        in joining <span className={classes.blueText}>“The Library” </span>
+        in joining <span className={classes.greenText}>“The Library” </span>
         visit our contact us page.
       </h1>
       <br />
@@ -75,7 +75,7 @@ function JoinLibraryPage() {
       </p>
       <Col md={2}>
         <h1 className={classes.sectionTitle}>
-          &emsp;&emsp;The <span className={classes.blueText}>Impact</span>
+          &emsp;&emsp;The <span className={classes.greenText}>Impact</span>
         </h1>
       </Col>
       <p>
@@ -89,7 +89,7 @@ function JoinLibraryPage() {
       </p>
       <Col md={2}>
         <h1 className={classes.sectionTitle}>
-          &emsp;&emsp;How To <span className={classes.blueText}>Join</span>
+          &emsp;&emsp;How To <span className={classes.greenText}>Join</span>
         </h1>
       </Col>
       <p>
