@@ -73,15 +73,11 @@ function JoinLibraryPage() {
         crisis of children displaced from their homes not having access to a
         quality education.
       </p>
-      <br />
-      <br />
       <Col md={2}>
-        <h1 className={classes.greenUnderline}>
+        <h1 className={classes.sectionTitle}>
           &emsp;&emsp;The <span className={classes.blueText}>Impact</span>
         </h1>
       </Col>
-      <br />
-      <br />
       <p>
         Like any new startup, we are looking for visionaries that can support
         our business model. The private donors that make up The Library can
@@ -91,15 +87,11 @@ function JoinLibraryPage() {
         is met on a consistent basis with your contributions to the operational
         side.
       </p>
-      <br />
-      <br />
       <Col md={2}>
-        <h1 className={classes.greenUnderline}>
+        <h1 className={classes.sectionTitle}>
           &emsp;&emsp;How To <span className={classes.blueText}>Join</span>
         </h1>
       </Col>
-      <br />
-      <br />
       <p>
         Interested in joining the library? Visit our contact page and send us an
         email!

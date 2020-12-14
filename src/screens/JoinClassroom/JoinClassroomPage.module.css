@@ -75,12 +75,14 @@
   }
 }
 
-.greenUnderline {
+.sectionTitle {
+  width: 260px;
   font-size: 35px;
   border-bottom: 4px #03Ab99;
   border-bottom-style: solid;
-  padding-left: -10px;
   margin-left: -100px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .title {

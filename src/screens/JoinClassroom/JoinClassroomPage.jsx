@@ -56,7 +56,7 @@ function JoinClassroomPage() {
   const contents = (
     <>
       <h1 className={classes.title}>
-        Everyone <span className={classes.blueText}>welcome!</span>
+        Everyone <span className={classes.greenText}>welcome!</span>
       </h1>
       <br />
       <p>
@@ -71,15 +71,11 @@ function JoinClassroomPage() {
         posted on world updates and how the Hope Sustains Life projects are
         progressing.
       </p>
-      <br />
-      <br />
       <Col md={2}>
-        <h1 className={classes.greenUnderline}>
-          &emsp;&emsp;The <span className={classes.blueText}>Impact</span>
+        <h1 className={classes.sectionTitle}>
+          &emsp;&emsp;The <span className={classes.greenText}>Impact</span>
         </h1>
       </Col>
-      <br />
-      <br />
       <p>
         Education gives these young minds HOPE. Your contribution is an
         investment in the astounding number of refugee children out of school.
@@ -88,15 +84,11 @@ function JoinClassroomPage() {
         individuals that are capable of achieving incredible feats, just as long
         as they’re given the tools to harness those strengths.
       </p>
-      <br />
-      <br />
       <Col md={2}>
-        <h1 className={classes.greenUnderline}>
-          &emsp;&emsp;How To <span className={classes.blueText}>Join</span>
+        <h1 className={classes.sectionTitle}>
+          &emsp;&emsp;How To <span className={classes.greenText}>Join</span>
         </h1>
       </Col>
-      <br />
-      <br />
       <p>
         Check out the Our Work page and donate to aid the projects that we’re
         currently involved with. If you have any further questions, visit our

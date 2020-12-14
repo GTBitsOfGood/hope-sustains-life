@@ -9,27 +9,6 @@
   }
 }
 
-.photoGrid {
-  display: grid;
-  grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr;
-  grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
-  gap: 5px 5px;
-  grid-template-areas:
-    "Photo1 Photo1 Photo1 Photo1 Photo2 Photo2 Photo2 Photo2 Photo3 Photo3 Photo3 Photo3"
-    "Photo1 Photo1 Photo1 Photo1 Photo4 Photo4 Photo4 Photo4 Photo5 Photo5 Photo5 Photo5"
-    "Photo6 Photo6 Photo6 Photo6 Photo6 Photo6 Photo7 Photo7 Photo7 Photo7 Photo7 Photo7"
-    "Photo8 Photo8 Photo8 Photo8 Photo8 Photo8 Photo9 Photo9 Photo9 Photo9 Photo9 Photo9";
-}
-.Photo1 { grid-area: Photo1; width: 100%; height: 100% }
-.Photo2 { grid-area: Photo2; width: 100%}
-.Photo3 { grid-area: Photo3; width: 100%}
-.Photo4 { grid-area: Photo4; width: 100%}
-.Photo5 { grid-area: Photo5; width: 100%}
-.Photo6 { grid-area: Photo6; width: 100%; height: 100%}
-.Photo7 { grid-area: Photo7; width: 100%}
-.Photo8 { grid-area: Photo8; width: 100%; height: 100%}
-.Photo9 { grid-area: Photo9; width: 100%}
-
 .jumbotron {
   position: relative;
   text-align: center;
@@ -96,12 +75,14 @@
   }
 }
 
-.greenUnderline {
+.sectionTitle {
+  width: 260px;
   font-size: 35px;
   border-bottom: 4px #03Ab99;
   border-bottom-style: solid;
-  padding-left: -10px;
   margin-left: -100px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -109,7 +90,7 @@
   color: black;
 }
 
-.blueText {
+.greenText {
   color: #4ca899;
 }
 
@@ -122,6 +103,27 @@
   background-size: cover;
   padding-bottom: 50px;
 }
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr;
+  grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    "Photo1 Photo1 Photo1 Photo1 Photo2 Photo2 Photo2 Photo2 Photo3 Photo3 Photo3 Photo3"
+    "Photo1 Photo1 Photo1 Photo1 Photo4 Photo4 Photo4 Photo4 Photo5 Photo5 Photo5 Photo5"
+    "Photo6 Photo6 Photo6 Photo6 Photo6 Photo6 Photo7 Photo7 Photo7 Photo7 Photo7 Photo7"
+    "Photo8 Photo8 Photo8 Photo8 Photo8 Photo8 Photo9 Photo9 Photo9 Photo9 Photo9 Photo9";
+}
+.Photo1 { grid-area: Photo1; width: 100%; height: 100% }
+.Photo2 { grid-area: Photo2; width: 100%}
+.Photo3 { grid-area: Photo3; width: 100%}
+.Photo4 { grid-area: Photo4; width: 100%}
+.Photo5 { grid-area: Photo5; width: 100%}
+.Photo6 { grid-area: Photo6; width: 100%; height: 100%}
+.Photo7 { grid-area: Photo7; width: 100%}
+.Photo8 { grid-area: Photo8; width: 100%; height: 100%}
+.Photo9 { grid-area: Photo9; width: 100%}
 
 .donateText {
   left: 2.08%;
