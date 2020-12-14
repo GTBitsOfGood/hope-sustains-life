@@ -1,7 +1,7 @@
 import mongoDB from "../index";
 import BlogPost from "../models/BlogPost";
 import { deleteImage } from "../../actions/cloudinary";
-import { mod } from "./utils";
+import { mod } from "../../../utils/math";
 
 export async function getBlogs(isPublishedOnly) {
   await mongoDB();
@@ -34,7 +34,7 @@ export async function createBlog(
   await mongoDB();
 
   try {
-    return BlogPost.create({
+    return await BlogPost.create({
       author: author,
       title: title,
       subtitle: subtitle,
@@ -92,8 +92,7 @@ export async function reorderBlogs(blogs) {
       };
     });
 
-    await BlogPost.bulkWrite(bulkUpdates);
-    return;
+    return await BlogPost.bulkWrite(bulkUpdates);
   } catch (err) {
     throw new Error(err.message);
   }
@@ -153,7 +152,7 @@ export async function updateBlog(
       updateParams["image"] = image;
     }
 
-    return BlogPost.findByIdAndUpdate(blogId, updateParams);
+    return await BlogPost.findByIdAndUpdate(blogId, updateParams);
   } catch (error) {
     throw new Error(error.message);
   }
@@ -179,7 +178,7 @@ export async function getRecommendedBlogs(orderIndex) {
       orderIndex: { $in: orderIndices },
       isPublished: true,
     });
-  } catch (err) {
-    return [];
+  } catch (error) {
+    throw new Error(error.message);
   }
 }

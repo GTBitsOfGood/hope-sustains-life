@@ -9,7 +9,7 @@ const LoginPage = () => {
   const [password, setPassword] = React.useState("");
   const router = useRouter();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     return login(email, password)

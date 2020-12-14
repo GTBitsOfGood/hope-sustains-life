@@ -1,7 +1,7 @@
-import { verifyPayment } from "../../../server/actions/stripe.js";
+import { verifyPayment } from "../../../../server/actions/stripe.js";
 
 const handler = (req, res) => {
-  if (req.method == "POST") {
+  if (req.method === "POST") {
     return verifyPayment(req.body)
       .then((payload) => res.status(200).json({ success: true, payload }))
       .catch((error) =>
