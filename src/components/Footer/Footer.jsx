@@ -75,7 +75,10 @@ const Footer = () => {
       >
         <Image src={twitterLogo}></Image>
       </a>
-      <a className={styles.icon}>
+      <a
+        href="https://www.youtube.com/channel/UCHIzsYOfHgWJ_8LFKHkADJA"
+        target="_blank"
+        className={styles.icon}>
         <Image src={youtubeLogo}></Image>
       </a>
     </Row>
