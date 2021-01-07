@@ -9,7 +9,9 @@ import {
 import TextEditor from "../TextEditor";
 import ImageUploader from "../ImageUploader";
 import classes from "./blogPostForm.module.css";
-import { updateBlog, publishBlog } from "../../actions/Blog";
+import { updateBlog, publishBlog, createBlog } from "../../actions/Blog";
+import { useRouter } from "next/router";
+import urls from "../../../utils/urls";
 
 const BlogPostForm = ({ blogPost }) => {
   const [title, setTitle] = React.useState(blogPost?.title);
@@ -20,6 +22,7 @@ const BlogPostForm = ({ blogPost }) => {
   const [references, setReferences] = React.useState(blogPost?.references);
   const [deleteOriginalImage, setDeleteOriginalImage] = React.useState(false);
   const [saving, setSaving] = React.useState(false);
+  const router = useRouter();
 
   const uploadImage = async () => {
     if (uploadedImage) {
@@ -48,6 +51,16 @@ const BlogPostForm = ({ blogPost }) => {
     try {
       setSaving(true);
       const cloudinaryImage = await uploadImage();
+      if (blogPost == undefined || blogPost._id == undefined) {
+        await createBlog(
+          title,
+          subtitle,
+          body,
+          references,
+          false,
+          cloudinaryImage
+        );
+      } else {
 
       await updateBlog(
         blogPost._id,
@@ -59,27 +72,39 @@ const BlogPostForm = ({ blogPost }) => {
         cloudinaryImage,
         deleteOriginalImage
       );
-
+      }
       showSuccessNotification("Saved blog post");
     } catch (error) {
       showErrorNotification(error.message);
     } finally {
       setSaving(false);
+      router.replace(urls.pages.admin.blogs)
     }
   };
 
   const publish = async () => {
     try {
       setSaving(true);
-
-      await publishBlog(blogPost._id, !published);
+      const cloudinaryImage = await uploadImage();
+      if (blogPost == undefined || blogPost._id == undefined) {
+        await createBlog(
+          title,
+          subtitle,
+          body,
+          references,
+          true,
+          cloudinaryImage
+        );
+      } else {
+        await publishBlog(blogPost._id, !published);
+      }
       setPublished(!published);
-
       showSuccessNotification("Published blog post");
     } catch (error) {
       showErrorNotification(error.message);
     } finally {
       setSaving(false);
+      router.replace(urls.pages.admin.blogs)
     }
   };
 
