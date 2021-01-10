@@ -6,18 +6,22 @@ import {
   NavDropdown,
   Image,
   Button,
+  DropdownButton,
+  Dropdown,
 } from "react-bootstrap";
 import { push as Menu } from "react-burger-menu";
 import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
-const { Brand, Collapse } = BootstrapNavbar;
+const { Brand, Toggle, Collapse } = BootstrapNavbar;
 
-export default function NavBar() {
+export default function NavBar () {
   const mobileView = displayMobileView();
   const { Item } = NavDropdown;
   const [isAboutHovered, setAboutHovered] = useState(false);
   const [isInvolvedHovered, setInvolvedHovered] = useState(false);
+  const [isAboutClicked, setAboutClicked] = useState(false);
+  const [isInvolvedClicked, setInvolvedClicked] = useState(false);
 
   const navContents = (
     <>
@@ -25,10 +29,11 @@ export default function NavBar() {
         title={<span className={styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
-        className={mobileView ? styles.mobileNavBar : "mr-3"}
+        className={mobileView ? styles.mobileNavBar : "mr-3"}            
         onMouseEnter={() => setAboutHovered(true)}
         onMouseLeave={() => setAboutHovered(false)}
-        show={isAboutHovered}
+        onToggle={() => setAboutClicked(!isAboutClicked)}
+        show={isAboutHovered || isAboutClicked}
 
       >
         <Link href={urls.pages.ourStory} passHref>
@@ -53,7 +58,8 @@ export default function NavBar() {
         className={mobileView ? styles.mobileNavBar : "mr-3"}
         onMouseEnter={() => setInvolvedHovered(true)}
         onMouseLeave={() => setInvolvedHovered(false)}
-        show={isInvolvedHovered}
+        onToggle={() => setInvolvedClicked(!isInvolvedClicked)}
+        show={isInvolvedHovered || isInvolvedClicked}
       >
         <Link href={urls.pages.joinClassroom} passHref>
           <Item className={styles.textColor}>Join the Classroom</Item>
