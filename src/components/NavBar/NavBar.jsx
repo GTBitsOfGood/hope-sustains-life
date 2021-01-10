@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./NavBar.module.css";
 import {
   Nav,
@@ -15,9 +15,13 @@ import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
 const { Brand, Toggle, Collapse } = BootstrapNavbar;
 
-const NavBar = () => {
+export default function NavBar () {
   const mobileView = displayMobileView();
   const { Item } = NavDropdown;
+  const [isAboutHovered, setAboutHovered] = useState(false);
+  const [isInvolvedHovered, setInvolvedHovered] = useState(false);
+  const [isAboutClicked, setAboutClicked] = useState(false);
+  const [isInvolvedClicked, setInvolvedClicked] = useState(false);
 
   const navContents = (
     <>
@@ -25,7 +29,12 @@ const NavBar = () => {
         title={<span className={styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
-        className={mobileView ? styles.mobileNavBar : "mr-3"}
+        className={mobileView ? styles.mobileNavBar : "mr-3"}            
+        onMouseEnter={() => setAboutHovered(true)}
+        onMouseLeave={() => setAboutHovered(false)}
+        onToggle={() => setAboutClicked(!isAboutClicked)}
+        show={isAboutHovered || isAboutClicked}
+
       >
         <Link href={urls.pages.ourStory} passHref>
           <Item className={styles.textColor}>Our Story</Item>
@@ -47,6 +56,10 @@ const NavBar = () => {
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
         className={mobileView ? styles.mobileNavBar : "mr-3"}
+        onMouseEnter={() => setInvolvedHovered(true)}
+        onMouseLeave={() => setInvolvedHovered(false)}
+        onToggle={() => setInvolvedClicked(!isInvolvedClicked)}
+        show={isInvolvedHovered || isInvolvedClicked}
       >
         <Link href={urls.pages.joinClassroom} passHref>
           <Item className={styles.textColor}>Join the Classroom</Item>
@@ -124,4 +137,3 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
