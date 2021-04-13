@@ -43,7 +43,7 @@
     "lodash": "^4.17.21",
     "mongodb": "^3.6.3",
     "mongoose": "^5.9.25",
-    "next": "^9.5.5",
+    "next": "^10.0.7",
     "next-images": "^1.6.2",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
