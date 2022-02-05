@@ -17,7 +17,7 @@ const PasswordResetRequestSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    expires: 60,
+    expires: "1h",
     default: Date.now,
   },
 });
