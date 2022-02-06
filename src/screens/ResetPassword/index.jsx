@@ -1,3 +1,3 @@
-import ResetPasswordScreen from "./ResetPasswordScreen"
+import ResetPasswordScreen from "./ResetPasswordScreen";
 
-export default ResetPasswordScreen
+export default ResetPasswordScreen;
