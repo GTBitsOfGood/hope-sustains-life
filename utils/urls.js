@@ -35,5 +35,6 @@ export default {
     subscribers: "/api/subscribers",
     emails: "/api/emails",
     donations: "/api/donations",
+    users: "/api/users/resetpassword",
   },
 };
