@@ -15,7 +15,7 @@ import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
 const { Brand, Toggle, Collapse } = BootstrapNavbar;
 
-export default function NavBar() {
+export default function NavBar () {
   const mobileView = displayMobileView();
   const { Item } = NavDropdown;
   const [isAboutHovered, setAboutHovered] = useState(false);
@@ -29,11 +29,12 @@ export default function NavBar() {
         title={<span className={styles.textColor}>ABOUT US</span>}
         id="basic-nav-dropdown"
         style={{ colorRendering: "white" }}
-        className={mobileView ? styles.mobileNavBar : "mr-3"}
+        className={mobileView ? styles.mobileNavBar : "mr-3"}            
         onMouseEnter={() => setAboutHovered(true)}
         onMouseLeave={() => setAboutHovered(false)}
         onToggle={() => setAboutClicked(!isAboutClicked)}
         show={isAboutHovered || isAboutClicked}
+
       >
         <Link href={urls.pages.ourStory} passHref>
           <Item className={styles.textColor}>Our Story</Item>
@@ -134,4 +135,5 @@ export default function NavBar() {
       {mobileView && mobileNavContents}
     </BootstrapNavbar>
   );
-}
+};
+
