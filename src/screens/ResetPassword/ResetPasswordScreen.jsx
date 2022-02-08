@@ -19,27 +19,29 @@ const ResetPasswordScreen = () => {
     setState(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) setValidation(VALIDATION.ERR_PW_MISMATCH);
     else if (!password) setValidation(VALIDATION.ERR_EMPTY_PW);
     else {
+      setValidation(VALIDATION.SUCCESS);
       setLoading(true);
-      setTimeout(async () => {
-        await fetch("/api/users/resetpassword", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          referrerPolicy: "no-referrer",
-          body: JSON.stringify({ token, password }),
-        }).then((res) => {
+      await fetch("/api/users?action=RESETPASSWORD", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({ token, password }),
+      })
+        .then((res) => {
           if (res.status === 200) setSubmit(SUBMIT.SUCCESS);
           else setSubmit(SUBMIT.ERR);
           setLoading(false);
+        })
+        .catch((err) => {
+          setSubmit(SUBMIT.ERR);
         });
-      }, 3000);
-      setValidation(VALIDATION.SUCCESS);
     }
   };
 

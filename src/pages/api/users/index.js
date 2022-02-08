@@ -46,6 +46,10 @@ const handler = (req, res) => {
       return res.status(200).json({
         success: true,
       });
+    } else if (action === "RESETPASSWORD") {
+      return res.status(200).json({
+        success: true,
+      });
     }
   } else if (req.method === "PATCH") {
     const { email, password } = req.body;
