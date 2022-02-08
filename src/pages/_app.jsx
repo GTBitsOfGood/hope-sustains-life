@@ -22,16 +22,10 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
       <title>Hope Sustains Life</title>
     </Head>
     <div className="App">
-      {!(
-        router.pathname.includes("admin") ||
-        router.pathname.includes("resetpassword")
-      ) && <NavBar />}
+      {!router.pathname.includes("admin") && <NavBar />}
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
-        {!(
-          router.pathname.includes("admin") ||
-          router.pathname.includes("resetpassword")
-        ) && (
+        {!router.pathname.includes("admin") && (
           <>
             <EmailSubInput />
             <Footer />
@@ -45,11 +39,13 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
 
 MyApp.getInitialProps = async (appContext) => {
   const { res } = appContext.ctx;
+
   const appProps = await App.getInitialProps(appContext);
 
   const cookies = appContext.ctx.req ? appContext.ctx.req.headers.cookie : null;
 
   const route = appContext.ctx.asPath;
+
   return getCurrentUser(cookies)
     .then((user) => {
       if (route === urls.pages.admin.index) {
@@ -60,6 +56,7 @@ MyApp.getInitialProps = async (appContext) => {
           return Router.replace(urls.pages.admin.blogs);
         }
       }
+
       return {
         ...appProps,
         currentUser: user,
