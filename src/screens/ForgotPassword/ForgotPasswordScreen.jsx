@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import classes from "./OurStoryPage.module.css";
+import classes from "./ForgotPasswordScreen.module.css";
 import { Button, Row, Col, Image } from "react-bootstrap";
 
 import TheodoreImage from "../../../public/static/Theodore_headshot.jpg";
@@ -7,7 +8,7 @@ import BernardImage from "../../../public/static/Bernard_headshot.jpg";
 import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
-const copyofOurStoryPage = () => {
+const ForgotPasswordScreen = () => {
   const isMobile = () => {
     const mobile = displayMobileView();
     return mobile;
@@ -227,4 +228,4 @@ const copyofOurStoryPage = () => {
   );
 };
 
-export default copyofOurStoryPage;
+export default ForgotPasswordScreen;

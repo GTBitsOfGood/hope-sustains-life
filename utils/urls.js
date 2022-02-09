@@ -28,6 +28,7 @@ export default {
     bangledesh: "/about/bangledesh",
     haiti: "/about/haiti",
     contactUs: "/contactus",
+    forgotpassword: "/forgotpassword",
   },
   api: {
     users: "/api/users",
