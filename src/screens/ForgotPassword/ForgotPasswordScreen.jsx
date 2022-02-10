@@ -30,7 +30,8 @@ const LoginPage = () => {
         else setSubmit(SUBMIT.ERR);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch((error) => {
+        window.alert(error.message);
         setSubmit(SUBMIT.ERR);
       });
   };
