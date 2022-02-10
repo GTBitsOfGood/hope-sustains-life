@@ -36,6 +36,7 @@
     "cloudinary": "^1.23.0",
     "cloudinary-react": "^1.6.7",
     "clsx": "^1.1.1",
+    "crypto-js": "^4.1.1",
     "dotenv": "^8.2.0",
     "focus-visible": "^5.1.0",
     "isomorphic-unfetch": "^3.0.0",

@@ -2,9 +2,9 @@ import fetch from "isomorphic-unfetch";
 
 const sendGridUrl = "https://api.sendgrid.com/v3/mail/send";
 
-export async function sendContactEmail(email, name, message) {
-  if (email == null || name == null || message == null) {
-    throw new Error("Email, name, and message must be provided");
+export async function sendEmail(email, subject, message, mimetype = "text/plain") {
+  if (email == null || subject == null || message == null) {
+    throw new Error("Email, subject, and message must be provided");
   }
 
   return fetch(sendGridUrl, {
@@ -17,7 +17,7 @@ export async function sendContactEmail(email, name, message) {
       personalizations: [
         {
           to: [{ email: process.env.TO_ADDRESS }],
-          subject: `[HSL] New Contact from ${name}`,
+          subject: subject,
         },
       ],
       from: {
@@ -25,7 +25,7 @@ export async function sendContactEmail(email, name, message) {
       },
       content: [
         {
-          type: "text/plain",
+          type: mimetype,
           value: message,
         },
       ],
