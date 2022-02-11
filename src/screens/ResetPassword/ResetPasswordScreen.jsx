@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import urls from "../../../utils/urls";
-import { resetPassword } from "../../actions/User";
 import classes from "./ResetPasswordScreen.module.css";
 
 const ResetPasswordScreen = () => {
@@ -26,7 +25,7 @@ const ResetPasswordScreen = () => {
     else {
       setValidation(VALIDATION.SUCCESS);
       setLoading(true);
-      await fetch("/api/users?action=RESETPASSWORD", {
+      await fetch(urls.baseUrl + "/api/users?action=RESETPASSWORD", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -50,6 +50,7 @@ MyApp.getInitialProps = async (appContext) => {
   const cookies = appContext.ctx.req ? appContext.ctx.req.headers.cookie : null;
 
   const route = appContext.ctx.asPath;
+
   return getCurrentUser(cookies)
     .then((user) => {
       if (route === urls.pages.admin.index) {

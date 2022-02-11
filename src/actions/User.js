@@ -57,12 +57,6 @@ export const getCurrentUser = async (cookies) => {
       } else if (!json.success) {
         throw new Error(json.message);
       }
-
       return json.payload;
     });
-};
-
-// Stub function to test Reset PW UI
-export const resetPassword = async ({token, password}) => {
-  alert({token, password})
 };
