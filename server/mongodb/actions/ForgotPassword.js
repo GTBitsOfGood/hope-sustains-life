@@ -11,30 +11,38 @@ export async function forgotPassword(email) {
     throw new Error("Email must be provided");
   }
 
-  const token = crypto.randomBytes(128).toString();
-  const hashedToken = await bcrypt.hash(token, 10);
+  await mongoDB();
 
-  const request = await PasswordResetRequest.create({ email: email, token: hashedToken });
+  try {
+    const token = crypto.randomBytes(128).toString();
+    const hashedToken = await bcrypt.hash(token, 10);
 
-  const subject = "[HSL] Password reset request";
-  const link = `${baseUrl}/resetpassword/${hashedToken}`;
-  const body = `
-  <html>
-    <head>
-        <style>
-        </style>
-    </head>
-    <body>
-        <p>Hello,</p>
-        <p>A reset password request was initiated for your account.</p>
-        <p>Please click the link below to reset your password. </p>
-        <a href="${link}">Reset Password</a>
-    </body>
-  </html>
-  `;
+    const passwordResetRequest = await PasswordResetRequest.create({ email: email, token: hashedToken });
 
-  const emailRequest = await sendEmail(email, subject, body, "text/html");
-  if (emailRequest == null) {
-    throw new Error("Email failed to send.");
+    const subject = "[HSL] Password reset request";
+    const link = `${baseUrl}/resetpassword/${hashedToken}`;
+    const body = `
+    <html>
+      <head>
+          <style>
+          </style>
+      </head>
+      <body>
+          <p>Hello,</p>
+          <p>A reset password request was initiated for your account.</p>
+          <p>Please click the link below to reset your password. </p>
+          <a href="${link}">Reset Password</a>
+      </body>
+    </html>
+    `;
+
+    const emailRequest = await sendEmail(email, subject, body, "text/html");
+    if (emailRequest == null) {
+      throw new Error("Email failed to send.");
+    } else {
+      return passwordResetRequest;
+    }
+  } catch (error) {
+    throw new Error(error.message);
   }
 }
