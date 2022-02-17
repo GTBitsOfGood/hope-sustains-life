@@ -52,12 +52,6 @@ const LoginPage = () => {
           <button className={classes.button} type="submit">
             Log In
           </button>
-          <button
-            className={classes.forgotbutton}
-            onClick={() => router.replace(urls.pages.forgotpassword)}
-          >
-            Forgot Password
-          </button>
         </form>
       </div>
     </div>

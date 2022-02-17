@@ -71,24 +71,7 @@
     font-size: 14px;
 }
 
-.forgotbutton {
-    width: 100%;
-    padding: 8px 0px;
-    margin-top: 10px;
-    outline: none;
-    color: #ffffff;
-    background-color: lightblue;
-    cursor: pointer;
-    border: 0;
-    border-radius: 4px;
-    transition: 0.3s;
-    font-size: 14px;
-}
-
 .button:hover {
     background: grey;
 }
 
-.forgotbutton:hover {
-    background: grey;
-}
