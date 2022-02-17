@@ -25,7 +25,7 @@ const ResetPasswordScreen = () => {
     else {
       setValidation(VALIDATION.SUCCESS);
       setLoading(true);
-      await fetch(urls.baseUrl + "/api/users?action=RESETPASSWORD", {
+      await fetch(urls.baseUrl + urls.api.users + "?action=RESETPASSWORD", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

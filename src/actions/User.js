@@ -57,6 +57,7 @@ export const getCurrentUser = async (cookies) => {
       } else if (!json.success) {
         throw new Error(json.message);
       }
+
       return json.payload;
     });
 };
