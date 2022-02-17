@@ -2,9 +2,9 @@ import fetch from "isomorphic-unfetch";
 
 const sendGridUrl = "https://api.sendgrid.com/v3/mail/send";
 
-export async function sendEmail(email, subject, message, mimetype = "text/plain") {
-  if (email == null || subject == null || message == null) {
-    throw new Error("Email, subject, and message must be provided");
+export async function sendEmail(recipient = process.env.TO_ADDRESS, subject, body, mimetype = "text/plain") {
+  if (recipient == null || subject == null || body == null) {
+    throw new Error("Recipient email address, subject, and message body must be provided");
   }
 
   return fetch(sendGridUrl, {
@@ -16,7 +16,7 @@ export async function sendEmail(email, subject, message, mimetype = "text/plain"
     body: JSON.stringify({
       personalizations: [
         {
-          to: [{ email: process.env.TO_ADDRESS }],
+          to: [{ email: recipient }],
           subject: subject,
         },
       ],
@@ -26,7 +26,7 @@ export async function sendEmail(email, subject, message, mimetype = "text/plain"
       content: [
         {
           type: mimetype,
-          value: message,
+          value: body,
         },
       ],
     }),

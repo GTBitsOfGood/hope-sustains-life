@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import mongoDB from "../index";
 import PasswordResetRequest from "../models/PasswordResetRequest";
 import { sendEmail } from "../../actions/email.js";
-import baseUrl from "../../../utils/urls.js";
+import urls from "../../../utils/urls.js";
 
 export async function forgotPassword(email) {
   if (email == null) {
@@ -20,7 +20,7 @@ export async function forgotPassword(email) {
     const passwordResetRequest = await PasswordResetRequest.create({ email: email, token: hashedToken });
 
     const subject = "[HSL] Password reset request";
-    const link = `${baseUrl}/resetpassword/${hashedToken}`;
+    const link = `${urls.baseUrl}/resetpassword/${hashedToken}`;
     const body = `
     <html>
       <head>
@@ -43,6 +43,10 @@ export async function forgotPassword(email) {
       return passwordResetRequest;
     }
   } catch (error) {
-    throw new Error(error.message);
+    if (error.message.includes("duplicate key error")) {
+      throw new Error("There is an existing password reset request for this user.")
+    } else {
+      throw new Error(error.message);
+    }
   }
 }
