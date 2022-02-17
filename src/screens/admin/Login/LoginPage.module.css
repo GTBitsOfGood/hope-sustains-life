@@ -74,3 +74,21 @@
 .button:hover {
     background: grey;
 }
+
+.forgotbutton {
+    width: 100%;
+    padding: 8px 0px;
+    outline: none;
+    color: #ffffff;
+    background-color: silver;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.forgotbutton:hover {
+    background: grey;
+}
