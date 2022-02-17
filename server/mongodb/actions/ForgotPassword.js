@@ -3,6 +3,7 @@ import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import mongoDB from "../index";
 import PasswordResetRequest from "../models/PasswordResetRequest";
+import User from "../models/User";
 import { sendEmail } from "../../actions/email.js";
 import urls from "../../../utils/urls.js";
 
@@ -16,6 +17,11 @@ export async function forgotPassword(email) {
   try {
     const token = crypto.randomBytes(128).toString();
     const hashedToken = await bcrypt.hash(token, 10);
+
+    const userCheck = await User.exists({ email: email });
+    if (!userCheck) {
+      throw new Error("No user exists with that email.");
+    }
 
     const passwordResetRequest = await PasswordResetRequest.create({ email: email, token: hashedToken });
 
