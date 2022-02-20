@@ -2,9 +2,11 @@ import fetch from "isomorphic-unfetch";
 
 const sendGridUrl = "https://api.sendgrid.com/v3/mail/send";
 
-export async function sendEmail(recipient = process.env.TO_ADDRESS, subject, body, mimetype = "text/plain") {
+export async function sendEmail(recipient, subject, body, mimetype) {
   if (recipient == null || subject == null || body == null) {
-    throw new Error("Recipient email address, subject, and message body must be provided");
+    throw new Error(
+      "Recipient email address, subject, message body, and MIME type must be provided"
+    );
   }
 
   return fetch(sendGridUrl, {
@@ -37,10 +39,7 @@ export async function sendEmail(recipient = process.env.TO_ADDRESS, subject, bod
         const json = JSON.parse(text);
 
         if ("errors" in json) {
-          // SendGrid can respond with multiple errors, let's deal with one at a time
-          const errorMessage = json.errors[0].message;
-
-          throw new Error(errorMessage);
+          throw new Error("Sendgrid email failed to send");
         }
 
         return json;

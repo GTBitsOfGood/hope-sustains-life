@@ -7,7 +7,7 @@ const handler = (req, res) => {
     if (action === "CONTACT") {
       const { email, subject, message } = req.body;
 
-      return sendEmail(email, subject, message)
+      return sendEmail(email, subject, message, "text/plain")
         .then(() => res.status(200).json({ success: true }))
         .catch((error) =>
           res.status(400).json({ success: false, message: error.message })

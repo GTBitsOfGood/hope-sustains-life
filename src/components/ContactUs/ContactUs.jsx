@@ -12,7 +12,7 @@ const ContactUs = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    return sendEmail(email, subject, message)
+    return sendEmail(email, subject, message, "text/plain")
       .then(() => window.alert("Message sent successfully!"))
       .catch((error) => window.alert(error.message));
   };

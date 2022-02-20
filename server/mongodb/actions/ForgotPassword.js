@@ -1,5 +1,4 @@
 import bcrypt from "bcryptjs";
-import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import mongoDB from "../index";
 import PasswordResetRequest from "../models/PasswordResetRequest";
@@ -13,9 +12,10 @@ export async function forgotPassword(email) {
   }
 
   await mongoDB();
+  const crypto = require("crypto");
 
   try {
-    const token = crypto.randomBytes(128).toString();
+    const token = crypto.randomUUID();
     const hashedToken = await bcrypt.hash(token, 10);
 
     const userCheck = await User.exists({ email: email });
@@ -23,7 +23,10 @@ export async function forgotPassword(email) {
       throw new Error("No user exists with that email.");
     }
 
-    const passwordResetRequest = await PasswordResetRequest.create({ email: email, token: hashedToken });
+    const passwordResetRequest = await PasswordResetRequest.create({
+      email: email,
+      token: hashedToken,
+    });
 
     const subject = "[HSL] Password reset request";
     const link = `${urls.baseUrl}/resetpassword/${hashedToken}`;
@@ -42,15 +45,13 @@ export async function forgotPassword(email) {
     </html>
     `;
 
-    const emailRequest = await sendEmail(email, subject, body, "text/html");
-    if (emailRequest == null) {
-      throw new Error("Email failed to send.");
-    } else {
-      return passwordResetRequest;
-    }
+    await sendEmail(email, subject, body, "text/html");
+    return passwordResetRequest;
   } catch (error) {
     if (error.message.includes("duplicate key error")) {
-      throw new Error("There is an existing password reset request for this user.")
+      throw new Error(
+        "There is an existing password reset request for this user."
+      );
     } else {
       throw new Error(error.message);
     }
