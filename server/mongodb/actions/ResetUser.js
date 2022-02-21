@@ -1,31 +1,36 @@
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import mongoDB from "../index";
 import PasswordResetRequest from "../models/PasswordResetRequest";
 import User from "../models/User";
+import { hashPassword } from "../../../utils/password";
+import mongoDB from "../index";
 
 export async function resetUser(token, password) {
-  if (token === null) {
-    throw new Error("Token must be provided!");
+  if (token === null || password === null) {
+    throw new Error("Token and password must be provided!");
   }
 
-  if (password === null) {
-    throw new Error("Password must be provided!");
+  await mongoDB();
+
+  const hashedPassword = await hashPassword(password);
+
+  const passwordRequest = await PasswordResetRequest.findOne({
+    token: token,
+  });
+
+  if (passwordRequest === null) {
+    throw new Error("Password reset query not found!");
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  const request = await PasswordResetRequest.findOne({ token: token });
-
-  if (request.length === 0) {
-    throw new Error("Password reset query not found");
-  }
-
-  await PasswordResetRequest.findOneAndDelete({ token: token });
-
-  await User.findOneAndUpdate(
-    { email: request[0].email },
+  const user = await User.findOneAndUpdate(
+    { email: passwordRequest.email },
     { password: hashedPassword },
     { new: false }
   );
+
+  if (user === null) {
+    throw new Error("User not found!");
+  }
+
+  await PasswordResetRequest.findOneAndDelete({
+    token: token,
+  });
 }

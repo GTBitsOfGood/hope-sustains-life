@@ -12,7 +12,7 @@ const handler = (req, res) => {
         res.status(400).json({ success: false, payload: error.message })
       );
   } else {
-    res.status(405).json({ success: false, payload: "405 Method Not Allowed" });
+    res.status(405).json({ success: false, payload: "Method Not Allowed" });
   }
 };
 
