@@ -4,6 +4,7 @@ import mongoDB from "../index";
 import PasswordResetRequest from "../models/PasswordResetRequest";
 import User from "../models/User";
 import { sendEmail } from "../../actions/email.js";
+import { getUuid, hash } from "../../../utils/encrypt";
 import urls from "../../../utils/urls.js";
 
 export async function forgotPassword(email) {
@@ -12,48 +13,36 @@ export async function forgotPassword(email) {
   }
 
   await mongoDB();
-  const crypto = require("crypto");
 
-  try {
-    const token = crypto.randomUUID();
-    const hashedToken = await bcrypt.hash(token, 10);
+  const hashedToken = await hash(getUuid());
 
-    const userCheck = await User.exists({ email: email });
-    if (!userCheck) {
-      throw new Error("No user exists with that email.");
-    }
-
-    const passwordResetRequest = await PasswordResetRequest.create({
-      email: email,
-      token: hashedToken,
-    });
-
-    const subject = "[HSL] Password reset request";
-    const link = `${urls.baseUrl}/resetpassword/${hashedToken}`;
-    const body = `
-    <html>
-      <head>
-          <style>
-          </style>
-      </head>
-      <body>
-          <p>Hello,</p>
-          <p>A reset password request was initiated for your account.</p>
-          <p>Please click the link below to reset your password. </p>
-          <a href="${link}">Reset Password</a>
-      </body>
-    </html>
-    `;
-
-    await sendEmail(email, subject, body, "text/html");
-    return passwordResetRequest;
-  } catch (error) {
-    if (error.message.includes("duplicate key error")) {
-      throw new Error(
-        "There is an existing password reset request for this user."
-      );
-    } else {
-      throw new Error(error.message);
-    }
+  const userCheck = await User.exists({ email: email });
+  if (!userCheck) {
+    throw new Error("No user exists with that email.");
   }
+
+  const passwordResetRequest = await PasswordResetRequest.create({
+    email: email,
+    token: hashedToken,
+  });
+
+  const subject = "[HSL] Password reset request";
+  const link = `${urls.baseUrl}/resetpassword/${hashedToken}`;
+  const body = `
+  <html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>
+        <p>Hello,</p>
+        <p>A reset password request was initiated for your account.</p>
+        <p>Please click the link below to reset your password. </p>
+        <a href="${link}">Reset Password</a>
+    </body>
+  </html>
+  `;
+
+  await sendEmail(email, subject, body, "text/html");
+  return passwordResetRequest;
 }
