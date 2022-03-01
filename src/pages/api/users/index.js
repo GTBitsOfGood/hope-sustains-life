@@ -4,6 +4,7 @@ import {
   updateUser,
 } from "../../../../server/mongodb/actions/User";
 import { createCookie, removeCookie } from "../../../../utils/tokens";
+import { resetUser } from "../../../../server/mongodb/actions/ResetUser";
 
 const handler = (req, res) => {
   const action = req.query.action;
@@ -47,9 +48,15 @@ const handler = (req, res) => {
         success: true,
       });
     } else if (action === "RESETPASSWORD") {
-      return res.status(200).json({
-        success: true,
-      });
+      const { token, password } = req.body;
+
+      return resetUser(token, password)
+        .then(() => {
+          res.status(200).json({ success: true });
+        })
+        .catch((error) =>
+          res.status(400).json({ success: false, payload: error.message })
+        );
     }
   } else if (req.method === "PATCH") {
     const { email, password } = req.body;

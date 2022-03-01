@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import mongoDB from "../index";
 import User from "../models/User";
+import { hash, comparePasswords } from "../../../utils/encrypt";
 
 export async function login({ email, password }) {
   if (email == null || password == null) {
@@ -13,7 +14,7 @@ export async function login({ email, password }) {
   const user = await User.findOne({ email });
 
   if (user != null) {
-    const didMatch = await bcrypt.compare(password, user.password);
+    const didMatch = comparePasswords(password, user.password);
 
     if (!didMatch) {
       throw new Error("The password you entered is incorrect!");
@@ -42,7 +43,7 @@ export const updateUser = async (id, email, password) => {
   await mongoDB();
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = hash(password);
 
     const user = await User.findOneAndUpdate(
       { _id: id },
