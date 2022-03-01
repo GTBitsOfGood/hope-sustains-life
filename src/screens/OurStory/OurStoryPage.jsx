@@ -7,7 +7,7 @@ import BernardImage from "../../../public/static/Bernard_headshot.jpg";
 import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
-const copyofOurStoryPage = () => {
+const OurStoryPage = () => {
   const isMobile = () => {
     const mobile = displayMobileView();
     return mobile;
@@ -157,13 +157,13 @@ const copyofOurStoryPage = () => {
                 8 years. He also volunteers at Catholic Charities of Atlanta. It
                 was a perfect opportunity for him to help refugees, like his
                 parents, settle into the U.S. and begin their new lives. Bernard
-                followed his father's footsteps by earning his own black belt in
-                Judo. The inspiration doesn't stop there. When his father,
-                Theodore, would return from his trips to Haiti, Bernard would
-                get the chance to fiddle with his photographs and nurture his
-                passion in photo and video editing. Through the camera lenses,
-                Bernard could see the love his father had for Haiti and how its
-                people suffered.
+                followed his father`&apos;`s footsteps by earning his own black
+                belt in Judo. The inspiration doesn`&apos;`t stop there. When
+                his father, Theodore, would return from his trips to Haiti,
+                Bernard would get the chance to fiddle with his photographs and
+                nurture his passion in photo and video editing. Through the
+                camera lenses, Bernard could see the love his father had for
+                Haiti and how its people suffered.
               </p>
             </div>
           </div>
@@ -183,14 +183,14 @@ const copyofOurStoryPage = () => {
               <h2 className={classes.founderTitle}>Founder</h2>
               <p className={classes.ourTeamText}>
                 Theodore is an immigrant from Haiti who was forced to leave home
-                and come to the US in the 1960's to flee from a dictatorship. He
-                became a teacher, winning the Teacher of the Year award in New
-                York City in 1993. In his spare time, he likes to practice
-                Kyokushin and Shotokan, which are two forms of martial arts,
-                eventually earning a black belt in both. Theodore has dedicated
-                his life to ensuring that those he left behind in Haiti get a
-                fair chance at a life filled with love and hope, just as his
-                family got.
+                and come to the US in the 1960`&apos;`s to flee from a
+                dictatorship. He became a teacher, winning the Teacher of the
+                Year award in New York City in 1993. In his spare time, he likes
+                to practice Kyokushin and Shotokan, which are two forms of
+                martial arts, eventually earning a black belt in both. Theodore
+                has dedicated his life to ensuring that those he left behind in
+                Haiti get a fair chance at a life filled with love and hope,
+                just as his family got.
               </p>
             </div>
           </div>
@@ -227,4 +227,4 @@ const copyofOurStoryPage = () => {
   );
 };
 
-export default copyofOurStoryPage;
+export default OurStoryPage;
