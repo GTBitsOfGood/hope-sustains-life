@@ -1,13 +1,13 @@
 import urls from "../../utils/urls";
 import appRequest from "../../utils/requests";
 
-export const sendContactEmail = async (email, name, message) => {
+export const sendEmail = async (email, subject, message) => {
   return await appRequest({
     url: urls.baseUrl + urls.api.emails + "?action=CONTACT",
     method: "POST",
     body: {
       email,
-      name,
+      subject,
       message,
     },
     isSecure: false,
