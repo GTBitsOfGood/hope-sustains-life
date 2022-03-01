@@ -36,5 +36,6 @@ export default {
     subscribers: "/api/subscribers",
     emails: "/api/emails",
     donations: "/api/donations",
+    forgotpassword: "/api/users/forgotpassword",
   },
 };

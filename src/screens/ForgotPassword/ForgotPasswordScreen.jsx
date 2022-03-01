@@ -3,6 +3,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import classes from "./ForgotPasswordScreen.module.css";
+import urls from "../../../utils/urls";
 
 const ForgotPasswordScreen = () => {
   const SUBMIT = { NONE: 0, SUCCESS: 1, ERR: 2 };
@@ -14,7 +15,7 @@ const ForgotPasswordScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch("/api/users/forgotpassword.js", {
+    await fetch(urls.baseUrl + urls.api.users.forgotpassword, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
