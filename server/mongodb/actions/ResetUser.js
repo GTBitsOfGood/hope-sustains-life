@@ -1,6 +1,6 @@
 import PasswordResetRequest from "../models/PasswordResetRequest";
 import User from "../models/User";
-import { hashPassword } from "../../../utils/password";
+import { hash } from "../../../utils/encrypt";
 import mongoDB from "../index";
 
 export async function resetUser(token, password) {
@@ -10,7 +10,7 @@ export async function resetUser(token, password) {
 
   await mongoDB();
 
-  const hashedPassword = await hashPassword(password);
+  const hashedPassword = await hash(password);
 
   const passwordRequest = await PasswordResetRequest.findOne({
     token: token,
