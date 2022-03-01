@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import urls from "/Users/rohankashi/hope-sustains-life/utils/urls.js";
 import { login } from "/Users/rohankashi/hope-sustains-life/src/actions/User.js";
-import { forgotPassword } from "../../actions/User";
+import { forgotpassword } from "../../actions/User";
 import classes from "./ForgotPasswordScreen.module.css";
 
-const LoginPage = () => {
+const ForgotPasswordScreen = () => {
   const SUBMIT = { NONE: 0, SUCCESS: 1, ERR: 2 };
   const [email, setEmail] = React.useState("");
   const router = useRouter();
@@ -64,4 +64,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ForgotPasswordScreen;
