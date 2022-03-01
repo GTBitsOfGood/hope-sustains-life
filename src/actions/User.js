@@ -16,7 +16,7 @@ export const login = async (email, password) => {
 
 export const forgot = async (email) => {
   return await appRequest({
-    url: urls.baseUrl + urls.api.users + "?action=FORGOT",
+    url: urls.baseUrl + urls.api.users.forgotpassword,
     method: "POST",
     body: {
       email,

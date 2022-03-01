@@ -2,7 +2,6 @@ import {
   login,
   verifyToken,
   updateUser,
-  forgot,
 } from "../../../../server/mongodb/actions/User";
 import { createCookie, removeCookie } from "../../../../utils/tokens";
 
@@ -44,11 +43,6 @@ const handler = (req, res) => {
     } else if (action === "LOGOUT") {
       res.setHeader("Set-Cookie", removeCookie());
 
-      return res.status(200).json({
-        success: true,
-      });
-    }
-    else if (action === "FORGOT") {
       return res.status(200).json({
         success: true,
       });
