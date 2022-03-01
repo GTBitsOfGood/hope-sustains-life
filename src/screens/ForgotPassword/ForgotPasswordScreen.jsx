@@ -15,7 +15,7 @@ const ForgotPasswordScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch(urls.baseUrl + urls.api.users.forgotpassword, {
+    await fetch(urls.baseUrl + urls.api.forgotpassword, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -20,7 +20,7 @@ export async function sendContactEmail(email, name, message) {
           subject: `[HSL] New Contact from ${name}`,
         },
       ],
-      from: {
+      from: {z
         email: process.env.FROM_ADDRESS,
       },
       content: [
