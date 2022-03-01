@@ -55,6 +55,7 @@ const LoginPage = () => {
           <button
             className={classes.forgotbutton}
             onClick={() => router.replace(urls.pages.forgotpassword)}
+            type="button"
           >
             Forgot Password
           </button>
