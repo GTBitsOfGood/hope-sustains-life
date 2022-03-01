@@ -2,9 +2,6 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import urls from "/Users/rohankashi/hope-sustains-life/utils/urls.js";
-import { login } from "/Users/rohankashi/hope-sustains-life/src/actions/User.js";
-import { forgotpassword } from "../../actions/User";
 import classes from "./ForgotPasswordScreen.module.css";
 
 const ForgotPasswordScreen = () => {
