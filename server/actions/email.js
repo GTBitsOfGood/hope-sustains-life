@@ -22,7 +22,7 @@ export async function sendEmail(recipient, subject, body, mimetype) {
           subject: subject,
         },
       ],
-      from: {z
+      from: {
         email: process.env.FROM_ADDRESS,
       },
       content: [
