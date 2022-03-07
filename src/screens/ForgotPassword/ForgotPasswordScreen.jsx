@@ -56,6 +56,15 @@ const ForgotPasswordScreen = () => {
           <button className={classes.button} type="submit">
             Send Reset Link
           </button>
+          {submit !== SUBMIT.NONE &&
+            (submit === SUBMIT.SUCCESS ? (
+              <h5> Password succesfully sent </h5>
+            ) : (
+              <h5 className={classes.errorMsg}>
+                {" "}
+                Error occurred, please contact gt@bitsofgood.org{" "}
+              </h5>
+            ))}
         </form>
       </div>
     </div>
