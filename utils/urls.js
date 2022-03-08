@@ -3,6 +3,7 @@ const prod = process.env.NODE_ENV === "production";
 export default {
   baseUrl: prod ? process.env.PROD_URL : "http://localhost:3000",
   dbUrl: process.env.MONGO_DB ?? "mongodb://localhost:27017",
+  adminRoutes: ["admin", "forgotpassword"],
   pages: {
     admin: {
       index: "/admin",
@@ -35,5 +36,6 @@ export default {
     subscribers: "/api/subscribers",
     emails: "/api/emails",
     donations: "/api/donations",
+    forgotpassword: "/api/users/forgotpassword",
   },
 };

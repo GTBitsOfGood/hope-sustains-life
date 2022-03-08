@@ -1,16 +1,18 @@
 import React from "react";
 import classes from "./ContactUs.module.css";
-import { sendContactEmail } from "../../actions/Email";
+import { sendEmail } from "../../actions/Email";
 
 const ContactUs = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  const subject = `[HSL] New Contact from ${name}`;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    return sendContactEmail(email, name, message)
+    return sendEmail(email, subject, message, "text/plain")
       .then(() => window.alert("Message sent successfully!"))
       .catch((error) => window.alert(error.message));
   };
