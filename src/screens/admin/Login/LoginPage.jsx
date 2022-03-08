@@ -17,6 +17,11 @@ const LoginPage = () => {
       .catch((error) => window.alert(error.message));
   };
 
+  const buttonClick = async (event) => {
+    event.preventDefault();
+    router.replace(urls.pages.forgotpassword);
+  };
+
   return (
     <div className={classes.background}>
       <div className={classes.formContainer}>
@@ -51,6 +56,13 @@ const LoginPage = () => {
           </div>
           <button className={classes.button} type="submit">
             Log In
+          </button>
+          <button
+            className={classes.forgotbutton}
+            onClick={buttonClick}
+            type="button"
+          >
+            Forgot Password
           </button>
         </form>
       </div>
