@@ -42,7 +42,7 @@ export const updateUser = async (id, email, password) => {
   await mongoDB();
 
   try {
-    const hashedPassword = hash(password);
+    const hashedPassword = await hash(password);
 
     const user = await User.findOneAndUpdate(
       { _id: id },
