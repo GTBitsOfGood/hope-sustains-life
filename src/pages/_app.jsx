@@ -29,8 +29,7 @@ const MyApp = ({ Component, pageProps, router, currentUser }) => (
       <div className="Content">
         <Component {...pageProps} currentUser={currentUser} />
         {!urls.adminRoutes.reduce(
-          (isAdminRoute, tag) => router.pathname.includes(tag) || isAdminRoute,
-          false
+          (isAdminRoute, tag) => router.pathname.includes(tag) || isAdminRoute
         ) && (
           <>
             <EmailSubInput />
