@@ -2,7 +2,7 @@ import mongoDB from "../index";
 import PasswordResetRequest from "../models/PasswordResetRequest";
 import User from "../models/User";
 import { sendEmail } from "../../actions/email.js";
-import { getUuid, hash } from "../../../utils/encrypt";
+import { getUuid } from "../../../utils/encrypt";
 import urls from "../../../utils/urls.js";
 
 export async function forgotPassword(email) {
@@ -12,7 +12,7 @@ export async function forgotPassword(email) {
 
   await mongoDB();
 
-  const hashedToken = await hash(getUuid());
+  const token = getUuid();
 
   const userCheck = await User.exists({ email: email });
   if (!userCheck) {
@@ -21,11 +21,11 @@ export async function forgotPassword(email) {
 
   const passwordResetRequest = await PasswordResetRequest.create({
     email: email,
-    token: hashedToken,
+    token: token,
   });
 
   const subject = "[HSL] Password reset request";
-  const link = `${urls.baseUrl}/resetpassword/${hashedToken}`;
+  const link = `${urls.baseUrl}/resetpassword/${token}`;
   const body = `
   <html>
     <head>
