@@ -13,7 +13,7 @@ export async function login({ email, password }) {
   const user = await User.findOne({ email });
 
   if (user != null) {
-    const didMatch = comparePasswords(password, user.password);
+    const didMatch = await comparePasswords(password, user.password);
 
     if (!didMatch) {
       throw new Error("The password you entered is incorrect!");
