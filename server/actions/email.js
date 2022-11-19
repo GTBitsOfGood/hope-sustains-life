@@ -1,6 +1,7 @@
 import fetch from "isomorphic-unfetch";
 
 const sendGridUrl = "https://api.sendgrid.com/v3/mail/send";
+const adminEmail = "bernard.michel@hopesustainslife.org";
 
 export async function sendEmail(recipient, subject, body, mimetype) {
   if (recipient == null || subject == null || body == null) {
@@ -8,6 +9,8 @@ export async function sendEmail(recipient, subject, body, mimetype) {
       "Recipient email address, subject, message body, and MIME type must be provided"
     );
   }
+
+  let newBody = `${recipient}: ` + body;
 
   return fetch(sendGridUrl, {
     method: "POST",
@@ -18,7 +21,7 @@ export async function sendEmail(recipient, subject, body, mimetype) {
     body: JSON.stringify({
       personalizations: [
         {
-          to: [{ email: recipient }],
+          to: [{ email: adminEmail }],
           subject: subject,
         },
       ],
@@ -28,7 +31,7 @@ export async function sendEmail(recipient, subject, body, mimetype) {
       content: [
         {
           type: mimetype,
-          value: body,
+          value: newBody,
         },
       ],
     }),
@@ -37,6 +40,7 @@ export async function sendEmail(recipient, subject, body, mimetype) {
     .then((text) => {
       if (text) {
         const json = JSON.parse(text);
+        console.log(text);
 
         if ("errors" in json) {
           throw new Error("Sendgrid email failed to send");
