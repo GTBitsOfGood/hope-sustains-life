@@ -61,24 +61,23 @@ const BlogPostForm = ({ blogPost }) => {
           cloudinaryImage
         );
       } else {
-
-      await updateBlog(
-        blogPost._id,
-        title,
-        subtitle,
-        body,
-        references,
-        published,
-        cloudinaryImage,
-        deleteOriginalImage
-      );
+        await updateBlog(
+          blogPost._id,
+          title,
+          subtitle,
+          body,
+          references,
+          published,
+          cloudinaryImage,
+          deleteOriginalImage
+        );
       }
       showSuccessNotification("Saved blog post");
     } catch (error) {
       showErrorNotification(error.message);
     } finally {
       setSaving(false);
-      router.replace(urls.pages.admin.blogs)
+      router.replace(urls.pages.admin.blogs);
     }
   };
 
@@ -104,7 +103,7 @@ const BlogPostForm = ({ blogPost }) => {
       showErrorNotification(error.message);
     } finally {
       setSaving(false);
-      router.replace(urls.pages.admin.blogs)
+      router.replace(urls.pages.admin.blogs);
     }
   };
 

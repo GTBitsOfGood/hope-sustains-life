@@ -1,9 +1,9 @@
-export {default as LibraryPhoto1} from "./LibraryPhoto1.png"
-export {default as LibraryPhoto2} from "./LibraryPhoto2.png"
-export {default as LibraryPhoto3} from "./LibraryPhoto3.png"
-export {default as LibraryPhoto4} from "./LibraryPhoto4.png"
-export {default as LibraryPhoto5} from "./LibraryPhoto5.png"
-export {default as LibraryPhoto6} from "./LibraryPhoto6.png"
-export {default as LibraryPhoto7} from "./LibraryPhoto7.png"
-export {default as LibraryPhoto8} from "./LibraryPhoto8.png"
-export {default as LibraryPhoto9} from "./LibraryPhoto9.png"
+export { default as LibraryPhoto1 } from "./LibraryPhoto1.png";
+export { default as LibraryPhoto2 } from "./LibraryPhoto2.png";
+export { default as LibraryPhoto3 } from "./LibraryPhoto3.png";
+export { default as LibraryPhoto4 } from "./LibraryPhoto4.png";
+export { default as LibraryPhoto5 } from "./LibraryPhoto5.png";
+export { default as LibraryPhoto6 } from "./LibraryPhoto6.png";
+export { default as LibraryPhoto7 } from "./LibraryPhoto7.png";
+export { default as LibraryPhoto8 } from "./LibraryPhoto8.png";
+export { default as LibraryPhoto9 } from "./LibraryPhoto9.png";

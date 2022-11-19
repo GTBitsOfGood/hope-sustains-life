@@ -1,7 +1,7 @@
 import fetch from "isomorphic-unfetch";
 
 const sendGridUrl = "https://api.sendgrid.com/v3/mail/send";
-const adminEmail = "ivanz36x@gmail.com";
+const adminEmail = "bernard.michel@hopesustainslife.org";
 
 export async function sendEmail(recipient, subject, body, mimetype) {
   if (recipient == null || subject == null || body == null) {
