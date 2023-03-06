@@ -21,7 +21,6 @@ import urls from "../../../utils/urls";
 import Footer from "../../components/Footer";
 import LineImage from "../../../public/static/line-1.png";
 
-
 function JoinLibraryPage() {
   const isMobile = () => {
     const mobile = displayMobileView();
@@ -78,10 +77,18 @@ function JoinLibraryPage() {
       </p>
       <div className={classes.subtitle}>
         <Image src={LineImage} />
-        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord
+          }
+        >
           THE
         </h1>
-        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileRightWord : classes.subtitleRightWord
+          }
+        >
           IMPACT
         </h1>
         <Image src={LineImage} />
@@ -97,10 +104,18 @@ function JoinLibraryPage() {
       </p>
       <div className={classes.subtitle}>
         <Image src={LineImage} />
-        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord
+          }
+        >
           HOW TO
         </h1>
-        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileRightWord : classes.subtitleRightWord
+          }
+        >
           JOIN
         </h1>
         <Image src={LineImage} />
@@ -156,7 +171,7 @@ function JoinLibraryPage() {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </>
     );
   }

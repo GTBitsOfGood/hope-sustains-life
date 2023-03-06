@@ -240,7 +240,7 @@ const IndexPage = () => {
           </Link>
         </Card.ImgOverlay>
       </Card>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -66,9 +66,11 @@ const OurWorkPage = () => {
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
-      <div className={
-        mobileView ? classes.mobileProcessTitle : classes.processTitle
-      }>
+      <div
+        className={
+          mobileView ? classes.mobileProcessTitle : classes.processTitle
+        }
+      >
         <Image src={LineImage} />
         <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
           AT A
@@ -128,7 +130,7 @@ const OurWorkPage = () => {
         navlink={urls.pages.haiti}
         isMobile={mobileView}
       />
-      <Footer/>
+      <Footer />
     </>
   );
 };

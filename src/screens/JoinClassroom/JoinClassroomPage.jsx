@@ -21,7 +21,6 @@ import urls from "../../../utils/urls";
 import Footer from "../../components/Footer";
 import LineImage from "../../../public/static/line-1.png";
 
-
 function JoinClassroomPage() {
   const isMobile = () => {
     const mobile = displayMobileView();
@@ -63,7 +62,9 @@ function JoinClassroomPage() {
         <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
           EVERYONE
         </h1>
-        <h1 className={mobileView ? classes.mobileRightWord : classes.rightWord}>
+        <h1
+          className={mobileView ? classes.mobileRightWord : classes.rightWord}
+        >
           WELCOME!
         </h1>
         <Image src={LineImage} />
@@ -83,10 +84,18 @@ function JoinClassroomPage() {
       </p>
       <div className={classes.title}>
         <Image src={LineImage} />
-        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord
+          }
+        >
           THE
         </h1>
-        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileRightWord : classes.subtitleRightWord
+          }
+        >
           IMPACT
         </h1>
         <Image src={LineImage} />
@@ -101,10 +110,18 @@ function JoinClassroomPage() {
       </p>
       <div className={classes.title}>
         <Image src={LineImage} />
-        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord
+          }
+        >
           HOW TO
         </h1>
-        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+        <h1
+          className={
+            mobileView ? classes.mobileRightWord : classes.subtitleRightWord
+          }
+        >
           JOIN
         </h1>
         <Image src={LineImage} />
@@ -161,7 +178,7 @@ function JoinClassroomPage() {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </>
     );
   }

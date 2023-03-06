@@ -39,7 +39,9 @@ const OurStoryPage = () => {
       <div className={mobileView ? classes.mobileOurStory : classes.ourStory}>
         <div className={classes.ourStoryHeader}>
           <Image src={LineImage} />
-          <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
+          <h1
+            className={mobileView ? classes.mobileLeftWord : classes.leftWord}
+          >
             OUR
           </h1>
           <h1
@@ -53,18 +55,17 @@ const OurStoryPage = () => {
           <p className={classes.ourStoryText}>
             He who opens a school door, closes a prison.
             <br /> <br />
-            These wise words from Victor Hugo resonated deeply within me and
-            my father. My parents are immigrants from Haiti, and came to the
-            US in the 1960s with the hope of making a better life for
-            themselves. While we lived a comfortable life, we often thought
-            back to our village. So many children in Gonaive could only dream
-            of receiving a proper education, unable to receive the help they
-            need to break out from the lifestyle they’re trapped in. As both a
-            parent and a teacher, my father could not let that go on any
-            longer.
+            These wise words from Victor Hugo resonated deeply within me and my
+            father. My parents are immigrants from Haiti, and came to the US in
+            the 1960s with the hope of making a better life for themselves.
+            While we lived a comfortable life, we often thought back to our
+            village. So many children in Gonaive could only dream of receiving a
+            proper education, unable to receive the help they need to break out
+            from the lifestyle they’re trapped in. As both a parent and a
+            teacher, my father could not let that go on any longer.
             <br /> <br />
-            We were inspired to act and founded Hope Sustains Life in 2011.
-            The mantra stands for more than our organization name, it our core
+            We were inspired to act and founded Hope Sustains Life in 2011. The
+            mantra stands for more than our organization name, it our core
             belief. We have but only one goal: giving refugees and vulnerable
             communities the chance to become something greater. Refugees are
             often forced to stay in camps for, on average, fifteen to twenty
@@ -74,7 +75,7 @@ const OurStoryPage = () => {
             Hope Sustains Life began as a father-son duo’s dream, we hope it
             will help every refugee child achieve theirs.
           </p>
-        </div>    
+        </div>
       </div>
 
       <div
@@ -121,7 +122,8 @@ const OurStoryPage = () => {
           {!mobileView && (
             <Col md={4} className={classes.centerContent}>
               <h1 className={classes.blueLineIssue}>
-                THE ISSUE<br/>
+                THE ISSUE
+                <br />
                 <span className={classes.blueText}>WE&apos;RE TACKLING</span>
               </h1>
             </Col>
@@ -132,7 +134,9 @@ const OurStoryPage = () => {
       <div className={classes.ourTeam}>
         <div className={classes.ourTeamHeader}>
           <Image src={LineImage} />
-          <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
+          <h1
+            className={mobileView ? classes.mobileLeftWord : classes.leftWord}
+          >
             OUR
           </h1>
           <h1
@@ -237,7 +241,7 @@ const OurStoryPage = () => {
           </>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

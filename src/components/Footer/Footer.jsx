@@ -15,16 +15,16 @@ const Footer = () => {
   const linkContents = (
     <>
       <Col>
-      <div className={styles.header}>HSL Locations</div>
-      <div className={styles.paragraph}>
-        <p>Hope Sustains Life - US Office</p>
-        <p>Address, City, State, Zipcode</p>
-      </div>
-      <div className={styles.header}>Contact Us</div>
-      <div className={styles.paragraph}>
-        <p>hopesustainslife@email.com</p>
-        <p>(###) ###-####</p>
-      </div>
+        <div className={styles.header}>HSL Locations</div>
+        <div className={styles.paragraph}>
+          <p>Hope Sustains Life - US Office</p>
+          <p>Address, City, State, Zipcode</p>
+        </div>
+        <div className={styles.header}>Contact Us</div>
+        <div className={styles.paragraph}>
+          <p>hopesustainslife@email.com</p>
+          <p>(###) ###-####</p>
+        </div>
       </Col>
       <Col>
         <div className={styles.header}>Learn More</div>

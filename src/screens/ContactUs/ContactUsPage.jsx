@@ -17,7 +17,7 @@ const ContactUsPage = () => {
         <ContactUs />
         <ContactFaq />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
