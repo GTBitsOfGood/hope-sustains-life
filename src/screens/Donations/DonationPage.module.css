@@ -12,7 +12,6 @@
   flex-direction: row;
   justify-content: flex-start;
   margin-left: 100px;
-  padding-top: 200px;
   width: 70%;
 }
 .mobileContainer {
@@ -23,6 +22,40 @@
   justify-content: flex-start;
   width: 100%;
 }
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+h1.leftWord {
+  padding-left: 50px;
+  padding-right: 10px;
+  font-size: 50px;
+}
+
+h1.mobileLeftWord {
+  font-size: 20;
+  margin-right: -10;
+  padding-right: 10px;
+  padding-left: 20; 
+}
+
+h1.rightWord {
+  color: #03ab99;
+  padding-right: 50px;
+  padding-left: 10px;
+  font-size: 50px;
+}
+
+h1.mobileRightWord {
+  color: #03ab99;
+  padding-right: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
 .mainHeader {
   font-size: 65px;
   font-weight: bold;
@@ -45,9 +78,9 @@
 }
 .mainText {
   position: absolute;
-  left: 62.42%;
+  left: 52.42%;
   right: 7.97%;
-  top: 29.97%;
+  top: 4%;
   bottom: 77.68%;
   font-weight: 500;
   font-size: 34px;
@@ -58,6 +91,13 @@
   text-align: justify;
   line-height: 1.25em;
 }
+
+.hundredText {
+  color: #03AB99;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #C4C4C4;
+}
+
 .donateMobile {
   font-size: 18px;
   margin-top: 1em;

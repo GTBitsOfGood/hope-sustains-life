@@ -7,11 +7,13 @@ import { Button } from "react-bootstrap";
 import classes from "./BlogNews.module.css";
 import urls from "../../../utils/urls";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 const BlogsNewsContainer = ({ blogs }) => (
   <>
     <BlogNews />
     <BlogList blogs={blogs || []} />
+    <div>
     <div className={classes.background}>
       <h1 className={classes.donateText}>
         Don’t wait to change the<br></br>world...the world needs the <br></br>
@@ -22,6 +24,9 @@ const BlogsNewsContainer = ({ blogs }) => (
           <Button className={classes.donateButton}>Donate</Button>
         </Link>
       </div>
+    </div>
+    <Footer/>
+
     </div>
   </>
 );

@@ -18,6 +18,9 @@ import { Image, Col, Row, Button } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen";
 import Link from "next/link";
 import urls from "../../../utils/urls";
+import Footer from "../../components/Footer";
+import LineImage from "../../../public/static/line-1.png";
+
 
 function JoinClassroomPage() {
   const isMobile = () => {
@@ -55,9 +58,16 @@ function JoinClassroomPage() {
 
   const contents = (
     <>
-      <h1 className={classes.title}>
-        Everyone <span className={classes.greenText}>welcome!</span>
-      </h1>
+      <div className={classes.title}>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
+          EVERYONE
+        </h1>
+        <h1 className={mobileView ? classes.mobileRightWord : classes.rightWord}>
+          WELCOME!
+        </h1>
+        <Image src={LineImage} />
+      </div>
       <br />
       <p>
         The Classroom is our community of donors. Their contributions are put
@@ -71,11 +81,16 @@ function JoinClassroomPage() {
         posted on world updates and how the Hope Sustains Life projects are
         progressing.
       </p>
-      <Col md={2}>
-        <h1 className={classes.sectionTitle}>
-          &emsp;&emsp;The <span className={classes.greenText}>Impact</span>
+      <div className={classes.title}>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+          THE
         </h1>
-      </Col>
+        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+          IMPACT
+        </h1>
+        <Image src={LineImage} />
+      </div>
       <p>
         Education gives these young minds HOPE. Your contribution is an
         investment in the astounding number of refugee children out of school.
@@ -84,11 +99,16 @@ function JoinClassroomPage() {
         individuals that are capable of achieving incredible feats, just as long
         as they’re given the tools to harness those strengths.
       </p>
-      <Col md={2}>
-        <h1 className={classes.sectionTitle}>
-          &emsp;&emsp;How To <span className={classes.greenText}>Join</span>
+      <div className={classes.title}>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+          HOW TO
         </h1>
-      </Col>
+        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+          JOIN
+        </h1>
+        <Image src={LineImage} />
+      </div>
       <p>
         Check out the Our Work page and donate to aid the projects that we’re
         currently involved with. If you have any further questions, visit our
@@ -141,6 +161,7 @@ function JoinClassroomPage() {
             </div>
           </div>
         </div>
+        <Footer/>
       </>
     );
   }

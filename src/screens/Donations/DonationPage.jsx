@@ -13,6 +13,9 @@ import { verifyPayment, finishPayment } from "../../actions/Donate";
 import PaymentDetails from "./PaymentDetails";
 import InputField from "./DonationInputField";
 import styles from "./DonationPage.module.css";
+import Footer from "../../components/Footer";
+import LineImage from "../../../public/static/line-1.png";
+import { Image, Col } from "react-bootstrap";
 
 const DonationPage = () => {
   const donationAmts = [25, 50, 100, 150];
@@ -52,22 +55,30 @@ const DonationPage = () => {
 
   return (
     <div className={styles.page}>
-      <div className={styles.main}>
-        <h1
-          className={mobileView ? styles.mainHeaderMobile : styles.mainHeader}
-        >
-          For the ones in need
-        </h1>
+        <div className={styles.title}>
+          <Image src={LineImage} />
+          <h1 className={mobileView ? styles.mobileLeftWord : styles.leftWord}>
+            FOR THE ONES
+          </h1>
+          <h1
+            className={mobileView ? styles.mobileRightWord : styles.rightWord}
+          >
+            IN NEED
+          </h1>
+          <Image src={LineImage} />
+        </div>
+        <Col>
         {mobileView && (
           <p className={mobileView ? styles.mainTextMobile : styles.mainText}>
-            <span style={{ color: "#03AB99", backgroundColor: "white" }}>
+            <span style={styles.hundredText}>
               100%
             </span>
             &nbsp; of your money goes to funding our educational projects for
             the refugee population.
           </p>
         )}
-      </div>
+        </Col>
+        <Col>
       <Form
         className={mobileView ? styles.mobileContainer : styles.container}
         onSubmit={handleSubmit}
@@ -169,15 +180,15 @@ const DonationPage = () => {
         {!mobileView && (
           <div style={{ width: "40%" }}>
             <p className={styles.mainText}>
-              <span style={{ color: "#03AB99", backgroundColor: "white" }}>
-                100%
-              </span>
-              &nbsp; of your money goes to funding our educational projects for
+              <span className={styles.hundredText}>100% </span>
+              of your money goes to funding our educational projects for
               the refugee population.
             </p>
           </div>
         )}
       </Form>
+      </Col>
+      <Footer/>
     </div>
   );
 };

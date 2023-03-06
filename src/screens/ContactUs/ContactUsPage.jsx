@@ -5,6 +5,7 @@ import styles from "./ContactUsPage.module.css";
 import ContactUsImage from "../../../public/static/contactus.png";
 import classes from "./ContactUsPage.module.css";
 import { Image } from "react-bootstrap";
+import Footer from "../../components/Footer";
 
 const ContactUsPage = () => {
   return (
@@ -16,6 +17,7 @@ const ContactUsPage = () => {
         <ContactUs />
         <ContactFaq />
       </div>
+      <Footer/>
     </>
   );
 };

@@ -86,8 +86,45 @@
 }
 
 .title {
-  line-height: 50px;
-  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1.leftWord {
+  padding-left: 75px;
+  padding-right: 10px;
+}
+
+h1.mobileLeftWord {
+  font-size: 20;
+  margin-right: -10;
+  padding-right: 10px;
+  padding-left: 20; 
+}
+
+h1.rightWord {
+  color: #03ab99;
+  padding-right: 75px;
+  padding-left: 10px;
+}
+
+h1.mobileRightWord {
+  color: #03ab99;
+  padding-right: 20px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+h1.subtitleLeftWord {
+  padding-left: 50px;
+  padding-right: 10px;
+}
+
+h1.subtitleRightWord {
+  color: #03ab99;
+  padding-right: 50px;
+  padding-left: 10px;
 }
 
 .greenText {

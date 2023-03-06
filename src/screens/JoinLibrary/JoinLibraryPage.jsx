@@ -18,6 +18,9 @@ import { Image, Col, Button } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen";
 import Link from "next/link";
 import urls from "../../../utils/urls";
+import Footer from "../../components/Footer";
+import LineImage from "../../../public/static/line-1.png";
+
 
 function JoinLibraryPage() {
   const isMobile = () => {
@@ -73,11 +76,16 @@ function JoinLibraryPage() {
         crisis of children displaced from their homes not having access to a
         quality education.
       </p>
-      <Col md={2}>
-        <h1 className={classes.sectionTitle}>
-          &emsp;&emsp;The <span className={classes.greenText}>Impact</span>
+      <div className={classes.subtitle}>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+          THE
         </h1>
-      </Col>
+        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+          IMPACT
+        </h1>
+        <Image src={LineImage} />
+      </div>
       <p>
         Like any new startup, we are looking for visionaries that can support
         our business model. The private donors that make up The Library can
@@ -87,11 +95,16 @@ function JoinLibraryPage() {
         is met on a consistent basis with your contributions to the operational
         side.
       </p>
-      <Col md={2}>
-        <h1 className={classes.sectionTitle}>
-          &emsp;&emsp;How To <span className={classes.greenText}>Join</span>
+      <div className={classes.subtitle}>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.subtitleLeftWord}>
+          HOW TO
         </h1>
-      </Col>
+        <h1 className={mobileView ? classes.mobileRightWord : classes.subtitleRightWord}>
+          JOIN
+        </h1>
+        <Image src={LineImage} />
+      </div>
       <p>
         Interested in joining the library? Visit our contact page and send us an
         email!
@@ -143,6 +156,7 @@ function JoinLibraryPage() {
             </div>
           </div>
         </div>
+        <Footer/>
       </>
     );
   }

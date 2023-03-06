@@ -7,6 +7,9 @@ import BernardImage from "../../../public/static/Bernard_headshot.jpg";
 import urls from "../../../utils/urls";
 import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
+import LineImage from "../../../public/static/line-1.png";
+import Footer from "../../components/Footer";
+
 const OurStoryPage = () => {
   const isMobile = () => {
     const mobile = displayMobileView();
@@ -34,39 +37,44 @@ const OurStoryPage = () => {
         </p>
       </div>
       <div className={mobileView ? classes.mobileOurStory : classes.ourStory}>
-        <Row>
-          <Col md={4} className={classes.centerContent}>
-            <h1 className={classes.blueLineStory}>
-              Our <span className={classes.blueText}>Story</span>
-            </h1>
-          </Col>
-          <Col md={8} className={classes.centerContent}>
-            <p className={classes.bodyText}>
-              He who opens a school door, closes a prison.
-              <br /> <br />
-              These wise words from Victor Hugo resonated deeply within me and
-              my father. My parents are immigrants from Haiti, and came to the
-              US in the 1960s with the hope of making a better life for
-              themselves. While we lived a comfortable life, we often thought
-              back to our village. So many children in Gonaive could only dream
-              of receiving a proper education, unable to receive the help they
-              need to break out from the lifestyle they’re trapped in. As both a
-              parent and a teacher, my father could not let that go on any
-              longer.
-              <br /> <br />
-              We were inspired to act and founded Hope Sustains Life in 2011.
-              The mantra stands for more than our organization name, it our core
-              belief. We have but only one goal: giving refugees and vulnerable
-              communities the chance to become something greater. Refugees are
-              often forced to stay in camps for, on average, fifteen to twenty
-              years. Their children are robbed of their right to a proper
-              education, and that is an injustice that cannot be ignored.
-              <br /> <br />
-              Hope Sustains Life began as a father-son duo’s dream, we hope it
-              will help every refugee child achieve theirs.
-            </p>
-          </Col>
-        </Row>
+        <div className={classes.ourStoryHeader}>
+          <Image src={LineImage} />
+          <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
+            OUR
+          </h1>
+          <h1
+            className={mobileView ? classes.mobileRightWord : classes.rightWord}
+          >
+            STORY
+          </h1>
+          <Image src={LineImage} />
+        </div>
+        <div md={8} className={classes.centerContent}>
+          <p className={classes.ourStoryText}>
+            He who opens a school door, closes a prison.
+            <br /> <br />
+            These wise words from Victor Hugo resonated deeply within me and
+            my father. My parents are immigrants from Haiti, and came to the
+            US in the 1960s with the hope of making a better life for
+            themselves. While we lived a comfortable life, we often thought
+            back to our village. So many children in Gonaive could only dream
+            of receiving a proper education, unable to receive the help they
+            need to break out from the lifestyle they’re trapped in. As both a
+            parent and a teacher, my father could not let that go on any
+            longer.
+            <br /> <br />
+            We were inspired to act and founded Hope Sustains Life in 2011.
+            The mantra stands for more than our organization name, it our core
+            belief. We have but only one goal: giving refugees and vulnerable
+            communities the chance to become something greater. Refugees are
+            often forced to stay in camps for, on average, fifteen to twenty
+            years. Their children are robbed of their right to a proper
+            education, and that is an injustice that cannot be ignored.
+            <br /> <br />
+            Hope Sustains Life began as a father-son duo’s dream, we hope it
+            will help every refugee child achieve theirs.
+          </p>
+        </div>    
       </div>
 
       <div
@@ -113,8 +121,8 @@ const OurStoryPage = () => {
           {!mobileView && (
             <Col md={4} className={classes.centerContent}>
               <h1 className={classes.blueLineIssue}>
-                The Issue{" "}
-                <span className={classes.blueText}>We&apos;re Tackling</span>
+                THE ISSUE<br/>
+                <span className={classes.blueText}>WE&apos;RE TACKLING</span>
               </h1>
             </Col>
           )}
@@ -122,12 +130,18 @@ const OurStoryPage = () => {
       </div>
 
       <div className={classes.ourTeam}>
-        <h1 className={classes.blueLineTeam}>
-          <span>
-            Our
-            <span className={classes.blueText}>Team</span>
-          </span>
-        </h1>
+        <div className={classes.ourTeamHeader}>
+          <Image src={LineImage} />
+          <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
+            OUR
+          </h1>
+          <h1
+            className={mobileView ? classes.mobileRightWord : classes.rightWord}
+          >
+            TEAM
+          </h1>
+          <Image src={LineImage} />
+        </div>
         <p className={classes.ourTeamText}>
           All great things begin small and Hope Sustains Life is no different.
           For years, it has just been my father and I working together as a
@@ -223,6 +237,7 @@ const OurStoryPage = () => {
           </>
         )}
       </div>
+      <Footer/>
     </>
   );
 };
