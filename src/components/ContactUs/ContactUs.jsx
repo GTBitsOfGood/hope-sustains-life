@@ -19,7 +19,10 @@ const ContactUs = () => {
 
   return (
     <div className={classes.card}>
-      <h1 className={classes.title}>Contact Us</h1>
+      <div className={classes.title}>
+        <h1 className={classes.leftWord}>CONTACT</h1>
+        <h1 className={classes.rightWord}>US</h1>
+      </div>
       <p>
         If you have questions or just want to get in touch, use the form below.
         We look forward to hearing from you!

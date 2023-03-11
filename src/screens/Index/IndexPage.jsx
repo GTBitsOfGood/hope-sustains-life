@@ -19,6 +19,7 @@ import {
 } from "./PrincipleDescriptions";
 import urls from "../../../utils/urls";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 const IndexPage = () => {
   const isMobile = () => {
@@ -239,6 +240,7 @@ const IndexPage = () => {
           </Link>
         </Card.ImgOverlay>
       </Card>
+      <Footer />
     </>
   );
 };

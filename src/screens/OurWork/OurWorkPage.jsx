@@ -20,6 +20,8 @@ import OurWorkCard from "../../components/OurWorkCard";
 import { text1, text2, text3, text4 } from "./OurWorkText.jsx";
 import OurLocationCard from "../../components/OurLocationCard";
 import urls from "../../../utils/urls";
+import LineImage from "../../../public/static/line-1.png";
+import Footer from "../../components/Footer";
 
 const OurWorkPage = () => {
   const isMobile = () => {
@@ -64,13 +66,22 @@ const OurWorkPage = () => {
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
-      <h1
+      <div
         className={
           mobileView ? classes.mobileProcessTitle : classes.processTitle
         }
       >
-        At a glance
-      </h1>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? classes.mobileLeftWord : classes.leftWord}>
+          AT A
+        </h1>
+        <h1
+          className={mobileView ? classes.mobileRightWord : classes.rightWord}
+        >
+          GLANCE
+        </h1>
+        <Image src={LineImage} />
+      </div>
       {!mobileView && (
         <div className={classes.processContainer}>
           <OurWorkCard image={MagnifyingGlass} text={text1} />
@@ -119,6 +130,7 @@ const OurWorkPage = () => {
         navlink={urls.pages.haiti}
         isMobile={mobileView}
       />
+      <Footer />
     </>
   );
 };

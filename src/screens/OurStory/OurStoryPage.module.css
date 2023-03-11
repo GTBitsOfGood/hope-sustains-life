@@ -67,6 +67,21 @@ p.mobileHeaderText {
     line-height: 27px;
 }
 /* Our Story/Issue CSS */
+
+.ourStoryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ourStoryText {
+    padding-top: 30px;
+    font-size: calc(14px + 0.25vw);
+    line-height: 26px;
+    text-align: left;
+    align-items: left;
+}
+
 .centerContent {
     display: flex;
     flex-direction: column;
@@ -89,7 +104,7 @@ p.mobileHeaderText {
 }
 
 div.ourStory {
-    padding: 117px 128px 120px 0px;
+    margin: 5% 10% 0% 10%;
 }
 
 div.mobileOurStory {
@@ -106,6 +121,8 @@ h1.blueLineStory {
 h1.blueLineIssue {
     border-top: 4px #03Ab99;
     border-top-style: solid;
+    border-bottom: 4px #03Ab99;
+    border-bottom-style: solid;
 }
 
 h1.issueLineBottom {
@@ -134,13 +151,17 @@ h1.issueLineBottom {
 .ourTeam{
     margin: 5% 10% 0% 10%
 }
+.ourTeamHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 p.ourTeamText{
     padding-top: 30px;
     font-size: calc(14px + 0.25vw);
     line-height: 26px;
     text-align: left;
     align-items: left;
-
 }
 
 .blueLineTeam {
@@ -165,8 +186,7 @@ p.ourTeamText{
 .centerContent {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
 }
 
 .mobileCenterContent {
@@ -282,6 +302,32 @@ h1.mobileName {
     font-size: calc(12px + 1.75vw);
     padding-top: 30px;
 }
+
+h1.leftWord {
+padding-left: 75px;
+padding-right: 10px;
+}
+
+h1.mobileLeftWord {
+font-size: 20;
+margin-right: -10;
+padding-right: 10px;
+padding-left: 20; 
+}
+
+h1.rightWord {
+color: #03ab99;
+padding-right: 75px;
+padding-left: 10px;
+}
+
+h1.mobileRightWord {
+color: #03ab99;
+padding-right: 20px;
+padding-left: 10px;
+font-size: 20px;
+}
+
 div.founderContainer {
     display: flex;
     flex-direction: column;

@@ -15,7 +15,19 @@ const Footer = () => {
   const linkContents = (
     <>
       <Col>
-        <div className={styles.header}>ABOUT US</div>
+        <div className={styles.header}>HSL Locations</div>
+        <div className={styles.paragraph}>
+          <p>Hope Sustains Life - US Office</p>
+          <p>Address, City, State, Zipcode</p>
+        </div>
+        <div className={styles.header}>Contact Us</div>
+        <div className={styles.paragraph}>
+          <p>hopesustainslife@email.com</p>
+          <p>(###) ###-####</p>
+        </div>
+      </Col>
+      <Col>
+        <div className={styles.header}>Learn More</div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.ourStory} passHref>
             <a>Our Story</a>
@@ -23,29 +35,22 @@ const Footer = () => {
         </div>
         <div className={styles.sublinks}>
           <Link href={urls.pages.blogNews} passHref>
-            <a>Blogs/News</a>
+            <a>Blog</a>
           </Link>
         </div>
-      </Col>
-
-      <Col>
-        <div className={styles.header}>
+        <div className={styles.sublinks}>
           <Link href={urls.pages.ourWork} passHref>
-            <a>OUR WORK</a>
-          </Link>
-        </div>
-      </Col>
-
-      <Col>
-        <div className={styles.header}>GET INVOLVED</div>
-        <div className={styles.sublinks}>
-          <Link href={urls.pages.joinClassroom} passHref>
-            <a>Join the Classroom</a>
+            <a>Our Work</a>
           </Link>
         </div>
         <div className={styles.sublinks}>
-          <Link href={urls.pages.joinLibrary} passHref>
-            <a>Join the Library</a>
+          <Link href={urls.pages.donate.index} passHref>
+            <a>Donate</a>
+          </Link>
+        </div>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.contactUs} passHref>
+            <a>Contact Us & FAQ</a>
           </Link>
         </div>
       </Col>
@@ -98,9 +103,8 @@ const Footer = () => {
           <div className={styles.verticalLine} />
 
           {linkContents}
-          <Col />
           <Col>
-            <div className={styles.social}>FOLLOW US</div>
+            <div className={styles.header}>Follow Us</div>
             {socialIcons}
           </Col>
         </Row>
@@ -113,7 +117,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col>
-            <div className={styles.social}>FOLLOW US</div>
+            <div className={styles.social}>Follow Us</div>
           </Col>
 
           <Col>{socialIcons}</Col>

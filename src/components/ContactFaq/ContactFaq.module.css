@@ -32,6 +32,10 @@ button.question {
 }
 
 .title {
-  line-height: 49px;
   color: #03AB99;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
 }

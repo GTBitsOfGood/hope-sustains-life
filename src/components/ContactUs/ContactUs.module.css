@@ -20,7 +20,9 @@
 
 .title {
   line-height: 50px;
-  color: #03AB99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form {
@@ -29,7 +31,6 @@
   align-items: stretch;
   width: 100%;
 }
-
 
 .input {
   opacity: 0.5;
@@ -46,4 +47,15 @@
   border-radius: 5px;
   border: none;
   padding: 10px 80px;
+}
+
+h1.leftWord {
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+h1.rightWord {
+  color: #03ab99;
+  padding-right: 15px;
+  padding-left: 10px;
 }

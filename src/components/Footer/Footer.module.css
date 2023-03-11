@@ -28,7 +28,8 @@
     font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
+    padding-bottom: 10px;
 }
 
 .mobileHeader {
@@ -44,13 +45,21 @@
     color: #009d91;
 }
 
-.sublinks {
-    padding-top: 10px;
+.paragraph {
     color: white;
     font-family: Roboto;
     font-style: normal;
     font-weight: 100;
     font-size: 12px;
+}
+
+.sublinks {
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 12px;
+    padding-bottom: 5px;
 }
 
 .mobileSublinks {

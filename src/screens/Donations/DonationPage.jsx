@@ -13,6 +13,9 @@ import { verifyPayment, finishPayment } from "../../actions/Donate";
 import PaymentDetails from "./PaymentDetails";
 import InputField from "./DonationInputField";
 import styles from "./DonationPage.module.css";
+import Footer from "../../components/Footer";
+import LineImage from "../../../public/static/line-1.png";
+import { Image, Col } from "react-bootstrap";
 
 const DonationPage = () => {
   const donationAmts = [25, 50, 100, 150];
@@ -52,132 +55,136 @@ const DonationPage = () => {
 
   return (
     <div className={styles.page}>
-      <div className={styles.main}>
-        <h1
-          className={mobileView ? styles.mainHeaderMobile : styles.mainHeader}
-        >
-          For the ones in need
+      <div className={styles.title}>
+        <Image src={LineImage} />
+        <h1 className={mobileView ? styles.mobileLeftWord : styles.leftWord}>
+          FOR THE ONES
         </h1>
+        <h1 className={mobileView ? styles.mobileRightWord : styles.rightWord}>
+          IN NEED
+        </h1>
+        <Image src={LineImage} />
+      </div>
+      <Col>
         {mobileView && (
           <p className={mobileView ? styles.mainTextMobile : styles.mainText}>
-            <span style={{ color: "#03AB99", backgroundColor: "white" }}>
-              100%
-            </span>
+            <span style={styles.hundredText}>100%</span>
             &nbsp; of your money goes to funding our educational projects for
             the refugee population.
           </p>
         )}
-      </div>
-      <Form
-        className={mobileView ? styles.mobileContainer : styles.container}
-        onSubmit={handleSubmit}
-      >
-        <div className={mobileView ? styles.mobileElements : styles.elements}>
-          <h3
-            style={{ textAlign: "center", marginBottom: 40 }}
-            className={mobileView ? styles.donateMobile : null}
-          >
-            Donate to Hope Sustains Life
-          </h3>
-          <div>
-            <Button className={styles.donationFreqButtons}>One Time</Button>
-            <Button className={styles.donationFreqButtons}>Monthly</Button>
-          </div>
-          <h5
-            style={mobileView ? { fontSize: "17px" } : null}
-            className={styles.headers}
-          >
-            Select an amount to give
-          </h5>
-          <div className={styles.amountButtons}>
-            {donationAmts.map((amt, index) => {
-              return (
-                <Button
-                  key={index}
-                  className={styles.amtButton}
-                  onClick={() => setDonationAmt(amt)}
-                >
-                  $ {amt}
-                </Button>
-              );
-            })}
-            <Button className={styles.amtButton} style={{ width: 200 }}>
-              Other amount
+      </Col>
+      <Col>
+        <Form
+          className={mobileView ? styles.mobileContainer : styles.container}
+          onSubmit={handleSubmit}
+        >
+          <div className={mobileView ? styles.mobileElements : styles.elements}>
+            <h3
+              style={{ textAlign: "center", marginBottom: 40 }}
+              className={mobileView ? styles.donateMobile : null}
+            >
+              Donate to Hope Sustains Life
+            </h3>
+            <div>
+              <Button className={styles.donationFreqButtons}>One Time</Button>
+              <Button className={styles.donationFreqButtons}>Monthly</Button>
+            </div>
+            <h5
+              style={mobileView ? { fontSize: "17px" } : null}
+              className={styles.headers}
+            >
+              Select an amount to give
+            </h5>
+            <div className={styles.amountButtons}>
+              {donationAmts.map((amt, index) => {
+                return (
+                  <Button
+                    key={index}
+                    className={styles.amtButton}
+                    onClick={() => setDonationAmt(amt)}
+                  >
+                    $ {amt}
+                  </Button>
+                );
+              })}
+              <Button className={styles.amtButton} style={{ width: 200 }}>
+                Other amount
+              </Button>
+            </div>
+            <br></br>
+
+            <h5
+              style={mobileView ? { fontSize: "17px" } : null}
+              className={styles.headers}
+            >
+              Your Information
+            </h5>
+            <div>
+              <InputField
+                label="First Name"
+                inputType="text"
+                placeholder="John"
+                formFieldName="firstName"
+                required={true}
+                onChange={(event) => setFirstName(event.target.value)}
+              />
+              <InputField
+                label="Last Name"
+                inputType="text"
+                placeholder="Doe"
+                formFieldName="lastName"
+                required={true}
+                onChange={(event) => setlastName(event.target.value)}
+              />
+              <InputField
+                label="E-Mail"
+                inputType="email"
+                placeholder="johndoe123@email.com"
+                formFieldName="email"
+                required={true}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+            <h5
+              style={mobileView ? { fontSize: "17px" } : null}
+              className={styles.headers}
+            >
+              Payment Details
+            </h5>
+            <PaymentDetails />
+
+            <div className="agreements">
+              <Form.Group controlId="matchesDonation">
+                <Form.Check
+                  type="checkbox"
+                  label="My employer matches 501(c)(3) donations"
+                />
+              </Form.Group>
+              <Form.Group controlId="subscribe">
+                <Form.Check
+                  type="checkbox"
+                  label="Subscribe to recieve newsletters"
+                />
+              </Form.Group>
+            </div>
+            <Button className={styles.completeDonation} type="submit">
+              Complete Donation
             </Button>
           </div>
-          <br></br>
 
-          <h5
-            style={mobileView ? { fontSize: "17px" } : null}
-            className={styles.headers}
-          >
-            Your Information
-          </h5>
-          <div>
-            <InputField
-              label="First Name"
-              inputType="text"
-              placeholder="John"
-              formFieldName="firstName"
-              required={true}
-              onChange={(event) => setFirstName(event.target.value)}
-            />
-            <InputField
-              label="Last Name"
-              inputType="text"
-              placeholder="Doe"
-              formFieldName="lastName"
-              required={true}
-              onChange={(event) => setlastName(event.target.value)}
-            />
-            <InputField
-              label="E-Mail"
-              inputType="email"
-              placeholder="johndoe123@email.com"
-              formFieldName="email"
-              required={true}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </div>
-          <h5
-            style={mobileView ? { fontSize: "17px" } : null}
-            className={styles.headers}
-          >
-            Payment Details
-          </h5>
-          <PaymentDetails />
-
-          <div className="agreements">
-            <Form.Group controlId="matchesDonation">
-              <Form.Check
-                type="checkbox"
-                label="My employer matches 501(c)(3) donations"
-              />
-            </Form.Group>
-            <Form.Group controlId="subscribe">
-              <Form.Check
-                type="checkbox"
-                label="Subscribe to recieve newsletters"
-              />
-            </Form.Group>
-          </div>
-          <Button className={styles.completeDonation} type="submit">
-            Complete Donation
-          </Button>
-        </div>
-
-        {!mobileView && (
-          <div style={{ width: "40%" }}>
-            <p className={styles.mainText}>
-              <span style={{ color: "#03AB99", backgroundColor: "white" }}>
-                100%
-              </span>
-              &nbsp; of your money goes to funding our educational projects for
-              the refugee population.
-            </p>
-          </div>
-        )}
-      </Form>
+          {!mobileView && (
+            <div style={{ width: "40%" }}>
+              <p className={styles.mainText}>
+                <span className={styles.hundredText}>100% </span>
+                of your money goes to funding our educational projects for the
+                refugee population.
+              </p>
+            </div>
+          )}
+        </Form>
+      </Col>
+      <Footer />
     </div>
   );
 };
