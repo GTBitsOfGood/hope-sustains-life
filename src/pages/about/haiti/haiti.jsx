@@ -43,12 +43,13 @@ function Haiti() {
           className={classes.textcontainer}>
             <h2>What We Want to Build</h2>
           <p className={classes.gridText}>
-            Kutupalong refugee camp is one of the newly established refugee
-            camps within the UNHCR network. It is mainly made of Rohingya
-            refugees that fled neighbouring Myanmar due to ethnic and religious
-            persecution by the government. As of June 2020, the camp has over
-            800,000 refugees many of them being children who do not have access
-            to a proper education.
+            This is where it all began! Back in 2011 was where the father and
+            son duo started helping and where the co-founder, Theordore, would
+            spend his summers as a child. The project initially started small
+            with providing food and building an artesian well for the locals but
+            then we saw how so many children were missing out on an education in
+            a country where only 20% of eligible children for secondary school
+            are enrolled.
           </p>
           </div>
         </div>
@@ -74,10 +75,12 @@ function Haiti() {
           className={classes.textcontainer}>
             <h2>Our Goal + Progress</h2>
           <p className={classes.gridText}>
-            HSL is currently in the process of scouting
-            nearby communities where we will be able to partner with the local
-            governments to establish a safe and reliable infrastructure for
-            education.
+            Our goal now is to partner with local nonprofits andthe government 
+            to initiate the process of building a school for the village of Dubedou. 
+            When building the school, the impact is not only the children who will 
+            receive a formal education but the communityand the jobs that will 
+            be provided during this process. Students from local universities 
+            will also have access to good paying jobs as they come on as teachers.
           </p>
           </div>
         </div>
