@@ -5,6 +5,7 @@ import HaitiImage from "../../../../public/static/HaitiImage.png";
 import { displayMobileView } from "../../../../utils/screen";
 import Link from "next/link";
 import urls from "../../../../utils/urls";
+import Footer from "../../../components/Footer";
 
 function Haiti() {
   const isMobile = () => {
@@ -84,6 +85,8 @@ function Haiti() {
           </>
         )}
       </div>
+      <div className={classes.space}></div>
+      <Footer />
     </>
   );
 }

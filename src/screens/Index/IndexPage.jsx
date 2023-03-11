@@ -240,6 +240,7 @@ const IndexPage = () => {
           </Link>
         </Card.ImgOverlay>
       </Card>
+      <div className={classes.space}></div>
       <Footer />
     </>
   );

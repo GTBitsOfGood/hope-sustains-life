@@ -5,6 +5,7 @@ import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
 import { displayMobileView } from "../../../../utils/screen";
 import urls from "../../../../utils/urls";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 function Bangledesh() {
   const isMobile = () => {
@@ -79,6 +80,8 @@ function Bangledesh() {
           </>
         )}
       </div>
+      <div className={classes.space}></div>
+      <Footer />
     </>
   );
 }

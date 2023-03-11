@@ -5,6 +5,7 @@ import HaitiImage from "../../../../public/static/HaitiImage.png";
 import { displayMobileView } from "../../../../utils/screen";
 import urls from "../../../../utils/urls";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 function Tanzania() {
   const isMobile = () => {
@@ -78,6 +79,8 @@ function Tanzania() {
           </>
         )}
       </div>
+      <div className={classes.space}></div>
+      <Footer />
     </>
   );
 }
