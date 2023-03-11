@@ -16,7 +16,8 @@ function Tanzania() {
   return (
     <>
       <div className={classes.general}>
-        <h1 className={classes.centerText}>Tanzania</h1>
+        <h1 className={classes.centerText}>Kigoma, Tanzania</h1>
+        <h1 className={classes.dubedou}>Nyarugusu refugee camp</h1>
       </div>
 
       <div className={classes.space}></div>
@@ -33,8 +34,6 @@ function Tanzania() {
             mobileView ? classes.mobileDescription : classes.description
           }
         >
-          <h1 className={classes.dubedou}>Nyarugusu refugee camp</h1>
-          <h1 className={classes.haiti}>Kigoma, Tanzania</h1>
           <p className={classes.gridText}>
             Nyarugusu Refugee Camp is one of the largest refugee camps in the
             world with about 150,00 residents. This is where we plan on doing

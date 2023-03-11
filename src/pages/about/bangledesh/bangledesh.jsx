@@ -16,7 +16,8 @@ function Bangledesh() {
   return (
     <>
       <div className={classes.general}>
-        <h1 className={classes.centerText}>Bangladesh</h1>
+        <h1 className={classes.centerText}>Coxx Bazaar, Bangladash</h1>
+        <h1 className={classes.dubedou}>Kutupalong refugee camp</h1>
       </div>
 
       <div className={classes.space}></div>
@@ -33,8 +34,6 @@ function Bangledesh() {
             mobileView ? classes.mobileDescription : classes.description
           }
         >
-          <h1 className={classes.dubedou}>Kutupalong refugee camp</h1>
-          <h1 className={classes.haiti}>Coxx Bazaar, Bangladash</h1>
           <p className={classes.gridText}>
             Kutupalong refugee camp is one of the newly established refugee
             camps within the UNHCR network. It is mainly made of Rohingya

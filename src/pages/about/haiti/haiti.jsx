@@ -17,7 +17,7 @@ function Haiti() {
   return (
     <>
       <div className={classes.general}>
-        <h1 className={classes.centerText}>Haiti</h1>
+        <h1 className={classes.centerText}>Dubedou, Haiti</h1>
       </div>
 
       <div className={classes.space}></div>
@@ -34,8 +34,6 @@ function Haiti() {
             mobileView ? classes.mobileDescription : classes.description
           }
         >
-          <h1 className={classes.dubedou}>Dubedou</h1>
-          <h1 className={classes.haiti}>Haiti</h1>
           <p className={classes.gridText}>
             This is where it all began! Back in 2011 was where the father and
             son duo started helping and where the co-founder, Theordore, would
