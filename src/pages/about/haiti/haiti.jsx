@@ -2,6 +2,8 @@ import React from "react";
 import classes from "./haiti.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
+import question from "../../../../public/static/question.svg";
+import construction from "../../../../public/static/construction.svg";
 import { displayMobileView } from "../../../../utils/screen";
 import Link from "next/link";
 import urls from "../../../../utils/urls";
@@ -22,6 +24,9 @@ function Haiti() {
 
       <div className={classes.space}></div>
 
+     <div
+      className={mobileView ? classes.mobileContainer : classes.gridOutterContainer}>
+
       <div
         className={mobileView ? classes.mobileContainer : classes.gridContainer}
       >
@@ -34,22 +39,53 @@ function Haiti() {
             mobileView ? classes.mobileDescription : classes.description
           }
         >
+          <div
+          className={classes.textcontainer}>
+            <h2>What We Want to Build</h2>
           <p className={classes.gridText}>
-            This is where it all began! Back in 2011 was where the father and
-            son duo started helping and where the co-founder, Theordore, would
-            spend his summers as a child. The project initially started small
-            with providing food and building an artesian well for the locals but
-            then we saw how so many children were missing out on an education in
-            a country where only 20% of eligible children for secondary school
-            are enrolled. Our goal now is to partner with local nonprofits and
-            the government to initiate the process of building a school for the
-            village of Dubedou. When building the school, the impact is not only
-            the children who will receive a formal education but the community
-            and the jobs that will be provided during this process. Students
-            from local universities will also have access to good paying jobs as
-            they come on as teachers.
+            Kutupalong refugee camp is one of the newly established refugee
+            camps within the UNHCR network. It is mainly made of Rohingya
+            refugees that fled neighbouring Myanmar due to ethnic and religious
+            persecution by the government. As of June 2020, the camp has over
+            800,000 refugees many of them being children who do not have access
+            to a proper education.
           </p>
+          </div>
         </div>
+          <Image
+          src={question}
+          className={mobileView ? classes.mobileImage : classes.grildicon}
+        />
+      </div>
+        <div className={classes.space}></div>
+      <div
+        className={mobileView ? classes.mobileContainer : classes.gridContainer}
+      >
+        <Image
+          src={HaitiImage}
+          className={mobileView ? classes.mobileImage : classes.gridImage}
+        />
+        <div
+          className={
+            mobileView ? classes.mobileDescription : classes.description
+          }
+        >
+          <div
+          className={classes.textcontainer}>
+            <h2>Our Goal + Progress</h2>
+          <p className={classes.gridText}>
+            HSL is currently in the process of scouting
+            nearby communities where we will be able to partner with the local
+            governments to establish a safe and reliable infrastructure for
+            education.
+          </p>
+          </div>
+        </div>
+          <Image
+          src={construction}
+          className={mobileView ? classes.mobileImage : classes.grildicon}
+        />
+      </div>
       </div>
 
       <div className={classes.space}></div>

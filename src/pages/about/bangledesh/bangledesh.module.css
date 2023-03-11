@@ -28,17 +28,26 @@
     padding: 3%;
 }
 
+div.gridOutterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 div.gridContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr .2fr;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    align-items: top;
     grid-template-rows: 1fr;
     width: 90%;
     gap: 0px 50px;
     grid-template-areas:
-      ". .";
+      ". . .";
 }
 div.mobileContainer {
     display: flex;
@@ -47,7 +56,11 @@ div.mobileContainer {
     margin-left: auto;
     margin-right: auto;
 }
-
+div.textcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
 div.description {
     width: 40vw;
     display: flex;
@@ -66,6 +79,11 @@ div.mobileDescription {
     margin-top: auto;
     margin-bottom: auto;
     width: 100%;
+}
+.gridIcon {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
 }
 .mobileImage {
     width: 90%;

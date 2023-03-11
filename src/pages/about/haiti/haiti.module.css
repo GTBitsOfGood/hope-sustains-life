@@ -28,24 +28,40 @@
     padding: 3%;
 }
 
+div.gridOutterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 div.gridContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr .2fr;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    align-items: top;
     grid-template-rows: 1fr;
     width: 90%;
     gap: 0px 50px;
     grid-template-areas:
-      ". .";
+        ". . .";
 }
+
 div.mobileContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+div.textcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 div.description {
@@ -59,7 +75,7 @@ div.mobileDescription {
     width: 90vw;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
 .gridImage {
@@ -67,6 +83,13 @@ div.mobileDescription {
     margin-bottom: auto;
     width: 100%;
 }
+
+.gridIcon {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
+}
+
 .mobileImage {
     width: 90%;
 }
@@ -92,12 +115,17 @@ div.mobileDescription {
 }
 
 .dubedou {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
     line-height: 45px;
     /* or 173% */
-    color: #2A2D39;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -128,9 +156,9 @@ h1.donateText {
     text-align: center;
     color: #FFFFFF;
     text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-  }
-  
-  h1.donateTextMobile {
+}
+
+h1.donateTextMobile {
     left: 2.08%;
     right: 56.25%;
     top: 62.7%;
@@ -145,9 +173,9 @@ h1.donateText {
     text-align: center;
     color: #FFFFFF;
     text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-  }
-  
-  button.donateButton {
+}
+
+button.donateButton {
     background: #03AB99;
     border: none;
     color: white;
@@ -158,15 +186,16 @@ h1.donateText {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  }
-  
-  button.donateButton:hover {
+}
+
+button.donateButton:hover {
     text-align: center;
     border-color: #FFFFFF;
     color: #03AB99;
     background: #FFFFFF;
-  }
+}
+
 .buttonDiv {
     padding-top: 350;
-    padding-left: 230px; 
+    padding-left: 230px;
 }
