@@ -206,35 +206,6 @@ p.ourTeamText{
     align-content: stretch;
     flex-wrap: wrap;
 }
-.donate {
-    background: linear-gradient(270.01deg, rgba(196, 196, 196, 0.126) -43.35%, rgba(207, 207, 207, 0.2) 29.99%, rgba(229, 229, 229, 0.2) 105.19%), url("../../../public/static/seth-doyle-78210-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 200px 120px 120px 120px;
-    
-}
-
-button.donateButton {
-    background: #03AB99;
-    border: none;
-    color: white;
-    padding: 15px 100px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-button.donateButton:hover {
-    text-align: center;
-    border-color: #FFFFFF;
-    color: #03AB99;
-    background: #FFFFFF;
-}
 
 .background {
     background-image: url("../../../public/static/HaitiImage2.png");
@@ -243,49 +214,6 @@ button.donateButton:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 50px;
-}
-
-
-h1.donateText {
-    left: 2.08%;
-    right: 56.25%;
-    top: 62.7%;
-    bottom: 34.58%;
-    padding-left: 100px;
-    padding-top: 350px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 60px;
-    /* or 158% */
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-  }
-  
-h1.donateTextMobile {
-    left: 2.08%;
-    right: 56.25%;
-    top: 62.7%;
-    bottom: 34.58%;
-    padding-top: 350px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: auto;
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-  }
-  
-.buttonDiv {
-    padding-top: 350;
-    padding-left: 230px; 
 }
 
 
@@ -304,28 +232,28 @@ h1.mobileName {
 }
 
 h1.leftWord {
-padding-left: 75px;
-padding-right: 10px;
+    padding-left: 75px;
+    padding-right: 10px;
 }
 
 h1.mobileLeftWord {
-font-size: 20;
-margin-right: -10;
-padding-right: 10px;
-padding-left: 20; 
+    font-size: 20;
+    margin-right: -10;
+    padding-right: 10px;
+    padding-left: 20; 
 }
 
 h1.rightWord {
-color: #03ab99;
-padding-right: 75px;
-padding-left: 10px;
+    color: #03ab99;
+    padding-right: 75px;
+    padding-left: 10px;
 }
 
 h1.mobileRightWord {
-color: #03ab99;
-padding-right: 20px;
-padding-left: 10px;
-font-size: 20px;
+    color: #03ab99;
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size: 20px;
 }
 
 div.founderContainer {

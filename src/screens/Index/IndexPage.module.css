@@ -138,6 +138,10 @@ div.titleText {
   padding: 3%;
 }
 
+.space2 {
+  padding: 1%;
+}
+
 .centerButton {
   text-align: center;
   display: flex;

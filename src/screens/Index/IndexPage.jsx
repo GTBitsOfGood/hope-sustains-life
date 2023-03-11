@@ -72,31 +72,6 @@ const IndexPage = () => {
           </Link>
         </Card.ImgOverlay>
       </Card>
-      <div className={classes.space}></div>
-      <div className={mobileView ? "" : classes.images}>
-        <Link href={urls.pages.tanzania}>
-          <Image
-            src={TanzaniaImage}
-            className={mobileView ? {} : classes.pictures}
-            fluid
-          />
-        </Link>
-        <Link href={urls.pages.bangledesh}>
-          <Image
-            src={BangledeshImage}
-            className={mobileView ? {} : classes.pictures}
-            fluid
-          />
-        </Link>
-        <Link href={urls.pages.haiti}>
-          <Image
-            style={mobileView ? { marginBottom: "20%" } : {}}
-            src={HaitiImage}
-            className={mobileView ? {} : classes.pictures}
-            fluid
-          />
-        </Link>
-      </div>
 
       <div className={classes.space}></div>
 
@@ -158,6 +133,32 @@ const IndexPage = () => {
           WE&nbsp;ARE
         </h1>
         <Image src={LineImage} />
+      </div>
+
+      <div className={classes.space2}></div>
+      <div className={mobileView ? "" : classes.images}>
+        <Link href={urls.pages.tanzania}>
+          <Image
+            src={TanzaniaImage}
+            className={mobileView ? {} : classes.pictures}
+            fluid
+          />
+        </Link>
+        <Link href={urls.pages.bangledesh}>
+          <Image
+            src={BangledeshImage}
+            className={mobileView ? {} : classes.pictures}
+            fluid
+          />
+        </Link>
+        <Link href={urls.pages.haiti}>
+          <Image
+            style={mobileView ? { marginBottom: "20%" } : {}}
+            src={HaitiImage}
+            className={mobileView ? {} : classes.pictures}
+            fluid
+          />
+        </Link>
       </div>
 
       <iframe

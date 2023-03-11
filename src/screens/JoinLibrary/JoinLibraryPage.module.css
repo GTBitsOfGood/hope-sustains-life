@@ -101,7 +101,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 50px;
 }
 
 .photoGrid {
@@ -124,67 +123,6 @@
 .Photo7 { grid-area: Photo7; width: 100%}
 .Photo8 { grid-area: Photo8; width: 100%; height: 100%}
 .Photo9 { grid-area: Photo9; width: 100%}
-
-.donateText {
-  left: 2.08%;
-  right: 56.25%;
-  top: 62.7%;
-  bottom: 34.58%;
-  padding-left: 100px;
-  padding-top: 350px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 60px;
-  /* or 158% */
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  color: #FFFFFF;
-  text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-}
-
-.donateTextMobile {
-  left: 2.08%;
-  right: 56.25%;
-  top: 62.7%;
-  bottom: 34.58%;
-  padding-top: 350px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: auto;
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  color: #FFFFFF;
-  text-shadow: 4px 0px 5px rgba(150, 150, 150, 0.53);
-}
-
-button.donateButton {
-  background: #03AB99;
-  border: none;
-  color: white;
-  padding: 15px 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-button.donateButton:hover {
-  text-align: center;
-  border-color: #FFFFFF;
-  color: #03AB99;
-  background: #FFFFFF;
-}
-
-.buttonDiv {
-  padding-top: 350;
-  padding-left: 230px;
-}
 
 .subtitle {
   display: flex;
