@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./haiti.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
+import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
 import question from "../../../../public/static/question.svg";
 import construction from "../../../../public/static/construction.svg";
 import { displayMobileView } from "../../../../utils/screen";
@@ -63,7 +64,7 @@ function Haiti() {
         className={mobileView ? classes.mobileContainer : classes.gridContainer}
       >
         <Image
-          src={HaitiImage}
+          src={BangledeshPic}
           className={mobileView ? classes.mobileImage : classes.gridImage}
         />
         <div

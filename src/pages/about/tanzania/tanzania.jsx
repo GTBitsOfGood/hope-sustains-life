@@ -2,6 +2,9 @@ import React from "react";
 import classes from "./tanzania.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
+import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
+import question from "../../../../public/static/question.svg";
+import construction from "../../../../public/static/construction.svg";
 import { displayMobileView } from "../../../../utils/screen";
 import urls from "../../../../utils/urls";
 import Link from "next/link";
@@ -41,13 +44,10 @@ function Tanzania() {
           className={classes.textcontainer}>
             <h2>What We Want to Build</h2>
           <p className={classes.gridText}>
-            This is where it all began! Back in 2011 was where the father and
-            son duo started helping and where the co-founder, Theordore, would
-            spend his summers as a child. The project initially started small
-            with providing food and building an artesian well for the locals but
-            then we saw how so many children were missing out on an education in
-            a country where only 20% of eligible children for secondary school
-            are enrolled.
+            Nyarugusu Refugee Camp is one of the largest refugee camps in the
+            world with about 150,00 residents. This is where we plan on doing
+            our first refugee project! This is a camp of about 4200 secondary
+            students, mainly Congolese and Burundian.
           </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ function Tanzania() {
         className={mobileView ? classes.mobileContainer : classes.gridContainer}
       >
         <Image
-          src={HaitiImage}
+          src={BangledeshPic}
           className={mobileView ? classes.mobileImage : classes.gridImage}
         />
         <div
@@ -73,12 +73,11 @@ function Tanzania() {
           className={classes.textcontainer}>
             <h2>Our Goal + Progress</h2>
           <p className={classes.gridText}>
-            Our goal now is to partner with local nonprofits andthe government 
-            to initiate the process of building a school for the village of Dubedou. 
-            When building the school, the impact is not only the children who will 
-            receive a formal education but the communityand the jobs that will 
-            be provided during this process. Students from local universities 
-            will also have access to good paying jobs as they come on as teachers.
+            We are currently in the
+            process of partnering with one of the local churches outside of the
+            camp to assist with locating a place that is close and convenient
+            for the refugee population so that children will be able to travel
+            safely to and from school.
           </p>
           </div>
         </div>

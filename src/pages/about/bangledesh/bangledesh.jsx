@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./bangledesh.module.css";
 import { Image, Button } from "react-bootstrap";
+import HaitiImage from "../../../../public/static/HaitiImage.png";
 import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
 import question from "../../../../public/static/question.svg";
 import construction from "../../../../public/static/construction.svg";
@@ -31,7 +32,7 @@ function Bangledesh() {
         className={mobileView ? classes.mobileContainer : classes.gridContainer}
       >
         <Image
-          src={BangledeshPic}
+          src={HaitiImage}
           className={mobileView ? classes.mobileImage : classes.gridImage}
         />
         <div
