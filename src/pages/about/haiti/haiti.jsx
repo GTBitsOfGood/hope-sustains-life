@@ -42,7 +42,13 @@ function Haiti() {
         >
           <div
           className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={question}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
             <h2>What We Want to Build</h2>
+          </div>
           <p className={classes.gridText}>
             This is where it all began! Back in 2011 was where the father and
             son duo started helping and where the co-founder, Theordore, would
@@ -54,10 +60,6 @@ function Haiti() {
           </p>
           </div>
         </div>
-          <Image
-          src={question}
-          className={mobileView ? classes.mobileImage : classes.grildicon}
-        />
       </div>
         <div className={classes.space}></div>
       <div
@@ -74,7 +76,13 @@ function Haiti() {
         >
           <div
           className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={construction}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
             <h2>Our Goal + Progress</h2>
+            </div>
           <p className={classes.gridText}>
             Our goal now is to partner with local nonprofits andthe government 
             to initiate the process of building a school for the village of Dubedou. 
@@ -85,10 +93,6 @@ function Haiti() {
           </p>
           </div>
         </div>
-          <Image
-          src={construction}
-          className={mobileView ? classes.mobileImage : classes.grildicon}
-        />
       </div>
       </div>
 

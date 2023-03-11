@@ -42,7 +42,13 @@ function Bangledesh() {
         >
           <div
           className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={question}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
             <h2>What We Want to Build</h2>
+          </div>
           <p className={classes.gridText}>
             Kutupalong refugee camp is one of the newly established refugee
             camps within the UNHCR network. It is mainly made of Rohingya
@@ -53,10 +59,7 @@ function Bangledesh() {
           </p>
           </div>
         </div>
-          <Image
-          src={question}
-          className={mobileView ? classes.mobileImage : classes.grildicon}
-        />
+          
       </div>
         <div className={classes.space}></div>
       <div
@@ -73,7 +76,13 @@ function Bangledesh() {
         >
           <div
           className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={construction}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
             <h2>Our Goal + Progress</h2>
+            </div>
           <p className={classes.gridText}>
             HSL is currently in the process of scouting
             nearby communities where we will be able to partner with the local
@@ -82,10 +91,6 @@ function Bangledesh() {
           </p>
           </div>
         </div>
-          <Image
-          src={construction}
-          className={mobileView ? classes.mobileImage : classes.grildicon}
-        />
       </div>
       </div>
 

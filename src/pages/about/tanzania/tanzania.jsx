@@ -42,7 +42,13 @@ function Tanzania() {
         >
           <div
           className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={question}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
             <h2>What We Want to Build</h2>
+          </div>
           <p className={classes.gridText}>
             Nyarugusu Refugee Camp is one of the largest refugee camps in the
             world with about 150,00 residents. This is where we plan on doing
@@ -51,10 +57,6 @@ function Tanzania() {
           </p>
           </div>
         </div>
-          <Image
-          src={question}
-          className={mobileView ? classes.mobileImage : classes.grildicon}
-        />
       </div>
         <div className={classes.space}></div>
       <div
@@ -71,7 +73,13 @@ function Tanzania() {
         >
           <div
           className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={construction}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
             <h2>Our Goal + Progress</h2>
+            </div>
           <p className={classes.gridText}>
             We are currently in the
             process of partnering with one of the local churches outside of the
@@ -81,10 +89,6 @@ function Tanzania() {
           </p>
           </div>
         </div>
-          <Image
-          src={construction}
-          className={mobileView ? classes.mobileImage : classes.grildicon}
-        />
       </div>
       </div>
 
