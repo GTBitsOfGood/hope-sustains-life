@@ -213,7 +213,7 @@ const OurStoryPage = () => {
         </div>
       </div>
       <div className={classes.background}>
-          <DonationSection/>
+        <DonationSection />
       </div>
       <Footer />
     </>

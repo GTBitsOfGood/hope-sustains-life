@@ -157,7 +157,7 @@ function JoinClassroomPage() {
           </div>
           <div className={classes.pictures}>{photoGrid}</div>
           <div className={classes.background}>
-            <DonationSection/>
+            <DonationSection />
           </div>
         </div>
         <Footer />

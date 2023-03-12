@@ -14,7 +14,7 @@ const BlogsNewsContainer = ({ blogs }) => (
     <BlogList blogs={blogs || []} />
     <div>
       <div className={classes.background}>
-        <DonationSection/>
+        <DonationSection />
       </div>
       <Footer />
     </div>

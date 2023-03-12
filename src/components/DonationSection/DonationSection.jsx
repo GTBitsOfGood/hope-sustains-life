@@ -14,29 +14,30 @@ const DonationSection = () => {
 
   return (
     <div>
-    {mobileView && (
-      <div className="d-flex flex-column justify-content-center">
-        <h1 className={classes.donateTextMobile}>
-          Don’t wait to change the world... the world needs the change you
-          can bring now.
-        </h1>
-        <Link href={urls.pages.donate.index}>
-          <Button className={classes.donateButton}>Donate</Button>
-        </Link>
-      </div>
-    )}
-    {!mobileView && (
-      <>
-        <h1 className={classes.donateText}>
-          Don’t wait to change the world... the world needs the change you can bring now.
-        </h1>
-        <div className={classes.buttonDiv}>
+      {mobileView && (
+        <div className="d-flex flex-column justify-content-center">
+          <h1 className={classes.donateTextMobile}>
+            Don’t wait to change the world... the world needs the change you can
+            bring now.
+          </h1>
           <Link href={urls.pages.donate.index}>
             <Button className={classes.donateButton}>Donate</Button>
           </Link>
         </div>
-      </>
-    )}
+      )}
+      {!mobileView && (
+        <>
+          <h1 className={classes.donateText}>
+            Don’t wait to change the world... the world needs the change you can
+            bring now.
+          </h1>
+          <div className={classes.buttonDiv}>
+            <Link href={urls.pages.donate.index}>
+              <Button className={classes.donateButton}>Donate</Button>
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };
