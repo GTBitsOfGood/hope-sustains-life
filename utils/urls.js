@@ -19,6 +19,7 @@ export default {
     ourStory: "/ourstory",
     blogNews: "/blognews",
     ourWork: "/ourwork",
+    getInvolved: "/getInvolved",
     joinClassroom: "/joinclassroom",
     joinLibrary: "/joinlibrary",
     donate: {

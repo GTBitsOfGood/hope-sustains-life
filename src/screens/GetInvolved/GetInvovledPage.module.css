@@ -1,0 +1,37 @@
+.title {
+  font-weight: 600;
+  font-size: 35px;
+  color: #000000;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2%;
+  align-items: center;
+}
+
+.mainContainer {
+  padding-top: 5%;
+  background: #59a9a1;
+  width: auto;
+  height: calc(100vh - 100px);
+}
+
+.Button {
+  margin-top: 10px;
+    background-color: aliceblue;
+    border-radius: 5%;
+    color: #000000;
+}
+
+.content {
+    padding: 1%;
+    justify-content: space-around;
+}
+
+.navCard {
+  align-content: center;
+  text-align: center;
+}
