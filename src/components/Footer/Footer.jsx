@@ -16,14 +16,24 @@ const Footer = () => {
     <>
       <Col>
         <div className={styles.header}>HSL Locations</div>
-        <div className={styles.paragraph}>
-          <p>Hope Sustains Life - US Office</p>
-          <p>Address, City, State, Zipcode</p>
+        <div className={styles.sublinks}>
+          <Link href={urls.pages.tanzania} passHref>
+            <a>Nyarugusu Refugee Camp</a>
+          </Link>
+          </div>
+          <div className={styles.sublinks}>
+          <Link href={urls.pages.bangledesh} passHref>
+            <a>Kutupalong Refugee Camp</a>
+          </Link>
+          </div>
+          <div className={styles.sublinks}>
+          <Link href={urls.pages.haiti} passHref>
+            <a>Dubedou</a>
+          </Link>
         </div>
         <div className={styles.header}>Contact Us</div>
         <div className={styles.paragraph}>
-          <p>hopesustainslife@email.com</p>
-          <p>(###) ###-####</p>
+          <p>bernard.michel@hopesustainslife.org</p>
         </div>
       </Col>
       <Col>
