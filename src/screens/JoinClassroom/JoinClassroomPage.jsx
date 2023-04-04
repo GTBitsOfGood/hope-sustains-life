@@ -14,12 +14,11 @@ import {
 } from "../../../public/static/ClassroomCollage";
 
 import classes from "./JoinClassroomPage.module.css";
-import { Image, Col, Row, Button } from "react-bootstrap";
+import { Image, Col, Row } from "react-bootstrap";
 import { displayMobileView } from "../../../utils/screen";
-import Link from "next/link";
-import urls from "../../../utils/urls";
 import Footer from "../../components/Footer";
 import LineImage from "../../../public/static/line-1.png";
+import DonationSection from "../../components/DonationSection/DonationSection";
 
 function JoinClassroomPage() {
   const isMobile = () => {
@@ -144,15 +143,7 @@ function JoinClassroomPage() {
         <div className={classes.pictures}>{photoGrid}</div>
 
         <div className={classes.background}>
-          <div className="d-flex flex-column justify-content-center">
-            <h1 className={classes.donateTextMobile}>
-              Don’t wait to change the world...the world needs the change you
-              can bring now
-            </h1>
-            <Link href={urls.pages.donate.index}>
-              <Button className={classes.donateButton}>Donate</Button>
-            </Link>
-          </div>
+          <DonationSection />
         </div>
       </div>
     );
@@ -166,16 +157,7 @@ function JoinClassroomPage() {
           </div>
           <div className={classes.pictures}>{photoGrid}</div>
           <div className={classes.background}>
-            <h1 className={classes.donateText}>
-              Don’t wait to change the<br></br>world...the world needs the{" "}
-              <br></br>
-              change you can bring now
-            </h1>
-            <div className={classes.buttonDiv}>
-              <Link href={urls.pages.donate.index}>
-                <Button className={classes.donateButton}>Donate</Button>
-              </Link>
-            </div>
+            <DonationSection />
           </div>
         </div>
         <Footer />

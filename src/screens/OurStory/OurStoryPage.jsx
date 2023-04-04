@@ -1,14 +1,12 @@
 import React from "react";
 import classes from "./OurStoryPage.module.css";
-import { Button, Row, Col, Image } from "react-bootstrap";
-
+import { Row, Col, Image } from "react-bootstrap";
 import TheodoreImage from "../../../public/static/Theodore_headshot.jpg";
 import BernardImage from "../../../public/static/Bernard_headshot.jpg";
-import urls from "../../../utils/urls";
-import Link from "next/link";
 import { displayMobileView } from "../../../utils/screen";
 import LineImage from "../../../public/static/line-1.png";
 import Footer from "../../components/Footer";
+import DonationSection from "../../components/DonationSection/DonationSection";
 
 const OurStoryPage = () => {
   const isMobile = () => {
@@ -215,31 +213,7 @@ const OurStoryPage = () => {
         </div>
       </div>
       <div className={classes.background}>
-        {mobileView && (
-          <div className="d-flex flex-column justify-content-center">
-            <h1 className={classes.donateTextMobile}>
-              Don’t wait to change the world...the world needs the change you
-              can bring now
-            </h1>
-            <Link href={urls.pages.donate.index}>
-              <Button className={classes.donateButton}>Donate</Button>
-            </Link>
-          </div>
-        )}
-        {!mobileView && (
-          <>
-            <h1 className={classes.donateText}>
-              Don’t wait to change the<br></br>world...the world needs the{" "}
-              <br></br>
-              change you can bring now
-            </h1>
-            <div className={classes.buttonDiv}>
-              <Link href={urls.pages.donate.index}>
-                <Button className={classes.donateButton}>Donate</Button>
-              </Link>
-            </div>
-          </>
-        )}
+        <DonationSection />
       </div>
       <Footer />
     </>
