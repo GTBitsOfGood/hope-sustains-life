@@ -28,7 +28,7 @@ function GetInvolvedPage() {
             buttonData={"Join the Library"}
           />
           <NavCard
-            img="/static/BangladeshImage.png"
+            img="/static/ourWork.png"
             link={urls.pages.joinLibrary}
             content={
               "Learn more about other ways to get involved with Hope Sustains Life."
