@@ -2,6 +2,9 @@ import React from "react";
 import classes from "./haiti.module.css";
 import { Image, Button } from "react-bootstrap";
 import HaitiImage from "../../../../public/static/HaitiImage.png";
+import BangledeshPic from "../../../../public/static/realBangledeshPic.png";
+import question from "../../../../public/static/question.svg";
+import construction from "../../../../public/static/construction.svg";
 import { displayMobileView } from "../../../../utils/screen";
 import Link from "next/link";
 import urls from "../../../../utils/urls";
@@ -18,10 +21,13 @@ function Haiti() {
   return (
     <>
       <div className={classes.general}>
-        <h1 className={classes.centerText}>Haiti</h1>
+        <h1 className={classes.centerText}>Dubedou, Haiti</h1>
       </div>
 
       <div className={classes.space}></div>
+
+     <div
+      className={mobileView ? classes.mobileContainer : classes.gridOutterContainer}>
 
       <div
         className={mobileView ? classes.mobileContainer : classes.gridContainer}
@@ -35,8 +41,15 @@ function Haiti() {
             mobileView ? classes.mobileDescription : classes.description
           }
         >
-          <h1 className={classes.dubedou}>Dubedou</h1>
-          <h1 className={classes.haiti}>Haiti</h1>
+          <div
+          className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={question}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
+            <h2>What We Want to Build</h2>
+          </div>
           <p className={classes.gridText}>
             This is where it all began! Back in 2011 was where the father and
             son duo started helping and where the co-founder, Theordore, would
@@ -44,15 +57,44 @@ function Haiti() {
             with providing food and building an artesian well for the locals but
             then we saw how so many children were missing out on an education in
             a country where only 20% of eligible children for secondary school
-            are enrolled. Our goal now is to partner with local nonprofits and
-            the government to initiate the process of building a school for the
-            village of Dubedou. When building the school, the impact is not only
-            the children who will receive a formal education but the community
-            and the jobs that will be provided during this process. Students
-            from local universities will also have access to good paying jobs as
-            they come on as teachers.
+            are enrolled.
           </p>
+          </div>
         </div>
+      </div>
+        <div className={classes.space}></div>
+      <div
+        className={mobileView ? classes.mobileContainer : classes.gridContainer}
+      >
+        <Image
+          src={BangledeshPic}
+          className={mobileView ? classes.mobileImage : classes.gridImage}
+        />
+        <div
+          className={
+            mobileView ? classes.mobileDescription : classes.description
+          }
+        >
+          <div
+          className={classes.textcontainer}>
+            <div className={classes.textheader}>
+            <Image
+          src={construction}
+          className={mobileView ? classes.mobileImage : classes.gridIcon}
+        />
+            <h2>Our Goal + Progress</h2>
+            </div>
+          <p className={classes.gridText}>
+            Our goal now is to partner with local nonprofits andthe government 
+            to initiate the process of building a school for the village of Dubedou. 
+            When building the school, the impact is not only the children who will 
+            receive a formal education but the communityand the jobs that will 
+            be provided during this process. Students from local universities 
+            will also have access to good paying jobs as they come on as teachers.
+          </p>
+          </div>
+        </div>
+      </div>
       </div>
 
       <div className={classes.space}></div>

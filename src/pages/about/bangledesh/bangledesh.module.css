@@ -28,12 +28,26 @@
     padding: 3%;
 }
 
+div.gridOutterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.textheader {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+}
+
 div.gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    align-items: center;
     grid-template-rows: 1fr;
     width: 90%;
     gap: 0px 50px;
@@ -47,7 +61,11 @@ div.mobileContainer {
     margin-left: auto;
     margin-right: auto;
 }
-
+div.textcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
 div.description {
     width: 40vw;
     display: flex;
@@ -66,6 +84,12 @@ div.mobileDescription {
     margin-top: auto;
     margin-bottom: auto;
     width: 100%;
+}
+.gridIcon {
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+    width: auto;
+    height: 2.5rem;
 }
 .mobileImage {
     width: 90%;
@@ -92,12 +116,17 @@ div.mobileDescription {
 }
 
 .dubedou {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
     line-height: 45px;
     /* or 173% */
-    color: #2A2D39;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 
 }
 
