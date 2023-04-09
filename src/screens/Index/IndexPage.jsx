@@ -232,7 +232,7 @@ const IndexPage = () => {
           >
             Read about what we're working on and how we plan to do it.
           </Card.Text>
-          <Link href={urls.pages.ourStory}>
+          <Link href={urls.pages.ourWork}>
             <Button
               className={mobileView ? classes.mobileViewMore : classes.viewMore}
             >
