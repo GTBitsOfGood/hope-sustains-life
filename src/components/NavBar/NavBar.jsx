@@ -50,26 +50,12 @@ export default function NavBar() {
         OUR WORK
       </Nav.Link>
 
-      <NavDropdown
-        title={<span className={styles.textColor}>GET INVOLVED</span>}
-        id="basic-nav-dropdown"
-        style={{ colorRendering: "white" }}
+      <Nav.Link
+        href={urls.pages.getInvolved}
         className={mobileView ? styles.mobileNavBar : "mr-3"}
-        onMouseEnter={() => setInvolvedHovered(true)}
-        onMouseLeave={() => setInvolvedHovered(false)}
-        onToggle={() => setInvolvedClicked(!isInvolvedClicked)}
-        show={isInvolvedHovered || isInvolvedClicked}
       >
-        <Link href={urls.pages.joinClassroom} passHref>
-          <Item className={styles.textColor}>Join the Classroom</Item>
-        </Link>
-        <Link href={urls.pages.joinLibrary} passHref>
-          <Item className={styles.textColor}>Join the Library</Item>
-        </Link>
-        <Link href={urls.pages.contactUs} passHref>
-          <Item className={styles.textColor}>Contact Us</Item>
-        </Link>
-      </NavDropdown>
+        GET INVOLVED
+      </Nav.Link>
     </>
   );
 
