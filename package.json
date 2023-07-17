@@ -42,7 +42,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.9.25",
+    "mongoose": "^5.13.20",
     "next": "^9.5.5",
     "next-images": "^1.6.2",
     "normalize.css": "^8.0.1",
