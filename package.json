@@ -59,7 +59,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-stripe-elements": "^6.1.2",
-    "react-toastify": "^6.0.8",
+    "react-toastify": "^6.2.0",
     "stripe": "^8.129.0"
   },
   "devDependencies": {
